@@ -1,0 +1,168 @@
+Ó 1993 go 1999,
+Bog an greasán ó 
+
+fíochán documeidí 
+
+go
+
+fíochán feidhmeanna;
+
+
+1993 - soláthraigh Mosaic Browser//.png 
+foirmeacha chun go d'featach usáidoir eolas a sheoladh ar ais chuig an friothálaí;
+
+1995 - Javascript
+
+1999 - teicnólíócht/teicníc ar a dtugtar XMLHTTPRequestobject agus an HTML4.01:
+       geata isteach ar 'Tír Feidhmeanna JS'.
+
+Anois, tá HTML 5 á foghlaim againn, 
+seo a deanannn sé:
+
+
+Solas: an ċlaíomh Solas atá uainn.
+
+Árdaidh agus ísligh na huimhreacha seo chun do shástachta.
+
+//uisce aBe
+
+
+
+//Maolaigh an chroí.
+
+Ainm:
+
+
+Go on then, gimmi some conas tá-foo.
+//Síar: Aimseoidh mé bealach eile.
+
+Cad atá agat anseo?
+
+Cá bhfúr tú é?
+
+//bréag!  
+
+an ea?
+
+Cá háit i ___?
+//lorg bealach eile.
+an ea?
+
+in aice __ nó __?
+
+agus cad is ainm dhuit?
+
+'ab ea.
+inis arís dom, ____;
+
+Bhí cnag ag an doras thart ar cén tám?
+
+Bhí cnag ag an doras agus cé a bhí ann?
+
+Bhí sceal ina bhéil agus cad bhí le rá?
+
+feirín ina mhála agus cad a bhí aige?
+
+Díarr sé céist ort agus cad a bhí uaidh?
+
+Fibonacci
+Recursion 
+
+
+Daoine óga,
+nearóga,
+codánach a 5 sin
+
+5 * 4 * 3 * 2* 1 
+
+agus tá sin cothram le 
+120
+cé chomh fada ar thóg sé ort é sin a oibrú amach?
+
+Sriobfaidh muid cód beag i Javascript, a deanann a leithead suim a oibrú amach ann ann tapaidh ar fad.
+
+Teanga riomharactha é JavaScript; atá cosúl le Bearla. Tá JavaScript liofa ag do brabhsálaí.
+
+//Treoir chun Oscail console agus scriobh seo
+
+function codánaigh(n){
+    if(n==0){            /*seo hé an bun cás. 
+Tufaidh muid cuirfaidhmís uimhear eigin in áit n, roimh a leieann an brabhsálaí an cód seo.
+  */  
+        return  1;
+    }
+    return n*(n-1);
+
+}
+
+anois, is feidir an chlár a rith. Sriobh seo sa consól:
+codánaigh(5)
+
+ar thug sé an freagra cheart dhuit?
+
+bain tríal as le uimhreacha eile.
+Cad is codánach 32?
+
+Tá an ceart agat!
+Tá murán teangaí riomharachta ar líne; lena termíocht agus ríalacha féin. Rud atá comónta acú:
+Deanann an 'DOM'(Samhaltán Documéid Mír?) cur sios orthú ar fad.
+
+Smaoinigh ar an DOM mar cránn le geaga eagsúla  ainmnaithe air.
+Trí príomh Geag:
+eilimint
+teacs
+aitreabúid
+ ----
+Tagann 3 teangaí le cheile chun suiomh greasán a roinnt.
+1: HTML bonchoch an greasán.
+2: CSS  chun an HTML a mhaisú
+3: JS   teanga na faidhmanna. (sampla)
+
+
+Is feidir leis an DOM cursios a deanamh ar gach suíomh ar an greasán.
+
+
+
+
+Ar an bóthar fada seo, beidh orainn rith.
+
+>Ní hé seo an áit i gcomhair ceimanna beaga.
+The hard stuff is for beginners. The really hard stuff is for us.png
+
+Tá blas an bua ag na ḃigánaigh.
+
+Cé híad na ḃígánaigh?
+
+Is ḃígánach mé.
+
+Tá an ceart acú.
+
+draoithe | filí | fianna
+
+ḃégántacht 
+
+riomhchlárú
+
+factasíócht
+Bí gníomhach tríd mhean na Gaeilge.
+Smaoinigh duit féin; conas is feidir leis an tenga bheith pairteach i do ṡaol?
+Leirigh eileamh, tríd Gaeilge a roghnú nuair atá an rogha ann. Agus tú á deanamh seo, cuimhnigh go mbraithnófar ortsa mar chuid den pobal Gaelach.
+Cuir leis an diospáireacht. Úsaid áisanna Gaeilge agus bí i dteagbháil le eagraichtaí agus daoine atá ag glaicheadh pairt sa saol tríd mhean na Gaeilge. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
