@@ -263,7 +263,7 @@ nav ul li a:hover{
     left:0;
     width:100%;
     height:113px;
-    background: #000 url(image/zoom.png) center center no-repeat;
+    background: #000 url(images/zoom.png) center center no-repeat;
     z-index:99;
     opacity:0;
     transition: opacity .5s ease;
