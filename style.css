@@ -383,47 +383,59 @@ footer .wrapper .column {
    margin-right:20px;
 }
 
-footer
+footer .wrapper .column.midlist.ul li{
+    width:auto;
+    padding: 0 0 10px 25px;
+    margin-botom: 10px;
+    border-bottom: 1px solid #444444;
+    background url(img/arrowright2.png) left 6px no-repeat;
+}
+footer .wrapper .column.midlist ul li a:hover(
+    color:#fff;
+)
 
 
+footer .wrapper .column.rightlist ul li{
+    width:auto;
+    margin-botom:15px;
+
+}
+
+footer .wrapper .column.rightlist ul li a span{
+    margin-left:95px;
+    display:block;
+
+}
+
+footer .wrapper .column.rightlist ul li a img{
+    transition: border .25s ease;
+    float: left;
+    border: 30px solid #444444;
+
+}
+
+footer .wrapper .column.rightlist ul li a img hover
+{
+    border-color: #5e5e5e;
+}
 
 
+#copyright{
+    background:#1D1D1D;
+    height:70px;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
+#copywrite .wrapper {
+    font-family:'Open Sans' sans-serif;
+    padding-top:25px;
+    color:#5e5e5e;
+    font-size:14px;
+    position:relative;
+}
 
 
 
