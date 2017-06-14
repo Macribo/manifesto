@@ -16,7 +16,7 @@ foirmeacha chun go d'featach usáidoir eolas a sheoladh ar ais chuig an friothá
 1999 - teicnólíócht/teicníc ar a dtugtar XMLHTTPRequestobject agus an HTML4.01:
        geata isteach ar 'Tír Feidhmeanna JS'.
 
-Anois, 18 bliana ar ball, tá HTML 5 á foghlaim againn, 
+Anois, tá HTML 5 á foghlaim againn, 
 seo a deanannn sé:
 
 
@@ -59,7 +59,7 @@ Bhí cnag ag an doras thart ar cén tám?
 
 Bhí cnag ag an doras agus cé a bhí ann?
 
-Bhí sceal ina bhéil agus cad bhí ann?
+Bhí sceal ina bhéil agus cad bhí le rá?
 
 feirín ina mhála agus cad a bhí aige?
 
@@ -104,5 +104,65 @@ bain tríal as le uimhreacha eile.
 Cad is codánach 32?
 
 Tá an ceart agat!
+Tá murán teangaí riomharachta ar líne; lena termíocht agus ríalacha féin. Rud atá comónta acú:
+Deanann an 'DOM'(Samhaltán Documéid Mír?) cur sios orthú ar fad.
 
-  
+Smaoinigh ar an DOM mar cránn le geaga eagsúla  ainmnaithe air.
+Trí príomh Geag:
+eilimint
+teacs
+aitreabúid
+ ----
+Tagann 3 teangaí le cheile chun suiomh greasán a roinnt.
+1: HTML bonchoch an greasán.
+2: CSS  chun an HTML a mhaisú
+3: JS   teanga na faidhmanna. (sampla)
+
+
+Is feidir leis an DOM cursios a deanamh ar gach suíomh ar an greasán.
+
+
+
+
+Ar an bóthar fada seo, beidh orainn rith.
+
+>Ní hé seo an áit i gcomhair ceimanna beaga.
+The hard stuff is for beginners. The really hard stuff is for us.png
+
+Tá blas an bua ag na ḃigánaigh.
+
+Cé híad na ḃígánaigh?
+
+Is ḃígánach mé.
+
+Tá an ceart acú.
+
+draoithe | filí | fianna
+
+ḃégántacht 
+
+riomhchlárú
+
+factasíócht
+Bí gníomhach tríd mhean na Gaeilge.
+Smaoinigh duit féin; conas is feidir leis an tenga bheith pairteach i do ṡaol?
+Leirigh eileamh, tríd Gaeilge a roghnú nuair atá an rogha ann. Agus tú á deanamh seo, cuimhnigh go mbraithnófar ortsa mar chuid den pobal Gaelach.
+Cuir leis an diospáireacht. Úsaid áisanna Gaeilge agus bí i dteagbháil le eagraichtaí agus daoine atá ag glaicheadh pairt sa saol tríd mhean na Gaeilge. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
