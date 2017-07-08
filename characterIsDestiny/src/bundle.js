@@ -135,7 +135,7 @@ function keydownHandler(event)
 }
 
 
-let story = 0;
+let story = 1;
 function narrate(story){
    output2.innerHTML = storyTexts[story];
 console.log("test! "+story);
