@@ -10,6 +10,17 @@ body {
 }
 
 
+h3{
+
+    text-align: center;
+    font-family:'Open Sans', sans-serif;
+    font-size:20px;
+    margin-bottom:10px;
+
+
+    
+}
+
 input
 {
     font-family:"Open Sans", sans-serif;
@@ -75,10 +86,11 @@ header{
 
 header h1{
     margin: 35px 0 0 0;
+    text-align: center;
     font-size: 55px;
     color: #e56038;
-    font-family: 'Baumans', cursive;
-
+    font-family: 'Open Sans', sans-serif;
+    text-transform:uppercase;
 }
 
 header p{
@@ -86,7 +98,6 @@ header p{
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     color: #4A463B;
-    magin-left:132px;
 
 }
 
@@ -212,6 +223,7 @@ nav ul li a:hover{
 }
 
 #boxcontent article h3{
+    text-align: center;
     font-family:'Open Sans', sans-serif;
     font-size:20px;
     margin-bottom:10px;
