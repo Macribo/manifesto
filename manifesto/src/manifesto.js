@@ -6,7 +6,10 @@ let storyTexts = require("./story-texts"); //can't use capital letters with brow
 
 var map = [];
 
-map[0] = "An old stone keep.";
+
+
+
+map[0] = "An ol stone keep.";
 map[1] = "A deep well.";
 map[2] = "A sunny glade.";
 map[3] = "A sleeping dragon.";

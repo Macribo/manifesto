@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
     <meta charset="utf-8">
-    
     <head>
         <title>Manifesto </title>
         <link rel="stylesheet" href="manifesto.css">
@@ -9,7 +8,7 @@
     <body>
         <div id="stage">
         <h1>Manifesto</h1>
-        <div id="test">big test</div>      
+      
         <img src="" width="300" height="267">
       
         <p id="output"></p>

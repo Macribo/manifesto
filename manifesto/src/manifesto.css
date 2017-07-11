@@ -1,11 +1,12 @@
 html
 {
-  font-family: computer_pixel-7;
+   font-family: computer_pixel-7;
   color: #fff;  
   font-size: 16px;
   padding: 0px;
   margin: 0px;
   background: black;
+
 }
 
 @font-face 
@@ -13,17 +14,7 @@ html
   font-family: INFO56_0;
   src: url("../fonts/INFO56_0.ttf");
 }
-@font-face 
-{
-  font-family: PCBius;
-  src: url("../fonts/PCBius.ttf");
-}
 
-@font-face 
-{
-  font-family: Bitwise;
-  src: url("../fonts/Bitwise.ttf");
-}
 
 @font-face 
 {
@@ -57,14 +48,15 @@ text-align: center;
   width: 300px;
   margin: 0px auto;
   font-size: 40px;
-  
-}
+   
+  }
 #output2
 {
   font-family: INFO56_0;
   width: 300px;
   margin: 0px auto;
   font-size: 30px;
+animation: fadein 2s;
 }
 
 img
@@ -98,7 +90,7 @@ button
   height: 40px;
   width: 75px;
   
-  font-family: Bitwise;
+  font-family: computer_pixel-7  ;
   font-size: 20px;
   color: #fff;
   border: 1px solid #000;
@@ -130,7 +122,21 @@ button
   background-image: url("../images/bg2.png");
   background-repeat: no-repeat;
   border:25px solid gray;
+
   
+}
+
+@keyframes pop-in{
+    0% {bottom:-100;}
+    18%{bottom:-100;}
+    100%{bottom:10;}
+
+}
+
+@keyframes fadein{
+0% {opacity:0;}
+
+100% {opacity:1;} 
 }
 
 
