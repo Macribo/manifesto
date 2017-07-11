@@ -335,7 +335,7 @@ function render()
   
   //Display the game message
 
-    output.style.fontSize="42px";
+    output.style.fontSize="140px";
     output.style.textAlign="center";
     output.innerHTML += gameMessage ;
     output.style.padding=0;
