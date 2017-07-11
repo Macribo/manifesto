@@ -140,6 +140,22 @@ button
 
   
 }
+
+#location{
+    position: absolute;
+    top: 28px;
+    left: 22px;
+    opacity: 0.15;
+}
+#shield-holder{
+    position:absolute;
+    width:150px;
+    height:342px;
+    background-image:url("../images/dealbh.png");
+    bottom: 0px;
+    left:28%;
+}
+
 @keyframes delay-fade-in{
     0% {opacity:0;}
     75%{opacity:0;}

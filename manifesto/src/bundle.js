@@ -14,7 +14,7 @@ map[0] = "An ol stone keep.";
 map[1] = "A deep well.";
 map[2] = "A sunny glade.";
 map[3] = "A sleeping dragon.";
-map[4] = "Aimsighim:";
+map[4] = "Manifesto";
 map[5] = "An ancient gate.";
 map[6] = "The edge of a river.";
 map[7] = "A lonely wooden bench.";
@@ -152,8 +152,8 @@ function playGame()
  
  narrate(story); 
     console.log(story);
-   output2.style.animation="fade-in 2s";
     story++;
+   output2.style.animation="fade-in 2s";
   //Render the game
   render();
 }
