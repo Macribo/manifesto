@@ -152,6 +152,7 @@ function playGame()
  
  narrate(story); 
     console.log(story);
+   output2.style.animation="fade-in 2s";
     story++;
   //Render the game
   render();

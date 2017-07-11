@@ -37,13 +37,15 @@ h1
   margin-bottom:0px ;
   margin-top:0px;
 }
-title:hover{
+
+#alt-title{
+    opacity:0;
     
+}
+#title:hover{
 }
 
 
-
-em
 {
   font-size: 14px;
 }
@@ -107,7 +109,7 @@ button
   font-size: 50px;
   color: #fff;
   border: 1px solid #000;
-	
+  animation: delay-fade-in 3s;	
 /*	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;	
@@ -150,5 +152,4 @@ button
 
 100% {opacity:1;} 
 }
-
 
