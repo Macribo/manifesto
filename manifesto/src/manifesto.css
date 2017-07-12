@@ -101,7 +101,7 @@ button
   background-color: #505050;
   position: absolute;
   bottom: 50px;
-  left: 50%;
+  left: 55%;
   height: 70px;
   width: 175px;
   
@@ -143,9 +143,9 @@ button
 
 #location{
     position: absolute;
-    top: 28px;
+    bottom:158px;
     left: 22px;
-    opacity: 0.15;
+    opacity: 0;
 }
 #shield-holder{
     position:absolute;
@@ -154,6 +154,7 @@ button
     background-image:url("../images/dealbh.png");
     bottom: 0px;
     left:28%;
+    z-index:10;
 }
 
 @keyframes delay-fade-in{
