@@ -1,11 +1,16 @@
- 
+ // 
 $(document).ready(function(){
-    $('#output2').hover(function(){
-        $('#bearla').text('#output2.span.title');
-                });
+$('#button').click(function(){
+$('#output2 span').hover(function(){
+
+               $('#bearla').text($(this).attr('title'));
+                      console.log(this.attributes.title);});
+
+
     $('#output2').mouseout(function(){
         $('#bearla').text('');
 
 });
 });
-console.log("reading jqueries.js");
+});
+

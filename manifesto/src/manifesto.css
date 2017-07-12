@@ -38,8 +38,11 @@ h1
   margin-top:0px;
 }
 
+
+
+
 #alt-title{
-    opacity:0;
+  opacity:0;
     
 }
 #title:hover{
@@ -164,6 +167,19 @@ button
     left:28%;
     z-index:10;
 }
+
+#badge{
+    position:absolute;
+    top:75px;
+    left:59px;
+    background-image:url("../images/badges.png");
+    z-index: 20;
+    opacity:1;
+    width:80px;
+    height:80px;
+}
+
+
 
 @keyframes delay-fade-in{
     0% {opacity:0;}

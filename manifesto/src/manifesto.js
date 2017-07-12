@@ -1,5 +1,5 @@
 //jshint esversion:6
-
+//
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
 
 //Create the map

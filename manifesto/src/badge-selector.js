@@ -1,4 +1,5 @@
 //jshint esversion:6
+//
 module.exports = function badgeSelector(duration) {
     const countyNames = require("./county-names");
     const contae = document.querySelector("#contae");
