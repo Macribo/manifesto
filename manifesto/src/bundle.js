@@ -364,17 +364,19 @@ fascinate, bewitch.
 
 //1
     
-`Fáilte.`,
+`<span title='Welcome'>Fáilte.</span>`,
   
 //2
 `
-Dún do beal, más é do thoil é.
+<span title='There is'>Tá</span> <span title='more'>nios mó </span><span title='at issue'>i gceist</span> <span title='by'>le</span> <span title='language'>teanga</span> <span title='than'>ná</span> <span title='talk'>caint</span>.
+
 `,
 
 //3
 
 `
-Tá nios mó i gceist le teanga ná cainnte.
+<span title=' \'tis'>Is</span> <span title='(a) system'>comhras</span> <span title='(of) thought'>smaoineamh</span> <span title='(which) she is'>í</span><span title='the Irish (language)'> an Gaeilge</span>.
+
 `,
 //4
 `
