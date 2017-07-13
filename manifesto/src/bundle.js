@@ -1,7 +1,109 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 //jshint esversion:6
 //
+module.exports = function badgeSelector(duration) {
+    const countyNames = require("./county-names");
+    const contae = document.querySelector("#contae");
+
+    let countyId = 0;
+    const badge = document.querySelector("#badge");
+    let badgeWidth = 80; 
+    console.log('>>>>>>>', badgeWidth);
+    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
+
+    let oldX;
+    let changeCountyTime;
+
+    function changeCounty(){
+        countyId = (countyId + 1) % countyNames.length; // use modulo to ensure we never step outside the array
+        contae.innerHTML = countyNames[countyId];
+        changeCountyTime = Date.now();
+        oldX =parseInt(badge.style.backgroundPositionX ||"0px");
+        console.log("county changed at:",changeCountyTime, "  oldX: ", oldX);
+    }
+
+
+    setInterval( function() {
+        if(oldX !== undefined) {
+            let t = Date.now() - changeCountyTime;
+            let m = badgeWidth/duration;
+            let b = oldX;
+            if (t > duration){
+                oldX = undefined;
+                t = duration;               
+            }
+            badge.style.backgroundPositionX = (-m*t+b)+"px";
+        }
+    }, 1000/60);
+};
+
+},{"./county-names":2}],2:[function(require,module,exports){
+//jshint esversion:6
+
+module.exports = [
+    'Uíḃ Ḟailí',
+    'Lú',
+    'Loch Garman',
+    'Luimnigh',
+    'Ḃaile Átha Ċliath',
+    'Liatroma',
+    'Aontroma',
+    'Ḋún na nGall',
+    'Ḟear Manaċ',
+    'Ċorcaí',
+    'Ċill Ṁantáin',
+    'Ros Comáin',
+    'Ḋoire',
+    'Ṡligiġ',
+    'Ṫiobraid Árann',
+    'Laoise',
+    'Ṗort Láirge',
+    'Ċill Ċainniġ',
+    'Na Mí',
+    'Ċiarraí',
+    'An LongFoirt',
+    'Ṁaigh Eo',
+    'Na hIarṁí',
+    'An Dúin',
+    'Ard Ṁaċa',
+    'Ċeaṫarlaċ',
+    'Ṁuineaċáin',
+    'na Gailliṁe',
+    'Ċill Dara',
+    'An Ċláir',
+    'An Caḃáin',
+    'Ṫír Eoghain',
+    'Thar lar'
+];
+
+},{}],3:[function(require,module,exports){
+ // 
+$(document).ready(function(){
+$('#button').click(function(){
+$('#output2 span').hover(function(){
+
+               $('#bearla').text($(this).attr('title'));
+                      console.log(this.attributes.title);});
+
+
+    $('#output2').mouseout(function(){
+        $('#bearla').text('');
+
+});
+});
+});
+
+
+},{}],4:[function(require,module,exports){
+//jshint esversion:6
+
+
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
+
+
+let badgeSelector = require("./badge-selector");
+badgeSelector(100);
+
 
 //Create the map
 
@@ -348,7 +450,7 @@ function render()
 
 
 
-},{"./story-texts":2}],2:[function(require,module,exports){
+},{"./badge-selector":1,"./story-texts":5}],5:[function(require,module,exports){
 //jshint esversion:6
 module.exports = [
 
@@ -453,4 +555,4 @@ fascinate, bewitch.
 
 ];
 
-},{}]},{},[1]);
+},{}]},{},[1,2,4,5,3]);

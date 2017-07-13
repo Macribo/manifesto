@@ -1,12 +1,7 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 //jshint esversion:6
 
-
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
-
-
-let badgeSelector = require("./badge-selector");
-badgeSelector(100);
-
 
 //Create the map
 
@@ -352,3 +347,110 @@ function render()
 }
 
 
+
+},{"./story-texts":2}],2:[function(require,module,exports){
+//jshint esversion:6
+module.exports = [
+
+//0
+`I aim, direct, attack; 
+I strike, hit the mark;
+I recognise at a distance
+(aim with the eye); I find out,
+discover; I tempt, allure, incite,
+fascinate, bewitch.
+`,
+
+
+//1
+    
+`<span title='Welcome'>Fáilte.</span>`,
+  
+//2
+`<span title='There is'>Tá</span> <span title='more'>nios mó </span><span title='at issue'>i gceist</span> <span title='by'>le</span> <span title='language'>teanga</span> <span title='than'>ná</span> <span title='talk'>caint</span>.
+
+`,
+
+//3
+
+`<span title='It is'>Is
+</span> 
+<span title='(a) system'>comhras
+</span> 
+<span title='(of) thought'>smaoineamh
+</span> 
+<span title='(which) she is'>í
+</span>
+<span title='the Irish (language)'> an Gaeilge
+</span>.`,
+//4
+`
+`,
+
+//5
+`
+`,
+
+//6
+`
+`,
+
+//7
+`
+`,
+
+//8
+`
+`,
+
+//9
+`
+`,
+
+//10
+`
+`,
+
+//11
+`
+`,
+
+//12
+`
+`,
+
+//13
+`
+`,
+
+//14
+`
+`,
+
+//15
+`
+`,
+
+//16
+`
+`, 
+  
+//17
+  `
+  `, 
+    
+//18
+  `
+  `, 
+    
+//19
+`
+`
+
+
+
+
+
+];
+
+},{}]},{},[1]);
