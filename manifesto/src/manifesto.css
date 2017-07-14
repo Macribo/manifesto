@@ -131,11 +131,12 @@ button
 }
 #bearla{
     position:absolute;
-    color:#202020;
+    color:black;
     font-size: 24px;
-    text-align:center;
-    bottom: 44px;
-    left:61px;
+    text-align:left;
+    top: 215px;
+    left:35px;
+    width: 90px;
     z-index:32;
 }
 
@@ -163,7 +164,7 @@ button
     width:150px;
     height:342px;
     background-image:url("../images/dealbh.png");
-    bottom: 0px;
+    bottom: -3px;
     left:28%;
     z-index:10;
 }
@@ -178,8 +179,33 @@ button
     width:80px;
     height:80px;
 }
+
+#contae{
+    position:absolute;
+    text-align: center;
+    width: 300px;
+    left:-70px;
+    padding-left:0px; 
+    font-family:INFO56_0;
+    bottom: 5px;
+    font-size:22px;
+}
+
 .item{
 }
+
+
+#player{
+
+    display:none;
+    background-image:url("../images/player.png"); 
+}
+
+
+
+
+
+
 
 
 @keyframes delay-fade-in{
