@@ -146,6 +146,7 @@ function keydownHandler(event)
 let story = 1;
 function narrate(story){
    output2.innerHTML = storyTexts[story];
+   output2.className=''; 
 console.log("test! "+story);
 }
 //test
@@ -158,8 +159,7 @@ function playGame()
  narrate(story); 
     console.log(story);
     story++;
-   output2.style.animation="fade-in 2s";
-  //Render the game
+output2.className='fadeText';
   render();
 }
 

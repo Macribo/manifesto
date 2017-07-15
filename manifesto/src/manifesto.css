@@ -63,15 +63,15 @@ text-align: center;
   }
 #output2
 {
-  font-family: INFO56_0;
+ font-family: INFO56_0;
   margin: 0px auto;
+  margin-top: 60px;
   font-size: 60px;
-animation: fade-in 2s;
 }
 
 #mainText{
     position:absolute;
-    top:100px;
+    top:3px;
     left: 450px;
     width: 800px;
 }
@@ -103,8 +103,8 @@ button
 {
   background-color: #505050;
   position: absolute;
-  bottom: 50px;
-  left: 55%;
+  bottom: 193px;
+  left: 10%;
   height: 70px;
   width: 175px;
   
@@ -144,7 +144,7 @@ button
 #stage
 {
   width: 350px;
-  height: 647px;
+  height: 423px;
   position: relative;
   background-image: url("../images/bg2.png");
   background-repeat: no-repeat;
@@ -202,7 +202,9 @@ button
 }
 
 
-
+ .fadeText{
+animation: fade-in 2s;
+ } 
 
 
 
