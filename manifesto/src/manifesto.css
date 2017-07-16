@@ -118,7 +118,7 @@ button
 {
   background-color: #505050;
   position: absolute;
-  bottom: 193px;
+  top:500px;
   left: 12%;
   height: 70px;
   width: 120px;
@@ -152,11 +152,11 @@ button
 #bearla{
     position:absolute;
     color:black;
-    font-size: 24px;
+    font-size: 26px;
     text-align:left;
-    top: 215px;
-    left:35px;
-    width: 90px;
+    top: 141px;
+    left:-44px;
+    width: 126px;
     z-index:32;
 }
 
@@ -178,6 +178,7 @@ button
 
 #right-panel
 {
+    display:none;
     width:350px;
     height:423px;
     position: relative;
@@ -197,8 +198,8 @@ button
     width:200px;
     height:342px;
     background-image:url("../images/dealbh.png");
-    bottom: -3px;
-    left:28%;
+    bottom: 18px;
+    left:76px;
     z-index:10;
 }
 
@@ -217,11 +218,11 @@ button
     position:absolute;
     text-align: center;
     width: 300px;
-    left:-70px;
+    left:-57px;
     padding-left:0px; 
     font-family:INFO56_0;
-    bottom: 5px;
-    font-size:22px;
+    bottom: -13px;
+    font-size:25px;
 }
 
 .item{
