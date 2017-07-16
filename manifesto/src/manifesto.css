@@ -22,6 +22,21 @@ html
   src: url("../fonts/computer_pixel-7.ttf");
 }
 
+/*flex-boxes*/
+
+.parent
+{
+    display: flex;
+    flex-direction:row;
+    align-content:center;
+    justify-content: space-between;
+}
+
+.item {
+
+}
+/************/
+
 span.withTitle {
     font-size: 30px;
 }
@@ -154,8 +169,21 @@ button
   background-image: url("../images/bg2.png");
   background-repeat: no-repeat;
   border:25px solid gray;
-
   
+}
+
+#middle-panel{
+
+}
+
+#right-panel
+{
+    width:350px;
+    height:423px;
+    position: relative;
+    background-image: url("../images/bg2.png");
+    background-repeat: no-repeat;
+    border:25px solid gray;
 }
 
 #location{
