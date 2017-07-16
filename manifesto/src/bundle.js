@@ -37,7 +37,143 @@ module.exports = function badgeSelector(duration) {
     }, 1000/60);
 };
 
-},{"./county-names":2}],2:[function(require,module,exports){
+},{"./county-names":3}],2:[function(require,module,exports){
+//jshint esversion:6
+
+function createArrayOfRandomInts(length,upperbound){
+    let randomNumbers = Array(length);
+    for (let i = 0; i<randomNumbers.length; i++){
+        randomNumbers[i] = Math.floor(Math.random()*upperbound);
+    }
+    return randomNumbers;
+}
+
+module.exports = function Camera(tileSize, county, grid, vw, vh, mapSymbolToTerrainType){
+
+    // minimum number of tiles to cover the
+    // viewport under all circumstances
+    let tw = Math.floor(vw / tileSize + 1);
+    let th = Math.floor(vh / tileSize + 1);
+    createGrid(tw, th);
+    let randomTileVariations = createArrayOfRandomInts(100,4);
+
+    function setOffsets(ox, oy){
+        grid.style.left =`${-ox % tileSize}px`;
+        grid.style.top = `${-oy % tileSize}px`;
+        let sx = Math.floor(ox / tileSize);
+        let sy = Math.floor(oy / tileSize);
+
+        updateGrid(tw, th, county, sx, sy);
+        updateSprites(ox, oy);
+    }
+
+    function createGrid(tw, th){
+        //console.log(`Creating tile grid ${tw}x${th}`);
+        for(let tileY = 0; tileY < th; tileY++){ 
+            for(let tileX = 0; tileX < tw; tileX++){
+                let tile = createTile(tileX, tileY, 0,0);
+
+                grid.appendChild(tile);
+            }
+        }
+    }
+
+    function createTile(tileX, tileY, terrainType, terrainVariation ){
+        // console.log(`CreateTile ${tileX}, ${tileY}`); 
+        let tile = document.createElement("div");
+        tile.setAttribute("id", `tile${tileX}_${tileY}`); //template strings
+        tile.classList.add('tile');  
+        let backgroundPosX = -terrainVariation * tileSize;
+        let backgroundPosY = -terrainType * tileSize;
+        tile.style.backgroundPositionX = `${backgroundPosX}px`;
+        tile.style.backgroundPositionY = `${backgroundPosY}px`;
+        tile.style.left = tileX*tileSize+ "px";
+        tile.style.top = tileY*tileSize + "px";
+
+        return tile;
+    }
+
+
+    function updateGrid(tw, th, map, sx, sy){
+        for(let tileY = 0; tileY < th; tileY++){ 
+            for(let tileX = 0; tileX < tw; tileX++){
+                let mapY =tileY + sy;
+                let mapX =tileX + sx;
+
+                let variationIndex = mapX * mapY;
+                let terrainVariation = randomTileVariations[variationIndex % randomTileVariations.length];
+                
+                let mapSymbol;
+                if (mapY>=map.length || mapY < 0){
+                    mapSymbol=undefined;
+                } else {
+                    mapSymbol = map[mapY][mapX];   //tileY gives us the map line, tileX gives the character position    
+                }
+                
+                let terrainType = mapSymbolToTerrainType(mapSymbol);
+
+                let tile = document.querySelector(`#tile${tileX}_${tileY}`);
+
+                if (terrainType !== undefined) {
+                    // animate water
+                    // let terrainVariation =0 ;
+                    if(mapSymbol === '>'){
+                        terrainVariation = mapY;
+                        terrainVariation = (terrainVariation + Math.floor(Date.now() / 500)) % 4;
+                    }
+
+                    //animate surf
+                    if(mapSymbol === 'z'){
+                        terrainVariation = mapY;
+                        terrainVariation = (terrainVariation + Math.floor(Date.now()/1000)) %4;
+                    
+                    }
+ 
+
+                    //animate sea
+                    if(mapSymbol === '7'|| mapSymbol === '9'|| mapSymbol === '0'){
+                        terrainVariation = mapY;
+                        terrainVariation = (terrainVariation + Math.floor(Date.now()/3000)) %4;
+                    
+                    }
+ 
+                    let backgroundPosX = -terrainVariation * tileSize;
+                    let backgroundPosY = -terrainType * tileSize;
+                    tile.style.backgroundPositionX = `${backgroundPosX}px`;
+                    tile.style.backgroundPositionY = `${backgroundPosY}px`;
+                    tile.style.opacity=1;
+                } else {
+                    // hide tile
+                    tile.style.opacity=0;
+                }
+
+            }
+        }
+    }
+
+    function updateSpritePosition(sprite, ox, oy){
+        let worldPosition = sprite.getWorldPosition();
+        let {x, y} = worldPosition;
+        sprite.updateScreenPosition((x-ox), (y- oy));
+    }
+
+    let sprites = [];
+    function addSprite(sprite) {
+        sprites.push(sprite);
+    }
+    function updateSprites(ox, oy) {
+        sprites.forEach( (sprite)=> {
+            updateSpritePosition(sprite, ox, oy);
+        });
+    }
+
+    return { //es6 shortcut for setOffsets: setOffsets, etc
+        setOffsets,
+        addSprite
+    };
+};
+
+},{}],3:[function(require,module,exports){
 //jshint esversion:6
 
 module.exports = [
@@ -78,7 +214,7 @@ module.exports = [
     'Dearg le Fearg'
 ];
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
  //jshint esversion:6 
 $(document).ready(function(){
 
@@ -106,7 +242,7 @@ $(document).ready(function(){
 });
 
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 //jshint esversion:6
 
 
@@ -488,7 +624,32 @@ function render()
 
 
 
-},{"./badge-selector":1,"./story-texts":5}],5:[function(require,module,exports){
+},{"./badge-selector":1,"./story-texts":7}],6:[function(require,module,exports){
+//jshint esversion:6
+
+module.exports = function Player(){
+
+    let px = 0; 
+    let py = 0;
+
+    function move(stepX, stepY){
+        px += stepX;
+        py += stepY;
+        
+    console.log("x: ",px,"y: ",py);
+    }
+
+    function getPosition() {
+        return {x: px, y: py};
+    }
+    
+    return {
+        move, //expose public API containing our move function (but not updateSpritePosition)
+        getPosition
+    };
+};
+
+},{}],7:[function(require,module,exports){
 //jshint esversion:6
 module.exports = [
 
@@ -604,4 +765,140 @@ module.exports = [
 
 ];
 
-},{}]},{},[1,2,4,5,3]);
+},{}],8:[function(require,module,exports){
+//jshint esversion:6
+
+const Player = require("./player");
+const Camera = require("./camera");
+
+let county =document.querySelector("#mapdata").innerHTML.split('\n');
+console.log(county);
+function mapSymbolToTerrainType(mapSymbol) {
+    return {
+        '~': 1,//water
+        '.': 0, //Grassland
+        '*': 5,//paths
+        '|': 2,//forests
+        '^': 3,//hills
+        'M': 4,//mountains
+        '>': 1,//riverwater
+        '8': 8, //Atlantic water
+        '9':9,//Atlantic waves
+        '0':10,//Atlantic waves
+        '7':11,//Atlantic waves
+        't': 6,//border
+        'z': 7, //surf
+        'x': 12//unreachable (grassland) 
+
+
+
+    }[mapSymbol];// || 0; property lookup in object literal || 0
+}
+const tileSize = 32;
+const vw = 32 * 32+ 10;
+const vh = 19 * 32 + 5;
+let grid = document.querySelector('#grid');
+
+let camera = Camera(tileSize, county, grid, vw, vh, mapSymbolToTerrainType);
+
+let playerElement = document.querySelector('#player');
+let player = Player();
+
+camera.addSprite({
+    updateScreenPosition: function(x, y) {
+        playerElement.style.left = x + "px";
+        playerElement.style.top = y + "px";
+    },
+    getWorldPosition: function() {
+        return player.getPosition();
+    }
+});
+
+//grid offset x and y
+let ox=0;
+let oy=0;
+
+function timerLoop() {
+    let playerPosition = player.getPosition();
+    ox = playerPosition.x - (vw/2);
+    oy = playerPosition.y - (vh/2);
+    camera.setOffsets(ox, oy);
+    requestAnimationFrame(timerLoop);
+}
+
+requestAnimationFrame(timerLoop);
+/*
+function createWorldMap(map){
+    let mapHeight = map.length;
+    let mapWidth = map[0].length; // we assume a rectangular map
+    console.log(mapWidth, mapHeight);
+    for(let tileY = 0; tileY < mapHeight; tileY++){ 
+        for(let tileX = 0; tileX < mapWidth; tileX++){
+            let mapSymbol = map[tileY][tileX];   //tileY gives us the map line, tileX gives the character position    
+            let terrainType = mapSymbolToTerrainType(mapSymbol);
+            if (terrainType !== undefined) {
+                let terrainVariation = Math.floor(Math.random()*3);
+                let tile = createTile(tileX,tileY,terrainType,terrainVariation);
+                document.querySelector('body').appendChild(tile);
+            }
+        }
+    }
+}
+*/
+
+var inventory = document.querySelectorAll("#inventory>*");
+inventory = Array.prototype.slice.call(inventory);
+console.log(inventory);
+function dropItem() {
+    itemElement = inventory.shift(); //inventory 0 and remove inventory 0;
+    dropItemElement(itemElement);
+}
+
+function dropItemElement(itemElement){
+    const position = player.getPosition();
+    
+    console.log(`data-x="${position.x}" data-y="${position.y}"`);
+    camera.addSprite({
+        updateScreenPosition: function(x, y) {
+            itemElement.style.left = x + "px";
+            itemElement.style.top = y + "px";
+        },
+        getWorldPosition: function() {
+            return position;
+        }
+    });
+
+}
+
+window.addEventListener("keydown", function(event){
+   //  console.log('keycode', event.keyCode);
+    
+    const step = 4;
+    switch(event.keyCode){
+        case 38:  //up
+            player.move(0, -step);
+            break;
+        case 40:  //down
+            player.move(0, step);
+            break;
+        case 39:  //right
+            player.move(step,0);
+            break;
+        case 37:  //left
+            player.move(-step,0);
+            break;
+
+        case 68: //d key
+            dropItem();
+            break;
+    }
+
+    event.preventDefault();
+});
+
+//new function for placing locations:
+//go through inventory items.
+//if inv item has data-x and data-y attributes, (look up getAttribute on MDN)
+//add sprite at that location.
+
+},{"./camera":2,"./player":6}]},{},[1,3,5,7,4,6,2,8]);

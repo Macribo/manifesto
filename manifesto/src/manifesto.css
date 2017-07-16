@@ -106,7 +106,7 @@ button
   bottom: 193px;
   left: 12%;
   height: 70px;
-  width: 175px;
+  width: 120px;
   
   font-family: computer_pixel-7  ;
   font-size: 50px;
@@ -211,7 +211,9 @@ animation: fade-in 2s;
 /**
  TILEWORLD DATA
   **/
-
+#tileworld{
+    display: none;
+}
 #mapdata {
     display: none;
 }
@@ -228,7 +230,7 @@ animation: fade-in 2s;
 .tile {
     width:32px; 
     height:32px;
-    background-image: url("images/tileset2.png");
+    background-image: url("../images/tileset2.png");
     position: absolute;
 
 }
@@ -240,7 +242,7 @@ animation: fade-in 2s;
     position: absolute;            
     height: 49px;
     width: 32px;
-    background-image: url("images/player.png");
+    background-image: url("../images/player.png");
     z-index: 50;
 }
 #inventory{
