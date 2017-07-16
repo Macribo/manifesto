@@ -146,7 +146,7 @@ button
 }
 
 
-#stage
+#left-panel
 {
   width: 350px;
   height: 423px;
@@ -166,7 +166,7 @@ button
 }
 #shield-holder{
     position:absolute;
-    width:150px;
+    width:200px;
     height:342px;
     background-image:url("../images/dealbh.png");
     bottom: -3px;
@@ -177,7 +177,7 @@ button
 #badge{
     position:absolute;
     top:75px;
-    left:59px;
+    left:84px;
     background-image:url("../images/badges.png");
     z-index: 20;
     opacity:1;
