@@ -2,12 +2,13 @@
 $(document).ready(function(){
 
     document.querySelector('#button').onmouseenter = (event) => {
-        document.querySelector('#bearla').innerHTML = 'push';
+        document.querySelector('#bearla').innerHTML = 'next';
     };
 //    $('#button').hover(function(){
 //                   $('#bearla').text('push');
 //    });
-    
+ 
+     
     $('#button').click(function(){
 
         $('#output2 span').hover(function(){

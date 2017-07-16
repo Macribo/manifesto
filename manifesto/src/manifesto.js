@@ -179,14 +179,15 @@ function playGame()
     output2.className='fadeText';
     render();
 
-    if(story>0){
+    if(story>1){
         bckBtn.style.display='inline';
-        bckBtn.style.animation='delay-fade-in 3s';
+        bckBtn.style.animation='delay-fade-in 1s';
+        fwdBtn.style.animation='slide-button-right 1s forwards';
         }else
         {
         bckBtn.style.animation='fade-out 1s';
-            bckBtn.style.display='none';
-        }
+        fwdBtn.style.animation='slide-button-left 1s forwards';
+        bckBtn.style.display='none';}
 }
 
 function takeItem()

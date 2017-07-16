@@ -80,7 +80,7 @@ text-align: center;
 {
  font-family: INFO56_0;
   margin: 0px auto;
-  margin-top: 60px;
+  margin-top: 16px;
   font-size: 60px;
 }
 
@@ -119,7 +119,7 @@ button
   background-color: #505050;
   position: absolute;
   top:500px;
-  left: 12%;
+  left: 148px;
   height: 70px;
   width: 120px;
   
@@ -173,12 +173,12 @@ button
 }
 
 #middle-panel{
-
+padding-right: 20px;
+padding-left: 40px;
 }
 
 #right-panel
 {
-    display:none;
     width:350px;
     height:423px;
     position: relative;
@@ -296,4 +296,17 @@ animation: fade-in 2s;
 @keyframes fade-out{
 100%{opacity:1;}
 0%{opacity:0;}
+}
+
+@keyframes slide-button-right{
+    0%{left:148px;}
+    100%{left: 288px;}
+    
+}
+@keyframes slide-button-left{
+    0%{left:288px;}
+    100%{left: 148px;}
+} 
+@keyframes county-select-mode{
+    
 }
