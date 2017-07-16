@@ -104,7 +104,7 @@ button
   background-color: #505050;
   position: absolute;
   bottom: 193px;
-  left: 10%;
+  left: 12%;
   height: 70px;
   width: 175px;
   
@@ -128,6 +128,11 @@ button
 	-webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+}
+
+#button_manifesto_back{
+    display:none;
+    left:1%;
 }
 #bearla{
     position:absolute;
@@ -195,11 +200,7 @@ button
 }
 
 
-#player{
 
-    display:none;
-    background-image:url("../images/player.png"); 
-}
 
 
  .fadeText{
@@ -207,7 +208,46 @@ animation: fade-in 2s;
  } 
 
 
+/**
+ TILEWORLD DATA
+  **/
 
+#mapdata {
+    display: none;
+}
+#viewport {
+    background-color: blue;
+    opacity: 0.1;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 10;
+    width: 10px;
+    height: 10px;
+}
+.tile {
+    width:32px; 
+    height:32px;
+    background-image: url("images/tileset2.png");
+    position: absolute;
+
+}
+#grid {
+    position: absolute;
+}
+
+#player{
+    position: absolute;            
+    height: 49px;
+    width: 32px;
+    background-image: url("images/player.png");
+    z-index: 50;
+}
+#inventory{
+}
+#inventory>*{
+    position: absolute;
+}
 
 
 @keyframes delay-fade-in{
@@ -222,4 +262,7 @@ animation: fade-in 2s;
 
 100% {opacity:1;} 
 }
-
+@keyframes fade-out{
+100%{opacity:1;}
+0%{opacity:0;}
+}
