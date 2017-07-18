@@ -698,7 +698,7 @@ module.exports = [
 //6
 ` <span id='recognises'>
  Aithníonn <span id='of'>an</span>
- <span id='in English mind'> meon Bearla</span><span id='there is not'> nach bhfuil</span> <span id='but'>ach</span> <span id='a minority'>mionlach</span> <span id='speaking> ag cainnt</span> <span id='in Irish'>i nGaeilge.</span>
+ <span id='in English mind'> meon Bearla</span><span id='there is not'> nach bhfuil</span> <span id='but'>ach</span> <span id='a minority'>mionlach</span> <span id='speaking'> ag cainnt</span> <span id='in Irish'>i nGaeilge.</span>
 
 `,
 

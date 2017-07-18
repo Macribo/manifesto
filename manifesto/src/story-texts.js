@@ -40,11 +40,15 @@ module.exports = [
 <span id='based on'> bunaithe ar</span><span id='the quantity'> líon</span> <span id='of the'>na</span> 'Irish Speakers'.
 `,
 
-
 //6
-` <span id='recognises'>
+` <span id='system'>
+
+Comhras</span> smaoineamh</span> í an Ghaeilge</span>.
+Más</span> nós</span> leat</span> smaoineamh</span> i mBearla</span>, is</span> aithrú mór intleachtúil</span> éan</span> athrú </span>go Gaeilge</span>.  Ar</span> mhaith</span> leat</span> tríal a bhainnt as</span>?
+
+
  Aithníonn <span id='of'>an</span>
- <span id='in English mind'> meon Bearla</span><span id='there is not'> nach bhfuil</span> <span id='but'>ach</span> <span id='a minority'>mionlach</span> <span id='speaking> ag cainnt</span> <span id='in Irish'>i nGaeilge.</span>
+ <span id='in English mind'> meon Bearla</span><span id='there is not'> nach bhfuil</span> <span id='but'>ach</span> <span id='a minority'>mionlach</span> <span id='speaking'> ag cainnt</span> <span id='in Irish'>i nGaeilge.</span>
 
 `,
 

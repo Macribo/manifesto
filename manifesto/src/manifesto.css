@@ -26,6 +26,10 @@ html
 
 .parent
 {
+    display: -webkit-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-direction:row;
     align-content:center;
@@ -69,9 +73,9 @@ h1
 }
 
 
-#output1{
+#output{
 text-align: center;
-  font-family: INFO56_0;
+ color:#d7d7d7;
   margin: 0px auto;
   font-size: 90px;
    
@@ -149,6 +153,27 @@ button
     display:none;
     left:1%;
 }
+
+
+#county-select-left {
+  display:none;
+  top:73px;
+  left: -51px;
+  height: 70px;
+  width: 60px;
+  border-radius: 20px;
+    
+}
+#county-select-right {
+  display: none;
+  top:73px;
+  left: 191px;
+  height: 70px;
+  width: 60px;
+  border-radius: 20px;
+}
+
+
 #bearla{
     position:absolute;
     color:black;
