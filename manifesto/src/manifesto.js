@@ -4,8 +4,7 @@
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
 
 
-let badgeSelector = require("./badge-selector");
-badgeSelector(100);
+let badgeSelector= require("./badge-selector");
 
 
 //Create the map
@@ -111,28 +110,48 @@ var countyBtnLeft = document.querySelector('#countyBtnLeft');
 
 
 fwdBtn.style.cursor = "pointer";
-fwdBtn.addEventListener("click", clickHandler, false);
+
+//Event Listeners:
+
+fwdBtn.addEventListener("click", fwdBtnHandler, false);
 fwdBtn.addEventListener("mousedown", mousedownHandler, false);
 fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
-
-bckBtn.addEventListener("click", backClickHandler, false);
-
+bckBtn.addEventListener("click", bckBtnHandler, false);
+countyBtnLeft.addEventListener("click", countyBtnLeftHandler, false);
+countyBtnRight.addEventListener("click",badgeSelector(100), false);
 playBtn.addEventListener("click", playHandler, false);
 noPlayBtn.addEventListener("click", noPlayHandler, false);
+
+
 //Listen for enter key presses
 window.addEventListener("keydown", keydownHandler, false);
 
 //Dispay the player's location
 render();
+function countyBtnLeftHandler(){
+console.log("clicked");
+badgeSelector(-100);
+//debugger;
+}
+function countyBtnRightHandler(){
+
+changeCounty.changeCounty();
+console.log("clicked");
+}
 
 function playHandler(){
- countyBtnLeft.style.display='inline';
- countyBtnRight.style.display='inline';
+ bckBtn.style.display='none';
+ noPlayBtn.style.display='none';
+ playBtn.style.display='none';
  
-    countyBtnRight.style.animation='fade-in 1s forwards';
+ 
+ countyBtnRight.style.animation='fade-in 1s forwards';
 
  countyBtnLeft.style.animation='fade-in 1s forwards';
-}
+ countyBtnLeft.style.display='inline';
+ countyBtnRight.style.display='inline';
+output2.innerHTML="<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>";}
+
 
 function noPlayHandler(){
 
@@ -152,7 +171,7 @@ function mouseoutHandler(){
     fwdBtn.style.background = "#505050";
 }
 
-function backClickHandler(){
+function bckBtnHandler(){
     bckBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
     bckBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
     bckBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
@@ -161,7 +180,7 @@ function backClickHandler(){
 
 }
 
-function clickHandler(){
+function fwdBtnHandler(){
     fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
     fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
     fwdBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
@@ -179,7 +198,7 @@ function keydownHandler(event)
 }
 
 
-let story = 1;
+let story = 13;
 function narrate(story){
     output2.innerHTML = storyTexts[story];
     output2.className=''; 
@@ -241,8 +260,6 @@ function progressStory(){
     playBtn.style.display='none';
     noPlayBtn.style.display='none';
     }
-    if(story > 15){
-    story= 15;}
 
 }
 

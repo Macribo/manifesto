@@ -1,15 +1,16 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 //jshint esversion:6
-//
+
 module.exports = function badgeSelector(duration) {
     const countyNames = require("./county-names");
     const contae = document.querySelector("#contae");
-
+    
     let countyId = 0;
     const badge = document.querySelector("#badge");
+    let countyBtnRight = document.querySelector("#countyBtnRight");
     let badgeWidth = 80; 
     console.log('>>>>>>>', badgeWidth);
-    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
+    countyBtnRight.addEventListener("click", changeCounty); //notice no brackets on updateCounty
 
     let oldX;
     let changeCountyTime;
@@ -35,145 +36,14 @@ module.exports = function badgeSelector(duration) {
             badge.style.backgroundPositionX = (-m*t+b)+"px";
         }
     }, 1000/60);
+
+
+//event listeners
+    countyBtnRight.addEventListener("click", changeCounty);
+
 };
 
-},{"./county-names":3}],2:[function(require,module,exports){
-//jshint esversion:6
-
-function createArrayOfRandomInts(length,upperbound){
-    let randomNumbers = Array(length);
-    for (let i = 0; i<randomNumbers.length; i++){
-        randomNumbers[i] = Math.floor(Math.random()*upperbound);
-    }
-    return randomNumbers;
-}
-
-module.exports = function Camera(tileSize, county, grid, vw, vh, mapSymbolToTerrainType){
-
-    // minimum number of tiles to cover the
-    // viewport under all circumstances
-    let tw = Math.floor(vw / tileSize + 1);
-    let th = Math.floor(vh / tileSize + 1);
-    createGrid(tw, th);
-    let randomTileVariations = createArrayOfRandomInts(100,4);
-
-    function setOffsets(ox, oy){
-        grid.style.left =`${-ox % tileSize}px`;
-        grid.style.top = `${-oy % tileSize}px`;
-        let sx = Math.floor(ox / tileSize);
-        let sy = Math.floor(oy / tileSize);
-
-        updateGrid(tw, th, county, sx, sy);
-        updateSprites(ox, oy);
-    }
-
-    function createGrid(tw, th){
-        //console.log(`Creating tile grid ${tw}x${th}`);
-        for(let tileY = 0; tileY < th; tileY++){ 
-            for(let tileX = 0; tileX < tw; tileX++){
-                let tile = createTile(tileX, tileY, 0,0);
-
-                grid.appendChild(tile);
-            }
-        }
-    }
-
-    function createTile(tileX, tileY, terrainType, terrainVariation ){
-        // console.log(`CreateTile ${tileX}, ${tileY}`); 
-        let tile = document.createElement("div");
-        tile.setAttribute("id", `tile${tileX}_${tileY}`); //template strings
-        tile.classList.add('tile');  
-        let backgroundPosX = -terrainVariation * tileSize;
-        let backgroundPosY = -terrainType * tileSize;
-        tile.style.backgroundPositionX = `${backgroundPosX}px`;
-        tile.style.backgroundPositionY = `${backgroundPosY}px`;
-        tile.style.left = tileX*tileSize+ "px";
-        tile.style.top = tileY*tileSize + "px";
-
-        return tile;
-    }
-
-
-    function updateGrid(tw, th, map, sx, sy){
-        for(let tileY = 0; tileY < th; tileY++){ 
-            for(let tileX = 0; tileX < tw; tileX++){
-                let mapY =tileY + sy;
-                let mapX =tileX + sx;
-
-                let variationIndex = mapX * mapY;
-                let terrainVariation = randomTileVariations[variationIndex % randomTileVariations.length];
-                
-                let mapSymbol;
-                if (mapY>=map.length || mapY < 0){
-                    mapSymbol=undefined;
-                } else {
-                    mapSymbol = map[mapY][mapX];   //tileY gives us the map line, tileX gives the character position    
-                }
-                
-                let terrainType = mapSymbolToTerrainType(mapSymbol);
-
-                let tile = document.querySelector(`#tile${tileX}_${tileY}`);
-
-                if (terrainType !== undefined) {
-                    // animate water
-                    // let terrainVariation =0 ;
-                    if(mapSymbol === '>'){
-                        terrainVariation = mapY;
-                        terrainVariation = (terrainVariation + Math.floor(Date.now() / 500)) % 4;
-                    }
-
-                    //animate surf
-                    if(mapSymbol === 'z'){
-                        terrainVariation = mapY;
-                        terrainVariation = (terrainVariation + Math.floor(Date.now()/1000)) %4;
-                    
-                    }
- 
-
-                    //animate sea
-                    if(mapSymbol === '7'|| mapSymbol === '9'|| mapSymbol === '0'){
-                        terrainVariation = mapY;
-                        terrainVariation = (terrainVariation + Math.floor(Date.now()/3000)) %4;
-                    
-                    }
- 
-                    let backgroundPosX = -terrainVariation * tileSize;
-                    let backgroundPosY = -terrainType * tileSize;
-                    tile.style.backgroundPositionX = `${backgroundPosX}px`;
-                    tile.style.backgroundPositionY = `${backgroundPosY}px`;
-                    tile.style.opacity=1;
-                } else {
-                    // hide tile
-                    tile.style.opacity=0;
-                }
-
-            }
-        }
-    }
-
-    function updateSpritePosition(sprite, ox, oy){
-        let worldPosition = sprite.getWorldPosition();
-        let {x, y} = worldPosition;
-        sprite.updateScreenPosition((x-ox), (y- oy));
-    }
-
-    let sprites = [];
-    function addSprite(sprite) {
-        sprites.push(sprite);
-    }
-    function updateSprites(ox, oy) {
-        sprites.forEach( (sprite)=> {
-            updateSpritePosition(sprite, ox, oy);
-        });
-    }
-
-    return { //es6 shortcut for setOffsets: setOffsets, etc
-        setOffsets,
-        addSprite
-    };
-};
-
-},{}],3:[function(require,module,exports){
+},{"./county-names":2}],2:[function(require,module,exports){
 //jshint esversion:6
 
 module.exports = [
@@ -214,7 +84,7 @@ module.exports = [
     'Dearg le Fearg'
 ];
 
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
  //jshint esversion:6 
 $(document).ready(function(){
 
@@ -260,15 +130,14 @@ $(document).ready(function(){
 });
 
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 //jshint esversion:6
 
 
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
 
 
-let badgeSelector = require("./badge-selector");
-badgeSelector(100);
+let badgeSelector= require("./badge-selector");
 
 
 //Create the map
@@ -374,28 +243,48 @@ var countyBtnLeft = document.querySelector('#countyBtnLeft');
 
 
 fwdBtn.style.cursor = "pointer";
-fwdBtn.addEventListener("click", clickHandler, false);
+
+//Event Listeners:
+
+fwdBtn.addEventListener("click", fwdBtnHandler, false);
 fwdBtn.addEventListener("mousedown", mousedownHandler, false);
 fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
-
-bckBtn.addEventListener("click", backClickHandler, false);
-
+bckBtn.addEventListener("click", bckBtnHandler, false);
+countyBtnLeft.addEventListener("click", countyBtnLeftHandler, false);
+countyBtnRight.addEventListener("click",badgeSelector(100), false);
 playBtn.addEventListener("click", playHandler, false);
 noPlayBtn.addEventListener("click", noPlayHandler, false);
+
+
 //Listen for enter key presses
 window.addEventListener("keydown", keydownHandler, false);
 
 //Dispay the player's location
 render();
+function countyBtnLeftHandler(){
+console.log("clicked");
+badgeSelector(-100);
+//debugger;
+}
+function countyBtnRightHandler(){
+
+changeCounty.changeCounty();
+console.log("clicked");
+}
 
 function playHandler(){
- countyBtnLeft.style.display='inline';
- countyBtnRight.style.display='inline';
+ bckBtn.style.display='none';
+ noPlayBtn.style.display='none';
+ playBtn.style.display='none';
  
-    countyBtnRight.style.animation='fade-in 1s forwards';
+ 
+ countyBtnRight.style.animation='fade-in 1s forwards';
 
  countyBtnLeft.style.animation='fade-in 1s forwards';
-}
+ countyBtnLeft.style.display='inline';
+ countyBtnRight.style.display='inline';
+output2.innerHTML="<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>";}
+
 
 function noPlayHandler(){
 
@@ -415,7 +304,7 @@ function mouseoutHandler(){
     fwdBtn.style.background = "#505050";
 }
 
-function backClickHandler(){
+function bckBtnHandler(){
     bckBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
     bckBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
     bckBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
@@ -424,7 +313,7 @@ function backClickHandler(){
 
 }
 
-function clickHandler(){
+function fwdBtnHandler(){
     fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
     fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
     fwdBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
@@ -442,7 +331,7 @@ function keydownHandler(event)
 }
 
 
-let story = 1;
+let story = 13;
 function narrate(story){
     output2.innerHTML = storyTexts[story];
     output2.className=''; 
@@ -504,8 +393,6 @@ function progressStory(){
     playBtn.style.display='none';
     noPlayBtn.style.display='none';
     }
-    if(story > 15){
-    story= 15;}
 
 }
 
@@ -712,32 +599,7 @@ function render()
 }
 
 
-},{"./badge-selector":1,"./story-texts":7}],6:[function(require,module,exports){
-//jshint esversion:6
-
-module.exports = function Player(){
-
-    let px = 0; 
-    let py = 0;
-
-    function move(stepX, stepY){
-        px += stepX;
-        py += stepY;
-        
-    console.log("x: ",px,"y: ",py);
-    }
-
-    function getPosition() {
-        return {x: px, y: py};
-    }
-    
-    return {
-        move, //expose public API containing our move function (but not updateSpritePosition)
-        getPosition
-    };
-};
-
-},{}],7:[function(require,module,exports){
+},{"./badge-selector":1,"./story-texts":5}],5:[function(require,module,exports){
 //jshint esversion:6
 module.exports = [
 
@@ -881,140 +743,4 @@ module.exports = [
 
 ];
 
-},{}],8:[function(require,module,exports){
-//jshint esversion:6
-
-const Player = require("./player");
-const Camera = require("./camera");
-
-let county =document.querySelector("#mapdata").innerHTML.split('\n');
-console.log(county);
-function mapSymbolToTerrainType(mapSymbol) {
-    return {
-        '~': 1,//water
-        '.': 0, //Grassland
-        '*': 5,//paths
-        '|': 2,//forests
-        '^': 3,//hills
-        'M': 4,//mountains
-        '>': 1,//riverwater
-        '8': 8, //Atlantic water
-        '9':9,//Atlantic waves
-        '0':10,//Atlantic waves
-        '7':11,//Atlantic waves
-        't': 6,//border
-        'z': 7, //surf
-        'x': 12//unreachable (grassland) 
-
-
-
-    }[mapSymbol];// || 0; property lookup in object literal || 0
-}
-const tileSize = 32;
-const vw = 32 * 32+ 10;
-const vh = 19 * 32 + 5;
-let grid = document.querySelector('#grid');
-
-let camera = Camera(tileSize, county, grid, vw, vh, mapSymbolToTerrainType);
-
-let playerElement = document.querySelector('#player');
-let player = Player();
-
-camera.addSprite({
-    updateScreenPosition: function(x, y) {
-        playerElement.style.left = x + "px";
-        playerElement.style.top = y + "px";
-    },
-    getWorldPosition: function() {
-        return player.getPosition();
-    }
-});
-
-//grid offset x and y
-let ox=0;
-let oy=0;
-
-function timerLoop() {
-    let playerPosition = player.getPosition();
-    ox = playerPosition.x - (vw/2);
-    oy = playerPosition.y - (vh/2);
-    camera.setOffsets(ox, oy);
-    requestAnimationFrame(timerLoop);
-}
-
-requestAnimationFrame(timerLoop);
-/*
-function createWorldMap(map){
-    let mapHeight = map.length;
-    let mapWidth = map[0].length; // we assume a rectangular map
-    console.log(mapWidth, mapHeight);
-    for(let tileY = 0; tileY < mapHeight; tileY++){ 
-        for(let tileX = 0; tileX < mapWidth; tileX++){
-            let mapSymbol = map[tileY][tileX];   //tileY gives us the map line, tileX gives the character position    
-            let terrainType = mapSymbolToTerrainType(mapSymbol);
-            if (terrainType !== undefined) {
-                let terrainVariation = Math.floor(Math.random()*3);
-                let tile = createTile(tileX,tileY,terrainType,terrainVariation);
-                document.querySelector('body').appendChild(tile);
-            }
-        }
-    }
-}
-*/
-
-var inventory = document.querySelectorAll("#inventory>*");
-inventory = Array.prototype.slice.call(inventory);
-console.log(inventory);
-function dropItem() {
-    itemElement = inventory.shift(); //inventory 0 and remove inventory 0;
-    dropItemElement(itemElement);
-}
-
-function dropItemElement(itemElement){
-    const position = player.getPosition();
-    
-    console.log(`data-x="${position.x}" data-y="${position.y}"`);
-    camera.addSprite({
-        updateScreenPosition: function(x, y) {
-            itemElement.style.left = x + "px";
-            itemElement.style.top = y + "px";
-        },
-        getWorldPosition: function() {
-            return position;
-        }
-    });
-
-}
-
-window.addEventListener("keydown", function(event){
-   //  console.log('keycode', event.keyCode);
-    
-    const step = 4;
-    switch(event.keyCode){
-        case 38:  //up
-            player.move(0, -step);
-            break;
-        case 40:  //down
-            player.move(0, step);
-            break;
-        case 39:  //right
-            player.move(step,0);
-            break;
-        case 37:  //left
-            player.move(-step,0);
-            break;
-
-        case 68: //d key
-            dropItem();
-            break;
-    }
-
-    event.preventDefault();
-});
-
-//new function for placing locations:
-//go through inventory items.
-//if inv item has data-x and data-y attributes, (look up getAttribute on MDN)
-//add sprite at that location.
-
-},{"./camera":2,"./player":6}]},{},[1,3,5,7,4,6,2,8]);
+},{}]},{},[1,2,4,5,3]);

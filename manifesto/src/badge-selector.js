@@ -1,14 +1,15 @@
 //jshint esversion:6
-//
+
 module.exports = function badgeSelector(duration) {
     const countyNames = require("./county-names");
     const contae = document.querySelector("#contae");
-
+    
     let countyId = 0;
     const badge = document.querySelector("#badge");
+    let countyBtnRight = document.querySelector("#countyBtnRight");
     let badgeWidth = 80; 
     console.log('>>>>>>>', badgeWidth);
-    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
+    countyBtnRight.addEventListener("click", changeCounty); //notice no brackets on updateCounty
 
     let oldX;
     let changeCountyTime;
@@ -34,4 +35,9 @@ module.exports = function badgeSelector(duration) {
             badge.style.backgroundPositionX = (-m*t+b)+"px";
         }
     }, 1000/60);
+
+
+//event listeners
+    countyBtnRight.addEventListener("click", changeCounty);
+
 };

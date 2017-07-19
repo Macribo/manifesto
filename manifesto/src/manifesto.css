@@ -182,18 +182,19 @@ animation: delay-fade-in 3s;
   display:none;
   top:73px;
   left: -51px;
-  height: 70px;
+  height: 60px;
   width: 60px;
-  border-radius: 20px;
-    
+  border-radius: 60px;
+ background-color: green;
 }
 #countyBtnRight {
-  display: none;
+  display:none;
   top:73px;
-  left: 191px;
-  height: 70px;
+  left: 189px;
+  height: 60px;
   width: 60px;
-  border-radius: 20px;
+  border-radius: 60px;
+  background-color:green;
 }
 
 
