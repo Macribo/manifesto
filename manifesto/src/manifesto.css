@@ -178,7 +178,7 @@ animation: delay-fade-in 3s;
   left: -44px;
  
 }
-#county-select-left {
+#countyBtnLeft {
   display:none;
   top:73px;
   left: -51px;
@@ -187,7 +187,7 @@ animation: delay-fade-in 3s;
   border-radius: 20px;
     
 }
-#county-select-right {
+#countyBtnRight {
   display: none;
   top:73px;
   left: 191px;
@@ -371,5 +371,6 @@ animation: fade-in 2s;
     100%{left: 163px;}
 } 
 @keyframes county-select-mode{
-    
+0%{opacity: 0;}
+100%{opacity:1;}
 }

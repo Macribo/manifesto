@@ -106,7 +106,8 @@ var bckBtn = document.querySelector('#bckBtn');
 
 var playBtn = document.querySelector('#play');
 var noPlayBtn = document.querySelector('#noPlay');
-
+var countyBtnRight = document.querySelector('#countyBtnRight');
+var countyBtnLeft = document.querySelector('#countyBtnLeft');
 
 
 fwdBtn.style.cursor = "pointer";
@@ -116,17 +117,27 @@ fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
 
 bckBtn.addEventListener("click", backClickHandler, false);
 
-playBtn.addEventListener("click", backClickHandler, false);
-noPlayBtn.addEventListener("click", backClickHandler, false);
+playBtn.addEventListener("click", playHandler, false);
+noPlayBtn.addEventListener("click", noPlayHandler, false);
 //Listen for enter key presses
 window.addEventListener("keydown", keydownHandler, false);
 
 //Dispay the player's location
 render();
 
-function playHandler(){}
+function playHandler(){
+ countyBtnLeft.style.display='inline';
+ countyBtnRight.style.display='inline';
+ 
+    countyBtnRight.style.animation='fade-in 1s forwards';
 
-function noPlayHandler(){}
+ countyBtnLeft.style.animation='fade-in 1s forwards';
+}
+
+function noPlayHandler(){
+
+
+}
 
 
 function mousedownHandler(){
