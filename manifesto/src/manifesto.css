@@ -118,6 +118,9 @@ input
 	box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
 }
 */
+
+/*BUTTONS*/
+
 button
 {
   background-color: #505050;
@@ -131,30 +134,48 @@ button
   font-size: 50px;
   color: #fff;
   border: 1px solid #000;
-  animation: delay-fade-in 3s;	
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
 /*	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;	
-	
-	background:-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2));
-	background:-moz-linear-gradient(top, #a3a3a3, rgba(0,0,0,0.2));
-	background: linear-gradient(top, #a3a3a3, rgba(0,0,0,0.2));
-	
+
 	-webkit-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
 	-moz-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
 	box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
-	*/
-	-webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+*/	
 }
 
-#button_manifesto_back{
+#fwdBtn{
+animation: delay-fade-in 3s;
+	
+
+    }
+
+
+
+
+#bckBtn{
     display:none;
-    left:47px;
+    left:80px;
 }
 
+#play {
+  background-color: green;
+  top:600px;
+  left: 105px;
+	
+}
 
+#noPlay {
+  background-color: red;
+  top:600px;
+  left: -44px;
+ 
+}
 #county-select-left {
   display:none;
   top:73px;
@@ -187,6 +208,9 @@ button
     word-spacing:-1px;
 }
 
+
+
+/*PANELS*/
 
 #left-panel
 {
@@ -332,11 +356,11 @@ animation: fade-in 2s;
 
 @keyframes slide-button-right{
     0%{left:163px;}
-    100%{left: 274px;}
+    100%{left: 229px;}
     
 }
 @keyframes slide-button-left{
-    0%{left:288px;}
+    0%{left:203px;}
     100%{left: 163px;}
 } 
 @keyframes county-select-mode{

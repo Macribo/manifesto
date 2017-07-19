@@ -346,9 +346,14 @@ var output = document.querySelector("#output");
 var output2 = document.querySelector("#output2");
 var input = document.querySelector("#input");
 
-//The button
-var fwdBtn = document.querySelector("#button");
-var bckBtn = document.querySelector('#button_manifesto_back'); 
+//The buttons
+var fwdBtn = document.querySelector("#fwdBtn");
+var bckBtn = document.querySelector('#bckBtn'); 
+
+var playBtn = document.querySelector('#play');
+var noPlayBtn = document.querySelector('#noPlay');
+
+
 
 fwdBtn.style.cursor = "pointer";
 fwdBtn.addEventListener("click", clickHandler, false);
@@ -357,11 +362,18 @@ fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
 
 bckBtn.addEventListener("click", backClickHandler, false);
 
+playBtn.addEventListener("click", backClickHandler, false);
+noPlayBtn.addEventListener("click", backClickHandler, false);
 //Listen for enter key presses
 window.addEventListener("keydown", keydownHandler, false);
 
 //Dispay the player's location
 render();
+
+function playHandler(){}
+
+function noPlayHandler(){}
+
 
 function mousedownHandler(){
     fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
@@ -418,24 +430,48 @@ function stepFwd(){
     story++;
     playGame();
 }
+
+function progressStory(){
+  if(story>1){
+        bckBtn.style.display='inline';
+        bckBtn.style.animation='delay-fade-in 1s';
+        fwdBtn.style.animation='slide-button-right 1s forwards';
+        }
+    else
+        {
+        bckBtn.style.animation='fade-out 1s';
+        fwdBtn.style.animation='slide-button-left 1s forwards';
+        bckBtn.style.display='none';
+        }
+//end of manifesto - begin game y/n?
+    if(story===14){
+      playBtn.style.animation='fade-in 1s';
+      notPlayBtn.style.animation='fade-in 1s';
+        }
+
+    if(story === 15){ //player wants to play
+        fwdBtn.style.animation='fade-out 1s';
+        bckBtn.style.animation='fade-out 1s';
+    
+
+    }
+
+}
+
+
+
+
 function playGame()
 {
 
     narrate(story); 
     output2.className='fadeText';
     render();
-
-    if(story>1){
-        bckBtn.style.display='inline';
-        bckBtn.style.animation='delay-fade-in 1s';
-        fwdBtn.style.animation='slide-button-right 1s forwards';
-        }else
-        {
-        bckBtn.style.animation='fade-out 1s';
-        fwdBtn.style.animation='slide-button-left 1s forwards';
-        bckBtn.style.display='none';}
+//using story to trigger game events
+    //
+    progressStory(story);
+    console.log(story);
 }
-
 function takeItem()
 {
     //Find the index number of the item in the items array
@@ -623,7 +659,6 @@ function render()
     //Clear the input field
     input.value = "";
 }
-
 
 
 },{"./badge-selector":1,"./story-texts":7}],6:[function(require,module,exports){
