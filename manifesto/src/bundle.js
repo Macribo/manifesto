@@ -218,7 +218,10 @@ module.exports = [
  //jshint esversion:6 
 $(document).ready(function(){
 
-    document.querySelector('#button').onmouseenter = (event) => {
+    document.querySelector('#bckBtn').onmouseenter = (event) => {
+        document.querySelector('#bearla').innerHTML = 'back';
+    };
+    document.querySelector('#fwdBtn').onmouseenter = (event) => {
         document.querySelector('#bearla').innerHTML = 'next';
     };
 //    $('#button').hover(function(){
@@ -226,7 +229,21 @@ $(document).ready(function(){
 //    });
  
      
-    $('#button').click(function(){
+    $('#fwdBtn').click(function(){
+
+        $('#output2 span').hover(function(){
+             $('#bearla').text($(this).attr('id'));
+             $(this).css('color','#e35ee5');
+             $('div').slidedown(); 
+    });
+
+        $('#output2 span').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+    });
+});
+    $('#bckBtn').click(function(){
 
         $('#output2 span').hover(function(){
              $('#bearla').text($(this).attr('id'));
@@ -447,14 +464,20 @@ function progressStory(){
     if(story===14){
       playBtn.style.animation='fade-in 1s';
       notPlayBtn.style.animation='fade-in 1s';
+      
+//fade in fwdBtn if it has been faded out by events on story 15
+      if(fwdBtn.style.opacity < 1){  
+      fwdBtn.style.animation='fade-in 1s';
         }
-
+    }
     if(story === 15){ //player wants to play
-        fwdBtn.style.animation='fade-out 1s';
         bckBtn.style.animation='fade-out 1s';
-    
+        playBtn.style.animation='fade-out 1s';
+        notPlayBtn.style.animation='fade-out 1s';
 
     }
+    if(story > 15){
+    story= 15;}
 
 }
 
@@ -785,7 +808,7 @@ module.exports = [
 
 //13
 `
-<span id='The aim'>Cuspoir</span> <span id='of this manifesto'>an forógra seo</span> <span id='is that'>ná</span> <span id='it would help'>go cuideoidh</span> <span id='a virtual space'>spás fíorúil</span> <span id='with us'>linn</span> <span id='to exist as'>bheith</span><span id='Gaels'> Gaelach</span>. 
+<span id='The aim'>Cuspoir</span> <span id='of this manifesto'>an forógra seo</span> <span id='is that'>ná</span> <span id='it is possible'>gur feidir</span> <span id='virtual spaces'>spásanna fíorúil</span><span id='to use for to'> a usáid chun</span> <span id='a global Gaelic thinking'>samhlíocht Gaelach domhanda</span><span id='to awaken'> a dhuiseacht</span>.  
 
 `,
 
@@ -794,8 +817,8 @@ module.exports = [
 <br>
     <ul><li>
 <span id='Ourselves'>Muid fein</span> <span id='identify'>a sainú</span> <span id='as'>mar</span> Gael, <span id='in a'>i</span> <span id='"land"'>"tír"</span> <span id='Gaelic'>Gaelach</span> <span id='digital'>digitach</span></li><li>
-<span id='Resources'>Áisanna</span> <span id='Gaelic'>Gaelach</span> <span id='discover'>a aimsú</span> <span id='and'>agus</span> <span id='share'>a roinnt</share>.</li><li>
-<span id='Co-operate'>Comhoibrú</span> <span id='on'>ar</span><span id='projects'> tionscanamh</span> <span id='and'>agus</span><span id='business ventures'> gnó</span>.
+<span id='Resources'>Áisanna</span> <span id='Gaelic'>Gaelach</span> <span id='discover'>a aimsú</span> <span id='and'>agus</span> <span id='share'>a roinnt</share></li><li>
+<span id='Co-operate'>Comhoibrú</span> <span id='on'>ar</span><span id='projects'> tionscanamh</span> <span id='and'>agus</span><span id='business ventures'> gnó</span>
 </li>
 </ul>
 `,

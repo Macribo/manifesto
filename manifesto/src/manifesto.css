@@ -5,7 +5,7 @@ html
   font-size: 16px;
   padding: 0px;
   margin: 0px;
-  background: black;
+  background-image:url('../images/bg.png');
 
 }
 
@@ -164,6 +164,7 @@ animation: delay-fade-in 3s;
 }
 
 #play {
+  display:none;
   background-color: green;
   top:600px;
   left: 105px;
@@ -171,6 +172,7 @@ animation: delay-fade-in 3s;
 }
 
 #noPlay {
+  display:none;
   background-color: red;
   top:600px;
   left: -44px;

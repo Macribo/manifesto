@@ -201,14 +201,20 @@ function progressStory(){
     if(story===14){
       playBtn.style.animation='fade-in 1s';
       notPlayBtn.style.animation='fade-in 1s';
+      
+//fade in fwdBtn if it has been faded out by events on story 15
+      if(fwdBtn.style.opacity < 1){  
+      fwdBtn.style.animation='fade-in 1s';
         }
-
+    }
     if(story === 15){ //player wants to play
-        fwdBtn.style.animation='fade-out 1s';
         bckBtn.style.animation='fade-out 1s';
-    
+        playBtn.style.animation='fade-out 1s';
+        notPlayBtn.style.animation='fade-out 1s';
 
     }
+    if(story > 15){
+    story= 15;}
 
 }
 
