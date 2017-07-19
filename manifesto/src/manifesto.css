@@ -352,8 +352,13 @@ animation: fade-in 2s;
 100% {opacity:1;} 
 }
 @keyframes fade-out{
-100%{opacity:1;}
-0%{opacity:0;}
+0%{opacity:1;}
+/*
+ 99%{opacity:0;}
+ 100%{display:none;} */
+
+ 100%{opacity:none;} 
+
 }
 
 @keyframes slide-button-right{

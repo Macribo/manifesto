@@ -456,25 +456,42 @@ function progressStory(){
         }
     else
         {
-        bckBtn.style.animation='fade-out 1s';
-        fwdBtn.style.animation='slide-button-left 1s forwards';
+       //I want this, it's not working yet:
+            //bckBtn.style.animation='fade-out 0.25s forwards';
+        //instead, I'm just setting display to 'none'
         bckBtn.style.display='none';
+        fwdBtn.style.animation='slide-button-left 1s forwards';
+
         }
+
+    if(story===13){
+//update button styles if player is coming back from events on story 14
+          fwdBtn.style.left='229px';
+          fwdBtn.style.display='inline';
+          
+      playBtn.style.display='none';
+      noPlayBtn.style.display='none';
+        }
+    
+
 //end of manifesto - begin game y/n?
     if(story===14){
-      playBtn.style.animation='fade-in 1s';
-      notPlayBtn.style.animation='fade-in 1s';
-      
-//fade in fwdBtn if it has been faded out by events on story 15
-      if(fwdBtn.style.opacity < 1){  
-      fwdBtn.style.animation='fade-in 1s';
-        }
+
+      noPlayBtn.style.display='inline';
+      playBtn.style.display='inline';
+     // fwdBtn.style.animation='fade-out 0.25s forwards';
+        fwdBtn.style.display='none';
+        playBtn.style.animation='fade-in 1s';
+      noPlayBtn.style.animation='fade-in 1s';
+                        console.log("yo 14"); 
     }
     if(story === 15){ //player wants to play
-        bckBtn.style.animation='fade-out 1s';
-        playBtn.style.animation='fade-out 1s';
-        notPlayBtn.style.animation='fade-out 1s';
-
+       bckBtn.style.animation='fade-out 0.25s forwards';
+        playBtn.style.animation='fade-out 0.5s forwards';
+        noPlayBtn.style.animation='fade-out 0.5s forwards';
+    bckBtn.style.display='none';
+    playBtn.style.display='none';
+    noPlayBtn.style.display='none';
     }
     if(story > 15){
     story= 15;}
