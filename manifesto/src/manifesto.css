@@ -74,8 +74,8 @@ h1
 
 
 #output{
-text-align: center;
- color:#d7d7d7;
+  text-align: center;
+  color:#d7d7d7;
   margin: 0px auto;
   font-size: 90px;
    
@@ -122,8 +122,8 @@ button
 {
   background-color: #505050;
   position: absolute;
-  top:500px;
-  left: 148px;
+  top:526px;
+  left: 163px;
   height: 70px;
   width: 120px;
   
@@ -151,7 +151,7 @@ button
 
 #button_manifesto_back{
     display:none;
-    left:1%;
+    left:47px;
 }
 
 
@@ -177,17 +177,21 @@ button
 #bearla{
     position:absolute;
     color:black;
-    font-size: 26px;
+    font-size: 36px;
     text-align:left;
-    top: 141px;
+    top: 139px;
     left:-44px;
-    width: 126px;
+    width: 123px;
     z-index:32;
+    line-height: 31px;
+    word-spacing:-1px;
 }
 
 
 #left-panel
 {
+  margin-left:15px;
+  margin-top:15px;
   width: 350px;
   height: 423px;
   position: relative;
@@ -204,6 +208,9 @@ padding-left: 40px;
 
 #right-panel
 {
+    display: none;
+    margin-right:15px;
+    margin-top:15px;
     width:350px;
     height:423px;
     position: relative;
@@ -221,16 +228,16 @@ padding-left: 40px;
 #shield-holder{
     position:absolute;
     width:200px;
-    height:342px;
+    height:420px;
     background-image:url("../images/dealbh.png");
-    bottom: 18px;
+    bottom: 26px;
     left:76px;
     z-index:10;
 }
 
 #badge{
     position:absolute;
-    top:75px;
+    top:107px;
     left:84px;
     background-image:url("../images/badges.png");
     z-index: 20;
@@ -324,13 +331,13 @@ animation: fade-in 2s;
 }
 
 @keyframes slide-button-right{
-    0%{left:148px;}
-    100%{left: 288px;}
+    0%{left:163px;}
+    100%{left: 274px;}
     
 }
 @keyframes slide-button-left{
     0%{left:288px;}
-    100%{left: 148px;}
+    100%{left: 163px;}
 } 
 @keyframes county-select-mode{
     
