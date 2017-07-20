@@ -1,5 +1,44 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 //jshint esversion:6
+module.exports = function badgeSelectorL(duration) {
+    const countyNames = require("./county-names");
+    const contae = document.querySelector("#contae");
+    const countyBtnLeft =document.querySelector("#countyBtnLeft");
+    const badge = document.querySelector("#badge");
+    
+    let countyId = 0;
+    let badgeWidth = -80; 
+    console.log('>>>>>>>', badgeWidth);
+    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
+   countyBtnLeft.addEventListener("click",changeCounty);
+    let oldX;
+    let changeCountyTime;
+
+    function changeCounty(){
+        countyId = (countyId + 1) % countyNames.length; // use modulo to ensure we never step outside the array
+        contae.innerHTML = countyNames[countyId];
+        changeCountyTime = Date.now();
+        oldX =parseInt(badge.style.backgroundPositionX ||"0px");
+        console.log("county changed at:",changeCountyTime, "  oldX: ", oldX);
+    }
+
+
+    setInterval( function() {
+        if(oldX !== undefined) {
+            let t = Date.now() - changeCountyTime;
+            let m = badgeWidth/duration;
+            let b = oldX;
+            if (t > duration){
+                oldX = undefined;
+                t = duration;               
+            }
+            badge.style.backgroundPositionX = (-m*t+b)+"px";
+        }
+    }, 1000/60);
+};
+
+},{"./county-names":3}],2:[function(require,module,exports){
+//jshint esversion:6
 module.exports = function badgeSelectorR(duration) {
     const countyNames = require("./county-names");
     const contae = document.querySelector("#contae");
@@ -37,7 +76,7 @@ module.exports = function badgeSelectorR(duration) {
     }, 1000/60);
 };
 
-},{"./county-names":2}],2:[function(require,module,exports){
+},{"./county-names":3}],3:[function(require,module,exports){
 //jshint esversion:6
 
 module.exports = [
@@ -78,7 +117,7 @@ module.exports = [
     'Dearg le Fearg'
 ];
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
  //jshint esversion:6 
 $(document).ready(function(){
 
@@ -124,9 +163,10 @@ $(document).ready(function(){
 });
 
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 //jshint esversion:6
 
+let badgeSelectorL = require("./badge-selector-l");
 let badgeSelectorR = require("./badge-selector-r");
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
 
@@ -245,7 +285,6 @@ playBtn.addEventListener("click", playHandler, false);
 noPlayBtn.addEventListener("click", noPlayHandler, false);
 
 
-//countyBtnLeft.addEventListener("click",bckBadgeHandler, false);
 
 
 //Listen for enter key presses
@@ -254,6 +293,9 @@ window.addEventListener("keydown", keydownHandler, false);
 //Dispay the player's location
 render();
 
+
+
+countyBtnLeft.addEventListener("click",bckBadgeHandler, false);
 countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
 //Event Handlers
 
@@ -261,16 +303,15 @@ function fwdBadgeHandler(){
 console.log("clicked");
 
 }
-//function bckBadgeHandler(){
-//console.log("clicked");
-//debugger;
-//}
+function bckBadgeHandler(){
+console.log("clicked");
+}
 
 function playHandler(){
  bckBtn.style.display='none';
  noPlayBtn.style.display='none';
  playBtn.style.display='none';
- 
+badgeSelectorL(100); 
 badgeSelectorR(100);
  
  countyBtnRight.style.animation='fade-in 1s forwards';
@@ -594,7 +635,7 @@ function render()
 }
 
 
-},{"./badge-selector-r":1,"./story-texts":5}],5:[function(require,module,exports){
+},{"./badge-selector-l":1,"./badge-selector-r":2,"./story-texts":6}],6:[function(require,module,exports){
 //jshint esversion:6
 module.exports = [
 
@@ -738,4 +779,4 @@ module.exports = [
 
 ];
 
-},{}]},{},[2,1,4,5,3]);
+},{}]},{},[3,2,1,5,6,4]);
