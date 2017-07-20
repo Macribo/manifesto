@@ -1,8 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 //jshint esversion:6
 module.exports = function badgeSelectorL(duration) {
-    const countyNames = require("./county-names");
-    const contae = document.querySelector("#contae");
     const countyBtnLeft =document.querySelector("#countyBtnLeft");
     const badge = document.querySelector("#badge");
     
@@ -15,8 +13,6 @@ module.exports = function badgeSelectorL(duration) {
     let changeCountyTime;
 
     function changeCounty(){
-        countyId = (countyId + 1) % countyNames.length; // use modulo to ensure we never step outside the array
-        contae.innerHTML = countyNames[countyId];
         changeCountyTime = Date.now();
         oldX =parseInt(badge.style.backgroundPositionX ||"0px");
         console.log("county changed at:",changeCountyTime, "  oldX: ", oldX);
@@ -37,7 +33,7 @@ module.exports = function badgeSelectorL(duration) {
     }, 1000/60);
 };
 
-},{"./county-names":3}],2:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 //jshint esversion:6
 module.exports = function badgeSelectorR(duration) {
     const countyNames = require("./county-names");
