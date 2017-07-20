@@ -165,8 +165,7 @@ $(document).ready(function(){
 let badgeSelectorL = require("./badge-selector-l");
 let badgeSelectorR = require("./badge-selector-r");
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
-
-
+let countyNames = require("./county-names");
 //Create the map
 
 var map = [];
@@ -251,15 +250,20 @@ var action = "";
 var itemsIKnow = ["flute", "stone", "sword"];
 var item = "";
 
-//The img element
+
+
+//Query Selectors:
+
 var image = document.querySelector("img");
 
-//The input and output fields
+
+
+let contae = document.querySelector("#contae");
+
 var output = document.querySelector("#output");
 var output2 = document.querySelector("#output2");
 var input = document.querySelector("#input");
 
-//The buttons
 var fwdBtn = document.querySelector("#fwdBtn");
 var bckBtn = document.querySelector('#bckBtn'); 
 
@@ -297,10 +301,13 @@ countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
 
 function fwdBadgeHandler(){
 console.log("clicked");
+updateCoNameR();
 
 }
 function bckBadgeHandler(){
-console.log("clicked");
+
+updateCoNameL();
+console.log("clicked <-");
 }
 
 function playHandler(){
@@ -630,8 +637,25 @@ function render()
     input.value = "";
 }
 
+let countyId = 0;
+//show county name
+function updateCoNameR(){
+    countyId = (countyId + 1) % countyNames.length;
+    contae.innerHTML = countyNames[countyId];
 
-},{"./badge-selector-l":1,"./badge-selector-r":2,"./story-texts":6}],6:[function(require,module,exports){
+
+}
+function updateCoNameL(){
+if(countyId < 0){
+    countyId = 34;}
+    countyId = (countyId - 1) % countyNames.length;
+    contae.innerHTML = countyNames[countyId];
+console.log("current Co id:", countyId );
+
+}
+
+
+},{"./badge-selector-l":1,"./badge-selector-r":2,"./county-names":3,"./story-texts":6}],6:[function(require,module,exports){
 //jshint esversion:6
 module.exports = [
 
