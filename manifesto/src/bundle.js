@@ -1,49 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 //jshint esversion:6
 
-module.exports = function bckBadgeSelector(duration) {
-    const countyNames = require("./county-names");
-    const contae = document.querySelector("#contae");
-    
-    let countyId = 0;
-    const badge = document.querySelector("#badge");
-    let countyBtnLeft = document.querySelector("#countyBtnLeft");
-    let badgeWidth = -80; 
-    console.log('>>>>>>>', badgeWidth);
-
-    let oldX;
-    let changeCountyTime;
-
-    function cCB(){
-        countyId = (countyId + 1) % countyNames.length; // use modulo to ensure we never step outside the array
-        contae.innerHTML = countyNames[countyId];
-        changeCountyTime = Date.now();
-        oldX =parseInt(badge.style.backgroundPositionX ||"0px");
-        console.log("county changed at:",changeCountyTime, "  oldX: ", oldX);
-    }
-   
-
-
-    setInterval( function() {
-        if(oldX !== undefined) {
-            let t = Date.now() - changeCountyTime;
-            let m = badgeWidth/duration;
-            let b = oldX;
-            if (t > duration){
-                oldX = undefined;
-                t = duration;               
-            }
-            badge.style.backgroundPositionX = (-m*t+b)+"px";
-        }
-    }, 1000/60);
-
-
-
-};
-
-},{"./county-names":2}],2:[function(require,module,exports){
-//jshint esversion:6
-
 module.exports = [
     '',
     'Co. Uíbh Fhailí',
@@ -82,56 +39,7 @@ module.exports = [
     'Dearg le Fearg'
 ];
 
-},{}],3:[function(require,module,exports){
-//jshint esversion:6
-
-module.exports = {
-    fwdBadgeSelector: function(duration) {
-
-    function test(){
-    console.log("test");}
-    const countyNames = require("./county-names");
-    const contae = document.querySelector("#contae");
-    
-    let countyId = 0;
-    const badge = document.querySelector("#badge");
-    let countyBtnRight = document.querySelector("#countyBtnRight");
-    let badgeWidth = 80; 
-    console.log('>>>>>>>', badgeWidth);
-
-    let oldX;
-    let changeCountyTime;
-
-    function changeCountyFwd(){
-        countyId = (countyId + 1) % countyNames.length; // use modulo to ensure we never step outside the array
-        contae.innerHTML = countyNames[countyId];
-        changeCountyTime = Date.now();
-        oldX =parseInt(badge.style.backgroundPositionX ||"0px");
-        console.log("county changed at:",changeCountyTime, "  oldX: ", oldX);
-    }
-   
-
-
-    setInterval( function() {
-        if(oldX !== undefined) {
-            let t = Date.now() - changeCountyTime;
-            let m = badgeWidth/duration;
-            let b = oldX;
-            if (t > duration){
-                oldX = undefined;
-                t = duration;               
-            }
-            badge.style.backgroundPositionX = (-m*t+b)+"px";
-        }
-    }, 1000/60);
-
-
-
-}
-};
-
-
-},{"./county-names":2}],4:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
  //jshint esversion:6 
 $(document).ready(function(){
 
@@ -177,15 +85,11 @@ $(document).ready(function(){
 });
 
 
-},{}],5:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 //jshint esversion:6
 
 
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
-
-
-let fwdBadgeSelector= require("./fwd-badge-selector");
-let bckBadgeSelector= require("./bck-badge-selector");
 
 
 //Create the map
@@ -303,7 +207,7 @@ noPlayBtn.addEventListener("click", noPlayHandler, false);
 
 
 countyBtnLeft.addEventListener("click",bckBadgeHandler, false);
-countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
+countyBtnRight.addEventListener("click",badgerFwd, false);
 
 
 //Listen for enter key presses
@@ -313,20 +217,12 @@ window.addEventListener("keydown", keydownHandler, false);
 render();
 
 
-function testB(){
-console.log("so.");
-}
-
-
 //Event Handlers
 function bckBadgeHandler(){
-   // bckBadgeSelector.changeCountyBck();
 console.log("clicked");
 //debugger;
 }
 function fwdBadgeHandler(){
-testB();
-fwdBadgeSelector.changeCountyFwd();
 console.log("clicked");
 //fwdBadgeSelector.test();
 }
@@ -390,7 +286,7 @@ function keydownHandler(event)
 }
 
 
-let story = 1;
+let story = 13;
 function narrate(story){
     output2.innerHTML = storyTexts[story];
     output2.className=''; 
@@ -656,9 +552,51 @@ function render()
     //Clear the input field
     input.value = "";
 }
+function badgerFwd(duration){
 
 
-},{"./bck-badge-selector":1,"./fwd-badge-selector":3,"./story-texts":6}],6:[function(require,module,exports){
+
+    const countyNames = require("./county-names");
+    const contae = document.querySelector("#contae");
+
+    let countyId = 0;
+    const badge = document.querySelector("#badge");
+    let badgeWidth = 80; 
+    console.log('>>>>>>>', badgeWidth);
+    
+    countyBtnRight.addEventListener("click",changeCounty);
+    let oldX;
+    let changeCountyTime;
+
+    setInterval( function() {
+        if(oldX !== undefined) {
+            let t = Date.now() - changeCountyTime;
+            let m = badgeWidth/duration;
+            let b = oldX;
+            if (t > duration){
+                oldX = undefined;
+                t = duration;               
+            }
+            badge.style.backgroundPositionX = (-m*t+b)+"px";
+        }
+    }, 1000/60);
+    changeCounty(); //notice no brackets on updateCounty
+}
+
+    function changeCounty(){
+        countyId = (countyId + 1) % countyNames.length; // use modulo to ensure we never step outside the array
+        contae.innerHTML = countyNames[countyId];
+        changeCountyTime = Date.now();
+        oldX =parseInt(badge.style.backgroundPositionX ||"0px");
+        console.log("county changed at:",changeCountyTime, "  oldX: ", oldX);
+    }
+
+
+
+
+
+
+},{"./county-names":1,"./story-texts":4}],4:[function(require,module,exports){
 //jshint esversion:6
 module.exports = [
 
@@ -802,4 +740,4 @@ module.exports = [
 
 ];
 
-},{}]},{},[3,1,2,5,6,4]);
+},{}]},{},[1,3,4,2]);

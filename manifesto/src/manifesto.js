@@ -1,11 +1,7 @@
 //jshint esversion:6
 
-
+let badgeSelector = require("./badge-selector");
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
-
-
-let fwdBadgeSelector= require("./fwd-badge-selector");
-let bckBadgeSelector= require("./bck-badge-selector");
 
 
 //Create the map
@@ -123,7 +119,7 @@ noPlayBtn.addEventListener("click", noPlayHandler, false);
 
 
 countyBtnLeft.addEventListener("click",bckBadgeHandler, false);
-countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
+countyBtnRight.addEventListener("click",badgerFwd, false);
 
 
 //Listen for enter key presses
@@ -133,20 +129,12 @@ window.addEventListener("keydown", keydownHandler, false);
 render();
 
 
-function testB(){
-console.log("so.");
-}
-
-
 //Event Handlers
 function bckBadgeHandler(){
-   // bckBadgeSelector.changeCountyBck();
 console.log("clicked");
 //debugger;
 }
 function fwdBadgeHandler(){
-testB();
-fwdBadgeSelector.changeCountyFwd();
 console.log("clicked");
 //fwdBadgeSelector.test();
 }
@@ -210,7 +198,7 @@ function keydownHandler(event)
 }
 
 
-let story = 1;
+let story = 13;
 function narrate(story){
     output2.innerHTML = storyTexts[story];
     output2.className=''; 
