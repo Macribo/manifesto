@@ -210,7 +210,7 @@ function keydownHandler(event)
 }
 
 
-let story = 13;
+let story = 1;
 function narrate(story){
     output2.innerHTML = storyTexts[story];
     output2.className=''; 

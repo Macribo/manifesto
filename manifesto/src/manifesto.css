@@ -166,22 +166,22 @@ animation: delay-fade-in 3s;
 #play {
   display:none;
   background-color: green;
-  top:600px;
-  left: 105px;
+  top:480px;
+  left: 176px;
 	
 }
 
 #noPlay {
   display:none;
   background-color: red;
-  top:600px;
-  left: -44px;
+  top:578px;
+  left: 176px;
  
 }
 #countyBtnLeft {
   display:none;
   top:73px;
-  left: -51px;
+  left: 54px;
   height: 60px;
   width: 60px;
   border-radius: 60px;
@@ -190,7 +190,7 @@ animation: delay-fade-in 3s;
 #countyBtnRight {
   display:none;
   top:73px;
-  left: 189px;
+  left: 249px;
   height: 60px;
   width: 60px;
   border-radius: 60px;
@@ -204,7 +204,7 @@ animation: delay-fade-in 3s;
     font-size: 36px;
     text-align:left;
     top: 139px;
-    left:-44px;
+    left:-38px;
     width: 123px;
     z-index:32;
     line-height: 31px;
@@ -254,18 +254,18 @@ padding-left: 40px;
 }
 #shield-holder{
     position:absolute;
-    width:200px;
+    width:257px;
     height:420px;
     background-image:url("../images/dealbh.png");
-    bottom: 26px;
-    left:76px;
+    bottom: 6px;
+    left:4px;
     z-index:10;
 }
 
 #badge{
     position:absolute;
-    top:107px;
-    left:84px;
+    top:90px;
+    left:158px;
     background-image:url("../images/badges.png");
     z-index: 20;
     opacity:1;
