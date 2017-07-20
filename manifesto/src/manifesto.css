@@ -26,10 +26,6 @@ html
 
 .parent
 {
-    display: -webkit-box;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: -webkit-flex;
     display: flex;
     flex-direction:row;
     align-content:center;
@@ -236,11 +232,12 @@ padding-left: 40px;
 #right-panel
 {
     display: none;
+    right:40px;
     margin-right:15px;
     margin-top:15px;
     width:350px;
     height:423px;
-    position: relative;
+    position: absolute;
     background-image: url("../images/bg2.png");
     background-repeat: no-repeat;
     border:25px solid gray;

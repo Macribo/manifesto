@@ -95,7 +95,7 @@ var item = "";
 var image = document.querySelector("img");
 
 
-
+let rightPanel = document.querySelector("#right-panel");
 let contae = document.querySelector("#contae");
 
 var output = document.querySelector("#output");
@@ -138,31 +138,31 @@ countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
 //Event Handlers
 
 function fwdBadgeHandler(){
-console.log("clicked");
-updateCoNameR();
+    console.log("clicked");
+    updateCoNameR();
 
 }
 function bckBadgeHandler(){
 
-updateCoNameL();
-console.log("clicked <-");
+    updateCoNameL();
+    console.log("clicked <-");
 }
 
 function playHandler(){
- bckBtn.style.display='none';
- noPlayBtn.style.display='none';
- playBtn.style.display='none';
-badgeSelectorL(100); 
-badgeSelectorR(100);
- 
- countyBtnRight.style.animation='fade-in 1s forwards';
+    bckBtn.style.display='none';
+    noPlayBtn.style.display='none';
+    playBtn.style.display='none';
+    badgeSelectorL(100); 
+    badgeSelectorR(100);
 
- countyBtnLeft.style.animation='fade-in 1s forwards';
- countyBtnLeft.style.display='inline';
- countyBtnRight.style.display='inline';
-output2.innerHTML="<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>";}
+    rightPanel.style.display='inline';    
+    countyBtnRight.style.animation='fade-in 1s forwards';
 
-
+    countyBtnLeft.style.animation='fade-in 1s forwards';
+    countyBtnLeft.style.display='inline';
+    countyBtnRight.style.display='inline';
+    output.style.display="none";
+    output2.innerHTML="<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>";}
 function noPlayHandler(){
 
 
@@ -226,49 +226,49 @@ function stepFwd(){
 }
 
 function progressStory(){
-  if(story>1){
+    if(story>1){
         bckBtn.style.display='inline';
         bckBtn.style.animation='delay-fade-in 1s';
         fwdBtn.style.animation='slide-button-right 1s forwards';
-        }
+    }
     else
-        {
-       //I want this, it's not working yet:
-            //bckBtn.style.animation='fade-out 0.25s forwards';
+    {
+        //I want this, it's not working yet:
+        //bckBtn.style.animation='fade-out 0.25s forwards';
         //instead, I'm just setting display to 'none'
         bckBtn.style.display='none';
         fwdBtn.style.animation='slide-button-left 1s forwards';
 
-        }
+    }
 
     if(story===13){
-//update button styles if player is coming back from events on story 14
-          fwdBtn.style.left='229px';
-          fwdBtn.style.display='inline';
-          
-      playBtn.style.display='none';
-      noPlayBtn.style.display='none';
-        }
-    
+        //update button styles if player is coming back from events on story 14
+        fwdBtn.style.left='229px';
+        fwdBtn.style.display='inline';
 
-//end of manifesto - begin game y/n?
+        playBtn.style.display='none';
+        noPlayBtn.style.display='none';
+    }
+
+
+    //end of manifesto - begin game y/n?
     if(story===14){
 
-      noPlayBtn.style.display='inline';
-      playBtn.style.display='inline';
-     // fwdBtn.style.animation='fade-out 0.25s forwards';
+        noPlayBtn.style.display='inline';
+        playBtn.style.display='inline';
+        // fwdBtn.style.animation='fade-out 0.25s forwards';
         fwdBtn.style.display='none';
         playBtn.style.animation='fade-in 1s';
-      noPlayBtn.style.animation='fade-in 1s';
-                        console.log("yo 14"); 
+        noPlayBtn.style.animation='fade-in 1s';
+        console.log("yo 14"); 
     }
     if(story === 15){ //player wants to play
-       bckBtn.style.animation='fade-out 0.25s forwards';
+        bckBtn.style.animation='fade-out 0.25s forwards';
         playBtn.style.animation='fade-out 0.5s forwards';
         noPlayBtn.style.animation='fade-out 0.5s forwards';
-    bckBtn.style.display='none';
-    playBtn.style.display='none';
-    noPlayBtn.style.display='none';
+        bckBtn.style.display='none';
+        playBtn.style.display='none';
+        noPlayBtn.style.display='none';
     }
 
 }
@@ -282,7 +282,7 @@ function playGame()
     narrate(story); 
     output2.className='fadeText';
     render();
-//using story to trigger game events
+    //using story to trigger game events
     //
     progressStory(story);
     console.log(story);
@@ -478,21 +478,22 @@ function render()
 let countyId = 0;
 //show county name
 function updateCoNameR(){
-if(countyId >33 ){
-    countyId = 1;}
-    countyId = (countyId + 1) % countyNames.length;
+    countyId = (countyId + 1) ;
+
+    if(countyId===35 ){
+        countyId = 0;}
+
     contae.innerHTML = countyNames[countyId];
-console.log("current Co id:", countyId );
 
-
-
+    console.log("current Co id:", countyId, countyNames[countyId] );
 }
 function updateCoNameL(){
-if(countyId < 0){
-    countyId = 33;}
-    countyId = (countyId - 1) % countyNames.length;
-    contae.innerHTML = countyNames[countyId];
-console.log("current Co id:", countyId );
+    countyId = (countyId - 1);
+    if(countyId === -1){
+        
+        countyId = 34;}
+contae.innerHTML = countyNames[countyId];
 
+    console.log("current Co id:", countyId );
 }
 
