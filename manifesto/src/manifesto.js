@@ -478,14 +478,18 @@ function render()
 let countyId = 0;
 //show county name
 function updateCoNameR(){
+if(countyId >33 ){
+    countyId = 1;}
     countyId = (countyId + 1) % countyNames.length;
     contae.innerHTML = countyNames[countyId];
+console.log("current Co id:", countyId );
+
 
 
 }
 function updateCoNameL(){
 if(countyId < 0){
-    countyId = 34;}
+    countyId = 33;}
     countyId = (countyId - 1) % countyNames.length;
     contae.innerHTML = countyNames[countyId];
 console.log("current Co id:", countyId );
