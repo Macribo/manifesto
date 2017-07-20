@@ -71,7 +71,7 @@ h1
 
 #output{
   text-align: center;
-  color:#d7d7d7;
+  color:#730a0a;
   margin: 0px auto;
   font-size: 90px;
    
@@ -81,7 +81,7 @@ h1
  font-family: INFO56_0;
   margin: 0px auto;
   margin-top: 16px;
-  font-size: 60px;
+  font-size: 39px;
 }
 
 #mainText{
@@ -121,7 +121,7 @@ button
 {
   background-color: #505050;
   position: absolute;
-  top:526px;
+  top:491px;
   left: 163px;
   height: 70px;
   width: 120px;
@@ -161,16 +161,16 @@ animation: delay-fade-in 3s;
 
 #play {
   display:none;
-  background-color: green;
-  top:480px;
+  background-color: #207720;
+  top:460px;
   left: 176px;
 	
 }
 
 #noPlay {
   display:none;
-  background-color: red;
-  top:578px;
+  background-color:#730a0a;
+  top:544px;
   left: 176px;
  
 }
@@ -198,12 +198,12 @@ animation: delay-fade-in 3s;
     position:absolute;
     color:black;
     font-size: 36px;
-    text-align:left;
-    top: 139px;
-    left:-38px;
-    width: 123px;
+    text-align:center;
+    top: 129px;
+    left:-41px;
+    width: 115px;
     z-index:32;
-    line-height: 31px;
+    line-height: 27px;
     word-spacing:-1px;
 }
 
@@ -213,14 +213,13 @@ animation: delay-fade-in 3s;
 
 #left-panel
 {
-  margin-left:15px;
-  margin-top:15px;
+  margin:20px;
   width: 350px;
   height: 423px;
   position: relative;
   background-image: url("../images/bg2.png");
   background-repeat: no-repeat;
-  border:25px solid gray;
+  border:5px solid gray;
   
 }
 
@@ -238,9 +237,8 @@ padding-left: 40px;
     width:350px;
     height:423px;
     position: absolute;
-    background-image: url("../images/bg2.png");
+   /* background-image: url("../images/bg2.png");*/
     background-repeat: no-repeat;
-    border:25px solid gray;
 }
 
 #location{

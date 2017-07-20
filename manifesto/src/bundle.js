@@ -316,7 +316,8 @@ function playHandler(){
     countyBtnLeft.style.animation='fade-in 1s forwards';
     countyBtnLeft.style.display='inline';
     countyBtnRight.style.display='inline';
-    output.style.display="none";
+    output.style.display='none';
+    bearla.innerHTML="aaa aaaa aaaa aaaa aaaaa aaaaa";
     output2.innerHTML="<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>";}
 function noPlayHandler(){
 
@@ -363,7 +364,7 @@ function keydownHandler(event)
 }
 
 
-let story = 13;
+let story = 3;
 function narrate(story){
     output2.innerHTML = storyTexts[story];
     output2.className=''; 
