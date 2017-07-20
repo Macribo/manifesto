@@ -1,14 +1,15 @@
 //jshint esversion:6
-module.exports = function badgeSelector(duration) {
+module.exports = function badgeSelectorR(duration) {
     const countyNames = require("./county-names");
     const contae = document.querySelector("#contae");
-
-    let countyId = 0;
+    const countyBtnRight =document.querySelector("#countyBtnRight");
     const badge = document.querySelector("#badge");
+    
+    let countyId = 0;
     let badgeWidth = 80; 
     console.log('>>>>>>>', badgeWidth);
     badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
-
+   countyBtnRight.addEventListener("click",changeCounty);
     let oldX;
     let changeCountyTime;
 

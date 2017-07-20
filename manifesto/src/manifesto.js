@@ -1,6 +1,6 @@
 //jshint esversion:6
 
-let badgeSelector = require("./badge-selector");
+let badgeSelectorR = require("./badge-selector-r");
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
 
 
@@ -118,8 +118,7 @@ playBtn.addEventListener("click", playHandler, false);
 noPlayBtn.addEventListener("click", noPlayHandler, false);
 
 
-countyBtnLeft.addEventListener("click",bckBadgeHandler, false);
-countyBtnRight.addEventListener("click",badgerFwd, false);
+//countyBtnLeft.addEventListener("click",bckBadgeHandler, false);
 
 
 //Listen for enter key presses
@@ -128,22 +127,24 @@ window.addEventListener("keydown", keydownHandler, false);
 //Dispay the player's location
 render();
 
-
+countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
 //Event Handlers
-function bckBadgeHandler(){
-console.log("clicked");
-//debugger;
-}
+
 function fwdBadgeHandler(){
 console.log("clicked");
-//fwdBadgeSelector.test();
+
 }
+//function bckBadgeHandler(){
+//console.log("clicked");
+//debugger;
+//}
 
 function playHandler(){
  bckBtn.style.display='none';
  noPlayBtn.style.display='none';
  playBtn.style.display='none';
  
+badgeSelectorR(100);
  
  countyBtnRight.style.animation='fade-in 1s forwards';
 
