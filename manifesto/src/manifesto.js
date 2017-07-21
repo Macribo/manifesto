@@ -112,6 +112,7 @@ var countyBtnLeft = document.querySelector('#countyBtnLeft');
 var htmla=document.querySelector('html');
 var audioAbattoir = document.querySelector('#abattoir');
 fwdBtn.style.cursor = "pointer";
+let countyMain = document.querySelector('#countyMain');
 
 //Event Listeners:
 
@@ -138,100 +139,112 @@ countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
 //Event Handlers
 
 function fwdBadgeHandler(){
+    updateCountyMain(-1);
     console.log("clicked");
     updateCoNameR();
-
+    
 }
 function bckBadgeHandler(){
-
+    updateCountyMain(1);
     updateCoNameL();
-    console.log("clicked <-");
-}
+        console.log("clicked <-");
+    }
 
-function playHandler(){
-    bckBtn.style.display='none';
-    noPlayBtn.style.display='none';
-    playBtn.style.display='none';
-    badgeSelectorL(100); 
-    badgeSelectorR(100);
+    function playHandler(){
+        bckBtn.style.display='none';
+        noPlayBtn.style.display='none';
+        playBtn.style.display='none';
+        badgeSelectorL(100); 
+        badgeSelectorR(100);
 
-    rightPanel.style.display='inline';    
-    countyBtnRight.style.animation='fade-in 1s forwards';
+        rightPanel.style.display='inline';    
+        countyBtnRight.style.animation='fade-in 1s forwards';
 
-    countyBtnLeft.style.animation='fade-in 1s forwards';
-    countyBtnLeft.style.display='inline';
-    countyBtnRight.style.display='inline';
-    output.style.display='none';
-    bearla.innerHTML="";
-    output2.innerHTML="<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>";
-   htmla.style.backgroundImage ="url('../images/bgDark.png')"; 
-audioAbattoir.play();
-}
+        countyBtnLeft.style.animation='fade-in 1s forwards';
+        countyBtnLeft.style.display='inline';
+        countyBtnRight.style.display='inline';
+        output.style.display='none';
+        bearla.innerHTML="";
+        output2.innerHTML="<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>";
+       htmla.style.backgroundImage ="url('../images/bgDark.png')"; 
+    audioAbattoir.play();
+    }
 
-function noPlayHandler(){
+    var coPos = 539; //county Position
+    function updateCountyMain(dist){
+        dist += dist*539; //#countyMain {width:539} 
+        coPos += dist;
+            if (coPos> 18865){coPos =0;}
+            if (coPos<0){coPos =18865;}
+
+    console.log("coMain bgposX = ", coPos);
+
+    countyMain.style.backgroundPositionX = coPos+"px";
+    }
+    function noPlayHandler(){
 
 
-}
+    }
 
 
-function mousedownHandler(){
-    fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
-    fwdBtn.style.background = "-moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
-    fwdBtn.style.background = "linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
-}
+    function mousedownHandler(){
+        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        fwdBtn.style.background = "linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+    }
 
-function mouseoutHandler(){
-    fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-    fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-    fwdBtn.style.background = "#505050";
-}
+    function mouseoutHandler(){
+        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        fwdBtn.style.background = "#505050";
+    }
 
-function bckBtnHandler(){
-    bckBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-    bckBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-    bckBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+    function bckBtnHandler(){
+        bckBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        bckBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        bckBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
 
-    stepBack();
+        stepBack();
 
-}
+    }
 
-function fwdBtnHandler(){
-    fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-    fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-    fwdBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-    stepFwd();
-    playGame();
-}
-
-function keydownHandler(event)
-{
-
-    if(event.keyCode === 13)
-    {
+    function fwdBtnHandler(){
+        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        fwdBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        stepFwd();
         playGame();
     }
-}
+
+    function keydownHandler(event)
+    {
+
+        if(event.keyCode === 13)
+        {
+            playGame();
+        }
+    }
 
 
-let story = 1;
-function narrate(story){
-    output2.innerHTML = storyTexts[story];
-    output2.className=''; 
-    console.log("test! "+story);
-}
-//test
+    let story = 1;
+    function narrate(story){
+        output2.innerHTML = storyTexts[story];
+        output2.className=''; 
+        console.log("test! "+story);
+    }
+    //test
 
-function stepBack(){
-    story--;
-    playGame();
-}
-function stepFwd(){
-    story++;
-    playGame();
-}
+    function stepBack(){
+        story--;
+        playGame();
+    }
+    function stepFwd(){
+        story++;
+        playGame();
+    }
 
-function progressStory(){
-    if(story>1){
+    function progressStory(){
+        if(story>1){
         bckBtn.style.display='inline';
         bckBtn.style.animation='delay-fade-in 1s';
         fwdBtn.style.animation='slide-button-right 1s forwards';
