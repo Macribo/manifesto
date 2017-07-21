@@ -149,6 +149,22 @@ $(document).ready(function(){
 
     });
 });
+
+   $('#play').click(function(){
+
+        $('#output2 span').hover(function(){
+             $('#bearla').text($(this).attr('id'));
+             $(this).css('color','#e35ee5');
+             $('div').slidedown(); 
+    });
+
+        $('#output2 span').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+    });
+});
+
 });
 
 
@@ -169,7 +185,7 @@ var map = [];
 map[0] = "An ol stone keep.";
 map[1] = "A deep well.";
 map[2] = "A sunny glade.";
-map[3] = "A sleeping dragon.";
+map[3] = "";
 map[4] = "Manifesto";
 map[5] = "An ancient gate.";
 map[6] = "The edge of a river.";
@@ -311,6 +327,7 @@ function bckBadgeHandler(){
 }
 
     function playHandler(){
+        narrate(15);
         bckBtn.style.display='none';
         noPlayBtn.style.display='none';
         playBtn.style.display='none';
@@ -324,8 +341,6 @@ function bckBadgeHandler(){
         countyBtnLeft.style.display='inline';
         countyBtnRight.style.display='inline';
         output.style.display='none';
-        bearla.innerHTML="";
-        output2.innerHTML="<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>";
        htmla.style.backgroundImage ="url('../images/bgDark.png')"; 
     audioAbattoir.play();
     }
@@ -800,11 +815,12 @@ module.exports = [
 
 //16
 `
-<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>
+Cad is ainm dhuit?
 `, 
   
 //17
   `
+<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>
   `, 
     
 //18

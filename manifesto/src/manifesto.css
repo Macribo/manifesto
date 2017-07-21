@@ -82,6 +82,7 @@ h1
   margin: 0px auto;
   margin-top: 16px;
   font-size: 39px;
+  z-index:32;
 }
 
 #mainText{
@@ -239,6 +240,7 @@ padding-left: 40px;
     position: absolute;
    /* background-image: url("../images/bg2.png");*/
     background-repeat: no-repeat;
+    
 }
 
 #location{
@@ -335,7 +337,7 @@ animation: fade-in 2s;
     height: 49px;
     width: 32px;
     background-image: url("../images/player.png");
-    z-index: 50;
+    z-index: 30;
 }
 #inventory{
 }
