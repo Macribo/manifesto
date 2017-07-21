@@ -258,11 +258,11 @@ padding-left: 40px;
 }
 #countyMain {
     position:absolute;
-    top:90px;
-    left:10px;
+    top:24px;
+    left:-138px;
     background-image:url("../images/countyMain.png");
     z-index:20;
-    opacity:1;
+    opacity:.25;
     width:539px;
     height:383px;
 }
@@ -379,3 +379,7 @@ animation: fade-in 2s;
 0%{opacity: 0;}
 100%{opacity:1;}
 }
+
+@keyframes dim {
+0%{opacity: 1;}
+100%{opacity:0.25;}

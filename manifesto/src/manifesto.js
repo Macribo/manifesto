@@ -145,10 +145,15 @@ function fwdBadgeHandler(){
     
 }
 function bckBadgeHandler(){
+  // countyMain.style.animation="fade-out .25s";
     updateCountyMain(1);
+  //  countyMain.style.opacity=1';
     updateCoNameL();
-        console.log("clicked <-");
-    }
+    //    console.log("clicked <-");
+   // if (countyMain.style.opacity ===1){
+ // countyMain.style.animation='dim .25s forwards';
+  // console.log("to be dimmed.") }
+}
 
     function playHandler(){
         bckBtn.style.display='none';
@@ -170,12 +175,13 @@ function bckBadgeHandler(){
     audioAbattoir.play();
     }
 
-    var coPos = 539; //county Position
-    function updateCountyMain(dist){
-        dist += dist*539; //#countyMain {width:539} 
+    var coPos = 1; //county Position
+   
+function updateCountyMain(dist){
+        dist += dist*538; //#countyMain {width:539} 
         coPos += dist;
-            if (coPos> 18865){coPos =0;}
-            if (coPos<0){coPos =18865;}
+           // if (coPos> 18865){coPos =0;}
+           // if (coPos<0){coPos =18865;}
 
     console.log("coMain bgposX = ", coPos);
 
@@ -226,7 +232,7 @@ function bckBadgeHandler(){
     }
 
 
-    let story = 1;
+    let story = 13;
     function narrate(story){
         output2.innerHTML = storyTexts[story];
         output2.className=''; 
