@@ -109,8 +109,8 @@ var playBtn = document.querySelector('#play');
 var noPlayBtn = document.querySelector('#noPlay');
 var countyBtnRight = document.querySelector('#countyBtnRight');
 var countyBtnLeft = document.querySelector('#countyBtnLeft');
-
-
+var htmla=document.querySelector('html');
+var audioAbattoir = document.querySelector('#abattoir');
 fwdBtn.style.cursor = "pointer";
 
 //Event Listeners:
@@ -163,7 +163,11 @@ function playHandler(){
     countyBtnRight.style.display='inline';
     output.style.display='none';
     bearla.innerHTML="";
-    output2.innerHTML="<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>";}
+    output2.innerHTML="<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>";
+   htmla.style.backgroundImage ="url('../images/bgDark.png')"; 
+audioAbattoir.play();
+}
+
 function noPlayHandler(){
 
 
@@ -209,7 +213,7 @@ function keydownHandler(event)
 }
 
 
-let story = 3;
+let story = 1;
 function narrate(story){
     output2.innerHTML = storyTexts[story];
     output2.className=''; 

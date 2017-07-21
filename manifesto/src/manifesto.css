@@ -6,7 +6,7 @@ html
   padding: 0px;
   margin: 0px;
   background-image:url('../images/bg.png');
-
+  transition: 1s background-image ease-out;
 }
 
 @font-face 
@@ -199,7 +199,7 @@ animation: delay-fade-in 3s;
     color:black;
     font-size: 36px;
     text-align:center;
-    top: 129px;
+    top: 134px;
     left:-41px;
     width: 115px;
     z-index:32;
@@ -256,7 +256,16 @@ padding-left: 40px;
     left:4px;
     z-index:10;
 }
-
+#countyMain {
+    position:absolute;
+    top:90px;
+    left:10px;
+    background-image:url("../images/countyMain.png");
+    z-index:20;
+    opacity:1;
+    width:539px;
+    height:383px;
+}
 #badge{
     position:absolute;
     top:90px;
