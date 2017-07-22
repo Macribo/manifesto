@@ -329,7 +329,7 @@ function bckBadgeHandler(){
 
     function playHandler(){
        if (story===11){
-          story++;
+          narrate(12);
            bckBtn.style.display='none';
            noPlayBtn.style.display='none';
            playBtn.style.display='none';

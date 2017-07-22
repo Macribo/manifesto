@@ -207,6 +207,24 @@ animation: delay-fade-in 3s;
     line-height: 27px;
     word-spacing:-1px;
 }
+/*PLAYER INPUT FORMS*/
+
+
+#pName{
+    display:none;
+    position:absolute;
+    color:green;
+    font-size: 46px;
+    text-align:center;
+    top: 334px;
+    left:479px;
+    width: 333px;
+    z-index:32;
+    background:black;
+    border: 5px solid gray;
+}
+
+
 
 
 
