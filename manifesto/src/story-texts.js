@@ -42,14 +42,14 @@ module.exports = [
 //5
 `
 <span id='English leaves'>Fágann Bearla</span> <span id='us'>muid</span> <span id='discussing'>ag plé</span> <span id='the question'>ceist</span> <span id='of the tongue'>an teanga</span> <span id='as though'>amhlaidh is</span> <span id='that'>gur</span> <span id='an ornament'>ornáid</span> <span id='decorative'>maisaithe</span> <span id='cultural'>cultúrtha</span> <span id='the Irish language is'>í an Gaeilge</span>.
-
+<span id='(it aint.)'>(ní hí.)</span>.
 
 `,
 
 //6
 
 `
-<span id='We are left'>Fágtar muid</span> <span id='speaking'>ag caint</span> <span id='in terms'>i dtearmaí</span> <span id='of the number of'>líonn</span><span id='Irish Speakers'> 'Irish Speakers'</span>. <span id='It is observed'>Feictear</span> <span id='that there are not'>nach bhfuil</span> <span id='many'>mórán</span><span id='speakers'> cainteoirí</span>, <span id='and'>agus </span><span id='it is assumed'>glachtar leis</span> <span id='therefore'>mar sin</span> <span id='not much would be lost'>nach chailfar mórán</span> <span id='without her'>gan í.</span> 
+<span id='That leaves us'>Fágann sin muid</span> <span id='speaking about it'>ag caint faoí </span> <span id='in terms'>i dtearmaí</span> <span id='of the number of'>líonn</span><span id='Irish Speakers'> 'Irish Speakers'</span>. <span id='It is observed'>Feictear</span> <span id='that there are not'>nach bhfuil</span> <span id='many'>mórán</span><span id='speakers'> cainteoirí</span>, <span id='and'>agus </span><span id='it is assumed'>glachtar leis</span> <span id='therefore'>mar sin</span> <span id='not much would be lost'>nach chailfar mórán</span> <span id='without her'>gan í.</span> 
 
 
 `,
@@ -67,58 +67,37 @@ module.exports = [
 //8
 
 `
-<span id='But'>Ach</span> <span id='there is'>tá</span> <span id='more'>nios mó</span> <span id='in question'>i gceist</span> <span id='with'>le</span> <span id='language'>teanga</span> <span id='than'>ná</span><span id='talk'> caint</span>. <span id='A system'>Comhras</span> <span id='of thought'>smaoineamh</span> <span id='is Gaelic'>í an Ghaeilge</span>. <span id='An ecology'>Eiceachóras</span> <span id='of visions'>físanna</span> <span id='the'>na</span> <span id='thousands'>mílte</span><span id='of years'> blianta</span><span id='of age'> d'aois</span><span id='she is'> í</span>. <span id='That is'>Sin</span> <span id='a powerful thing'>rud laidir</span>. 
-<span id='Here is'>Seo</span><span id='powerful thing'> rud laidir</span><span id='another'> eile</span>:
+<span id='That is a mistake'>Is botún é sin. <span id='First of all'>Sa chead áit</span><span id='there is'>tá</span> <span id='more'>nios mó</span> <span id='in question'>i gceist</span> <span id='with'>le</span> <span id='language'>teanga</span> <span id='than'>ná</span><span id='talk'> caint</span>. <span id='A system'>Comhras</span> <span id='of thought'>smaoineamh</span> <span id='is Gaelic'>í an Ghaeilge</span>. <span id='An ecology'>Eiceachóras</span> <span id='of visions'>físanna</span> <span id='the'>na</span> <span id='thousands'>mílte</span><span id='of years'> blianta</span><span id='of age'> d'aois</span><span id='she is'> í</span>.Ní laighdín ganntanas lúach achmain.</span>. 
+
 
 `,
 
 //9
- `   
-<span id='There is'>Tá</span> <span id='a bit of Irish'>Gaeilge éigin</span> <span id='posessed by'>ag</span> <span id='every'>gach</span> <span id='English-speaker'>Bearl-cainteoir</span> <span id='in the country'>sa tír</span>.<span id='It is not'> Ní</span> <span id='a subject'>ábhar </span><span id='of mockery'>fachnaoid</span> <span id='those'>iad</span> <span id='the'>na</span><span id='so-called few words'> cúpla focal</span>. <span id='They are seeds'>Síolta íad</span>. 
-
+ `<span id='Secondly'> Sa dara háit</span>, 
+<span id='There is'>tá</span> <span id='a bit of Irish'>Gaeilge éigin</span> <span id='posessed by'>ag</span> <span id='every'>gach</span> <span id='English-speaker'>Bearl-cainteoir</span> <span id='in the country'>sa tír</span>.
+<span id='Quantum'>Candam</span><span id='unknown'> anaithnid</span><span id='they are'> íad</span>,<span id=''> a cuireann<span id=''>dó rath<span id=''> áireamhíocht<span id=''> bunaithe ar 'Irish Speakers'
+<span id='It is not'> Ní</span> <span id='a subject'>ábhar </span><span id='of mockery'>fachnaoid</span> <span id='those'>iad</span> <span id='the'>na</span><span id='so-called few words'> cúpla focal</span>. <span id='They are seeds'>Síolta íad</span> <<>.
 
 `,
 
 //10
 `
+<span id='Asserts'>Dearbhín <span id='a'>an</span> <span id='a'>forógra</span> <span id='a'>seo</span>: <ul>
+<li>/li><li>
+*Tagann lúach an Gaeilge óna bheith á usáid mar comhras tuiscint fréamhach.
+ <span id='It is not'>Ní </span><span id='an absence'>easpa</span> <span id='of interest'> spéis</span>, <span id='nor ability'>ná cumas</span>, 
+<span id='which'>is</span> <span id='is the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>
+<<span id='of room'>spás</span> <span id='is the problem.'>is cúis</span><span id='of it'> leis</span>.
+<>Ní feidir greidhm a fáil ar an meoin Gaeilge laistigh de samhlíocht Bearla. Níl spás ann dí.
 
-<span id='It is not'>Ní </span><span id='an absence'>easpa</span> <span id='of Irish'>Gaeilge</span> <span id='which'>is</span> <span id='is the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>. <span id='Nor'>Ná</span> <span id='an absence'>easpa</span> <span id='of interest'> spéis</span>, <span id='nor ability'>ná cumas</span>, <span id='nor will'>ná thoill</span><span id='either'> ach oiread</span>.
+    <span id='Is sufficient'>Is leoir</span><span id='a virtual space'>spás fíorúil</span><span id='to'>chun</span><span id='mental fluency'>líofacht intinneach</span>Gaelach<span id='develop'>a fhorbairt <span>
+</li></ul>
 
+`,`
+<span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> cluiche a<span id='play'>imirt</span>?
 `,
-
-//11
-//12
-`
-<span id='An absence'>Easpa</span> <span id='of room'>spás</span> <span id='is the cause'>is cúis</span><span id='of it'> leis</span>. <span id='There is no'>Níl</span> <span id='room'>spás</span> <span id='in'>sa</span> <span id='English thought'>samhlíocht Bearla</span> <span id='for'>i gcomhair</span> <span id='thoughts'>smaointe</span><span id='Gaelic'> Gaelach</span>. 
-
-`,
-
 
 //13
-`
-<span id='The aim'>Cuspoir</span> <span id='of this manifesto'>an forógra seo</span> <span id='is that'>ná</span> <span id='it is possible'>gur feidir</span> <span id='virtual spaces'>spásanna fíorúil</span><span id='to use for to'> a usáid chun</span> <span id='a global Gaelic thinking'>samhlíocht Gaelach domhanda</span><span id='to awaken'> a dhuiseacht</span>.  
-
-`,
-
-//14
-`<span id='Imagine'>Samhlaigh</span> <span id='a platform'>árdán</span> <span id='social'>socialta</span> <span id='virtual'>fíorúil</span> <span id='in which one could'>inar feidir</span>: 
-<br>
-    <ul><li>
-<span id='Ourselves'>Muid fein</span> <span id='identify'>a sainú</span> <span id='as'>mar</span> Gael, <span id='in a'>i</span> <span id='"land"'>"tír"</span> <span id='Gaelic'>Gaelach</span> <span id='digital'>digitach</span></li><li>
-<span id='Resources'>Áisanna</span> <span id='Gaelic'>Gaelach</span> <span id='discover'>a aimsú</span> <span id='and'>agus</span> <span id='share'>a roinnt</share></li><li>
-<span id='Co-operate'>Comhoibrú</span> <span id='on'>ar</span><span id='projects'> tionscanamh</span> <span id='and'>agus</span><span id='business ventures'> gnó</span>
-</li>
-</ul>
-`,
-
-//15
-`
-
-<span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='try'>tríal</span> <span id='give it a shot'>a bhainnt as</span>?
-
-`,
-
-//16
 `
 Cad is ainm dhuit?
 `, 
@@ -138,6 +117,9 @@ Cad is ainm dhuit?
 
 
 
-
+/*
+  * <span id='It is not'>Ní </span><span id='an absence'>easpa</span> <span id='of interest'> spéis</span>, <span id='nor ability'>ná cumas</span>, <span id='nor will'>ná thoill</span>
+<span id='which'>is</span> <span id='is the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>
+<*/
 
 ];

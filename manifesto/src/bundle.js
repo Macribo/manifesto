@@ -402,7 +402,7 @@ function updateCountyMain(dist){
     }
 
 
-    let story = 13;
+    let story = 1;
     function narrate(story){
         output2.innerHTML = storyTexts[story];
         output2.className=''; 
@@ -782,38 +782,21 @@ module.exports = [
 `,
 
 //11
-//12
 `
 <span id='An absence'>Easpa</span> <span id='of room'>spás</span> <span id='is the cause'>is cúis</span><span id='of it'> leis</span>. <span id='There is no'>Níl</span> <span id='room'>spás</span> <span id='in'>sa</span> <span id='English thought'>samhlíocht Bearla</span> <span id='for'>i gcomhair</span> <span id='thoughts'>smaointe</span><span id='Gaelic'> Gaelach</span>. 
 
 `,
 
 
+//12
+`
+<Cuspóir <span title='a'>an</span> <span title='a'>forógra</span> <span title='a'>seo</span> <span title='a'>ná</span> <span title='a'>gur</span> feidir <span title='a'>linn</span> líofacht intinneach <span title='a'>a</span> fáil <span title='a'>ar</span> <span title='a'>an</span> Gaeilge, le cheile, <span title='a'>i</span> spásanna fíorúil.`,
+
+`
+<span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='play'>imirt</span>?
+`,
+
 //13
-`
-<span id='The aim'>Cuspoir</span> <span id='of this manifesto'>an forógra seo</span> <span id='is that'>ná</span> <span id='it is possible'>gur feidir</span> <span id='virtual spaces'>spásanna fíorúil</span><span id='to use for to'> a usáid chun</span> <span id='a global Gaelic thinking'>samhlíocht Gaelach domhanda</span><span id='to awaken'> a dhuiseacht</span>.  
-
-`,
-
-//14
-`<span id='Imagine'>Samhlaigh</span> <span id='a platform'>árdán</span> <span id='social'>socialta</span> <span id='virtual'>fíorúil</span> <span id='in which one could'>inar feidir</span>: 
-<br>
-    <ul><li>
-<span id='Ourselves'>Muid fein</span> <span id='identify'>a sainú</span> <span id='as'>mar</span> Gael, <span id='in a'>i</span> <span id='"land"'>"tír"</span> <span id='Gaelic'>Gaelach</span> <span id='digital'>digitach</span></li><li>
-<span id='Resources'>Áisanna</span> <span id='Gaelic'>Gaelach</span> <span id='discover'>a aimsú</span> <span id='and'>agus</span> <span id='share'>a roinnt</share></li><li>
-<span id='Co-operate'>Comhoibrú</span> <span id='on'>ar</span><span id='projects'> tionscanamh</span> <span id='and'>agus</span><span id='business ventures'> gnó</span>
-</li>
-</ul>
-`,
-
-//15
-`
-
-<span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='try'>tríal</span> <span id='give it a shot'>a bhainnt as</span>?
-
-`,
-
-//16
 `
 Cad is ainm dhuit?
 `, 
