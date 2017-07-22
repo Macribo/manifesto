@@ -171,6 +171,7 @@ $(document).ready(function(){
 },{}],5:[function(require,module,exports){
 //jshint esversion:6
 
+let story = 1;
 let badgeSelectorL = require("./badge-selector-l");
 let badgeSelectorR = require("./badge-selector-r");
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
@@ -284,7 +285,7 @@ var htmla=document.querySelector('html');
 var audioAbattoir = document.querySelector('#abattoir');
 fwdBtn.style.cursor = "pointer";
 let countyMain = document.querySelector('#countyMain');
-
+let pName = document.querySelector('#pName'); //player name
 //Event Listeners:
 
 fwdBtn.addEventListener("click", fwdBtnHandler, false);
@@ -327,24 +328,28 @@ function bckBadgeHandler(){
 }
 
     function playHandler(){
-        narrate(15);
-        bckBtn.style.display='none';
-        noPlayBtn.style.display='none';
-        playBtn.style.display='none';
-        badgeSelectorL(100); 
-        badgeSelectorR(100);
+       if (story===11){
+          story++;
+           bckBtn.style.display='none';
+           noPlayBtn.style.display='none';
+           playBtn.style.display='none';
+           audioAbattoir.play();
+           htmla.style.backgroundImage ="url('../images/bgDark.png')"; 
+           pName.style.display='inline';
+       
+       }
+      if (story===14){ badgeSelectorL(100); 
+       badgeSelectorR(100);
 
-        rightPanel.style.display='inline';    
-        countyBtnRight.style.animation='fade-in 1s forwards';
+         rightPanel.style.display='inline';    
+         countyBtnRight.style.animation='fade-in 1s forwards';
 
-        countyBtnLeft.style.animation='fade-in 1s forwards';
-        countyBtnLeft.style.display='inline';
-        countyBtnRight.style.display='inline';
-        output.style.display='none';
-       htmla.style.backgroundImage ="url('../images/bgDark.png')"; 
-    audioAbattoir.play();
+         countyBtnLeft.style.animation='fade-in 1s forwards';
+         countyBtnLeft.style.display='inline';
+         countyBtnRight.style.display='inline';
+         output.style.display='none';
+       }
     }
-
     var coPos = 1; //county Position
    
 function updateCountyMain(dist){
@@ -402,7 +407,6 @@ function updateCountyMain(dist){
     }
 
 
-    let story = 1;
     function narrate(story){
         output2.innerHTML = storyTexts[story];
         output2.className=''; 
@@ -434,9 +438,19 @@ function updateCountyMain(dist){
         fwdBtn.style.animation='slide-button-left 1s forwards';
 
     }
-
-    if(story===13){
-        //update button styles if player is coming back from events on story 14
+    //end of manifesto - begin game y/n?
+if (story===11){
+        noPlayBtn.style.display='inline';
+        playBtn.style.display='inline';
+        // fwdBtn.style.animation='fade-out 0.25s forwards';
+        fwdBtn.style.display='none';
+        playBtn.style.animation='fade-in 1s';
+        noPlayBtn.style.animation='fade-in 1s';
+        console.log("yo 11"); 
+    }
+ 
+    if(story===10){
+        //update button styles if player is coming back from events on story 11
         fwdBtn.style.left='229px';
         fwdBtn.style.display='inline';
 
@@ -445,18 +459,7 @@ function updateCountyMain(dist){
     }
 
 
-    //end of manifesto - begin game y/n?
-    if(story===14){
-
-        noPlayBtn.style.display='inline';
-        playBtn.style.display='inline';
-        // fwdBtn.style.animation='fade-out 0.25s forwards';
-        fwdBtn.style.display='none';
-        playBtn.style.animation='fade-in 1s';
-        noPlayBtn.style.animation='fade-in 1s';
-        console.log("yo 14"); 
-    }
-    if(story === 15){ //player wants to play
+   if(story === 12){ //player wants to play
         bckBtn.style.animation='fade-out 0.25s forwards';
         playBtn.style.animation='fade-out 0.5s forwards';
         noPlayBtn.style.animation='fade-out 0.5s forwards';
@@ -784,16 +787,18 @@ module.exports = [
 <span id='which'>is</span> <span id='is the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>.
 <span id='Space'>Spás</span> <span id='is the reason'>is cúis</span><span id='with it'> leis</span>
 
-</li><br><li><span id='It would sufficie'>Ba leoir </span><span id='a virtual space'>spás fíorúil </span><span id='to'>chun </span><span id='mental fluency'>líofacht intinneach </span>Gaelach <span id='develop'>a fhorbairt <span>
+</li><br><li><span id='It would sufficie'>Ba leoir </span><span id='a virtual space'>spás fíorúil </span><span id='to'>chun </span><span id='mental fluency'>líofacht intinneach </span><span id='Gaelic'>Gaelach </span><span id='to improve'>a feabhsú <span>
 </li></ul>
 
-`,`
-<span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='a test'>tríal</span><span id='to play'>imirt</span>?
+`,
+//11
+`
+<span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='a test'> tríal</span><span id='to play'> a imirt</span>?
 `,
 
 //13
 `
-Cad is ainm dhuit?
+<span id='what'>Cad</span><span id='is your name'> is ainm dhuit?</span>
 `, 
   
 //17

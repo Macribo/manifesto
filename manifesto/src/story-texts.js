@@ -92,13 +92,15 @@ module.exports = [
 </li><br><li><span id='It would sufficie'>Ba leoir </span><span id='a virtual space'>spás fíorúil </span><span id='to'>chun </span><span id='mental fluency'>líofacht intinneach </span><span id='Gaelic'>Gaelach </span><span id='to improve'>a feabhsú <span>
 </li></ul>
 
-`,`
+`,
+//11
+`
 <span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='a test'> tríal</span><span id='to play'> a imirt</span>?
 `,
 
 //13
 `
-Cad is ainm dhuit?
+<span id='what'>Cad</span><span id='is your name'> is ainm dhuit?</span>
 `, 
   
 //17

@@ -337,7 +337,7 @@ animation: fade-in 2s;
     height: 49px;
     width: 32px;
     background-image: url("../images/player.png");
-    z-index: 30;
+    z-index: 31;
 }
 #inventory{
 }
