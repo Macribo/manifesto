@@ -6,7 +6,7 @@ html
   padding: 0px;
   margin: 0px;
   background-image:url('../images/bg.png');
-  transition: 1s background-image ease-out;
+  inputElementstransition: 1s background-image ease-out;
 }
 
 @font-face 
@@ -199,9 +199,9 @@ button
 
 #inputElements
 {
-  
+  display: none;  
   position: relative;
-  bottom: -100px;
+  bottom: -110px;
   left: 40px;
   width: 260px;
   height:50px;
@@ -212,13 +212,6 @@ button
 	-moz-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
 	box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
 }
-::placeholder{
-   color:green;
-  font-size: 35px; 
- font-family: INFO56_0;
- text-align:center;
-}
-
 /*
 #pName{
     display:none;
@@ -238,7 +231,19 @@ button
 position:relative;
 left:1px;
 top:1px;
-width: 500px;}
+width: 300px;
+height:50px;
+background:rgba(5,5,5,0.3);
+
+}
+::placeholder{
+   color:green;
+  font-size: 35px; 
+ font-family: INFO56_0;
+ text-align:center;
+}
+
+
 #inputLabel{
     position:relative;
     width:300px;
@@ -255,7 +260,7 @@ background-color: #207720;
 color:#ffe959;
 font-size:46;
 text-align:center;
-top:141px;
+top:184px;
 left:6px;
 
 

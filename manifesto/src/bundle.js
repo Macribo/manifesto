@@ -272,7 +272,7 @@ var htmla=document.querySelector('html');
 var audioAbattoir = document.querySelector('#abattoir');
 fwdBtn.style.cursor = "pointer";
 let countyMain = document.querySelector('#countyMain');
-let pName = document.querySelector('#pName'); //player name
+let ainmBtn = document.querySelector('#ainmBtn'); //player name
 
 
 //Event Listeners:
@@ -283,7 +283,7 @@ fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
 bckBtn.addEventListener("click", bckBtnHandler, false);
 playBtn.addEventListener("click", playHandler, false);
 noPlayBtn.addEventListener("click", noPlayHandler, false);
-pName.addEventListener("click", ainmHandler);
+ainmBtn.addEventListener("click", ainmHandler);
 
 
 
@@ -306,6 +306,8 @@ function fwdBadgeHandler(){
     updateCoNameR();
     
 }
+
+//deleted keypressHandler - may cause bugs later?
 function bckBadgeHandler(){
   // countyMain.style.animation="fade-out .25s";
     updateCountyMain(1);
@@ -327,7 +329,7 @@ function ainmHandler(){
            playBtn.style.display='none';
            audioAbattoir.play();
            htmla.style.backgroundImage ="url('../images/bgDark.png')"; 
-           pName.style.display='inline';
+           inputElements.style.display='inline';
        
        }
       if (story===14){ badgeSelectorL(100); 
@@ -432,7 +434,8 @@ if (story===11){
         playBtn.style.animation='fade-in 1s';
         noPlayBtn.style.animation='fade-in 1s';
         console.log("yo 11"); 
-    }
+        console.log("story === 11");   
+}
  
     if(story===10){
         //update button styles if player is coming back from events on story 11
@@ -654,7 +657,7 @@ function render()
     output.style.padding=0;
     output.style.margin=0;
     //Clear the input field
-    input.value = "";
+   // input.value = "";
 }
 
 let countyId = 0;
