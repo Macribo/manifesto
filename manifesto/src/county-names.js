@@ -22,7 +22,7 @@ module.exports = [
     'Co. Chill Chainnigh',
     'Co. Na Mí',
     'Co. Chiarraí',
-    'Co. An LongFoirt',
+    'Co. An Longfoirt',
     'Co. Mhaigh Eo',
     'Co. Na hIarmhí',
     'Co. An Dúin',
@@ -34,6 +34,6 @@ module.exports = [
     'Co. An Chláir',
     'Co. An Cabháin',
     'Co. Thír Eoghain',
-    'Thar Muir',
-    'Dearg le Fearg'
+    'Tír Thar Muir',
+    'An Teanga'
 ];

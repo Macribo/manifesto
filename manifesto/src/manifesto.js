@@ -105,7 +105,7 @@ let ainmBtn = document.querySelector('#ainmBtn'); //player name
 
 
 //Event Listeners:
-
+joinTeam.addEventListener("click",joinTeamHandler);
 fwdBtn.addEventListener("click", fwdBtnHandler, false);
 fwdBtn.addEventListener("mousedown", mousedownHandler, false);
 fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
@@ -157,6 +157,8 @@ function bckBadgeHandler(){
            inputElements.style.display='block'; 
        }
       if (story===13){ badgeSelectorL(100); //player selects team
+         countyMain.style.top='50px';
+         narrate(13);
          badgeSelectorR(100);
          inputName.style.display='none';
          inputLabel.style.display='none';
@@ -169,9 +171,8 @@ function bckBadgeHandler(){
          countyBtnLeft.style.display='inline';
         console.log("Hello", ainm);
         //imreoir.style.display='block';
-        narrate(13);
           joinTeam.style.display='inline';
-        joinTeam.style.animation='delay-fade-in 3s';
+        joinTeam.style.animation='delay-fade-in 5s';
     }
     }
     var coPos = 1; //county Position
@@ -186,8 +187,14 @@ function updateCountyMain(dist){
 
     countyMain.style.backgroundPositionX = coPos+"px";
     }
-    function noPlayHandler(){
+    function joinTeamHandler(){
+    countyMain.style.animation="fade-out 1s";
+    console.log("team joined");
+    
+    }
 
+    function noPlayHandler(){
+            alert("Slán and thank you for visiting.");
 
     }
     function ainmHandler(){

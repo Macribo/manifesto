@@ -93,7 +93,7 @@ module.exports = [
   
 //13
   `
-<span id='Play'> &nbsp Imir</span> <span id='for'>ar shon</span>:
+<span id='Play'>Imir </span><span id='for'>ar shon</span> :
   `, 
     
 //18

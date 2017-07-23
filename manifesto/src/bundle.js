@@ -90,7 +90,7 @@ module.exports = [
     'Co. Chill Chainnigh',
     'Co. Na Mí',
     'Co. Chiarraí',
-    'Co. An LongFoirt',
+    'Co. An Longfoirt',
     'Co. Mhaigh Eo',
     'Co. Na hIarmhí',
     'Co. An Dúin',
@@ -102,8 +102,8 @@ module.exports = [
     'Co. An Chláir',
     'Co. An Cabháin',
     'Co. Thír Eoghain',
-    'Thar Muir',
-    'Dearg le Fearg'
+    'Tír Thar Muir',
+    'An Teanga'
 ];
 
 },{}],4:[function(require,module,exports){
@@ -276,7 +276,7 @@ let ainmBtn = document.querySelector('#ainmBtn'); //player name
 
 
 //Event Listeners:
-
+joinTeam.addEventListener("click",joinTeamHandler);
 fwdBtn.addEventListener("click", fwdBtnHandler, false);
 fwdBtn.addEventListener("mousedown", mousedownHandler, false);
 fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
@@ -328,6 +328,8 @@ function bckBadgeHandler(){
            inputElements.style.display='block'; 
        }
       if (story===13){ badgeSelectorL(100); //player selects team
+         countyMain.style.top='50px';
+         narrate(13);
          badgeSelectorR(100);
          inputName.style.display='none';
          inputLabel.style.display='none';
@@ -340,9 +342,8 @@ function bckBadgeHandler(){
          countyBtnLeft.style.display='inline';
         console.log("Hello", ainm);
         //imreoir.style.display='block';
-        narrate(13);
           joinTeam.style.display='inline';
-        joinTeam.style.animation='delay-fade-in 3s';
+        joinTeam.style.animation='delay-fade-in 5s';
     }
     }
     var coPos = 1; //county Position
@@ -357,8 +358,14 @@ function updateCountyMain(dist){
 
     countyMain.style.backgroundPositionX = coPos+"px";
     }
-    function noPlayHandler(){
+    function joinTeamHandler(){
+    countyMain.style.animation="fade-out 1s";
+    console.log("team joined");
+    
+    }
 
+    function noPlayHandler(){
+            alert("Slán and thank you for visiting.");
 
     }
     function ainmHandler(){
@@ -781,7 +788,7 @@ module.exports = [
   
 //13
   `
-<span id='Play'> &nbsp Imir</span> <span id='for'>ar shon</span>:
+<span id='Play'>Imir </span><span id='for'>ar shon</span> :
   `, 
     
 //18
