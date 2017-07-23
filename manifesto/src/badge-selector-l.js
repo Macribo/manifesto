@@ -6,7 +6,7 @@ module.exports = function badgeSelectorL(duration) {
     let countyId = 0;
     let badgeWidth = -80; 
     console.log('>>>>>>>', badgeWidth);
-    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
+//    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
    countyBtnLeft.addEventListener("click",changeCounty);
     let oldX;
     let changeCountyTime;

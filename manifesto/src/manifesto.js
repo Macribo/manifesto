@@ -170,6 +170,7 @@ function bckBadgeHandler(){
         console.log("Hello", ainm);
         //imreoir.style.display='block';
         narrate(13);
+          joinTeam.style.display='inline';
         joinTeam.style.animation='delay-fade-in 3s';
     }
     }

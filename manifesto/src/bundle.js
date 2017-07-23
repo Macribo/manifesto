@@ -7,7 +7,7 @@ module.exports = function badgeSelectorL(duration) {
     let countyId = 0;
     let badgeWidth = -80; 
     console.log('>>>>>>>', badgeWidth);
-    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
+//    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
    countyBtnLeft.addEventListener("click",changeCounty);
     let oldX;
     let changeCountyTime;
@@ -40,7 +40,7 @@ module.exports = function badgeSelectorR(duration) {
     const badge = document.querySelector("#badge");
     
     let badgeWidth = 80; 
-    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
+//    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
    countyBtnRight.addEventListener("click",changeCounty);
     let oldX;
     let changeCountyTime;
@@ -341,6 +341,7 @@ function bckBadgeHandler(){
         console.log("Hello", ainm);
         //imreoir.style.display='block';
         narrate(13);
+          joinTeam.style.display='inline';
         joinTeam.style.animation='delay-fade-in 3s';
     }
     }
