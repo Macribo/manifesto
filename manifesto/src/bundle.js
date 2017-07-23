@@ -186,7 +186,7 @@ var map = [];
 map[0] = "An ol stone keep.";
 map[1] = "A deep well.";
 map[2] = "A sunny glade.";
-map[3] = "";
+map[3] = "Tríal";
 map[4] = "Manifesto";
 map[5] = "An ancient gate.";
 map[6] = "The edge of a river.";
@@ -246,20 +246,20 @@ var action = "";
 //and a variable to store the current item
 var itemsIKnow = ["flute", "stone", "sword"];
 var item = "";
-
-
+var imreoir = document.querySelector('#imreoir');
+var pAinm=document.querySelector('#pAinm');
 
 //Query Selectors:
 
 var image = document.querySelector("img");
 
-let playerName = 'Imreoir_1';
+//let playerName = 'Imreoir_1';
 let rightPanel = document.querySelector("#right-panel");
 let contae = document.querySelector("#contae");
 
 var output = document.querySelector("#output");
 var output2 = document.querySelector("#output2");
-var input = document.querySelector("#input");
+var playerName = document.querySelector("#inputName");
 
 var fwdBtn = document.querySelector("#fwdBtn");
 var bckBtn = document.querySelector('#bckBtn'); 
@@ -296,10 +296,7 @@ render();
 countyBtnLeft.addEventListener("click",bckBadgeHandler, false);
 countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
 //Event Handlers
-
-function processPNameForm(){
-    if (e.preventDefault) preventDefault();
-}
+var ainm='bob';
 function fwdBadgeHandler(){
     updateCountyMain(-1);
     console.log("clicked");
@@ -318,31 +315,31 @@ function bckBadgeHandler(){
  // countyMain.style.animation='dim .25s forwards';
   // console.log("to be dimmed.") }
 }
-function ainmHandler(){
-    console.log("hello ainmHandler");
-}
     function playHandler(){
        if (story===11){
-          narrate(12);
+            output.innerHTML='Tríal';
+           narrate(12);
            bckBtn.style.display='none';
            noPlayBtn.style.display='none';
            playBtn.style.display='none';
            audioAbattoir.play();
            htmla.style.backgroundImage ="url('../images/bgDark.png')"; 
            inputElements.style.display='inline';
-       
+           imreoir.style.display='inline';
        }
-      if (story===14){ badgeSelectorL(100); 
+      if (story===13){ badgeSelectorL(100); 
        badgeSelectorR(100);
 
+         countyBtnRight.style.animation='fade-in 1s forwards';
          rightPanel.style.display='inline';    
          countyBtnRight.style.animation='fade-in 1s forwards';
-
+         countyBtnRight.style.display='inline';
          countyBtnLeft.style.animation='fade-in 1s forwards';
          countyBtnLeft.style.display='inline';
-         countyBtnRight.style.display='inline';
-         output.style.display='none';
-       }
+        console.log("Hello", ainm);
+        inputElements.style.display='none';
+        narrate(13);
+    }
     }
     var coPos = 1; //county Position
    
@@ -361,7 +358,10 @@ function updateCountyMain(dist){
 
     }
     function ainmHandler(){
-        console.log("Hello ainm");
+    ainm = document.getElementById('#inputName');
+    console.log(ainm);
+    story=13;
+   playHandler();
     }
 
     function mousedownHandler(){
@@ -783,12 +783,12 @@ module.exports = [
 <span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='a test'> tríal</span><span id='to play'> a imirt</span>?
 `,
 
-//13
+//12
 `
 <span id='what'>Cad</span><span id='is your name'> is ainm dhuit?</span>
 `, 
   
-//17
+//13
   `
 <span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>
   `, 

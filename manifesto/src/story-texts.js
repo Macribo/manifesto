@@ -97,12 +97,12 @@ module.exports = [
 <span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='a test'> tríal</span><span id='to play'> a imirt</span>?
 `,
 
-//13
+//12
 `
 <span id='what'>Cad</span><span id='is your name'> is ainm dhuit?</span>
 `, 
   
-//17
+//13
   `
 <span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>
   `, 
