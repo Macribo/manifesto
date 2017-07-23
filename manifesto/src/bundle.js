@@ -259,7 +259,7 @@ let contae = document.querySelector("#contae");
 
 var output = document.querySelector("#output");
 var output2 = document.querySelector("#output2");
-var playerName = document.querySelector("#inputName");
+var inputLabel = document.querySelector("#inputLabel");
 
 var fwdBtn = document.querySelector("#fwdBtn");
 var bckBtn = document.querySelector('#bckBtn'); 
@@ -316,7 +316,7 @@ function bckBadgeHandler(){
   // console.log("to be dimmed.") }
 }
     function playHandler(){
-       if (story===11){
+       if (story===11){  //player enters name
             output.innerHTML='Tríal';
            narrate(12);
            bckBtn.style.display='none';
@@ -324,12 +324,14 @@ function bckBadgeHandler(){
            playBtn.style.display='none';
            audioAbattoir.play();
            htmla.style.backgroundImage ="url('../images/bgDark.png')"; 
-           inputElements.style.display='inline';
-           imreoir.style.display='inline';
+           inputElements.style.visibility='visible'; 
+           inputElements.style.display='block'; 
        }
-      if (story===13){ badgeSelectorL(100); 
-       badgeSelectorR(100);
-
+      if (story===13){ badgeSelectorL(100); //player selects team
+         badgeSelectorR(100);
+         inputName.style.visibility='hidden';
+         inputLabel.style.visibility='hidden';
+         ainmBtn.style.visibility='hidden';
          countyBtnRight.style.animation='fade-in 1s forwards';
          rightPanel.style.display='inline';    
          countyBtnRight.style.animation='fade-in 1s forwards';
@@ -337,7 +339,7 @@ function bckBadgeHandler(){
          countyBtnLeft.style.animation='fade-in 1s forwards';
          countyBtnLeft.style.display='inline';
         console.log("Hello", ainm);
-        inputElements.style.display='none';
+        //imreoir.style.display='block';
         narrate(13);
     }
     }
@@ -358,8 +360,6 @@ function updateCountyMain(dist){
 
     }
     function ainmHandler(){
-    ainm = document.getElementById('#inputName');
-    console.log(ainm);
     story=13;
    playHandler();
     }
@@ -790,7 +790,7 @@ module.exports = [
   
 //13
   `
-<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>
+<span id='Play'>Imir</span> <span id='for'>ar shon</span>:
   `, 
     
 //18

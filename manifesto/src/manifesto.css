@@ -8,7 +8,13 @@ html
   background-image:url('../images/bg.png');
   inputElementstransition: 1s background-image ease-out;
 }
+input,textarea{
+    font-size:40px;
+    padding:5px;
+    color: green;
+    font-family: INFO56_0;
 
+}
 @font-face 
 {
   font-family: INFO56_0;
@@ -207,6 +213,18 @@ button
 	-moz-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
 	box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
 }
+
+#imreoir{
+
+    position:absolute;
+    top:-190px;
+    left:50%;
+    height:156px;
+    width:111px;
+    z-index:55;
+    background-image:url("../images/imreoir.gif");
+
+}
 /*
 #pName{
     display:none;
@@ -313,8 +331,8 @@ padding-left: 40px;
 }
 #countyMain {
     position:absolute;
-    top:134px;
-    left:-39px;
+    top:450px;
+    left:200px;
     background-image:url("../images/countyMain.png");
     z-index:20;
     opacity:.25;
@@ -383,18 +401,6 @@ animation: fade-in 2s;
 }
 #grid {
     position: absolute;
-}
-#imreoir{
-
-    display:none;
-    position:absolute;
-    height:75px;
-    width:75px;
-    left:212px;
-    top:283px;
-    z-index:55;
-    background-image:url("../images/imreoir.gif");
-
 }
 #player{
     position: absolute;            

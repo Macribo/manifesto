@@ -28,13 +28,9 @@ module.exports = [
 `
 <span id='One cannot'>Ní feidir</span> <span id='think'>smaoineamh</span> <span id='in Irish'>i nGaeilge</span>, <span id='in English'>i mBearla</span>.
 
-
-
-
 `,
 //4
 `
-
 <span id='In English'>I mBearla</span>, <span id='it is that'>tá</span> <span id='the Irish'>an Gaeilge</span> <span id='utterly separated'>glanscartha</span> <span id='from'>ó</span> <span id='the meaning'>brí</span> <span id='of Irish'>an Gaeilge</span>.
 
 `,
@@ -49,17 +45,11 @@ module.exports = [
 
 `
 <span id='That leaves us'>Fágann sin muid</span> <span id='speaking about it'>ag caint uirthí </span> <span id='in terms'>i dtearmaí</span> <span id='of the number of'>líonn na</span><span id='Irish Speakers'> 'Irish Speakers'</span>. <span id='It is observed'>Feictear</span> <span id='that there are not'>nach bhfuil</span> <span id='many'>mórán</span><span id='speakers'> cainteoirí</span>, <span id='and'>agus </span><span id='it is assumed'>glachtar leis</span> <span id='therefore'>mar sin</span> <span id='not much would be lost'>nach chailfar mórán</span> <span id='without her'>gan í.</span> 
-
-
 `,
 
 //7
 `
 <span id='It is thought'>Ceaptar, </span><span id='perhaps'>b'feidir</span>, <span id='if all can'>más feidir gach rud</span> <span id='to translate to English'>a aistrú go Bearla</span>,<span id="there is no need"> níl gá</span><span id='for Irish'> le Gaeilge</span>.<span id='In English'> I mBearla</span>,<span id='there is no need for'> níl aon gá le</span><span id='Éire'> Éire</span>, <span id='because'>mar</span> <span id='is enough'>is leoir</span> <span id='Ireland'>'Ireland'</span>.
-
-
-
-
 
 `,
 
@@ -67,7 +57,6 @@ module.exports = [
 
 `
 <span id='That is a mistake'>Is botún é sin.</span> <span id='First of all'>Sa chead áit </span><span id='there is'>tá</span> <span id='more'>nios mó</span> <span id='in question'>i gceist</span> <span id='with'>le</span> <span id='language'>teanga</span> <span id='than'>ná</span><span id='talk'> caint</span>.<br><br> <span id='A system'>Comhras</span> <span id='of thought'>smaoineamh</span> <span id='is Gaelic'>í an Ghaeilge</span>. <span id='An ecology'>Eiceachóras</span> <span id='of visions'>físanna</span> <span id='the'>na</span> <span id='thousands'>mílte</span><span id='of years'> blianta</span><span id='of age'> d'aois</span><span id='she is'> í</span>.<br><br><div style="animation:delay-fade-in 5s;"><span id='Not lower'> Ní laighdín</span><span id='value'> lúach</span><span id='this resource'> an achmain seo</span><span id='because of'> de bhár</span><span id='scarcity'> ganntanas</span>. 
-
 
 `,
 
@@ -104,7 +93,7 @@ module.exports = [
   
 //13
   `
-<span id='Select'>Roghnaigh</span> <span id='your team'>foireann</span>
+<span id='Play'>Imir</span> <span id='for'>ar shon</span>:
   `, 
     
 //18
