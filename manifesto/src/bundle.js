@@ -273,8 +273,9 @@ var audioAbattoir = document.querySelector('#abattoir');
 fwdBtn.style.cursor = "pointer";
 let countyMain = document.querySelector('#countyMain');
 let ainmBtn = document.querySelector('#ainmBtn'); //player name
-
-
+var tileworld = document.querySelector('#tileworld');
+var mapdata = document.querySelector('#mapdata');
+var curSiosArCo = document.querySelector('#curSiosArCo');
 //Event Listeners:
 joinTeam.addEventListener("click",joinTeamHandler);
 fwdBtn.addEventListener("click", fwdBtnHandler, false);
@@ -359,8 +360,22 @@ function updateCountyMain(dist){
     countyMain.style.backgroundPositionX = coPos+"px";
     }
     function joinTeamHandler(){
-    countyMain.style.animation="fade-out 1s";
-    console.log("team joined");
+        inputElements.style.display='none';
+        countyMain.style.animation='fade-out 2s forwards';
+        console.log("team joined");
+        countyBtnRight.style.display='none';
+        countyBtnLeft.style.display='none';
+        joinTeam.style.display='none';
+        imreoir.style.display='none';
+        output2.style.display='none';
+        contae.style.display='none';
+        inputName.style.display='none';
+        curSiosArCo.style.display='none';
+        tileworld.style.display='inline';
+        tileworld.style.animation='delay-fade-in 2s';
+        mapdata.style.display='inline';
+        mapdata.style.animation='delay-fade-in 3s';
+        
     
     }
 

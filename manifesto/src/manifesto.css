@@ -429,7 +429,7 @@ animation: fade-in 2s;
     z-index: 31;
 }
 
-#inventory{
+#inventory{display:none;
 }
 #inventory>*{
     position: absolute;
@@ -450,11 +450,8 @@ animation: fade-in 2s;
 }
 @keyframes fade-out{
 0%{opacity:1;}
-/*
- 99%{opacity:0;}
- 100%{display:none;} */
 
- 100%{opacity:none;} 
+ 100%{opacity:0;} 
 
 }
 
