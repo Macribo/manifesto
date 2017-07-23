@@ -39,17 +39,6 @@ images[7] = "MainistirNaCorann.png";
 images[8] = "Skibbereen.png";
 
 //Set the blocked path messages
-var blockedPathMessages = [];
-
-blockedPathMessages[0] = "Níl an chuid sin den cluiche ulamh go fóil.";
-blockedPathMessages[1] = "Níl an piosa sin ríomhchláraithe go fóil.";
-blockedPathMessages[2] = "Ní feidir dul an bealach sin..";
-blockedPathMessages[3] = "Ní feidir dul an bealach sin.";
-blockedPathMessages[4] = "";
-blockedPathMessages[5] = "Tá an bealach sin dúnta.";
-blockedPathMessages[6] = "Ní feidir.";
-blockedPathMessages[7] = "Tá an bealach sin dúnta.";
-blockedPathMessages[8] = "Ní feidir dul an treo sin.";
 
 //Set the blocked path messages
 var helpMessages = [];
@@ -71,8 +60,6 @@ var itemLocations = [6];
 //An array to store what the player is carrying
 var backpack = [];
 
-//Initialize the player's input
-var playersInput = "";
 
 //Initialize the gameMessage
 var gameMessage = ``;
@@ -95,7 +82,7 @@ var item = "";
 
 var image = document.querySelector("img");
 
-
+let playerName = 'Imreoir_1';
 let rightPanel = document.querySelector("#right-panel");
 let contae = document.querySelector("#contae");
 
@@ -114,7 +101,9 @@ var htmla=document.querySelector('html');
 var audioAbattoir = document.querySelector('#abattoir');
 fwdBtn.style.cursor = "pointer";
 let countyMain = document.querySelector('#countyMain');
-let pName = document.querySelector('#pName'); //player name
+let ainmBtn = document.querySelector('#ainmBtn'); //player name
+
+
 //Event Listeners:
 
 fwdBtn.addEventListener("click", fwdBtnHandler, false);
@@ -123,12 +112,10 @@ fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
 bckBtn.addEventListener("click", bckBtnHandler, false);
 playBtn.addEventListener("click", playHandler, false);
 noPlayBtn.addEventListener("click", noPlayHandler, false);
+pName.addEventListener("click", ainmHandler);
 
 
 
-
-//Listen for enter key presses
-window.addEventListener("keydown", keydownHandler, false);
 
 //Dispay the player's location
 render();
@@ -139,12 +126,17 @@ countyBtnLeft.addEventListener("click",bckBadgeHandler, false);
 countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
 //Event Handlers
 
+function processPNameForm(){
+    if (e.preventDefault) preventDefault();
+}
 function fwdBadgeHandler(){
     updateCountyMain(-1);
     console.log("clicked");
     updateCoNameR();
     
 }
+
+//deleted keypressHandler - may cause bugs later?
 function bckBadgeHandler(){
   // countyMain.style.animation="fade-out .25s";
     updateCountyMain(1);
@@ -155,7 +147,9 @@ function bckBadgeHandler(){
  // countyMain.style.animation='dim .25s forwards';
   // console.log("to be dimmed.") }
 }
-
+function ainmHandler(){
+    console.log("hello ainmHandler");
+}
     function playHandler(){
        if (story===11){
           narrate(12);
@@ -195,7 +189,9 @@ function updateCountyMain(dist){
 
 
     }
-
+    function ainmHandler(){
+        console.log("Hello ainm");
+    }
 
     function mousedownHandler(){
         fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
@@ -226,16 +222,7 @@ function updateCountyMain(dist){
         playGame();
     }
 
-    function keydownHandler(event)
-    {
-
-        if(event.keyCode === 13)
-        {
-            playGame();
-        }
-    }
-
-
+ 
     function narrate(story){
         output2.innerHTML = storyTexts[story];
         output2.className=''; 

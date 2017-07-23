@@ -210,17 +210,6 @@ images[7] = "MainistirNaCorann.png";
 images[8] = "Skibbereen.png";
 
 //Set the blocked path messages
-var blockedPathMessages = [];
-
-blockedPathMessages[0] = "Níl an chuid sin den cluiche ulamh go fóil.";
-blockedPathMessages[1] = "Níl an piosa sin ríomhchláraithe go fóil.";
-blockedPathMessages[2] = "Ní feidir dul an bealach sin..";
-blockedPathMessages[3] = "Ní feidir dul an bealach sin.";
-blockedPathMessages[4] = "";
-blockedPathMessages[5] = "Tá an bealach sin dúnta.";
-blockedPathMessages[6] = "Ní feidir.";
-blockedPathMessages[7] = "Tá an bealach sin dúnta.";
-blockedPathMessages[8] = "Ní feidir dul an treo sin.";
 
 //Set the blocked path messages
 var helpMessages = [];
@@ -242,8 +231,6 @@ var itemLocations = [6];
 //An array to store what the player is carrying
 var backpack = [];
 
-//Initialize the player's input
-var playersInput = "";
 
 //Initialize the gameMessage
 var gameMessage = ``;
@@ -266,7 +253,7 @@ var item = "";
 
 var image = document.querySelector("img");
 
-
+let playerName = 'Imreoir_1';
 let rightPanel = document.querySelector("#right-panel");
 let contae = document.querySelector("#contae");
 
@@ -286,6 +273,8 @@ var audioAbattoir = document.querySelector('#abattoir');
 fwdBtn.style.cursor = "pointer";
 let countyMain = document.querySelector('#countyMain');
 let pName = document.querySelector('#pName'); //player name
+
+
 //Event Listeners:
 
 fwdBtn.addEventListener("click", fwdBtnHandler, false);
@@ -294,12 +283,10 @@ fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
 bckBtn.addEventListener("click", bckBtnHandler, false);
 playBtn.addEventListener("click", playHandler, false);
 noPlayBtn.addEventListener("click", noPlayHandler, false);
+pName.addEventListener("click", ainmHandler);
 
 
 
-
-//Listen for enter key presses
-window.addEventListener("keydown", keydownHandler, false);
 
 //Dispay the player's location
 render();
@@ -310,6 +297,9 @@ countyBtnLeft.addEventListener("click",bckBadgeHandler, false);
 countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
 //Event Handlers
 
+function processPNameForm(){
+    if (e.preventDefault) preventDefault();
+}
 function fwdBadgeHandler(){
     updateCountyMain(-1);
     console.log("clicked");
@@ -326,7 +316,9 @@ function bckBadgeHandler(){
  // countyMain.style.animation='dim .25s forwards';
   // console.log("to be dimmed.") }
 }
-
+function ainmHandler(){
+    console.log("hello ainmHandler");
+}
     function playHandler(){
        if (story===11){
           narrate(12);
@@ -366,7 +358,9 @@ function updateCountyMain(dist){
 
 
     }
-
+    function ainmHandler(){
+        console.log("Hello ainm");
+    }
 
     function mousedownHandler(){
         fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
@@ -397,16 +391,7 @@ function updateCountyMain(dist){
         playGame();
     }
 
-    function keydownHandler(event)
-    {
-
-        if(event.keyCode === 13)
-        {
-            playGame();
-        }
-    }
-
-
+ 
     function narrate(story){
         output2.innerHTML = storyTexts[story];
         output2.className=''; 
@@ -783,9 +768,8 @@ module.exports = [
 <li>
 <span id='Comes'>Go dtagann</span> <span id='the value of Irish'>lúach an Gaeilge</span><span id='from being used'> óna bheith á usáid</span><span id='as a system'> mar comhras</span><span id='of under- standing'> tuiscint</span><span id='original'> fréamhach</span></li>
 <br><li>
- <span id='It is not'>Ní </span><span id='an absence'>easpa</span> <span id='of interest'> spéis</span>, <span id='nor ability'>ná cumas</span>, 
-<span id='which'>is</span> <span id='is the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>.
-<span id='Space'>Spás</span> <span id='is the reason'>is cúis</span><span id='with it'> leis</span>
+<span id='A lack of space'>Easpa spás,</span> <span id='rather than'> seachas </span><span id='a lack'>easpa</span> <span id='of interest'> spéis</span> <span id='or ability'>ná cumas</span>, 
+<span id='is'>is</span> <span id='the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>.
 
 </li><br><li><span id='It would sufficie'>Ba leoir </span><span id='a virtual space'>spás fíorúil </span><span id='to'>chun </span><span id='mental fluency'>líofacht intinneach </span><span id='Gaelic'>Gaelach </span><span id='to improve'>a feabhsú <span>
 </li></ul>

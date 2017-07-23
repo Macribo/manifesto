@@ -85,9 +85,8 @@ module.exports = [
 <li>
 <span id='Comes'>Go dtagann</span> <span id='the value of Irish'>lúach an Gaeilge</span><span id='from being used'> óna bheith á usáid</span><span id='as a system'> mar comhras</span><span id='of under- standing'> tuiscint</span><span id='original'> fréamhach</span></li>
 <br><li>
- <span id='It is not'>Ní </span><span id='an absence'>easpa</span> <span id='of interest'> spéis</span>, <span id='nor ability'>ná cumas</span>, 
-<span id='which'>is</span> <span id='is the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>.
-<span id='Space'>Spás</span> <span id='is the reason'>is cúis</span><span id='with it'> leis</span>
+<span id='A lack of space'>Easpa spás,</span> <span id='rather than'> seachas </span><span id='a lack'>easpa</span> <span id='of interest'> spéis</span> <span id='or ability'>ná cumas</span>, 
+<span id='is'>is</span> <span id='the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>.
 
 </li><br><li><span id='It would sufficie'>Ba leoir </span><span id='a virtual space'>spás fíorúil </span><span id='to'>chun </span><span id='mental fluency'>líofacht intinneach </span><span id='Gaelic'>Gaelach </span><span id='to improve'>a feabhsú <span>
 </li></ul>
