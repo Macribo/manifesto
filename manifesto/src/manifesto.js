@@ -196,14 +196,13 @@ function updateCountyMain(dist){
         countyBtnLeft.style.display='none';
         joinTeam.style.display='none';
         imreoir.style.display='none';
+        output.style.display='none';
         output2.style.display='none';
         contae.style.display='none';
         inputName.style.display='none';
         curSiosArCo.style.display='none';
         tileworld.style.display='inline';
         tileworld.style.animation='delay-fade-in 2s';
-        mapdata.style.display='inline';
-        mapdata.style.animation='delay-fade-in 3s';
         
     
     }

@@ -396,6 +396,8 @@ animation: fade-in 2s;
  TILEWORLD DATA
   **/
 #tileworld{
+    left:0px;
+    top:0px;
     display: none;
 }
 #mapdata {
