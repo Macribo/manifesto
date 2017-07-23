@@ -164,22 +164,26 @@ button
  
 }
 #countyBtnLeft {
+  position:relative;
   display:none;
-  top:73px;
-  left: 54px;
+  top:-201px;
+  left:-10%;
   height: 60px;
   width: 60px;
   border-radius: 60px;
  background-color: green;
+ z-index:75;
 }
 #countyBtnRight {
+    position:relative;
   display:none;
-  top:73px;
-  left: 249px;
+  top:-201px;
+  left: 94%;
   height: 60px;
   width: 60px;
   border-radius: 60px;
   background-color:green;
+  z-index:75;
 }
 
 
@@ -218,7 +222,7 @@ button
 
     position:absolute;
     top:-190px;
-    left:50%;
+    left:45%;
     height:156px;
     width:111px;
     z-index:55;
@@ -243,7 +247,7 @@ button
 #inputName{
 position:relative;
 left:1px;
-top:1px;
+top:-56px;
 width: 300px;
 height:50px;
 background:rgba(5,5,5,0.3);
@@ -263,8 +267,8 @@ background:rgba(5,5,5,0.3);
     text-align:left;
     font-family:INFO56_0;
     font-size:40px;
-    top:30px;
-    left: 1px;
+    top:-8px;
+    left:-5px;
 
 }
 #ainmBtn{
@@ -273,7 +277,7 @@ background-color: #207720;
 color:#ffe959;
 font-size:46;
 text-align:center;
-top:51px;
+top:32px;
 left:197px;
 
 
@@ -334,7 +338,7 @@ padding-left: 40px;
     top:50px;
     left:600px;
     background-image:url("../images/countyMain.png");
-    z-index:20;
+    z-index:1;
     opacity:.25;
     width:539px;
     height:383px;
@@ -351,14 +355,19 @@ padding-left: 40px;
 }
 
 #contae{
-    position:absolute;
-    text-align: center;
+    position:relative;
+    text-align: left;
     width: 300px;
-    left:-57px;
+    left:-10px;
     padding-left:0px; 
     font-family:INFO56_0;
-    bottom: -13px;
-    font-size:25px;
+    bottom: 122px;
+    font-size:40px;
+}
+
+#curSiosArCo{
+bottom:130px;
+left:0px
 }
 
 .item{

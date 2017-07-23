@@ -158,9 +158,9 @@ function bckBadgeHandler(){
        }
       if (story===13){ badgeSelectorL(100); //player selects team
          badgeSelectorR(100);
-         inputName.style.visibility='hidden';
-         inputLabel.style.visibility='hidden';
-         ainmBtn.style.visibility='hidden';
+         inputName.style.display='none';
+         inputLabel.style.display='none';
+         ainmBtn.style.display='none';
          countyBtnRight.style.animation='fade-in 1s forwards';
          rightPanel.style.display='inline';    
          countyBtnRight.style.animation='fade-in 1s forwards';
@@ -170,6 +170,7 @@ function bckBadgeHandler(){
         console.log("Hello", ainm);
         //imreoir.style.display='block';
         narrate(13);
+
     }
     }
     var coPos = 1; //county Position
