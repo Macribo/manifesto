@@ -156,6 +156,7 @@ button
 	
 }
 
+
 #noPlay {
   display:none;
   background-color:#730a0a;
@@ -216,6 +217,8 @@ button
   -webkit-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
 	-moz-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
 	box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+  z-index: 100;
+
 }
 
 #imreoir{
@@ -253,6 +256,13 @@ height:50px;
 background:rgba(5,5,5,0.3);
 
 }
+#joinTeam{
+  display:none;
+  background-color: #207720;
+  top:40px;
+  left:-436px;
+	
+}
 ::placeholder{
    color:green;
   font-size: 35px; 
@@ -267,7 +277,7 @@ background:rgba(5,5,5,0.3);
     text-align:left;
     font-family:INFO56_0;
     font-size:40px;
-    top:-8px;
+    top:-27px;
     left:-5px;
 
 }

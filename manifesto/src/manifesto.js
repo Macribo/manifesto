@@ -79,7 +79,7 @@ var imreoir = document.querySelector('#imreoir');
 var pAinm=document.querySelector('#pAinm');
 
 //Query Selectors:
-
+var joinTeam = document.querySelector("#joinTeam");
 var image = document.querySelector("img");
 
 //let playerName = 'Imreoir_1';
@@ -170,7 +170,7 @@ function bckBadgeHandler(){
         console.log("Hello", ainm);
         //imreoir.style.display='block';
         narrate(13);
-
+        joinTeam.style.animation='delay-fade-in 3s';
     }
     }
     var coPos = 1; //county Position
