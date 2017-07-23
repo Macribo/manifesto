@@ -331,8 +331,8 @@ padding-left: 40px;
 }
 #countyMain {
     position:absolute;
-    top:450px;
-    left:200px;
+    top:50px;
+    left:600px;
     background-image:url("../images/countyMain.png");
     z-index:20;
     opacity:.25;
