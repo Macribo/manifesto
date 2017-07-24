@@ -6,7 +6,7 @@ html
   padding: 0px;
   margin: 0px;
   background-image:url('../images/bg.png');
-  inputElementstransition: 1s background-image ease-out;
+ transition: 1s background-image ease-out;
 }
 input,textarea{
     font-size:40px;
@@ -398,10 +398,9 @@ animation: fade-in 2s;
 #tileworld{
     left:0px;
     top:0px;
-    display: none;
-}
+display:none;}
 #mapdata {
-    display: none;
+   display: none;
 }
 #viewport {
     background-color: blue;

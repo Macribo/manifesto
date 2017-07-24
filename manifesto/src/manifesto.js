@@ -1,12 +1,13 @@
 //jshint esversion:6
 
-let story = 1;
 let badgeSelectorL = require("./badge-selector-l");
 let badgeSelectorR = require("./badge-selector-r");
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
 let countyNames = require("./county-names");
+let maps = require("./maps");
 //Create the map
 
+let story = 10;
 var map = [];
 
 
@@ -105,6 +106,7 @@ let ainmBtn = document.querySelector('#ainmBtn'); //player name
 var tileworld = document.querySelector('#tileworld');
 var mapdata = document.querySelector('#mapdata');
 var curSiosArCo = document.querySelector('#curSiosArCo');
+
 //Event Listeners:
 joinTeam.addEventListener("click",joinTeamHandler);
 fwdBtn.addEventListener("click", fwdBtnHandler, false);
@@ -201,10 +203,11 @@ function updateCountyMain(dist){
         contae.style.display='none';
         inputName.style.display='none';
         curSiosArCo.style.display='none';
+        mapdata.innerHTML= maps[countyId];
         tileworld.style.display='inline';
         tileworld.style.animation='delay-fade-in 2s';
-        
-    
+       console.log("joinTeamHandler hello", mapdata.innerHTML); 
+   //alert("Hup! Deireadh le chuid a h-aon.");
     }
 
     function noPlayHandler(){
@@ -317,7 +320,8 @@ function playGame()
 {
 
     narrate(story); 
-    output2.className='fadeText';
+    console.log("hello narrate!");
+    //output2.className='fadeText';
     render();
     //using story to trigger game events
     //
@@ -481,7 +485,7 @@ function render()
 {
     //Render the location
     output.innerHTML = map[mapLocation];
-    image.src = "../images/" + images[mapLocation];
+   // image.src = "../images/" + images[mapLocation];
 
     //Display an item if there's one in this location
     //1. Loop through all the game items
