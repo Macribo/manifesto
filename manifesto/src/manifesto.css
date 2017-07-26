@@ -15,6 +15,14 @@ input,textarea{
     font-family: INFO56_0;
 
 }
+
+#langLevel{
+top:400px;
+left:0px;
+
+}
+
+
 @font-face 
 {
   font-family: INFO56_0;
@@ -400,7 +408,6 @@ animation: fade-in 2s;
     top:0px;
 display:none;}
 #mapdata {
-   display: none;
 }
 #viewport {
     background-color: blue;

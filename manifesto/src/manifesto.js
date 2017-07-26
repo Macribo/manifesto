@@ -1,5 +1,9 @@
 //jshint esversion:6
 
+const Player = require("./player");
+const Camera = require("./camera");
+
+
 let badgeSelectorL = require("./badge-selector-l");
 let badgeSelectorR = require("./badge-selector-r");
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
@@ -7,7 +11,7 @@ let countyNames = require("./county-names");
 let maps = require("./maps");
 //Create the map
 
-let story = 10;
+let story = 1;
 var map = [];
 
 
@@ -74,6 +78,9 @@ var action = "";
 
 //An array of items the game understands
 //and a variable to store the current item
+
+
+
 var itemsIKnow = ["flute", "stone", "sword"];
 var item = "";
 var imreoir = document.querySelector('#imreoir');
@@ -103,7 +110,7 @@ var audioAbattoir = document.querySelector('#abattoir');
 fwdBtn.style.cursor = "pointer";
 let countyMain = document.querySelector('#countyMain');
 let ainmBtn = document.querySelector('#ainmBtn'); //player name
-var tileworld = document.querySelector('#tileworld');
+var gameMap = document.querySelector('#tileworld');
 var mapdata = document.querySelector('#mapdata');
 var curSiosArCo = document.querySelector('#curSiosArCo');
 
@@ -148,36 +155,7 @@ function bckBadgeHandler(){
   // console.log("to be dimmed.") }
 }
     function playHandler(){
-       if (story===11){  //player enters name
-            output.innerHTML='Tríal';
-           narrate(12);
-           bckBtn.style.display='none';
-           noPlayBtn.style.display='none';
-           playBtn.style.display='none';
-           audioAbattoir.play();
-           htmla.style.backgroundImage ="url('../images/bgDark.png')"; 
-           inputElements.style.visibility='visible'; 
-           inputElements.style.display='block'; 
-       }
-      if (story===13){ badgeSelectorL(100); //player selects team
-         countyMain.style.top='50px';
-         narrate(13);
-         badgeSelectorR(100);
-         inputName.style.display='none';
-         inputLabel.style.display='none';
-         ainmBtn.style.display='none';
-         countyBtnRight.style.animation='fade-in 1s forwards';
-         rightPanel.style.display='inline';    
-         countyBtnRight.style.animation='fade-in 1s forwards';
-         countyBtnRight.style.display='inline';
-         countyBtnLeft.style.animation='fade-in 1s forwards';
-         countyBtnLeft.style.display='inline';
-        console.log("Hello", ainm);
-        //imreoir.style.display='block';
-          joinTeam.style.display='inline';
-        joinTeam.style.animation='delay-fade-in 5s';
-    }
-    }
+    window.location.replace("file:///home/ribo/dev/cq3/manifesto/src/naContae/naContae.html");}
     var coPos = 1; //county Position
    
 function updateCountyMain(dist){
@@ -191,25 +169,35 @@ function updateCountyMain(dist){
     countyMain.style.backgroundPositionX = coPos+"px";
     }
     function joinTeamHandler(){
+       // mapdata.innerHTML= maps[countyId];
+       // console.log(mapdata.innerHTML);
         inputElements.style.display='none';
         countyMain.style.animation='fade-out 2s forwards';
-        console.log("team joined");
+        console.log("team joined",contae[countyId]);
         countyBtnRight.style.display='none';
         countyBtnLeft.style.display='none';
         joinTeam.style.display='none';
         imreoir.style.display='none';
         output.style.display='none';
-        output2.style.display='none';
+      
+        //  output2.style.display='none';
+      //output new position and text:
+        
         contae.style.display='none';
         inputName.style.display='none';
         curSiosArCo.style.display='none';
-        mapdata.innerHTML= maps[countyId];
-        tileworld.style.display='inline';
-        tileworld.style.animation='delay-fade-in 2s';
-       console.log("joinTeamHandler hello", mapdata.innerHTML); 
+        //gameMap.style.display='inline';
+        gameMap.style.animation='delay-fade-in 2s';
+//console.log("Heloo fresh new code",county);
+       //console.log("joinTeamHandler hello", mapdata.innerHTML); 
    //alert("Hup! Deireadh le chuid a h-aon.");
+    
+        levelSelect();
     }
+    function levelSelect(){
+console.log("hello levelSelect");
 
+}
     function noPlayHandler(){
             alert("Slán and thank you for visiting.");
 
@@ -538,3 +526,141 @@ contae.innerHTML = countyNames[countyId];
     console.log("current Co id:", countyId );
 }
 
+
+/// can run tileworld from here?
+//
+//
+//
+//
+
+
+
+
+let county =document.querySelector("#mapdata");
+function mapSymbolToTerrainType(mapSymbol) {
+    return {
+        '~': 1,//water
+        '.': 0, //Grassland
+        '*': 5,//paths
+        '|': 2,//forests
+        '^': 3,//hills
+        'M': 4,//mountains
+        '>': 1,//riverwater
+        '8': 8, //Atlantic water
+        '9':9,//Atlantic waves
+        '0':10,//Atlantic waves
+        '7':11,//Atlantic waves
+        't': 6,//border
+        'z': 7, //surf
+        'x': 12//unreachable (grassland) 
+
+
+
+    }[mapSymbol];// || 0; property lookup in object literal || 0
+}
+const tileSize = 32;
+const vw = 32 * 32+ 10;
+const vh =25 * 32 + 5;
+let grid = document.querySelector('#grid');
+
+let camera = Camera(tileSize, county, grid, vw, vh, mapSymbolToTerrainType);
+
+let playerElement = document.querySelector('#player');
+let player = Player();
+
+camera.addSprite({
+    updateScreenPosition: function(x, y) {
+        playerElement.style.left = x + "px";
+        playerElement.style.top = y + "px";
+    },
+    getWorldPosition: function() {
+        return player.getPosition();
+    }
+});
+
+//grid offset x and y
+let ox=0;
+let oy=0;
+
+function timerLoop() {
+    let playerPosition = player.getPosition();
+    ox = playerPosition.x - (vw/2);
+    oy = playerPosition.y - (vh/2);
+    camera.setOffsets(ox, oy);
+    requestAnimationFrame(timerLoop);
+}
+
+requestAnimationFrame(timerLoop);
+/*
+function createWorldMap(map){
+    let mapHeight = map.length;
+    let mapWidth = map[0].length; // we assume a rectangular map
+    console.log(mapWidth, mapHeight);
+    for(let tileY = 0; tileY < mapHeight; tileY++){ 
+        for(let tileX = 0; tileX < mapWidth; tileX++){
+            let mapSymbol = map[tileY][tileX];   //tileY gives us the map line, tileX gives the character position    
+            let terrainType = mapSymbolToTerrainType(mapSymbol);
+            if (terrainType !== undefined) {
+                let terrainVariation = Math.floor(Math.random()*3);
+                let tile = createTile(tileX,tileY,terrainType,terrainVariation);
+                document.querySelector('body').appendChild(tile);
+            }
+        }
+    }
+}
+*/
+
+var inventory = document.querySelectorAll("#inventory>*");
+inventory = Array.prototype.slice.call(inventory);
+console.log(inventory);
+function dropItem() {
+    itemElement = inventory.shift(); //inventory 0 and remove inventory 0;
+    dropItemElement(itemElement);
+}
+
+function dropItemElement(itemElement){
+    const position = player.getPosition();
+    
+    console.log(`data-x="${position.x}" data-y="${position.y}"`);
+    camera.addSprite({
+        updateScreenPosition: function(x, y) {
+            itemElement.style.left = x + "px";
+            itemElement.style.top = y + "px";
+        },
+        getWorldPosition: function() {
+            return position;
+        }
+    });
+
+}
+
+window.addEventListener("keydown", function(event){
+   //  console.log('keycode', event.keyCode);
+    
+    const step = 4;
+    switch(event.keyCode){
+        case 38:  //up
+            player.move(0, -step);
+            break;
+        case 40:  //down
+            player.move(0, step);
+            break;
+        case 39:  //right
+            player.move(step,0);
+            break;
+        case 37:  //left
+            player.move(-step,0);
+            break;
+
+        case 68: //d key
+            dropItem();
+            break;
+    }
+
+    event.preventDefault();
+});
+
+//new function for placing locations:
+//go through inventory items.
+//if inv item has data-x and data-y attributes, (look up getAttribute on MDN)
+//add sprite at that location.

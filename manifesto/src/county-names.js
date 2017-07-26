@@ -6,7 +6,7 @@ module.exports = [
     'Co. Lú',
     'Co. Loch Garman',
     'Co. Luimnigh',
-    'Co. Bhaile Átha Chliath',
+    'Co. Átha Chliath',
     'Co. Liatroma',
     'Co. Aontroma',
     'Co. Dhún na nGall',
