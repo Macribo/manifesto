@@ -1,15 +1,6 @@
 //jshint esversion:6
 
-const Player = require("./player");
-const Camera = require("./camera");
-
-
-let badgeSelectorL = require("./badge-selector-l");
-let badgeSelectorR = require("./badge-selector-r");
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
-let countyNames = require("./county-names");
-let maps = require("./maps");
-//Create the map
 
 let story = 1;
 var map = [];
@@ -17,15 +8,15 @@ var map = [];
 
 
 
-map[0] = "An ol stone keep.";
-map[1] = "A deep well.";
-map[2] = "A sunny glade.";
-map[3] = "Tríal";
+map[0] = "";
+map[1] = "";
+map[2] = "";
+map[3] = "";
 map[4] = "Manifesto";
-map[5] = "An ancient gate.";
-map[6] = "The edge of a river.";
-map[7] = "A lonely wooden bench.";
-map[8] = "An isolated cottage. Faint music comes from inside.";
+map[5] = "";
+map[6] = "";
+map[7] = "";
+map[8] = "";
 
 //Set the player's start location
 var mapLocation = 4;
@@ -43,54 +34,19 @@ images[6] = "TighNuaAnDháPhota.png";
 images[7] = "MainistirNaCorann.png";
 images[8] = "Skibbereen.png";
 
-//Set the blocked path messages
 
-//Set the blocked path messages
-var helpMessages = [];
-
-helpMessages[0] = "";
-helpMessages[1] = "I wonder if you could 'use' something to find out how deep the well is?";
-helpMessages[2] = "";
-helpMessages[3] = "Maybe if you had a sword, you could slay the dragon?";
-helpMessages[4] = "";
-helpMessages[5] = "";
-helpMessages[6] = "";
-helpMessages[7] = "";
-helpMessages[8] = "This seems like a nice place for music.";
-
-//Create the objects and set their locations
-var items = ["stone"];
-var itemLocations = [6];
-
-//An array to store what the player is carrying
-var backpack = [];
 
 
 //Initialize the gameMessage
 var gameMessage = ``;
 
-//Create an array of actions the game understands
-//and a variable to store the current action
-var actionsIKnow 
-    = ["north","east", "south", "west", 
-        "help", "take", "use", "drop"];
-var action = "";
-
-//An array of items the game understands
-//and a variable to store the current item
-
-
-
-var itemsIKnow = ["flute", "stone", "sword"];
-var item = "";
+//Query Selectors:
 var imreoir = document.querySelector('#imreoir');
 var pAinm=document.querySelector('#pAinm');
 
-//Query Selectors:
 var joinTeam = document.querySelector("#joinTeam");
 var image = document.querySelector("img");
 
-//let playerName = 'Imreoir_1';
 let rightPanel = document.querySelector("#right-panel");
 let contae = document.querySelector("#contae");
 
@@ -115,14 +71,12 @@ var mapdata = document.querySelector('#mapdata');
 var curSiosArCo = document.querySelector('#curSiosArCo');
 
 //Event Listeners:
-joinTeam.addEventListener("click",joinTeamHandler);
 fwdBtn.addEventListener("click", fwdBtnHandler, false);
 fwdBtn.addEventListener("mousedown", mousedownHandler, false);
 fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
 bckBtn.addEventListener("click", bckBtnHandler, false);
 playBtn.addEventListener("click", playHandler, false);
 noPlayBtn.addEventListener("click", noPlayHandler, false);
-ainmBtn.addEventListener("click", ainmHandler);
 
 
 
@@ -132,79 +86,14 @@ render();
 
 
 
-countyBtnLeft.addEventListener("click",bckBadgeHandler, false);
-countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
 //Event Handlers
-var ainm='bob';
-function fwdBadgeHandler(){
-    updateCountyMain(-1);
-    console.log("clicked");
-    updateCoNameR();
-    
-}
-
-//deleted keypressHandler - may cause bugs later?
-function bckBadgeHandler(){
-  // countyMain.style.animation="fade-out .25s";
-    updateCountyMain(1);
-  //  countyMain.style.opacity=1';
-    updateCoNameL();
-    //    console.log("clicked <-");
-   // if (countyMain.style.opacity ===1){
- // countyMain.style.animation='dim .25s forwards';
-  // console.log("to be dimmed.") }
-}
     function playHandler(){
-    window.location.replace("file:///home/ribo/dev/cq3/manifesto/src/naContae/naContae.html");}
-    var coPos = 1; //county Position
+    window.location.replace("file:///home/ribo/dev/cq3/manifesto/src/naContae/naContae.html");
+    }
    
-function updateCountyMain(dist){
-        dist += dist*538; //#countyMain {width:539} 
-        coPos += dist;
-           // if (coPos> 18865){coPos =0;}
-           // if (coPos<0){coPos =18865;}
-
-    console.log("coMain bgposX = ", coPos);
-
-    countyMain.style.backgroundPositionX = coPos+"px";
-    }
-    function joinTeamHandler(){
-       // mapdata.innerHTML= maps[countyId];
-       // console.log(mapdata.innerHTML);
-        inputElements.style.display='none';
-        countyMain.style.animation='fade-out 2s forwards';
-        console.log("team joined",contae[countyId]);
-        countyBtnRight.style.display='none';
-        countyBtnLeft.style.display='none';
-        joinTeam.style.display='none';
-        imreoir.style.display='none';
-        output.style.display='none';
-      
-        //  output2.style.display='none';
-      //output new position and text:
-        
-        contae.style.display='none';
-        inputName.style.display='none';
-        curSiosArCo.style.display='none';
-        //gameMap.style.display='inline';
-        gameMap.style.animation='delay-fade-in 2s';
-//console.log("Heloo fresh new code",county);
-       //console.log("joinTeamHandler hello", mapdata.innerHTML); 
-   //alert("Hup! Deireadh le chuid a h-aon.");
-    
-        levelSelect();
-    }
-    function levelSelect(){
-console.log("hello levelSelect");
-
-}
     function noPlayHandler(){
             alert("Slán and thank you for visiting.");
 
-    }
-    function ainmHandler(){
-    story=13;
-   playHandler();
     }
 
     function mousedownHandler(){
@@ -253,10 +142,21 @@ console.log("hello levelSelect");
         playGame();
     }
 
+function playGame()
+{
+
+    narrate(story); 
+    console.log("hello narrate!");
+    render();
+    progressStory(story);
+    console.log(story);
+}
+
     function progressStory(){
         if(story>1){
         bckBtn.style.display='inline';
-        bckBtn.style.animation='delay-fade-in 1s';
+        console.log("hello bckBtn?");
+            bckBtn.style.animation='delay-fade-in 1s';
         fwdBtn.style.animation='slide-button-right 1s forwards';
     }
     else
@@ -276,7 +176,6 @@ if (story===11){
         fwdBtn.style.display='none';
         playBtn.style.animation='fade-in 1s';
         noPlayBtn.style.animation='fade-in 1s';
-        console.log("yo 11"); 
         console.log("story === 11");   
 }
  
@@ -290,184 +189,10 @@ if (story===11){
     }
 
 
-   if(story === 12){ //player wants to play
-        bckBtn.style.animation='fade-out 0.25s forwards';
-        playBtn.style.animation='fade-out 0.5s forwards';
-        noPlayBtn.style.animation='fade-out 0.5s forwards';
-        bckBtn.style.display='none';
-        playBtn.style.display='none';
-        noPlayBtn.style.display='none';
-    }
 
 }
 
 
-
-
-function playGame()
-{
-
-    narrate(story); 
-    console.log("hello narrate!");
-    //output2.className='fadeText';
-    render();
-    //using story to trigger game events
-    //
-    progressStory(story);
-    console.log(story);
-}
-function takeItem()
-{
-    //Find the index number of the item in the items array
-    var itemIndexNumber = items.indexOf(item);
-
-    //Does the item exist in the game world
-    //and is it at the player's current location?
-    if(itemIndexNumber !== -1 && itemLocations[itemIndexNumber] === mapLocation) {
-        gameMessage = "You take the " + item + ".";
-
-        //Add the item to the player's backpack 
-        backpack.push(item);
-
-        //Remove the item from the game world
-        items.splice(itemIndexNumber, 1);
-        itemLocations.splice(itemIndexNumber, 1);
-
-        //Display in the console for testing
-        console.log("World items: " + items);
-        console.log("backpack items: " + backpack);
-    }
-    else
-    {
-        //Message if you try and take an item
-        //that isn't in the current location
-        gameMessage = "You can't do that.";
-    }
-}
-
-function dropItem()
-{
-    //Try to drop the item only if the backpack isn't empty
-    if(backpack.length !== 0)
-    {
-        //Find the item's array index number in the backpack
-        var backpackIndexNumber = backpack.indexOf(item);
-
-        //The item is in the backpack if backpackIndex number isn't -1
-        if(backpackIndexNumber !== -1)
-        {
-
-            //Tell the player that the item has been dropped
-            gameMessage = "You drop the " + item + ".";
-
-            //Add the item from the backpack to the game world 
-            items.push(backpack[backpackIndexNumber]);
-            itemLocations.push(mapLocation); 
-
-            //Remove the item from the player's backpack 
-            backpack.splice(backpackIndexNumber, 1);
-        }
-        else
-        {
-            //Message if the player tries to drop
-            //something that's not in the backpack
-            gameMessage = "You can't do that.";
-        }
-    }
-    else
-    {
-        //Message if the backpack is empty
-        gameMessage = "You're not carrying anything.";
-    }
-}
-
-function useItem()
-{
-    //1. Find out if the item is in the backpack
-
-    //Find the item's array index number in the backpack
-    var backpackIndexNumber = backpack.indexOf(item);
-
-    //If the index number is -1, then it isn't in the backpack.
-    //Tell the player that he or she isn't carrying it.
-    if(backpackIndexNumber === -1)
-    {
-        gameMessage = "You're not carrying it.";
-    }
-
-    //If there are no items in the backpack, then
-    //tell the player the backpack is empty
-    if(backpack.length === 0)
-    {
-        gameMessage += " Your backpack is empty";
-    }
-
-    //2. If the item is found in the backpack
-    //figure out what to do with it
-    if(backpackIndexNumber !== -1)
-    {
-        switch(item)
-        {
-            case "flute":
-                if(mapLocation === 8)
-                {
-                    gameMessage = "Beautiful music fills the air.";
-                    gameMessage += "A wizend old man steps outside "; 
-                    gameMessage += "and hands you a sword!";
-
-                    //Add the sword to the world
-                    items.push("sword");
-                    itemLocations.push(mapLocation);
-
-                    //Reset the location's help message
-                    helpMessages[mapLocation] = "";
-                }
-                else
-                {
-                    gameMessage = "You try and play the flute "; 
-                    gameMessage += "but it makes no sound here.";
-                }
-                break;
-
-            case "sword":
-                if(mapLocation === 3)
-                {
-                    gameMessage = "You swing the sword and slay the dragon! ";
-                    gameMessage += "You've saved the forest of Lyrica!";
-
-                    //Reset the location's help message
-                    helpMessages[mapLocation] = "";  
-                }
-                else
-                {
-                    gameMessage = "You swing the sword listlessly.";
-                }
-                break;
-
-            case "stone":
-                if(mapLocation === 1)
-                {
-                    gameMessage = "You drop the stone in the well.";
-                    gameMessage += " A magical flute appears!";
-
-                    //Remove the stone from the player's backpack 
-                    backpack.splice(backpackIndexNumber, 1);
-
-                    //Add the flute to the world
-                    items.push("flute");
-                    itemLocations.push(mapLocation);
-
-                    //Reset the location's help message
-                    helpMessages[mapLocation] = "";
-                }
-                else
-                {
-                    gameMessage = "You fumble with the stone in your pocket.";
-                }
-                break;			          
-        }
-    }
-}
 
 function render()
 {
@@ -475,23 +200,7 @@ function render()
     output.innerHTML = map[mapLocation];
    // image.src = "../images/" + images[mapLocation];
 
-    //Display an item if there's one in this location
-    //1. Loop through all the game items
-    for(var i = 0; i < items.length; i++)
-    {
-        //Find out if there's an item at this location
-        if(mapLocation === itemLocations[i])
-        {
-            //Display it
-            output.innerHTML += "<br>You see a <strong>" + items[i] + "</strong> here.";
-        }
-    }
 
-    //Display the player's backpack contents
-    if(backpack.length !== 0)
-    {
-        output.innerHTML += "<br>You are carrying: " + backpack.join(", ");  
-    }
 
     //Display the game message
 
@@ -504,163 +213,3 @@ function render()
    // input.value = "";
 }
 
-let countyId = 0;
-//show county name
-function updateCoNameR(){
-    countyId = (countyId + 1) ;
-
-    if(countyId===35 ){
-        countyId = 0;}
-
-    contae.innerHTML = countyNames[countyId];
-
-    console.log("current Co id:", countyId, countyNames[countyId] );
-}
-function updateCoNameL(){
-    countyId = (countyId - 1);
-    if(countyId === -1){
-        
-        countyId = 34;}
-contae.innerHTML = countyNames[countyId];
-
-    console.log("current Co id:", countyId );
-}
-
-
-/// can run tileworld from here?
-//
-//
-//
-//
-
-
-
-
-let county =document.querySelector("#mapdata");
-function mapSymbolToTerrainType(mapSymbol) {
-    return {
-        '~': 1,//water
-        '.': 0, //Grassland
-        '*': 5,//paths
-        '|': 2,//forests
-        '^': 3,//hills
-        'M': 4,//mountains
-        '>': 1,//riverwater
-        '8': 8, //Atlantic water
-        '9':9,//Atlantic waves
-        '0':10,//Atlantic waves
-        '7':11,//Atlantic waves
-        't': 6,//border
-        'z': 7, //surf
-        'x': 12//unreachable (grassland) 
-
-
-
-    }[mapSymbol];// || 0; property lookup in object literal || 0
-}
-const tileSize = 32;
-const vw = 32 * 32+ 10;
-const vh =25 * 32 + 5;
-let grid = document.querySelector('#grid');
-
-let camera = Camera(tileSize, county, grid, vw, vh, mapSymbolToTerrainType);
-
-let playerElement = document.querySelector('#player');
-let player = Player();
-
-camera.addSprite({
-    updateScreenPosition: function(x, y) {
-        playerElement.style.left = x + "px";
-        playerElement.style.top = y + "px";
-    },
-    getWorldPosition: function() {
-        return player.getPosition();
-    }
-});
-
-//grid offset x and y
-let ox=0;
-let oy=0;
-
-function timerLoop() {
-    let playerPosition = player.getPosition();
-    ox = playerPosition.x - (vw/2);
-    oy = playerPosition.y - (vh/2);
-    camera.setOffsets(ox, oy);
-    requestAnimationFrame(timerLoop);
-}
-
-requestAnimationFrame(timerLoop);
-/*
-function createWorldMap(map){
-    let mapHeight = map.length;
-    let mapWidth = map[0].length; // we assume a rectangular map
-    console.log(mapWidth, mapHeight);
-    for(let tileY = 0; tileY < mapHeight; tileY++){ 
-        for(let tileX = 0; tileX < mapWidth; tileX++){
-            let mapSymbol = map[tileY][tileX];   //tileY gives us the map line, tileX gives the character position    
-            let terrainType = mapSymbolToTerrainType(mapSymbol);
-            if (terrainType !== undefined) {
-                let terrainVariation = Math.floor(Math.random()*3);
-                let tile = createTile(tileX,tileY,terrainType,terrainVariation);
-                document.querySelector('body').appendChild(tile);
-            }
-        }
-    }
-}
-*/
-
-var inventory = document.querySelectorAll("#inventory>*");
-inventory = Array.prototype.slice.call(inventory);
-console.log(inventory);
-function dropItem() {
-    itemElement = inventory.shift(); //inventory 0 and remove inventory 0;
-    dropItemElement(itemElement);
-}
-
-function dropItemElement(itemElement){
-    const position = player.getPosition();
-    
-    console.log(`data-x="${position.x}" data-y="${position.y}"`);
-    camera.addSprite({
-        updateScreenPosition: function(x, y) {
-            itemElement.style.left = x + "px";
-            itemElement.style.top = y + "px";
-        },
-        getWorldPosition: function() {
-            return position;
-        }
-    });
-
-}
-
-window.addEventListener("keydown", function(event){
-   //  console.log('keycode', event.keyCode);
-    
-    const step = 4;
-    switch(event.keyCode){
-        case 38:  //up
-            player.move(0, -step);
-            break;
-        case 40:  //down
-            player.move(0, step);
-            break;
-        case 39:  //right
-            player.move(step,0);
-            break;
-        case 37:  //left
-            player.move(-step,0);
-            break;
-
-        case 68: //d key
-            dropItem();
-            break;
-    }
-
-    event.preventDefault();
-});
-
-//new function for placing locations:
-//go through inventory items.
-//if inv item has data-x and data-y attributes, (look up getAttribute on MDN)
-//add sprite at that location.

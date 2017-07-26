@@ -1,12 +1,12 @@
-html
-{
-   font-family: computer_pixel-7;
-  color: #fff;  
+
+html {
+  font-family: computer_pixel-7;
+  color: #fff;
   font-size: 16px;
   padding: 0px;
   margin: 0px;
   background-image:url('../images/bg.png');
- transition: 1s background-image ease-out;
+  transition: 1s background-image ease-out;
 }
 input,textarea{
     font-size:40px;
@@ -15,26 +15,18 @@ input,textarea{
     font-family: INFO56_0;
 
 }
-
-#langLevel{
-top:400px;
-left:0px;
-
-}
-
-
-@font-face 
+@font-face
 {
-  font-family: INFO56_0;
-  src: url("../fonts/INFO56_0.ttf");
-}
-
-
-@font-face 
+    font-family: INFO56_0;
+    src: url("../fonts/INFO56_0.ttf");
+}  
+  
+@font-face
 {
-  font-family: computer_pixel-7;
-  src: url("../fonts/computer_pixel-7.ttf");
+    font-family: computer_pixel-7;
+    src: url("../fonts/computer_pixel-7.ttf");
 }
+
 
 /*flex-boxes*/
 
@@ -84,12 +76,13 @@ h1
 
 
 #output{
-  text-align: center;
+  text-align: left;
   color:#730a0a;
-  margin: 0px auto;
-  font-size: 90px;
+  margin: 50px auto;
+  font-size: 65px;
  z-index: 90;  
-  }
+
+ }
 #output2
 {
  font-family: INFO56_0;
@@ -98,15 +91,6 @@ h1
   font-size: 39px;
   z-index:100;
 }
-
-#mainText{
-    position:absolute;
-    top:3px;
-    left: 450px;
-    width: 800px;
-}
-
-
 img
 {
   margin: 0px auto;
@@ -124,7 +108,7 @@ button
   height: 70px;
   width: 120px;
   
-  font-family: computer_pixel-7  ;
+  font-family: computer_pixel-7;
   font-size: 50px;
   color: #fff;
   border: 1px solid #000;
@@ -144,8 +128,6 @@ button
 }
 #fwdBtn{
     animation: delay-fade-in 3s;
-	
-
     }
 
 
@@ -172,29 +154,19 @@ button
   left: 176px;
  
 }
-#countyBtnLeft {
-  position:relative;
-  display:none;
-  top:-40px;
-  left:-10%;
-  height: 60px;
-  width: 60px;
-  border-radius: 60px;
- background-color: green;
- z-index:75;
-}
-#countyBtnRight {
-    position:relative;
-  display:none;
-  top:-40px;
-  left: 94%;
-  height: 60px;
-  width: 60px;
-  border-radius: 60px;
-  background-color:green;
-  z-index:75;
-}
 
+/**STATUE STUFF*/
+
+#shield-holder{
+
+    position:absolute;
+    width:257px;
+    height:420px;
+    background-image:url("../images/dealbh.png");
+    bottom:6px;
+    left:4px;
+    z-index:10;
+}
 
 #bearla{
     position:absolute;
@@ -208,6 +180,20 @@ button
     line-height: 27px;
     word-spacing:-1px;
 }
+
+#badge{
+    position:absolute;
+    top:90px;
+    left:158px;
+    background-image:url("../images/badges.png");
+    z-index:20;
+    opacity:1;
+    width:80px;
+    height:80px
+
+}
+
+
 /*PLAYER INPUT ELEMENTS*/
 
 
@@ -229,54 +215,7 @@ button
 
 }
 
-#imreoir{
 
-    position:absolute;
-    top:-190px;
-    left:45%;
-    height:156px;
-    width:111px;
-    z-index:55;
-    background-image:url("../images/imreoir.gif");
-
-}
-/*
-#pName{
-    display:none;
-    position:absolute;
-    color:green;
-    font-size: 46px;
-    text-align:center;
-    top: 334px;
-    left:479px;
-    width: 333px;
-    z-index:32;
-    background:black;
-    border: 5px solid gray;
-}
-*/
-#inputName{
-position:relative;
-left:1px;
-top:-56px;
-width: 300px;
-height:50px;
-background:rgba(5,5,5,0.3);
-
-}
-#joinTeam{
-  display:none;
-  background-color: #207720;
-  top:40px;
-  left:115px;
-	
-}
-::placeholder{
-   color:green;
-  font-size: 35px; 
- font-family: INFO56_0;
- text-align:center;
-}
 
 
 #inputLabel{
@@ -289,32 +228,15 @@ background:rgba(5,5,5,0.3);
     left:-5px;
 
 }
-#ainmBtn{
-position:absolute;
-background-color: #207720;
-color:#ffe959;
-font-size:46;
-text-align:center;
-top:32px;
-left:197px;
 
-
-}
-
-
-
-/*PANELS*/
-
-#left-panel
-{
-  margin:20px;
-  width: 350px;
-  height: 423px;
-  position: relative;
-  background-image: url("../images/bg2.png");
-  background-repeat: no-repeat;
-  border:5px solid gray;
-  
+#left-panel{
+    margin:20px;
+    width:350px;
+    height: 423px;
+    position: relative;
+    background-image: url("../images/bg2.png");
+    background-repeat: no-repeat;
+    border: 5px solid gray;
 }
 
 #middle-panel{
@@ -322,71 +244,7 @@ padding-right: 20px;
 padding-left: 40px;
 }
 
-#right-panel
-{
-    display: none;
-    right:40px;
-    margin-right:15px;
-    margin-top:15px;
-    width:350px;
-    height:423px;
-    position: absolute;
-   /* background-image: url("../images/bg2.png");*/
-    background-repeat: no-repeat;
-    
-}
 
-#location{
-    position: absolute;
-    bottom:158px;
-    left: 22px;
-    opacity: 0;
-}
-#shield-holder{
-    position:absolute;
-    width:257px;
-    height:420px;
-    background-image:url("../images/dealbh.png");
-    bottom: 6px;
-    left:4px;
-    z-index:10;
-}
-#countyMain {
-    position:absolute;
-    top:650px;
-    left:660px;
-    background-image:url("../images/countyMain.png");
-    z-index:0;
-    opacity:.25;
-    width:539px;
-    height:383px;
-}
-#badge{
-    position:absolute;
-    top:90px;
-    left:158px;
-    background-image:url("../images/badges.png");
-    z-index: 20;
-    opacity:1;
-    width:80px;
-    height:80px;
-}
-
-#contae{
-    position:relative;
-    text-align: left;
-    width: 601px;
-    left:px;
-    padding-left:0px; 
-    font-family:INFO56_0;
-    bottom: 322px;
-    font-size:40px;
-}
-
-#curSiosArCo{
-bottom:130px;
-left:0px
-}
 
 .item{
 }
@@ -398,51 +256,6 @@ left:0px
  .fadeText{
 animation: fade-in 2s;
  } 
-
-
-/**
- TILEWORLD DATA
-  **/
-#tileworld{
-    left:0px;
-    top:0px;
-display:none;}
-#mapdata {
-}
-#viewport {
-    background-color: blue;
-    opacity: 0.1;
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    z-index: 10;
-    width: 10px;
-    height: 10px;
-}
-.tile {
-    width:32px; 
-    height:32px;
-    background-image: url("../images/tileset2.png");
-    position: absolute;
-
-}
-#grid {
-    position: absolute;
-}
-#player{
-    position: absolute;            
-    height: 49px;
-    width: 32px;
-    background-image:url("../images/player.png");
-    z-index: 31;
-}
-
-#inventory{display:none;
-}
-#inventory>*{
-    position: absolute;
-}
-
 
 @keyframes delay-fade-in{
     0% {opacity:0;}
