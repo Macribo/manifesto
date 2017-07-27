@@ -23,19 +23,29 @@ html {
 
 /*flex-boxes*/
 
-.parent
-{
-    display: flex;
-    flex-direction:row;
-    align-content:center;
-    justify-content: space-between;
-}
 
 .item {
-
 }
 /************/
 
+
+
+#left-panel{
+    margin:20px;
+    width:350px;
+    height: 423px;
+    position: relative;
+    background-image: url("../images/bg2.png");
+    background-repeat: no-repeat;
+    border: 5px solid gray;
+}
+
+#middle-panel{
+margin-left:360px;
+min-width:700px;
+padding-right:0px;
+padding-left:100px;
+}
 span.withTitle {
     font-size: 30px;
 }
@@ -48,6 +58,7 @@ h1
   padding-bottom: 0px;
   padding-top: 20px;
   font-weight: normal;
+
   margin-bottom:0px ;
   margin-top:0px;
 }
@@ -69,23 +80,27 @@ h1
 
 
 #output{
- left:50%;
+ top: -39px;
+ height:0px;
+ line-height:0px;
+ position:relative;
  text-align:center;
- position:absolute; 
-  color:#730a0a;
-  margin: 50px auto;
-  font-size: 65px;
- padding:100px;
- margin:100px
- }
+ 
+ color:#730a0a;
+ margin-left: 0px auto;
+ font-size: 85px;
+}
 #output2
 {
- font-family: INFO56_0;
-  text-align:center;
-  margin: 50px auto;
-  font-size: 39px;
-  padding: 100px;
+    position:relative;
+    top:-68px;
+font-family: INFO56_0;
+margin:0px auto;
+margin-top: 0px;
+font-size:39px;
+
 }
+
 img
 {
   margin: 0px auto;
@@ -97,58 +112,46 @@ img
 button
 {
   background-color: #505050;
-  position: absolute;
-  top:491px;
-  left: 163px;
   height: 70px;
   width: 120px;
   
   font-family: computer_pixel-7;
   font-size: 50px;
   color: #fff;
-  border: 1px solid #000;
 
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 
-/*	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;	
-
-	-webkit-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
-	-moz-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
-	box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
-*/	
+	
 }
 #fwdBtn{
+  position:relative;
+     
+    left:-42px;
+    top:375px;
     animation: delay-fade-in 3s;
     }
 
 
-
-
 #bckBtn{
     display:none;
-    left:80px;
+  position:relative;
+    left:-122px;
+    top:307px;
+
 }
 
 #play {
   display:none;
+  position:relative;
   background-color: #207720;
-  top:460px;
-  left: 176px;
-	
+  top:240px;
+  left:40px;
+z-index:20;	
 }
 
 
-#noPlay {
-  display:none;
-  background-color:#730a0a;
-  top:544px;
-  left: 176px;
- 
-}
 
 /**STATUE STUFF*/
 
@@ -212,25 +215,7 @@ button
 
 
 
-#left-panel{
-    margin:20px;
-    width:350px;
-    height: 423px;
-    position: relative;
-    background-image: url("../images/bg2.png");
-    background-repeat: no-repeat;
-    border: 5px solid gray;
-}
 
-#middle-panel{
-padding-right: 0px;
-padding-left: 0px;
-}
-
-
-
-.item{
-}
 
 
 
@@ -260,13 +245,13 @@ animation: fade-in 2s;
 }
 
 @keyframes slide-button-right{
-    0%{left:163px;}
-    100%{left: 229px;}
+    0%{left:-42px;}
+    100%{left: 37px;}
     
 }
 @keyframes slide-button-left{
-    0%{left:203px;}
-    100%{left: 163px;}
+    0%{left:37px;}
+    100%{left: -42px;}
 } 
 @keyframes county-select-mode{
 0%{opacity: 0;}

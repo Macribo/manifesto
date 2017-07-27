@@ -58,7 +58,6 @@ var fwdBtn = document.querySelector("#fwdBtn");
 var bckBtn = document.querySelector('#bckBtn'); 
 
 var playBtn = document.querySelector('#play');
-var noPlayBtn = document.querySelector('#noPlay');
 var countyBtnRight = document.querySelector('#countyBtnRight');
 var countyBtnLeft = document.querySelector('#countyBtnLeft');
 var htmla=document.querySelector('html');
@@ -76,7 +75,6 @@ fwdBtn.addEventListener("mousedown", mousedownHandler, false);
 fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
 bckBtn.addEventListener("click", bckBtnHandler, false);
 playBtn.addEventListener("click", playHandler, false);
-noPlayBtn.addEventListener("click", noPlayHandler, false);
 
 
 
@@ -91,10 +89,6 @@ render();
     window.location.replace("file:///home/ribo/dev/cq3/manifesto/src/naContae/naContae.html");
     }
    
-    function noPlayHandler(){
-            alert("Slán and thank you for visiting.");
-
-    }
 
     function mousedownHandler(){
         fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
@@ -170,12 +164,10 @@ function playGame()
     }
     //end of manifesto - begin game y/n?
 if (story===11){
-        noPlayBtn.style.display='inline';
         playBtn.style.display='inline';
         // fwdBtn.style.animation='fade-out 0.25s forwards';
-        fwdBtn.style.display='none';
+        fwdBtn.style.visibility='hidden';
         playBtn.style.animation='fade-in 1s';
-        noPlayBtn.style.animation='fade-in 1s';
         console.log("story === 11");   
 }
  
@@ -185,7 +177,6 @@ if (story===11){
         fwdBtn.style.display='inline';
 
         playBtn.style.display='none';
-        noPlayBtn.style.display='none';
     }
 
 
@@ -204,12 +195,5 @@ function render()
 
     //Display the game message
 
-    output.style.fontSize="140px";
-    output.style.textAlign="center";
-    output.innerHTML += gameMessage ;
-    output.style.padding=0;
-    output.style.margin=0;
-    //Clear the input field
-   // input.value = "";
 }
 
