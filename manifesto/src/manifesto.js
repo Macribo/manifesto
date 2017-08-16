@@ -36,6 +36,7 @@ images[8] = "Skibbereen.png";
 
 
 
+        var shorttrans = false;
 
 //Initialize the gameMessage
 var gameMessage = ``;
@@ -68,7 +69,6 @@ let ainmBtn = document.querySelector('#ainmBtn'); //player name
 var gameMap = document.querySelector('#tileworld');
 var mapdata = document.querySelector('#mapdata');
 var curSiosArCo = document.querySelector('#curSiosArCo');
-
 //Event Listeners:
 fwdBtn.addEventListener("click", fwdBtnHandler, false);
 fwdBtn.addEventListener("mousedown", mousedownHandler, false);
@@ -111,15 +111,24 @@ render();
 
     }
 
+
     function fwdBtnHandler(){
+
+ 
+
         fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
         fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
         fwdBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
         stepFwd();
         playGame();
+        htmla.style.backgroundImage="url('../images/bgAnim4.gif')";    
+     setTimeout(function(){
+     
+        htmla.style.backgroundImage="url('../images/bg.png')";    
+     },1500);
+
     }
 
- 
     function narrate(story){
         output2.innerHTML = storyTexts[story];
         output2.className=''; 
@@ -135,7 +144,6 @@ render();
         story++;
         playGame();
     }
-
 function playGame()
 {
 
@@ -145,14 +153,19 @@ function playGame()
     progressStory(story);
     console.log(story);
 }
+function sayHi(){
+    console.log("saying hi.");
 
+}
     function progressStory(){
+
+
         if(story>1){
         bckBtn.style.display='inline';
-        console.log("hello bckBtn?");
             bckBtn.style.animation='delay-fade-in 1s';
         fwdBtn.style.animation='slide-button-right 1s forwards';
-    }
+        console.log("hello bckBtn?");
+        }
     else
     {
         //I want this, it's not working yet:
@@ -179,10 +192,7 @@ if (story===11){
         playBtn.style.display='none';
     }
 
-
-
 }
-
 
 
 function render()

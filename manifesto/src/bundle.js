@@ -1,4 +1,66 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+ //jshint esversion:6 
+$(document).ready(function(){
+
+    document.querySelector('#bckBtn').onmouseenter = (event) => {
+        document.querySelector('#bearla').innerHTML = 'back';
+    };
+    document.querySelector('#fwdBtn').onmouseenter = (event) => {
+        document.querySelector('#bearla').innerHTML = 'next';
+    };
+//    $('#button').hover(function(){
+//                   $('#bearla').text('push');
+//    });
+ 
+     
+    $('#fwdBtn').click(function(){
+
+        $('#output2 span').hover(function(){
+             $('#bearla').text($(this).attr('id'));
+             $(this).css('color','#e35ee5');
+             $('div').slidedown(); 
+    });
+
+        $('#output2 span').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+    });
+});
+    $('#bckBtn').click(function(){
+
+        $('#output2 span').hover(function(){
+             $('#bearla').text($(this).attr('id'));
+             $(this).css('color','#e35ee5');
+             $('div').slidedown(); 
+    });
+
+        $('#output2 span').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+    });
+});
+
+   $('#play').click(function(){
+
+        $('#output2 span').hover(function(){
+             $('#bearla').text($(this).attr('id'));
+             $(this).css('color','#e35ee5');
+             $('div').slidedown(); 
+    });
+
+        $('#output2 span').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+    });
+});
+
+});
+
+
+},{}],2:[function(require,module,exports){
 //jshint esversion:6
 
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
@@ -37,6 +99,7 @@ images[8] = "Skibbereen.png";
 
 
 
+        var shorttrans = false;
 
 //Initialize the gameMessage
 var gameMessage = ``;
@@ -69,7 +132,6 @@ let ainmBtn = document.querySelector('#ainmBtn'); //player name
 var gameMap = document.querySelector('#tileworld');
 var mapdata = document.querySelector('#mapdata');
 var curSiosArCo = document.querySelector('#curSiosArCo');
-
 //Event Listeners:
 fwdBtn.addEventListener("click", fwdBtnHandler, false);
 fwdBtn.addEventListener("mousedown", mousedownHandler, false);
@@ -112,15 +174,24 @@ render();
 
     }
 
+
     function fwdBtnHandler(){
+
+ 
+
         fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
         fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
         fwdBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
         stepFwd();
         playGame();
+        htmla.style.backgroundImage="url('../images/bgAnim4.gif')";    
+     setTimeout(function(){
+     
+        htmla.style.backgroundImage="url('../images/bg.png')";    
+     },1500);
+
     }
 
- 
     function narrate(story){
         output2.innerHTML = storyTexts[story];
         output2.className=''; 
@@ -136,7 +207,6 @@ render();
         story++;
         playGame();
     }
-
 function playGame()
 {
 
@@ -146,14 +216,19 @@ function playGame()
     progressStory(story);
     console.log(story);
 }
+function sayHi(){
+    console.log("saying hi.");
 
+}
     function progressStory(){
+
+
         if(story>1){
         bckBtn.style.display='inline';
-        console.log("hello bckBtn?");
             bckBtn.style.animation='delay-fade-in 1s';
         fwdBtn.style.animation='slide-button-right 1s forwards';
-    }
+        console.log("hello bckBtn?");
+        }
     else
     {
         //I want this, it's not working yet:
@@ -180,10 +255,7 @@ if (story===11){
         playBtn.style.display='none';
     }
 
-
-
 }
-
 
 
 function render()
@@ -199,7 +271,7 @@ function render()
 }
 
 
-},{"./story-texts":2}],2:[function(require,module,exports){
+},{"./story-texts":3}],3:[function(require,module,exports){
 //jshint esversion:6
 module.exports = [
 
@@ -315,4 +387,4 @@ module.exports = [
 
 ];
 
-},{}]},{},[2,1]);
+},{}]},{},[3,1,2]);
