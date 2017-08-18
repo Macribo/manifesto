@@ -115,7 +115,7 @@ var gameMessage = ``;
 //Query Selectors:
 var imreoir = document.querySelector('#imreoir');
 var pAinm=document.querySelector('#pAinm');
-
+var hum1 = document.querySelector('#hum1');
 var joinTeam = document.querySelector("#joinTeam");
 var image = document.querySelector("img");
 
@@ -224,7 +224,8 @@ function playGame()
 
 
         if(story>1){
-        bckBtn.style.display='inline';
+       hum1.play();
+            bckBtn.style.display='inline';
             bckBtn.style.animation='delay-fade-in 1s';
         fwdBtn.style.animation='slide-button-right 1s forwards';
         console.log("hello bckBtn?");
