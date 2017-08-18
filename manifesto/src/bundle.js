@@ -1,12 +1,20 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
  //jshint esversion:6 
 $(document).ready(function(){
-
+    $('#output').hover(function(){
+    $('#bearla').text('Manifesto');
+    $(this).css('color','#e35ee5');
+    }
+);
+    $('#output').mouseout(function(){
+        $('#bearla').text('');
+        $(this).css('color','#730a0a');
+    });
     document.querySelector('#bckBtn').onmouseenter = (event) => {
         document.querySelector('#bearla').innerHTML = 'back';
     };
     document.querySelector('#fwdBtn').onmouseenter = (event) => {
-        document.querySelector('#bearla').innerHTML = 'next';
+        document.querySelector('#bearla').innerHTML = 'Mouseover Irish text to translate';
     };
 //    $('#button').hover(function(){
 //                   $('#bearla').text('push');
@@ -75,7 +83,7 @@ map[0] = "";
 map[1] = "";
 map[2] = "";
 map[3] = "";
-map[4] = "Manifesto";
+map[4] = "Forógra";
 map[5] = "";
 map[6] = "";
 map[7] = "";
@@ -178,19 +186,14 @@ render();
     function fwdBtnHandler(){
 
  
+    console.log("saying hi.");
 
         fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
         fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
         fwdBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
         stepFwd();
         playGame();
-        htmla.style.backgroundImage="url('../images/bgAnim4.gif')";    
-     setTimeout(function(){
-     
-        htmla.style.backgroundImage="url('../images/bg.png')";    
-     },1500);
-
-    }
+      }
 
     function narrate(story){
         output2.innerHTML = storyTexts[story];
@@ -216,10 +219,7 @@ function playGame()
     progressStory(story);
     console.log(story);
 }
-function sayHi(){
-    console.log("saying hi.");
 
-}
     function progressStory(){
 
 
@@ -246,7 +246,15 @@ if (story===11){
         playBtn.style.animation='fade-in 1s';
         console.log("story === 11");   
 }
- 
+if(story===2){
+      htmla.style.backgroundImage="url('../images/bgAnim6.gif')";    
+     setTimeout(function(){
+     
+        htmla.style.backgroundImage="url('../images/bg.png')";    
+     },2500);
+
+
+} 
     if(story===10){
         //update button styles if player is coming back from events on story 11
         fwdBtn.style.left='229px';

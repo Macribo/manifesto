@@ -6,7 +6,7 @@ html {
   padding: 0px;
   margin: 0px;
   background-image:url('../images/bg.png');
-  transition: 1s background-image ease-out;
+  transition: 0.02s background-image ease-out;
 }
 @font-face
 {

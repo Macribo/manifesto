@@ -1,11 +1,19 @@
  //jshint esversion:6 
 $(document).ready(function(){
-
+    $('#output').hover(function(){
+    $('#bearla').text('Manifesto');
+    $(this).css('color','#e35ee5');
+    }
+);
+    $('#output').mouseout(function(){
+        $('#bearla').text('');
+        $(this).css('color','#730a0a');
+    });
     document.querySelector('#bckBtn').onmouseenter = (event) => {
         document.querySelector('#bearla').innerHTML = 'back';
     };
     document.querySelector('#fwdBtn').onmouseenter = (event) => {
-        document.querySelector('#bearla').innerHTML = 'next';
+        document.querySelector('#bearla').innerHTML = 'Mouseover Irish text to translate';
     };
 //    $('#button').hover(function(){
 //                   $('#bearla').text('push');
