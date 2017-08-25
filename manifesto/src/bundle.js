@@ -26,7 +26,6 @@ $(document).ready(function(){
         $('#output2 span').hover(function(){
              $('#bearla').text($(this).attr('id'));
              $(this).css('color','#e35ee5');
-             $('div').slidedown(); 
     });
 
         $('#output2 span').mouseout(function(){
@@ -157,7 +156,7 @@ render();
 
 //Event Handlers
     function playHandler(){
-    window.location.replace("file:///home/ribo/dev/cq3/manifesto/src/naContae/naContae.html");
+    window.location.replace("http://ribodev.com/wp-content/uploads/2017/manifestoWeb/src/naContae/naContae.html");
     }
    
 
@@ -224,7 +223,6 @@ function playGame()
 
 
         if(story>1){
-       hum1.play();
             bckBtn.style.display='inline';
             bckBtn.style.animation='delay-fade-in 1s';
         fwdBtn.style.animation='slide-button-right 1s forwards';
@@ -239,28 +237,32 @@ function playGame()
         fwdBtn.style.animation='slide-button-left 1s forwards';
 
     }
+        if (story>2){
+            
+       hum1.play();
+        }
     //end of manifesto - begin game y/n?
-if (story===11){
+if (story===5){
         playBtn.style.display='inline';
         // fwdBtn.style.animation='fade-out 0.25s forwards';
         fwdBtn.style.visibility='hidden';
         playBtn.style.animation='fade-in 1s';
-        console.log("story === 11");   
+        console.log("story === 5");   
 }
-if(story===2){
-      htmla.style.backgroundImage="url('../images/bgAnim6.gif')";    
+if(story===1){
+     setTimeout(function(){ htmla.style.backgroundImage="url('../images/bgAnim6.gif')";},1000);    
      setTimeout(function(){
      
         htmla.style.backgroundImage="url('../images/bg.png')";    
-     },2500);
+     },3500);
 
 
 } 
-    if(story===10){
-        //update button styles if player is coming back from events on story 11
-        fwdBtn.style.left='229px';
+    if(story===4){
+        //update button styles if player is coming back from events on story 5 
+        fwdBtn.style.left='-42px';
         fwdBtn.style.display='inline';
-
+        fwdBtn.style.visibility='visible';
         playBtn.style.display='none';
     }
 
@@ -300,68 +302,61 @@ module.exports = [
     
 //2
 
-`
-<span id='There is'>Tá</span> <span id='more'>nios mó</span> <span id='in question'>i gceist</span> <span id='with language'>le teanga</span> <span id='than talk'>ná caint</span>.
-
+`<span id='A Question...'>Ceist...</span>
 `,
 
-//3
+//3<span id='One cannot'>Ní feidir</span> <span id='think'>smaoineamh</span> <span id='in Irish'>i nGaeilge</span>, <span id='in English'>i mBearla</span>.
 
 
-`
-<span id='One cannot'>Ní feidir</span> <span id='think'>smaoineamh</span> <span id='in Irish'>i nGaeilge</span>, <span id='in English'>i mBearla</span>.
 
-`,
-//4
-`
-<span id='In English'>I mBearla</span>, <span id='it is that'>tá</span> <span id='the Irish'>an Gaeilge</span> <span id='utterly separated'>glanscartha</span> <span id='from'>ó</span> <span id='the meaning'>brí</span> <span id='of Irish'>an Gaeilge</span>.
 
+`<span id='This language'>Tá an teanga seo</span><span id='is involved with'> bainteach le</span>
+<span id='writing and speaking'> scriobh agus caint,</span><span id='but'> ach </span>
+<span id='is it used'>an usaidtear</span><span id='in the mind'> san aigne í </span><span id='also?'>freisin?</span>
 `,
 
-//5
-`
-<span id='English leaves'>Fágann Bearla</span> <span id='us'>muid</span> <span id='discussing'>ag plé</span> <span id='the question'>ceist</span> <span id='of the tongue'>an teanga</span> <span id='as though'>amhlaidh is</span> <span id='that'>gur</span> <span id='an ornament'>ornáid</span> <span id='decorative'>maisaithe</span> <span id='cultural'>cultúrtha</span> <span id='the Irish language is'>í an Gaeilge</span>.
-
-`,
-
-//6
-
-`
-<span id='That leaves us'>Fágann sin muid</span> <span id='speaking about it'>ag caint uirthí </span> <span id='in terms'>i dtearmaí</span> <span id='of the number of'>líonn na</span><span id='Irish Speakers'> 'Irish Speakers'</span>. <span id='It is observed'>Feictear</span> <span id='that there are not'>nach bhfuil</span> <span id='many'>mórán</span><span id='speakers'> cainteoirí</span>, <span id='and'>agus </span><span id='it is assumed'>glachtar leis</span> <span id='therefore'>mar sin</span> <span id='not much would be lost'>nach chailfar mórán</span> <span id='without her'>gan í.</span> 
-`,
-
-//7
-`
-<span id='It is thought'>Ceaptar, </span><span id='perhaps'>b'feidir</span>, <span id='if all can'>más feidir gach rud</span> <span id='to translate to English'>a aistrú go Bearla</span>,<span id="there is no need"> níl gá</span><span id='for Irish'> le Gaeilge</span>.<span id='In English'> I mBearla</span>,<span id='there is no need for'> níl aon gá le</span><span id='Éire'> Éire</span>, <span id='because'>mar</span> <span id='is enough'>is leoir</span> <span id='Ireland'>'Ireland'</span>.
-
-`,
-
-//8
-
-`
-<span id='That is a mistake'>Is botún é sin.</span> <span id='First of all'>Sa chead áit </span><span id='there is'>tá</span> <span id='more'>nios mó</span> <span id='in question'>i gceist</span> <span id='with'>le</span> <span id='language'>teanga</span> <span id='than'>ná</span><span id='talk'> caint</span>.<br><br> <span id='A system'>Comhras</span> <span id='of thought'>smaoineamh</span> <span id='is Gaelic'>í an Ghaeilge</span>. <span id='An ecology'>Eiceachóras</span> <span id='of visions'>físanna</span> <span id='the'>na</span> <span id='thousands'>mílte</span><span id='of years'> blianta</span><span id='of age'> d'aois</span><span id='she is'> í</span>.<br><br><div style="animation:delay-fade-in 5s;"><span id='Not lower'> Ní laighdín</span><span id='value'> lúach</span><span id='this resource'> an achmain seo</span><span id='because of'> de bhár</span><span id='scarcity'> ganntanas</span>. 
-
-`,
-
-//9
+////9 <div style="animation:delay-fade-in 2s;">
+    /*
  `<span id='Secondly'> Sa dara h-áit</span>, 
 <span id='There is'>tá</span> <span id='a bit of Irish'>Gaeilge éigin</span> <span id='posessed by'>ag</span> <span id='every'>gach</span> <span id='English-speaker'>Bearl-cainteoir</span> <span id='in the country'>sa tír</span>.
 <span id='A factor'>Gníomhadóir</span><span id='unknown'> anaithnid</span><span id='this is'> é seo</span>,<span id='which puts'> a cuireann</span><span id='off accuracy'> dó rath</span><span id='calcu- lations'> áireamhíocht</span><span id='based on Irish Speakers'> bunaithe ar 'Irish Speakers'</span>
 <span id='It is not'> Ní</span> <span id='a subject'>ábhar </span><span id='of mockery'>fachnaoid</span> <span id='those'>iad</span> <span id='the'>na</span><span id='so-called few words'> cúpla focal</span>. <span id='They are seeds'>Síolta íad</span>.
 
 `,
-
+*/
 //10
 `
 <span id='Asserts'>Dearbhín</span> <span id='this manifesto'>an forógra seo</span>: <ul>
-<li>
-<span id='Comes'>Go dtagann</span> <span id='the value of Irish'>lúach an Gaeilge</span><span id='from being used'> óna bheith á usáid</span><span id='as a system'> mar comhras</span><span id='of under- standing'> tuiscint</span><span id='original'> fréamhach</span></li>
-<br><li>
-<span id='A lack of space'>Easpa spás,</span> <span id='rather than'> seachas </span><span id='a lack'>easpa</span> <span id='of interest'> spéis</span> <span id='or ability'>ná cumas</span>, 
-<span id='is'>is</span> <span id='the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>.
 
-</li><br><li><span id='It would sufficie'>Ba leoir </span><span id='a virtual space'>spás fíorúil </span><span id='to'>chun </span><span id='mental fluency'>líofacht intinneach </span><span id='Gaelic'>Gaelach </span><span id='to improve'>a feabhsú <span>
-</li></ul>
+<div style="animation:delay-fade-in 1s;">
+<li>
+<span id='One cannot'>Ní feidir</span><span id='give an objective account'> tuairisc oibiachtúil a thabhairt</span><span id='on the intimacy between'> ar an caidreamh idir</span><span id='language'> teanga</span><span id='and mind'> agus meabhair</span>
+</li>
+</div>
+<br>
+
+<div style="animation:delay-fade-in 3s;">
+<li>
+
+<span id='A lack of space'>Easpa spás,</span> <span id='rather than'> seachas </span><span id='a lack'>easpa</span> <span id='of interest'> spéis</span> <span id='or ability'>ná cumas</span>, 
+<span id='is'>is</span> <span id='the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>
+</li>
+
+</div>
+<br>
+
+<div style="animation:delay-fade-in 5s;">
+<li>
+    
+
+<span id='A virtual community can'>Is feidir le spás fiorúl coiteannta</span><span id='suddenly improve'> feabhas tobann a deanamh ar</span><span id='mental fluency'> líofacht intinneach </span><span id='Gaelic'>Gaelach </span><span id='through play and competing together'>tríd spraoí agus iommíocht le cheile</span>
+</li>
+
+</div>
+
+
+
+</ul>
 
 `,
 //11

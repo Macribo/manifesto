@@ -86,7 +86,7 @@ render();
 
 //Event Handlers
     function playHandler(){
-    window.location.replace("file:///home/ribo/dev/cq3/manifesto/src/naContae/naContae.html");
+    window.location.replace("http://ribodev.com/wp-content/uploads/2017/manifestoWeb/src/naContae/naContae.html");
     }
    
 
@@ -153,7 +153,6 @@ function playGame()
 
 
         if(story>1){
-       hum1.play();
             bckBtn.style.display='inline';
             bckBtn.style.animation='delay-fade-in 1s';
         fwdBtn.style.animation='slide-button-right 1s forwards';
@@ -168,28 +167,32 @@ function playGame()
         fwdBtn.style.animation='slide-button-left 1s forwards';
 
     }
+        if (story>2){
+            
+       hum1.play();
+        }
     //end of manifesto - begin game y/n?
-if (story===11){
+if (story===5){
         playBtn.style.display='inline';
         // fwdBtn.style.animation='fade-out 0.25s forwards';
         fwdBtn.style.visibility='hidden';
         playBtn.style.animation='fade-in 1s';
-        console.log("story === 11");   
+        console.log("story === 5");   
 }
-if(story===2){
-      htmla.style.backgroundImage="url('../images/bgAnim6.gif')";    
+if(story===1){
+     setTimeout(function(){ htmla.style.backgroundImage="url('../images/bgAnim6.gif')";},1000);    
      setTimeout(function(){
      
         htmla.style.backgroundImage="url('../images/bg.png')";    
-     },2500);
+     },3500);
 
 
 } 
-    if(story===10){
-        //update button styles if player is coming back from events on story 11
-        fwdBtn.style.left='229px';
+    if(story===4){
+        //update button styles if player is coming back from events on story 5 
+        fwdBtn.style.left='-42px';
         fwdBtn.style.display='inline';
-
+        fwdBtn.style.visibility='visible';
         playBtn.style.display='none';
     }
 
