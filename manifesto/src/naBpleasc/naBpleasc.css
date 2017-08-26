@@ -83,9 +83,20 @@ h1
   font-size: 14px;
 }
 
+#súile{
+   position:absolute;
+    width:85px;
+    height:85px;
+    background-image:url("../../images/suile.png");
+    bottom:223px;
+    right:-1080px;
+    z-index:4;
+opacity:0.5;
 
+}
 #deirGeaga1{
- top: -39px;
+ top: -373px;
+ left:0px;
  height:0px;
  line-height:0px;
  position:relative;
@@ -202,6 +213,7 @@ z-index:10;
     z-index:32;
     line-height: 27px;
     word-spacing:-1px;
+    font-family:computer_pixel-7; 
 }
 
 #badge{
