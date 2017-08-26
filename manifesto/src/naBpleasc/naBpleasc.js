@@ -1,18 +1,18 @@
 //jshint esversion:6
 
-let storyTexts = require("./bpleasc-texts"); //can't use capital letters with browswerify 
+let storyTexts = require("./pleasc-teacs"); //can't use capital letters with browswerify 
 
 let story = 1;
 var map = [];
 
 
 
-
+var isAinmDom = "Imreoir a hAon";
 map[0] = "";
 map[1] = "";
 map[2] = "";
 map[3] = "";
-map[4] = "Forógra";
+map[4] = isAinmDom;
 map[5] = "";
 map[6] = "";
 map[7] = "";
@@ -51,8 +51,8 @@ var image = document.querySelector("img");
 let rightPanel = document.querySelector("#right-panel");
 let contae = document.querySelector("#contae");
 
-var output = document.querySelector("#output");
-var output2 = document.querySelector("#output2");
+var deirGeaga1 = document.querySelector("#deirGeaga1");
+var deirGeaga2 = document.querySelector("#deirGeaga2");
 var inputLabel = document.querySelector("#inputLabel");
 
 var fwdBtn = document.querySelector("#fwdBtn");
@@ -125,8 +125,8 @@ render();
       }
 
     function narrate(story){
-        output2.innerHTML = storyTexts[story];
-        output2.className=''; 
+        deirGeaga2.innerHTML = storyTexts[story];
+        deirGeaga2.className=''; 
         console.log("test! "+story);
     }
     //test
@@ -202,7 +202,7 @@ if(story===1){
 function render()
 {
     //Render the location
-    output.innerHTML = map[mapLocation];
+    deirGeaga1.innerHTML = map[mapLocation];
    // image.src = "../images/" + images[mapLocation];
 
 

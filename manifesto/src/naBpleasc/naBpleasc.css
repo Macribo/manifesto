@@ -1,23 +1,28 @@
 
 html {
-  font-family: CELTG___.TTF;
+  font-family: myFirstFont;
   color: #fff;
   font-size: 16px;
   padding: 0px;
   margin: 0px;
-  background-image:url('../images/bg.png');
+  background-image:url('../../images/bg.png');
   transition: 0.05s background-image ease-in;
 }
 @font-face
 {
-    font-family: celtframe.ttf;
-    src: url("../../fonts/celtframe.ttf");
+    font-family: INFO56_0;
+    src: url("./INFO56_0.ttf");
+}  
+@font-face
+{
+    font-family: myFirstFont;
+    src: url("./myFirstFont.ttf");
 }  
   
 @font-face
 {
     font-family: computer_pixel-7;
-    src: url("../../fonts/CELTG___.TTF");
+    src: url("./computer_pixel-7.ttf");
 }
 
 
@@ -35,7 +40,7 @@ html {
     width:202px;
     height: 423px;
     position: relative;
-    background-image: url("../images/bg2.png");
+    background-image: url("../../images/bg2.png");
     background-repeat: no-repeat;
     border: 5px solid gray;
 }
@@ -79,22 +84,22 @@ h1
 }
 
 
-#output{
+#deirGeaga1{
  top: -39px;
  height:0px;
  line-height:0px;
  position:relative;
  text-align:center;
- 
+font-family: computer_pixel-7;
+
  color:#730a0a;
  margin-left: 0px auto;
  font-size: 85px;
 }
-#output2
+#deirGeaga2
 {
     position:relative;
     top:-68px;
-font-family: INFO56_0;
 margin:0px auto;
 margin-top: 0px;
 font-size:39px;
@@ -115,7 +120,6 @@ button
   height: 70px;
   width: 120px;
   
-  font-family: computer_pixel-7;
   font-size: 50px;
   color: #fff;
 
@@ -151,6 +155,27 @@ button
 z-index:20;	
 }
 
+#geaga{
+
+    position:absolute;
+    width:220px;
+    height:311px;
+    background-image:url("../../images/geaga2.png");
+    bottom:110px;
+    right:-1119px;
+    z-index:4;
+}
+
+#deetsFrame{
+position:relative;
+background-image:url("../../images/deetsFrame.png");
+top:-25px;
+right:-592px;
+width:350px;
+height:352px;
+background-repeat:no-repeat;
+z-index:10;
+}
 
 
 /**STATUE STUFF*/
@@ -160,9 +185,9 @@ z-index:20;
     position:absolute;
     width:257px;
     height:420px;
-    background-image:url("../images/dealbh.png");
-    bottom:6px;
-    left:-71px;
+    background-image:url("../../images/dealbh.png");
+    bottom:-6px;
+    left:-69px;
     z-index:10;
 }
 
@@ -183,7 +208,7 @@ z-index:20;
     position:absolute;
     top:90px;
     left:158px;
-    background-image:url("../images/badges.png");
+    background-image:url("../../images/badges.png");
     z-index:20;
     opacity:1;
     width:80px;
