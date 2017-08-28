@@ -165,7 +165,7 @@ var deirGeaga1 = document.querySelector("#deirGeaga1");
 var deirGeaga2 = document.querySelector("#deirGeaga2");
 var inputLabel = document.querySelector("#inputLabel");
 
-var fwdBtn = document.querySelector("#fwdBtn");
+var btnTalk = document.querySelector("#btnTalk");
 var bckBtn = document.querySelector('#bckBtn'); 
 
 var playBtn = document.querySelector('#play');
@@ -173,16 +173,15 @@ var countyBtnRight = document.querySelector('#countyBtnRight');
 var countyBtnLeft = document.querySelector('#countyBtnLeft');
 var htmla=document.querySelector('html');
 var audioAbattoir = document.querySelector('#abattoir');
-fwdBtn.style.cursor = "pointer";
 let countyMain = document.querySelector('#countyMain');
 let ainmBtn = document.querySelector('#ainmBtn'); //player name
 var gameMap = document.querySelector('#tileworld');
 var mapdata = document.querySelector('#mapdata');
 var curSiosArCo = document.querySelector('#curSiosArCo');
 //Event Listeners:
-fwdBtn.addEventListener("click", fwdBtnHandler, false);
-fwdBtn.addEventListener("mousedown", mousedownHandler, false);
-fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
+btnTalk.addEventListener("click", btnTalkHandler, false);
+btnTalk.addEventListener("mousedown",btnTalkHandler, false);
+btnTalk.addEventListener("mouseout", btnTalkHandler, false);
 bckBtn.addEventListener("click", bckBtnHandler, false);
 playBtn.addEventListener("click", playHandler, false);
 
@@ -201,15 +200,15 @@ seanDown.play();
    
 
     function mousedownHandler(){
-        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
-        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
-        fwdBtn.style.background = "linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        btnTalk.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        btnTalk.style.background = "-moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        btnTalk.style.background = "linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
     }
 
     function mouseoutHandler(){
-        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "#505050";
+        btnTalk.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        btnTalk.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        btnTalk.style.background = "#505050";
     }
 
     function bckBtnHandler(){
@@ -222,16 +221,14 @@ seanDown.play();
     }
 
 
-    function fwdBtnHandler(){
+    function btnTalkHandler(){
 
  
     console.log("saying hi.");
 
-        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        stepFwd();
-        playGame();
+        btnTalk.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        btnTalk.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        btnTalk.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
       }
 
     function narrate(story){
@@ -265,7 +262,7 @@ function playGame()
         if(story>1){
             bckBtn.style.display='inline';
             bckBtn.style.animation='delay-fade-in 1s';
-        fwdBtn.style.animation='slide-button-right 1s forwards';
+        btnTalk.style.animation='slide-button-right 1s forwards';
         console.log("hello bckBtn?");
         }
     else
@@ -274,7 +271,7 @@ function playGame()
         //bckBtn.style.animation='fade-out 0.25s forwards';
         //instead, I'm just setting display to 'none'
         bckBtn.style.display='none';
-        fwdBtn.style.animation='slide-button-left 1s forwards';
+        btnTalk.style.animation='slide-button-left 1s forwards';
 
     }
         if (story>2){
@@ -284,8 +281,8 @@ function playGame()
     //end of manifesto - begin game y/n?
 if (story===5){
         playBtn.style.display='inline';
-        // fwdBtn.style.animation='fade-out 0.25s forwards';
-        fwdBtn.style.visibility='hidden';
+        // btnTalk.style.animation='fade-out 0.25s forwards';
+        btnTalk.style.visibility='hidden';
         playBtn.style.animation='fade-in 1s';
         console.log("story === 5");   
 }
@@ -300,9 +297,9 @@ if(story===1){
 } 
     if(story===4){
         //update button styles if player is coming back from events on story 5 
-        fwdBtn.style.left='-42px';
-        fwdBtn.style.display='inline';
-        fwdBtn.style.visibility='visible';
+        btnTalk.style.left='-42px';
+        btnTalk.style.display='inline';
+        btnTalk.style.visibility='visible';
         playBtn.style.display='none';
     }
 
@@ -559,7 +556,7 @@ render();
 function render(event)
 
 {
-  drawingSurface.clearRect(0,0,canvas.width,canvas.height);
+  drawingSurface.clearRect(334,50,canvas.width,canvas.height);
 drawingSurface.save();
 
 //move drawing surface to keep position relative to camera
@@ -592,4 +589,77 @@ if(sprites.length !== 0)
 }
 
 
-},{}]},{},[1,2,3]);
+},{}],4:[function(require,module,exports){
+ //jshint esversion:6 
+$(document).ready(function(){
+    $('#deirGeaga1').hover(function(){
+    $('#bearla').text('The Other Land');
+    $(this).css('color','#e35ee5');
+    }
+);
+    $('#deirGeaga1').mouseout(function(){
+        $('#bearla').text('');
+        $(this).css('color','#730a0a');
+    });
+    document.querySelector('#bckBtn').onmouseenter = (event) => {
+        document.querySelector('#bearla').innerHTML = 'back';
+    };
+    document.querySelector('#btnTalk').onmouseenter = (event) => {
+        document.querySelector('#bearla').innerHTML = '"..."';
+    };
+    document.querySelector('#btnTalk').onmouseleave = (event) => {
+    document.querySelector().innerHTML = '';};
+//    $('#button').hover(function(){
+//                   $('#bearla').text('push');
+//    });
+ 
+     
+    $('#btnTalk').click(function(){
+
+        $('#output2 span').hover(function(){
+             $('#bearla').text($(this).attr('id'));
+             $(this).css('color','#e35ee5');
+    });
+
+        $('#output2 span').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+    });
+});
+    $('#bckBtn').click(function(){
+
+        $('#output2 span').hover(function(){
+             $('#bearla').text($(this).attr('id'));
+             $(this).css('color','#e35ee5');
+             $('div').slidedown(); 
+    });
+
+        $('#output2 span').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+    });
+});
+
+   $('#play').click(function(){
+
+        $('#output2 span').hover(function(){
+             $('#bearla').text($(this).attr('id'));
+             $(this).css('color','#e35ee5');
+             $('div').slidedown(); 
+    });
+
+        $('#output2 span').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+    });
+});
+
+
+
+   });
+
+
+},{}]},{},[1,2,3,4]);

@@ -64,7 +64,7 @@ module.exports = [
 <li>
     
 
-<span id='A virtual community can'>Is feidir le spás fiorúl coiteannta</span><span id='suddenly improve'> feabhas tobann a deanamh ar</span><span id='mental fluency'> líofacht intinneach </span><span id='Gaelic'>Gaelach </span><span id='through play and competing together'>tríd spraoí agus iommíocht le cheile</span>
+<span id='A virtual community can'>Is feidir le spás fiorúl coiteannta</span><span id='suddenly improve'> luas tobann a chuir faoi</span><span id='mental fluency'> líofacht intinneach </span><span id='Gaelic'>don tae ag a bhfuil cú-foo eigin aicí/ge </span>
 </li>
 
 </div>
