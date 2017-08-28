@@ -117,12 +117,12 @@ var map = [];
 
 
 
-var isAinmDom = "Imreoir a hAon";
+var  placeName = "Tír nAill";
 map[0] = "";
 map[1] = "";
 map[2] = "";
 map[3] = "";
-map[4] = isAinmDom;
+map[4] = "";
 map[5] = "";
 map[6] = "";
 map[7] = "";
@@ -318,6 +318,7 @@ function render()
 
 }
 
+deirGeaga1.innerHTML= placeName;
 
 },{"./geaga-teacs":1}],3:[function(require,module,exports){
 
@@ -357,7 +358,7 @@ background.sourceHeight =1424;
 background.width = 1034;
 background.height =712;
 background.x = 0;
-background.y = 0;
+background.y =0;
 sprites.push(background);
 //gameworld and camera object
 var gameWorld =
@@ -395,13 +396,13 @@ bottomInnerBoundary: function(){
 };
 
 
-//cat sprite created and centered
+//player sprite created and centered
 
 
-var cat = Object.create(spriteObject);
-cat.x = 243;
-cat.y = 168;
-sprites.push(cat);
+var player = Object.create(spriteObject);
+player.x = 243;
+player.y = 368;
+sprites.push(player);
 
 //load the image
 
@@ -477,59 +478,59 @@ requestAnimationFrame(update,canvas);
 //up
 if(moveUp && !moveDown)
 {
-  cat.vy = -5;
+  player.vy = -5;
   console.log("up");
 }
 //down
 if(moveDown && !moveUp){
-  cat.vy = 5;
+  player.vy = 5;
 }
 //left
 if(moveLeft && !moveRight){
-  cat.vx = -5;
+  player.vx = -5;
 }
 //right
 if (moveRight && !moveLeft){
-  cat.vx = 5;
+  player.vx = 5;
 }
 
 //no moves
 
 if(!moveUp && !moveDown)
 {
-  cat.vy = 0;
+  player.vy = 0;
 }
 
 if(!moveLeft && !moveRight){
-  cat.vx = 0;
+  player.vx = 0;
 }
 
-//move the cat and keep inside gameworld
-cat.x = Math.max(0, Math.min(cat.x + cat.vx, gameWorld.width - cat.width));
+//move the player and keep inside gameworld
+player.x = Math.max(0, Math.min(player.x + player.vx, gameWorld.width - player.width));
 
-cat.y = Math.max(0, Math.min(cat.y+cat.vy, gameWorld.height-cat.height));
+player.y = Math.max(0, Math.min(player.y+player.vy, gameWorld.height-player.height));
 
 //move camera
 
-if (cat.x < camera.leftInnerBoundary())
+if (player.x < camera.leftInnerBoundary())
 {
-  camera.x = Math.floor(cat.x - (camera.width * 0.25));
+  camera.x = Math.floor(player.x - (camera.width * 0.25));
 }
 
-if (cat.y < camera.topInnerBoundary())
+if (player.y < camera.topInnerBoundary())
 {
-   camera.y = Math.floor(cat.y - (camera.height * 0.25));
+   camera.y = Math.floor(player.y - (camera.height * 0.25));
 }
-if (cat.x + cat.width > camera.rightInnerBoundary())
+if (player.x + player.width > camera.rightInnerBoundary())
 {
-  camera.x = Math.floor(cat.x + cat.width - (camera.width * 0.75));
+  camera.x = Math.floor(player.x + player.width - (camera.width * 0.75));
 }
-if (cat.y + cat.height > camera.bottomInnerBoundary())
+if (player.y + player.height > camera.bottomInnerBoundary())
 {
-  camera.y = Math.floor(cat.y + cat.height - (camera.height *0.75));
+  camera.y = Math.floor(player.y + player.height - (camera.height *0.75));
 }
-// camera.x = Math.floor(cat.x + (cat.width/2) - (camera.width/2));
-// camera.y = Math.floor(cat.y + (cat.height/2)- (camera.height/2));
+// camera.x = Math.floor(player.x + (player.width/2) - (camera.width/2));
+// camera.y = Math.floor(player.y + (player.height/2)- (camera.height/2));
 
 //keep camera inside gameworld
 if(camera.x < gameWorld.x)
@@ -556,7 +557,7 @@ render();
 function render(event)
 
 {
-  drawingSurface.clearRect(334,50,canvas.width,canvas.height);
+  drawingSurface.clearRect(0,0,canvas.width,canvas.height);
 drawingSurface.save();
 
 //move drawing surface to keep position relative to camera

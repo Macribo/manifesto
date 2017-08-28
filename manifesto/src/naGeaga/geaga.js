@@ -7,12 +7,12 @@ var map = [];
 
 
 
-var isAinmDom = "Imreoir a hAon";
+var  placeName = "Tír nAill";
 map[0] = "";
 map[1] = "";
 map[2] = "";
 map[3] = "";
-map[4] = isAinmDom;
+map[4] = "";
 map[5] = "";
 map[6] = "";
 map[7] = "";
@@ -208,3 +208,4 @@ function render()
 
 }
 
+deirGeaga1.innerHTML= placeName;
