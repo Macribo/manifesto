@@ -1,0 +1,325 @@
+
+html {
+  font-family: myFirstFont;
+  color: #fff;
+  font-size: 16px;
+  padding: 0px;
+  margin: 0px;
+  background-image:url('../../images/bg.png');
+  transition: 0.05s background-image ease-in;
+}
+@font-face
+{
+    font-family: INFO56_0;
+    src: url("./INFO56_0.ttf");
+}  
+@font-face
+{
+    font-family: myFirstFont;
+    src: url("./myFirstFont.ttf");
+}  
+  
+@font-face
+{
+    font-family: computer_pixel-7;
+    src: url("./computer_pixel-7.ttf");
+}
+
+
+/*flex-boxes*/
+
+
+.item {
+}
+/************/
+
+
+
+#left-panel{
+    margin:20px;
+    width:202px;
+    height: 423px;
+    position: relative;
+    background-image: url("../../images/bg2.png");
+    background-repeat: no-repeat;
+    border: 5px solid gray;
+}
+
+#middle-panel{
+margin-left:360px;
+min-width:700px;
+padding-right:0px;
+padding-left:100px;
+}
+
+
+#mapFrame{
+    position:absolute;
+    display:inline;
+    background-image:url('../../images/mapFrame.png');
+    top:-24px;
+    left:318px;
+    height:544px;
+    width:862px;
+    z-index:200;
+    padding-left:0px;
+    padding-top:0px;
+    margin-top:0px;
+    margin-right:0px;
+    background-repeat:no-repeat;
+
+
+}   
+#geagaCanvas{
+ border: 2px solid black;
+top:0;
+left:0;
+
+}
+span.withTitle {
+    font-size: 30px;
+}
+
+h1
+{
+  text-align: center;
+  font-family: computer_pixel-7;
+  font-size: 80px;
+  padding-bottom: 0px;
+  padding-top: 20px;
+  font-weight: normal;
+
+  margin-bottom:0px ;
+  margin-top:0px;
+}
+
+
+
+
+#alt-title{
+  opacity:0;
+    
+}
+#title:hover{
+}
+
+
+{
+  font-size: 14px;
+}
+
+#súile{
+   position:absolute;
+    width:85px;
+    height:85px;
+    background-image:url("../../images/suile.png");
+    bottom:223px;
+    right:-1080px;
+    z-index:4;
+opacity:0.5;
+
+}
+#deirGeaga1{
+ top: -373px;
+ left:0px;
+ height:0px;
+ line-height:0px;
+ position:relative;
+ text-align:center;
+font-family: computer_pixel-7;
+
+ color:#730a0a;
+ margin-left: 0px auto;
+ font-size: 85px;
+}
+#deirGeaga2
+{
+    position:relative;
+    top:-68px;
+margin:0px auto;
+margin-top: 0px;
+font-size:39px;
+
+}
+
+img
+{
+  margin: 0px auto;
+  display: block;
+  margin-bottom: 20px;
+}
+/*BUTTONS*/
+
+button
+{
+  background-color: #505050;
+  height: 70px;
+  width: 120px;
+  
+  font-size: 50px;
+  color: #fff;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
+	
+}
+#fwdBtn{
+  position:relative;
+     
+    left:-42px;
+    top:375px;
+    animation: delay-fade-in 3s;
+    }
+
+
+#bckBtn{
+    display:none;
+  position:relative;
+    left:-122px;
+    top:307px;
+
+}
+
+#play {
+  display:none;
+  position:relative;
+  background-color: #207720;
+  top:234px;
+  left:38px;
+z-index:20;	
+}
+
+#geaga{
+
+    position:absolute;
+    width:220px;
+    height:311px;
+    background-image:url("../../images/geaga2.png");
+    bottom:110px;
+    right:-1119px;
+    z-index:4;
+}
+
+#deetsFrame{
+position:relative;
+background-image:url("../../images/deetsFrame.png");
+top:-25px;
+right:-592px;
+width:350px;
+height:352px;
+background-repeat:no-repeat;
+z-index:10;
+}
+
+
+/**STATUE STUFF*/
+
+#shield-holder{
+
+    position:absolute;
+    width:257px;
+    height:420px;
+    background-image:url("../../images/dealbh.png");
+    bottom:-6px;
+    left:-69px;
+    z-index:10;
+}
+
+#bearla{
+    position:absolute;
+    color:black;
+    font-size: 36px;
+    text-align:center;
+    top: 134px;
+    left:-41px;
+    width: 115px;
+    z-index:32;
+    line-height: 27px;
+    word-spacing:-1px;
+    font-family:computer_pixel-7; 
+}
+
+#badge{
+    position:absolute;
+    top:90px;
+    left:158px;
+    background-image:url("../../images/badges.png");
+    z-index:20;
+    opacity:1;
+    width:80px;
+    height:80px
+
+}
+
+
+/*PLAYER INPUT ELEMENTS*/
+
+
+#inputElements
+{
+  display: none;  
+  position: relative;
+  bottom: -250px;
+  left: 0px;
+  width: 260px;
+  height:50px;
+  padding: 2px 2px 2px 5px;
+  border: 1px solid black;
+  background-color: rgba(0,0,0,0.3);
+  -webkit-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+	box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+  z-index: 100;
+
+}
+
+
+
+
+
+
+
+
+
+ .fadeText{
+animation: fade-in 2s;
+ } 
+
+@keyframes delay-fade-in{
+    0% {opacity:0;}
+    75%{opacity:0;}
+    100%{opacity:1;}
+
+}
+
+@keyframes fade-in{
+0% {opacity:0;}
+
+100% {opacity:1;} 
+}
+@keyframes fade-out{
+0%{opacity:1;}
+
+ 100%{opacity:0;} 
+
+}
+
+@keyframes slide-button-right{
+    0%{left:-42px;}
+    100%{left: 37px;}
+    
+}
+@keyframes slide-button-left{
+    0%{left:37px;}
+    100%{left: -42px;}
+} 
+@keyframes county-select-mode{
+0%{opacity: 0;}
+100%{opacity:1;}
+}
+
+@keyframes dim {
+0%{opacity: 1;}
+100%{opacity:0.25;}
