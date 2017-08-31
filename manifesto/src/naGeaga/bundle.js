@@ -322,22 +322,24 @@ deirGeaga1.innerHTML= placeName;
 
 },{"./geaga-teacs":1}],3:[function(require,module,exports){
 
+geagaChat = document.getElementById('#geagaChat');
+
 //sprite Object
 
 var spriteObject =
-{
-  sourceX: 0,
-  sourceY: 0,
-  sourceWidth: 64,
-  sourceHeight: 64,
+    {
+        sourceX: 0,
+        sourceY: 0,
+        sourceWidth: 64,
+        sourceHeight: 64,
 
-  x:0,
-  y:0,
-  width:64,
-  height:64,
-  vx:0,
-  vy:0
-};
+        x:0,
+        y:0,
+        width:64,
+        height:64,
+        vx:0,
+        vy:0
+    };
 
 
 
@@ -362,43 +364,43 @@ background.y =0;
 sprites.push(background);
 //gameworld and camera object
 var gameWorld =
-{
-  x:0,
-  y:0,
-  width: background.width,
-  height: background.height
+    {
+        x:0,
+        y:0,
+        width: background.width,
+        height: background.height
 
-};
+    };
 
 var camera =
-{
-  x: 0,
-  y: 0,
-  width: canvas.width,
-  height: canvas.height,
+    {
+        x: 0,
+        y: 0,
+        width: canvas.width,
+        height: canvas.height,
 
-//inner boundary getters
-rightInnerBoundary: function(){
-  return this.x + (this.width*0.75);
-},
-leftInnerBoundary: function(){
-  return this.x + (this.width*0.25);
+        //inner boundary getters
+        rightInnerBoundary: function(){
+            return this.x + (this.width*0.75);
+        },
+        leftInnerBoundary: function(){
+            return this.x + (this.width*0.25);
 
-},
-topInnerBoundary: function(){
-  return this.y + (this.height*0.25);
+        },
+        topInnerBoundary: function(){
+            return this.y + (this.height*0.25);
 
-},
-bottomInnerBoundary: function(){
-  return this.y + (this.height*0.75);
-}
+        },
+        bottomInnerBoundary: function(){
+            return this.y + (this.height*0.75);
+        }
 
-};
+    };
 
 
 //player sprite created and centered
 
-
+var canMove=true;
 var player = Object.create(spriteObject);
 player.x = 243;
 player.y = 368;
@@ -425,168 +427,182 @@ var moveLeft = false;
 //keyboard listeners hit and release
 
 window.addEventListener("keydown",function(event){
+    if(canMove){
+        switch(event.keyCode){
+            case UP:
+                moveUp = true;
+                break;
 
-  switch(event.keyCode){
-    case UP:
-    moveUp = true;
-    break;
+            case DOWN:
+                moveDown = true;
+                break;
 
-    case DOWN:
-    moveDown = true;
-    break;
+            case LEFT:
+                moveLeft = true;
+                break;
 
-    case LEFT:
-    moveLeft = true;
-    break;
+            case RIGHT:
+                moveRight = true;
+                break;
+        }
+        console.log("px: "+player.x+"  py: "+player.y);
+        if(player.x>645 && player.y>478){
+            playerNearGeaga();
+        }
+    }
 
-    case RIGHT:
-    moveRight = true;
-    break;
-  }
-    event.preventDefault();
+
+//        event.preventDefault();
 },false);
 window.addEventListener("keyup", function(event){
-  switch(event.keyCode){
-    case UP:
-    moveUp = false;
-    break;
+    switch(event.keyCode){
+        case UP:
+            moveUp = false;
+            break;
 
-    case DOWN:
-    moveDown = false;
-    break;
+        case DOWN:
+            moveDown = false;
+            break;
 
-    case LEFT:
-    moveLeft = false;
-    break;
+        case LEFT:
+            moveLeft = false;
+            break;
 
-    case RIGHT:
-    moveRight = false;
-    break;
-  }
+        case RIGHT:
+            moveRight = false;
+            break;
+    }
 },false);
 
 function loadHandler()
 {
-  update();
+    update();
 }
 
 function update()
 {
 
-requestAnimationFrame(update,canvas);
+    requestAnimationFrame(update,canvas);
 
-//up
-if(moveUp && !moveDown)
-{
-  player.vy = -5;
-  console.log("up");
-}
-//down
-if(moveDown && !moveUp){
-  player.vy = 5;
-}
-//left
-if(moveLeft && !moveRight){
-  player.vx = -5;
-}
-//right
-if (moveRight && !moveLeft){
-  player.vx = 5;
-}
+    //up
+    if(moveUp && !moveDown)
+    {
+        player.vy = -5;
+        console.log("up");
+    }
+    //down
+    if(moveDown && !moveUp){
+        player.vy = 5;
+    }
+    //left
+    if(moveLeft && !moveRight){
+        player.vx = -5;
+    }
+    //right
+    if (moveRight && !moveLeft){
+        player.vx = 5;
+    }
 
-//no moves
+    //no moves
 
-if(!moveUp && !moveDown)
-{
-  player.vy = 0;
-}
+    if(!moveUp && !moveDown)
+    {
+        player.vy = 0;
+    }
 
-if(!moveLeft && !moveRight){
-  player.vx = 0;
-}
+    if(!moveLeft && !moveRight){
+        player.vx = 0;
+    }
 
-//move the player and keep inside gameworld
-player.x = Math.max(0, Math.min(player.x + player.vx, gameWorld.width - player.width));
+    //move the player and keep inside gameworld
+    player.x = Math.max(0, Math.min(player.x + player.vx, gameWorld.width - player.width));
 
-player.y = Math.max(0, Math.min(player.y+player.vy, gameWorld.height-player.height));
+    player.y = Math.max(0, Math.min(player.y+player.vy, gameWorld.height-player.height));
 
-//move camera
+    //move camera
 
-if (player.x < camera.leftInnerBoundary())
-{
-  camera.x = Math.floor(player.x - (camera.width * 0.25));
-}
+    if (player.x < camera.leftInnerBoundary())
+    {
+        camera.x = Math.floor(player.x - (camera.width * 0.25));
+    }
 
-if (player.y < camera.topInnerBoundary())
-{
-   camera.y = Math.floor(player.y - (camera.height * 0.25));
-}
-if (player.x + player.width > camera.rightInnerBoundary())
-{
-  camera.x = Math.floor(player.x + player.width - (camera.width * 0.75));
-}
-if (player.y + player.height > camera.bottomInnerBoundary())
-{
-  camera.y = Math.floor(player.y + player.height - (camera.height *0.75));
-}
-// camera.x = Math.floor(player.x + (player.width/2) - (camera.width/2));
-// camera.y = Math.floor(player.y + (player.height/2)- (camera.height/2));
+    if (player.y < camera.topInnerBoundary())
+    {
+        camera.y = Math.floor(player.y - (camera.height * 0.25));
+    }
+    if (player.x + player.width > camera.rightInnerBoundary())
+    {
+        camera.x = Math.floor(player.x + player.width - (camera.width * 0.75));
+    }
+    if (player.y + player.height > camera.bottomInnerBoundary())
+    {
+        camera.y = Math.floor(player.y + player.height - (camera.height *0.75));
+    }
+    // camera.x = Math.floor(player.x + (player.width/2) - (camera.width/2));
+    // camera.y = Math.floor(player.y + (player.height/2)- (camera.height/2));
 
-//keep camera inside gameworld
-if(camera.x < gameWorld.x)
-{
-  camera.x = gameWorld.x;
-}
+    //keep camera inside gameworld
+    if(camera.x < gameWorld.x)
+    {
+        camera.x = gameWorld.x;
+    }
 
-if(camera.y < gameWorld.y)
-{
-  camera.y = gameWorld.y;
-}
+    if(camera.y < gameWorld.y)
+    {
+        camera.y = gameWorld.y;
+    }
 
-if(camera.x + camera.width >gameWorld.x+ gameWorld.width)
-{
-  camera.x = gameWorld.x + gameWorld.width - camera.width;
+    if(camera.x + camera.width >gameWorld.x+ gameWorld.width)
+    {
+        camera.x = gameWorld.x + gameWorld.width - camera.width;
+    }
+    if(camera.y + camera.height > gameWorld.y + gameWorld.height)
+    {
+        camera.y = gameWorld.y + gameWorld.height - camera.height;
+    }
+    render();
 }
-if(camera.y + camera.height > gameWorld.y + gameWorld.height)
-{
-  camera.y = gameWorld.y + gameWorld.height - camera.height;
-}
-render();
+function playerNearGeaga(){
+    console.log("achtung player 1!");
+    geagaChat.style.display="inline";
+    canMove=false;
+    player.x =648;
+    player.y = 501;
 }
 
 function render(event)
 
 {
-  drawingSurface.clearRect(0,0,canvas.width,canvas.height);
-drawingSurface.save();
+    drawingSurface.clearRect(0,0,canvas.width,canvas.height);
+    drawingSurface.save();
 
-//move drawing surface to keep position relative to camera
-drawingSurface.translate(-camera.x, -camera.y);
-
-
-
-  //LOOP THROUGH ALL SPRITES AND USE THEIR PROPERTIES TO DISPLAY THEM
+    //move drawing surface to keep position relative to camera
+    drawingSurface.translate(-camera.x, -camera.y);
 
 
 
-if(sprites.length !== 0)
-{
-  for (var i = 0; i<sprites.length; i++){
-    var sprite = sprites[i];
-    drawingSurface.drawImage
-    (
-      image,
-      sprite.sourceX,sprite.sourceY,
-      sprite.sourceWidth, sprite.sourceHeight,
-      Math.floor(sprite.x), Math.floor(sprite.y),
-      sprite.width, sprite.height
-);
+    //LOOP THROUGH ALL SPRITES AND USE THEIR PROPERTIES TO DISPLAY THEM
 
 
+
+    if(sprites.length !== 0)
+    {
+        for (var i = 0; i<sprites.length; i++){
+            var sprite = sprites[i];
+            drawingSurface.drawImage
+            (
+                image,
+                sprite.sourceX,sprite.sourceY,
+                sprite.sourceWidth, sprite.sourceHeight,
+                Math.floor(sprite.x), Math.floor(sprite.y),
+                sprite.width, sprite.height
+            );
+
+
+        }
     }
-  }
 
-  drawingSurface.restore();
+    drawingSurface.restore();
 }
 
 

@@ -187,16 +187,23 @@ button
   left:38px;
 z-index:20;	
 }
-
+#chat{
+    position:absolute;
+    background-image:url('../../images/geagaFrame.png');
+    top:150px;
+    left:461px;
+    height:253px;
+    width:557px;
+}
 #geaga{
-    opacity:0;
+    opacity:1;
     position:absolute;
     width:220px;
     height:311px;
     background-image:url("../../images/geaga2.png");
-    bottom:110px;
-    right:-119px;
-    z-index:4;
+    bottom:37px;
+    right:-794px;
+    z-index:500;
 }
 
 #deetsFrame{
