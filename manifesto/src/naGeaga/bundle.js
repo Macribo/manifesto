@@ -322,8 +322,8 @@ deirGeaga1.innerHTML= placeName;
 
 },{"./geaga-teacs":1}],3:[function(require,module,exports){
 
-geagaChat = document.getElementById('#geagaChat');
-
+var geagaChat = document.getElementById('geagaChat');
+var allChat = document.getElementById('allChat');
 //sprite Object
 
 var spriteObject =
@@ -452,7 +452,7 @@ window.addEventListener("keydown",function(event){
     }
 
 
-//        event.preventDefault();
+        event.preventDefault();
 },false);
 window.addEventListener("keyup", function(event){
     switch(event.keyCode){
@@ -564,10 +564,10 @@ function update()
 }
 function playerNearGeaga(){
     console.log("achtung player 1!");
-    geagaChat.style.display="inline";
     canMove=false;
-    player.x =648;
+    player.x =1648;
     player.y = 501;
+   allChat.style.display="inline";
 }
 
 function render(event)

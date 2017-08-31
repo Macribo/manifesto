@@ -1,6 +1,6 @@
 
-geagaChat = document.getElementById('#geagaChat');
-
+var geagaChat = document.getElementById('geagaChat');
+var allChat = document.getElementById('allChat');
 //sprite Object
 
 var spriteObject =
@@ -241,10 +241,10 @@ function update()
 }
 function playerNearGeaga(){
     console.log("achtung player 1!");
-    geagaChat.style.display="inline";
     canMove=false;
-    player.x =648;
+    player.x =1648;
     player.y = 501;
+   allChat.style.display="inline";
 }
 
 function render(event)

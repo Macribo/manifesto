@@ -111,8 +111,10 @@ h1
     background-image:url("../../images/suile.png");
     bottom:223px;
     right:-1080px;
-    z-index:4;
-opacity:0;
+    z-index:900;
+opacity:1;
+animation: fade-in 2s;
+
 
 }
 #deirGeaga1{
@@ -187,7 +189,21 @@ button
   left:38px;
 z-index:20;	
 }
-#chat{
+
+#allChat{
+    display:none;
+    animation:fade-in 0.5s; 
+}
+#playerPortrait{
+    position:absolute;
+    background-image:url('../../images/imreoir.gif');
+    top:461px;
+    left:866px;
+    height:156px;
+    width:111px;
+    z-index:301;
+}
+#chatPanel{
     position:absolute;
     background-image:url('../../images/geagaFrame.png');
     top:150px;
@@ -198,12 +214,12 @@ z-index:20;
 #geaga{
     opacity:1;
     position:absolute;
-    width:220px;
-    height:311px;
-    background-image:url("../../images/geaga2.png");
-    bottom:37px;
-    right:-794px;
-    z-index:500;
+    width:441px;
+    height:621px;
+    background-image:url("../../images/geaga5.png");
+    bottom:-170px;
+    right:-1076px;
+    z-index:300;
 }
 
 #deetsFrame{
@@ -299,7 +315,7 @@ animation: fade-in 2s;
 }
 
 @keyframes fade-in{
-0% {opacity:0;}
+0% {opacity:0.2;}
 
 100% {opacity:1;} 
 }
