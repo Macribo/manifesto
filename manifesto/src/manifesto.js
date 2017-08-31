@@ -91,7 +91,7 @@ render();
    
 
     function mousedownHandler(){
-        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        fwdBtn.style.backgroundImage ='src("../images/btnBg3.png")';
         fwdBtn.style.background = "-moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
         fwdBtn.style.background = "linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
     }
@@ -187,7 +187,12 @@ if(story===1){
      },3500);
 
 
-} 
+}
+if(story===2){
+    output2.style.top="-399px";
+    output2.style.left="400px;";
+
+}
     if(story===4){
         //update button styles if player is coming back from events on story 5 
         fwdBtn.style.left='-42px';

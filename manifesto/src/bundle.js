@@ -64,18 +64,7 @@ $(document).ready(function(){
     });
 });
 
-//naGeaga
 
-
-    $('#deirGeaga1').hover(function(){
-    $('#bearla').text('Player 1');
-    $(this).css('color','#e35ee5');
-    }
-);
-    $('#deirGeaga1').mouseout(function(){
-        $('#bearla').text('');
-        $(this).css('color','#730a0a');
-    });
    });
 
 
@@ -173,7 +162,7 @@ render();
    
 
     function mousedownHandler(){
-        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        fwdBtn.style.backgroundImage ='src("../images/btnBg3.png")';
         fwdBtn.style.background = "-moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
         fwdBtn.style.background = "linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
     }
@@ -269,7 +258,12 @@ if(story===1){
      },3500);
 
 
-} 
+}
+if(story===2){
+    output2.style.top="-399px";
+    output2.style.left="400px;";
+
+}
     if(story===4){
         //update button styles if player is coming back from events on story 5 
         fwdBtn.style.left='-42px';
@@ -342,7 +336,7 @@ module.exports = [
 
 <div style="animation:delay-fade-in 1s;">
 <li>
-<span id='One cannot'>Ní feidir</span><span id='give an objective account'> tuairisc oibiachtúil a thabhairt</span><span id='on the intimacy between'> ar an caidreamh idir</span><span id='language'> teanga</span><span id='and mind'> agus meabhair</span>
+<span id='One cannot'>Ní feidir</span><span id='give a neutral account'> tuairisc neodrach a thabhairt</span><span id='of the connection between'> ar an caidreamh idir</span><span id='language'> teanga</span><span id='and mind'> agus meabhair</span>
 </li>
 </div>
 <br>
@@ -351,7 +345,7 @@ module.exports = [
 <li>
 
 <span id='A lack of space'>Easpa spás,</span> <span id='rather than'> seachas </span><span id='a lack'>easpa</span> <span id='of interest'> spéis</span> <span id='or ability'>ná cumas</span>, 
-<span id='is'>is</span> <span id='the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>
+<span id='is'>is</span> <span id='the cause'>cúis</span><span id='of our'> len ár</span> <span id='language problem'>dúcheist teanga</span>
 </li>
 
 </div>
@@ -361,7 +355,7 @@ module.exports = [
 <li>
     
 
-<span id='A virtual community can'>Is feidir le spás fiorúl coiteannta</span><span id='suddenly improve'> luas tobann a chuir faoi</span><span id='mental fluency'> líofacht intinneach </span><span id='Gaelic'>don tae ag a bhfuil cú-foo eigin aicí/ge </span>
+<span id='A shared virtual space could'>D'feidach spás fiorúl coiteannta</span><span id='improve'> feabhsú </span><span id='internal fluency'> líofacht intinneach </span><span id='among a community'>i measc pobal</span><span id='separated'> scartha </span><span id='from Gaelic ways'> ón Gaelachas</span>
 </li>
 
 </div>
