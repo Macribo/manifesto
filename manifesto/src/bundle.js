@@ -157,43 +157,43 @@ render();
 
 //Event Handlers
     function playHandler(){
+        playBtn.style.backgroundImage='url("../images/btnBg3.png")';
     window.location.replace("http://ribodev.com/wp-content/uploads/2017/manifestoWeb/src/naContae/naContae.html");
     }
-   
+  function mouseoverHandler(){
+    fwdBtn.style.backgroundImage='("../images/btnBg3.png")';
+  } 
 
     function mousedownHandler(){
-        fwdBtn.style.backgroundImage ='src("../images/btnBg3.png")';
-        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
-        fwdBtn.style.background = "linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        fwdBtn.style.backgroundImage ='url("../images/btnBg2.png")';
     }
 
     function mouseoutHandler(){
-        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "#505050";
+        fwdBtn.style.backgroundImage = 'url("../images/btnBg1.png")';
     }
 
     function bckBtnHandler(){
-        bckBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        bckBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        bckBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        bckBtn.style.backgroundImage = 'url("../images/btnBg2.png")';
 
         stepBack();
-
+        setTimeout(function(){
+            bckBtn.style.backgroundImage='url("../images/btnBg1.png")';},1000);
     }
 
 
     function fwdBtnHandler(){
 
- 
-    console.log("saying hi.");
+       fwdBtn.style.backgroundImage = 'url("../images/btnBg2.png")';
 
-        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+           console.log("saying hi.");
+
         stepFwd();
         playGame();
-      }
+       
+        setTimeout(function(){
+            fwdBtn.style.backgroundImage='url("../images/btnBg1.png")';},1000);
+ 
+}
 
     function narrate(story){
         output2.innerHTML = storyTexts[story];
@@ -261,10 +261,16 @@ if(story===1){
 }
 if(story===2){
     output2.style.top="-399px";
-    output2.style.left="400px;";
+    output2.style.left="140px";
 
 }
-    if(story===4){
+   
+    if(story===3){
+        output2.style.top="-520px";
+        output2.style.left="-140px";
+    }
+
+if(story===4){
         //update button styles if player is coming back from events on story 5 
         fwdBtn.style.left='-42px';
         fwdBtn.style.display='inline';
@@ -332,11 +338,11 @@ module.exports = [
 */
 //10
 `
-<span id='Asserts'>Dearbhín</span> <span id='this manifesto'>an forógra seo</span>: <ul>
+<span id='Asserts'>Dearbhín</span> <span id='this manifesto:'>an forógra seo</span>: <ul>
 
 <div style="animation:delay-fade-in 1s;">
 <li>
-<span id='One cannot'>Ní feidir</span><span id='give a neutral account'> tuairisc neodrach a thabhairt</span><span id='of the connection between'> ar an caidreamh idir</span><span id='language'> teanga</span><span id='and mind'> agus meabhair</span>
+<span id='One cannot'>Ní feidir</span><span id='give a neutral account'> tuairisc neodrach a thabhairt</span><span id='of the connections'> ar na caidreamh </span><span id='between'>idir</span><span id='language'> teanga</span><span id='and mind'> agus meabhair</span>
 </li>
 </div>
 <br>
@@ -344,22 +350,15 @@ module.exports = [
 <div style="animation:delay-fade-in 3s;">
 <li>
 
-<span id='A lack of space'>Easpa spás,</span> <span id='rather than'> seachas </span><span id='a lack'>easpa</span> <span id='of interest'> spéis</span> <span id='or ability'>ná cumas</span>, 
-<span id='is'>is</span> <span id='the cause'>cúis</span><span id='of our'> len ár</span> <span id='language problem'>dúcheist teanga</span>
+
+<span id='A shared virtual space could'>D'feidach spás fiorúl coiteannta</span><span id='support'> tacú </span> <span id='the development of'>le forbairt </span><span id='these connections'>na caidreamh sin</span>
+</li>
+
+
 </li>
 
 </div>
-<br>
-
-<div style="animation:delay-fade-in 5s;">
-<li>
     
-
-<span id='A shared virtual space could'>D'feidach spás fiorúl coiteannta</span><span id='improve'> feabhsú </span><span id='internal fluency'> líofacht intinneach </span><span id='among a community'>i measc pobal</span><span id='separated'> scartha </span><span id='from Gaelic ways'> ón Gaelachas</span>
-</li>
-
-</div>
-
 
 
 </ul>
@@ -367,7 +366,7 @@ module.exports = [
 `,
 //11
 `
-<span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='a test'> tríal</span><span id='to play'> a imirt</span>?
+<span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='give it a try?'> tríal a bhainnt as</span>?
 `,
 
 //12

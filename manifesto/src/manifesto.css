@@ -116,8 +116,8 @@ margin:0px auto;
 margin-top: 0px;
 font-size:39px;
 left:0px;
-}
-
+width:640px;
+z-index: 600;}
 img
 {
   margin: 0px auto;
@@ -143,7 +143,7 @@ button
   position:relative;
      
     left:-42px;
-    top:375px;
+    top:352px;
     animation: delay-fade-in 3s;
    }
 
@@ -152,17 +152,17 @@ button
     display:none;
   position:relative;
     left:-122px;
-    top:307px;
+    top:234px;
 
 }
 
 #play {
   display:none;
   position:relative;
-  background-color: #207720;
-  top:234px;
+  top:115px;
   left:38px;
-z-index:20;	
+z-index:20;
+background-image:url('../images/btnBg2.png');
 }
 
 

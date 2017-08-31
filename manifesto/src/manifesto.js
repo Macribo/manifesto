@@ -86,43 +86,43 @@ render();
 
 //Event Handlers
     function playHandler(){
+        playBtn.style.backgroundImage='url("../images/btnBg3.png")';
     window.location.replace("http://ribodev.com/wp-content/uploads/2017/manifestoWeb/src/naContae/naContae.html");
     }
-   
+ // function mouseoverHandler(){
+   // fwdBtn.style.backgroundImage='("../images/btnBg3.png")';
+//  } 
 
     function mousedownHandler(){
-        fwdBtn.style.backgroundImage ='src("../images/btnBg3.png")';
-        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
-        fwdBtn.style.background = "linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        fwdBtn.style.backgroundImage ='url("../images/btnBg2.png")';
     }
 
     function mouseoutHandler(){
-        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "#505050";
+        fwdBtn.style.backgroundImage = 'url("../images/btnBg1.png")';
     }
 
     function bckBtnHandler(){
-        bckBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        bckBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        bckBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        bckBtn.style.backgroundImage = 'url("../images/btnBg2.png")';
 
         stepBack();
-
+        setTimeout(function(){
+            bckBtn.style.backgroundImage='url("../images/btnBg1.png")';},1000);
     }
 
 
     function fwdBtnHandler(){
 
- 
-    console.log("saying hi.");
+       fwdBtn.style.backgroundImage = 'url("../images/btnBg2.png")';
 
-        fwdBtn.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        fwdBtn.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+           console.log("saying hi.");
+
         stepFwd();
         playGame();
-      }
+       
+        setTimeout(function(){
+            fwdBtn.style.backgroundImage='url("../images/btnBg1.png")';},1000);
+ 
+}
 
     function narrate(story){
         output2.innerHTML = storyTexts[story];
@@ -190,10 +190,16 @@ if(story===1){
 }
 if(story===2){
     output2.style.top="-399px";
-    output2.style.left="400px;";
+    output2.style.left="140px";
 
 }
-    if(story===4){
+   
+    if(story===3){
+        output2.style.top="-520px";
+        output2.style.left="-140px";
+    }
+
+if(story===4){
         //update button styles if player is coming back from events on story 5 
         fwdBtn.style.left='-42px';
         fwdBtn.style.display='inline';
