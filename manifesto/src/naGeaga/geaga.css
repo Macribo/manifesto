@@ -49,6 +49,8 @@ margin-left:260px;
 min-width:700px;
 padding-right:0px;
 padding-left:100px;
+top:0px;
+left:0px;
 }
 
 
@@ -56,8 +58,8 @@ padding-left:100px;
     position:absolute;
     display:inline;
     background-image:url('../../images/mapFrame.png');
-    top:15px;
-    left:305px;
+    top:36px;
+    left:339px;
     height:544px;
     width:862px;
     z-index:200;
@@ -70,7 +72,7 @@ padding-left:100px;
 
 }   
 #geagaCanvas{
-padding-top:36px;
+padding-top:46px;
 }
 span.withTitle {
     font-size: 30px;
@@ -106,11 +108,11 @@ h1
 
 #súile{
    position:absolute;
-    width:85px;
+    width:170px;
     height:85px;
     background-image:url("../../images/suile.png");
-    bottom:223px;
-    right:-1080px;
+    bottom:120px;
+    right:-995px;
     z-index:900;
 opacity:1;
 animation: fade-in 2s;
@@ -150,28 +152,32 @@ img
 
 button
 {
-  background-color: #505050;
-  height: 70px;
-  width: 120px;
+  height: 59px;
+  width: 59px;
   
-  font-size: 50px;
+  font-size: 20px;
   color: #fff;
 
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
 
-	
+	background-color:transparent;
+    border:none;
+    outline:none;
+
+    background-image:url('../../images/btnBg1.png');
 }
 #btnTalk{
   position:relative;
-     
-    left:-42px;
-    top:375px;
-    /*animation: delay-fade-in 3s;*/
+    left:-13px;
+    top:335px;
+    animation:fade-in 0.5s;
     display:none;
-    }
-
+        }
+#btnTalk:hover{
+    background-image:url('../../images/btnBg2.png');
+}
 
 #bckBtn{
     display:none;
@@ -225,7 +231,7 @@ z-index:20;
 #deetsFrame{
 position:relative;
 background-image:url("../../images/deetsFrame.png");
-top:-573px;
+top:-540px;
 right:410px;
 width:350px;
 height:352px;
@@ -242,8 +248,8 @@ z-index:2;
     width:257px;
     height:420px;
     background-image:url("../../images/dealbh.png");
-    bottom:-6px;
-    left:-55px;
+    bottom:-63px;
+    left:-52px;
     z-index:10;
 }
 

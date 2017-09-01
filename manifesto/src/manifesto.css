@@ -33,7 +33,7 @@ html {
     position:absolute;
     display: inline;
     background-image:url('../images/mapFrame.png');
-    top:32px;
+    top:62px;
     left:319px;
     height: 544px;
     width:862px;
@@ -101,7 +101,7 @@ h1
  line-height:0px;
  position:relative;
  text-align:center;
- left: -135px;
+ left: -200px;
  color:#730a0a;
  margin-left: 0px auto;
  font-size: 85px;
@@ -112,8 +112,6 @@ h1
     position:relative;
     top:-68px;
 font-family: INFO56_0;
-margin:0px auto;
-margin-top: 0px;
 font-size:39px;
 left:0px;
 width:640px;
@@ -128,38 +126,45 @@ img
 
 button
 {
-  height: 118px;
-  width: 118px;
-  
-  font-size: 50px;
- background-image:url('../images/btnBg1.png');
-  -webkit-user-select: none;
+  height: 59px;
+  width: 59px;
+ border:0px; 
+  font-size: 20px;
+  color:#eae2a9;
+ outline:none;
+ -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  background-color:transparent;
 
+ background-image:url('../images/btnBg1.png');
 	
+}
+button:hover{
+    background-image:url('../images/btnBg3.png');
 }
 #fwdBtn{
   position:relative;
      
-    left:-42px;
+ outline:none;
+    left:-13px;
     top:352px;
-    animation: delay-fade-in 3s;
+    animation: delay-fade-in 1s;
    }
 
 
 #bckBtn{
     display:none;
   position:relative;
-    left:-122px;
-    top:234px;
+    left:-71px;
+    top:293px;
 
 }
 
 #play {
   display:none;
   position:relative;
-  top:115px;
+  top:234px;
   left:38px;
 z-index:20;
 background-image:url('../images/btnBg2.png');
@@ -259,13 +264,13 @@ animation: fade-in 2s;
 }
 
 @keyframes slide-button-right{
-    0%{left:-42px;}
+    0%{left:-13px;}
     100%{left: 37px;}
     
 }
 @keyframes slide-button-left{
     0%{left:37px;}
-    100%{left: -42px;}
+    100%{left: -13px;}
 } 
 @keyframes county-select-mode{
 0%{opacity: 0;}
@@ -274,4 +279,4 @@ animation: fade-in 2s;
 
 @keyframes dim {
 0%{opacity: 1;}
-100%{opacity:0.25;}
+130%{opacity:0.25;}

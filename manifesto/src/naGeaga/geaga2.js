@@ -33,7 +33,7 @@ var sprites = [];
 var background = Object.create(spriteObject);
 background.sourceY = 64;
 background.sourceWidth = 2068;
-background.sourceHeight =1424;
+background.sourceHeight =1404;
 background.width = 1034;
 background.height =712;
 background.x = 0;
@@ -123,11 +123,15 @@ window.addEventListener("keydown",function(event){
                 break;
         }
         console.log("px: "+player.x+"  py: "+player.y);
-        if(player.x>645 && player.y>478){
+        
+    }
+if(player.x>645 && player.y>478){
             playerNearGeaga();
         }
+    else{
+        notNearGeaga();
     }
-
+    
 
         event.preventDefault();
 },false);
@@ -241,12 +245,20 @@ function update()
 }
 function playerNearGeaga(){
     console.log("achtung player 1!");
+     btnTalk.style.display="inline"; 
+
+}
+function notNearGeaga(){
+     btnTalk.style.display="none"; 
+
+}
+function talkToGeaga(){
     canMove=false;
     player.x =1648;
     player.y = 501;
    allChat.style.display="inline";
-}
 
+}
 function render(event)
 
 {

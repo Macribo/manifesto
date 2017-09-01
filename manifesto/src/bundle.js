@@ -160,16 +160,15 @@ render();
         playBtn.style.backgroundImage='url("../images/btnBg3.png")';
     window.location.replace("http://ribodev.com/wp-content/uploads/2017/manifestoWeb/src/naContae/naContae.html");
     }
-  function mouseoverHandler(){
-    fwdBtn.style.backgroundImage='("../images/btnBg3.png")';
-  } 
+ // function mouseoverHandler(){
+   // fwdBtn.style.backgroundImage='("../images/btnBg3.png")';
+//  } 
 
     function mousedownHandler(){
         fwdBtn.style.backgroundImage ='url("../images/btnBg2.png")';
     }
 
     function mouseoutHandler(){
-        fwdBtn.style.backgroundImage = 'url("../images/btnBg1.png")';
     }
 
     function bckBtnHandler(){
@@ -261,13 +260,14 @@ if(story===1){
 }
 if(story===2){
     output2.style.top="-399px";
-    output2.style.left="140px";
+    output2.style.left="150px";
 
 }
    
     if(story===3){
         output2.style.top="-520px";
-        output2.style.left="-140px";
+        output2.style.left="-100px";
+        
     }
 
 if(story===4){
@@ -342,7 +342,7 @@ module.exports = [
 
 <div style="animation:delay-fade-in 1s;">
 <li>
-<span id='One cannot'>Ní feidir</span><span id='give a neutral account'> tuairisc neodrach a thabhairt</span><span id='of the connections'> ar na caidreamh </span><span id='between'>idir</span><span id='language'> teanga</span><span id='and mind'> agus meabhair</span>
+<span id='One cannot'>Nach feidir</span><span id='give a neutral account'> tuairisc neodrach a thabhairt</span><span id='of the connec- tions'> ar na caidreamh </span><span id='between'>idir</span><span id='language'> teanga</span><span id='and mind'> agus meabhair</span>
 </li>
 </div>
 <br>
@@ -351,7 +351,7 @@ module.exports = [
 <li>
 
 
-<span id='A shared virtual space could'>D'feidach spás fiorúl coiteannta</span><span id='support'> tacú </span> <span id='the development of'>le forbairt </span><span id='these connections'>na caidreamh sin</span>
+<span id='A shared virtual space could'>D'feidach spás fiorúl coiteannta</span><span id='support'> tacú </span> <span id='the develop- ment of'>le forbairt </span><span id='these connec- tions'>na caidreamh sin</span>
 </li>
 
 

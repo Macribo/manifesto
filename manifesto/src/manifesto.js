@@ -98,7 +98,6 @@ render();
     }
 
     function mouseoutHandler(){
-        fwdBtn.style.backgroundImage = 'url("../images/btnBg1.png")';
     }
 
     function bckBtnHandler(){
@@ -190,13 +189,14 @@ if(story===1){
 }
 if(story===2){
     output2.style.top="-399px";
-    output2.style.left="140px";
+    output2.style.left="150px";
 
 }
    
     if(story===3){
         output2.style.top="-520px";
-        output2.style.left="-140px";
+        output2.style.left="-100px";
+        
     }
 
 if(story===4){

@@ -45,7 +45,7 @@ module.exports = [
 
 <div style="animation:delay-fade-in 1s;">
 <li>
-<span id='One cannot'>Ní feidir</span><span id='give a neutral account'> tuairisc neodrach a thabhairt</span><span id='of the connections'> ar na caidreamh </span><span id='between'>idir</span><span id='language'> teanga</span><span id='and mind'> agus meabhair</span>
+<span id='One cannot'>Nach feidir</span><span id='give a neutral account'> tuairisc neodrach a thabhairt</span><span id='of the connec- tions'> ar na caidreamh </span><span id='between'>idir</span><span id='language'> teanga</span><span id='and mind'> agus meabhair</span>
 </li>
 </div>
 <br>
@@ -54,7 +54,7 @@ module.exports = [
 <li>
 
 
-<span id='A shared virtual space could'>D'feidach spás fiorúl coiteannta</span><span id='support'> tacú </span> <span id='the development of'>le forbairt </span><span id='these connections'>na caidreamh sin</span>
+<span id='A shared virtual space could'>D'feidach spás fiorúl coiteannta</span><span id='support'> tacú </span> <span id='the develop- ment of'>le forbairt </span><span id='these connec- tions'>na caidreamh sin</span>
 </li>
 
 
