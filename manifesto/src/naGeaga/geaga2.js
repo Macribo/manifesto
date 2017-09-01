@@ -1,6 +1,14 @@
+//jshint esversion:6
 
-var geagaChat = document.getElementById('geagaChat');
+let geagaTexts = require("./geaga-teacs"); //can't use capital letters with browswerify 
+
+let story = 1;
+
+var btnTalk = document.getElementById('btnTalk');
 var allChat = document.getElementById('allChat');
+var súile = document.getElementById('súile');
+var talkingToGeaga = false;
+
 //sprite Object
 
 var spriteObject =
@@ -101,6 +109,9 @@ var moveDown = false;
 var moveRight = false;
 var moveLeft = false;
 
+//chat button handler
+btnTalk.addEventListener("click",talkHandler,false);
+
 //keyboard listeners hit and release
 
 window.addEventListener("keydown",function(event){
@@ -125,18 +136,12 @@ window.addEventListener("keydown",function(event){
         console.log("px: "+player.x+"  py: "+player.y);
         
     }
-if(player.x>645 && player.y>478){
-            playerNearGeaga();
-        }
-    else{
-        notNearGeaga();
-    }
     
 
         event.preventDefault();
 },false);
 window.addEventListener("keyup", function(event){
-    switch(event.keyCode){
+    if(canMove)switch(event.keyCode){
         case UP:
             moveUp = false;
             break;
@@ -165,6 +170,12 @@ function update()
 
     requestAnimationFrame(update,canvas);
 
+if(player.x>=653 && player.y>=388){
+            playerNearGeaga();
+        }
+    else{
+        notNearGeaga();
+    }
     //up
     if(moveUp && !moveDown)
     {
@@ -246,19 +257,46 @@ function update()
 function playerNearGeaga(){
     console.log("achtung player 1!");
      btnTalk.style.display="inline"; 
+    
 
 }
 function notNearGeaga(){
      btnTalk.style.display="none"; 
 
 }
+
+function talkHandler(){
+    if(talkingToGeaga){
+        endTalkToGeaga();
+    }else{
+    talkToGeaga();}
+}
 function talkToGeaga(){
+    allChat.style.display="inline";
+    talkingToGeaga=true;
     canMove=false;
-    player.x =1648;
-    player.y = 501;
-   allChat.style.display="inline";
+    player.x=863;
+    player.y=398;
+    btnTalk.innerHTML='<i class= "fa fa-window-close-o">';
+    setTimeout(function(){
+        súile.style.animation="look-down 1s forwards";
+    },1200);
+    setTimeout(function(){
+        deirGeaga2.innerHTML = geagaTexts[story];
+    },2500);
+
 
 }
+
+function endTalkToGeaga(){
+   talkingToGeaga=false;
+   canMove=true;
+   player.x=650;
+   player.y=450;
+   allChat.style.display="none";
+    btnTalk.innerHTML='<i class= "fa fa-commenting-o">';
+}
+
 function render(event)
 
 {

@@ -110,9 +110,6 @@ module.exports = [
 },{}],2:[function(require,module,exports){
 //jshint esversion:6
 
-let storyTexts = require("./geaga-teacs"); //can't use capital letters with browswerify 
-
-let story = 1;
 var map = [];
 
 
@@ -181,7 +178,6 @@ var curSiosArCo = document.querySelector('#curSiosArCo');
 //Event Listeners:
 btnTalk.addEventListener("click", btnTalkHandler, false);
 btnTalk.addEventListener("mousedown",btnTalkHandler, false);
-btnTalk.addEventListener("mouseout", btnTalkHandler, false);
 bckBtn.addEventListener("click", bckBtnHandler, false);
 playBtn.addEventListener("click", playHandler, false);
 
@@ -226,9 +222,12 @@ seanDown.play();
  
     console.log("saying hi.");
 
-        btnTalk.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        btnTalk.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        btnTalk.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        btnTalk.style.backgroundImage = 'url("../../images/btnBg2.png")';
+setTimeout(
+    function(){
+        
+        btnTalk.style.backgroundImage = "url('../../images/btnBg1.png')";},1000); 
+
       }
 
     function narrate(story){
@@ -320,10 +319,18 @@ function render()
 
 deirGeaga1.innerHTML= placeName;
 
-},{"./geaga-teacs":1}],3:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
+//jshint esversion:6
 
-var geagaChat = document.getElementById('geagaChat');
+let geagaTexts = require("./geaga-teacs"); //can't use capital letters with browswerify 
+
+let story = 1;
+
+var btnTalk = document.getElementById('btnTalk');
 var allChat = document.getElementById('allChat');
+var súile = document.getElementById('súile');
+var talkingToGeaga = false;
+
 //sprite Object
 
 var spriteObject =
@@ -424,6 +431,9 @@ var moveDown = false;
 var moveRight = false;
 var moveLeft = false;
 
+//chat button handler
+btnTalk.addEventListener("click",talkHandler,false);
+
 //keyboard listeners hit and release
 
 window.addEventListener("keydown",function(event){
@@ -448,18 +458,12 @@ window.addEventListener("keydown",function(event){
         console.log("px: "+player.x+"  py: "+player.y);
         
     }
-if(player.x>645 && player.y>478){
-            playerNearGeaga();
-        }
-    else{
-        notNearGeaga();
-    }
     
 
         event.preventDefault();
 },false);
 window.addEventListener("keyup", function(event){
-    switch(event.keyCode){
+    if(canMove)switch(event.keyCode){
         case UP:
             moveUp = false;
             break;
@@ -488,6 +492,12 @@ function update()
 
     requestAnimationFrame(update,canvas);
 
+if(player.x>=653 && player.y>=388){
+            playerNearGeaga();
+        }
+    else{
+        notNearGeaga();
+    }
     //up
     if(moveUp && !moveDown)
     {
@@ -569,19 +579,46 @@ function update()
 function playerNearGeaga(){
     console.log("achtung player 1!");
      btnTalk.style.display="inline"; 
+    
 
 }
 function notNearGeaga(){
      btnTalk.style.display="none"; 
 
 }
+
+function talkHandler(){
+    if(talkingToGeaga){
+        endTalkToGeaga();
+    }else{
+    talkToGeaga();}
+}
 function talkToGeaga(){
+    allChat.style.display="inline";
+    talkingToGeaga=true;
     canMove=false;
-    player.x =1648;
-    player.y = 501;
-   allChat.style.display="inline";
+    player.x=863;
+    player.y=398;
+    btnTalk.innerHTML='<i class= "fa fa-window-close-o">';
+    setTimeout(function(){
+        súile.style.animation="look-down 1s forwards";
+    },1200);
+    setTimeout(function(){
+        deirGeaga2.innerHTML = geagaTexts[story];
+    },2500);
+
 
 }
+
+function endTalkToGeaga(){
+   talkingToGeaga=false;
+   canMove=true;
+   player.x=650;
+   player.y=450;
+   allChat.style.display="none";
+    btnTalk.innerHTML='<i class= "fa fa-commenting-o">';
+}
+
 function render(event)
 
 {
@@ -618,7 +655,7 @@ function render(event)
 }
 
 
-},{}],4:[function(require,module,exports){
+},{"./geaga-teacs":1}],4:[function(require,module,exports){
  //jshint esversion:6 
 $(document).ready(function(){
     $('#deirGeaga1').hover(function(){
@@ -633,11 +670,6 @@ $(document).ready(function(){
     document.querySelector('#bckBtn').onmouseenter = (event) => {
         document.querySelector('#bearla').innerHTML = 'back';
     };
-    document.querySelector('#btnTalk').onmouseenter = (event) => {
-        document.querySelector('#bearla').innerHTML = '"..."';
-    };
-    document.querySelector('#btnTalk').onmouseleave = (event) => {
-    document.querySelector().innerHTML = '';};
 //    $('#button').hover(function(){
 //                   $('#bearla').text('push');
 //    });
@@ -645,12 +677,12 @@ $(document).ready(function(){
      
     $('#btnTalk').click(function(){
 
-        $('#output2 span').hover(function(){
+        $('#deirGeaga2 span').hover(function(){
              $('#bearla').text($(this).attr('id'));
              $(this).css('color','#e35ee5');
     });
 
-        $('#output2 span').mouseout(function(){
+        $('#deirGeaga2 span').mouseout(function(){
             $('#bearla').text('');
             $(this).css('color','#fff');
 
@@ -658,28 +690,12 @@ $(document).ready(function(){
 });
     $('#bckBtn').click(function(){
 
-        $('#output2 span').hover(function(){
+        $('#deirGeaga2 span').hover(function(){
              $('#bearla').text($(this).attr('id'));
              $(this).css('color','#e35ee5');
-             $('div').slidedown(); 
     });
 
-        $('#output2 span').mouseout(function(){
-            $('#bearla').text('');
-            $(this).css('color','#fff');
-
-    });
-});
-
-   $('#play').click(function(){
-
-        $('#output2 span').hover(function(){
-             $('#bearla').text($(this).attr('id'));
-             $(this).css('color','#e35ee5');
-             $('div').slidedown(); 
-    });
-
-        $('#output2 span').mouseout(function(){
+        $('#deirGeaga2 span').mouseout(function(){
             $('#bearla').text('');
             $(this).css('color','#fff');
 

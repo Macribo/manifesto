@@ -1,8 +1,5 @@
 //jshint esversion:6
 
-let storyTexts = require("./geaga-teacs"); //can't use capital letters with browswerify 
-
-let story = 1;
 var map = [];
 
 
@@ -71,7 +68,6 @@ var curSiosArCo = document.querySelector('#curSiosArCo');
 //Event Listeners:
 btnTalk.addEventListener("click", btnTalkHandler, false);
 btnTalk.addEventListener("mousedown",btnTalkHandler, false);
-btnTalk.addEventListener("mouseout", btnTalkHandler, false);
 bckBtn.addEventListener("click", bckBtnHandler, false);
 playBtn.addEventListener("click", playHandler, false);
 
@@ -116,9 +112,12 @@ seanDown.play();
  
     console.log("saying hi.");
 
-        btnTalk.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        btnTalk.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        btnTalk.style.background = "linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        btnTalk.style.backgroundImage = 'url("../../images/btnBg2.png")';
+setTimeout(
+    function(){
+        
+        btnTalk.style.backgroundImage = "url('../../images/btnBg1.png')";},1000); 
+
       }
 
     function narrate(story){
