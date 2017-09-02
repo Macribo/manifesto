@@ -2,8 +2,9 @@
 
 let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
 
-let story = 1;
+let story = 2;
 var map = [];
+var starting = true;
 
 
 
@@ -42,6 +43,7 @@ images[8] = "Skibbereen.png";
 var gameMessage = ``;
 
 //Query Selectors:
+var cubes = document.querySelector('#cubes');
 var imreoir = document.querySelector('#imreoir');
 var pAinm=document.querySelector('#pAinm');
 var hum1 = document.querySelector('#hum1');
@@ -179,15 +181,12 @@ if (story===5){
         console.log("story === 5");   
 }
 if(story===1){
-     setTimeout(function(){ htmla.style.backgroundImage="url('../images/bgAnim6.gif')";},1000);    
-     setTimeout(function(){
-     
-        htmla.style.backgroundImage="url('../images/bg.png')";    
-     },3500);
 
 
 }
 if(story===2){
+     setTimeout(function(){ cubes.style.display="inline";},1000);    
+     setTimeout(function(){ cubes.style.display="none"; },3500);
     output2.style.top="-399px";
     output2.style.left="150px";
 
@@ -221,4 +220,11 @@ function render()
     //Display the game message
 
 }
+
+if (starting){
+progressStory();
+playGame();
+        output2.innerHTML = storyTexts[story];
+}
+
 

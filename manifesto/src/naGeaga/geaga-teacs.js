@@ -13,10 +13,7 @@ module.exports = [
 
 //1
     
-`<span id='but you will have to'>
-
-...ach beidh ort é a</span><span id='prove it'> croṫhú
-</span>
+`Fáilte
 
 
 `,

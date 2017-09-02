@@ -27,7 +27,15 @@ html {
 .item {
 }
 /************/
-
+#cubes{
+display:inline;
+position:absolute;
+background-image:url('../images/bgAnim6.gif');
+height:435px;
+width:756px;
+top:85px;
+left:340px;
+transition:fade-out 1s;}
 #mapFrame {
 
     position:absolute;

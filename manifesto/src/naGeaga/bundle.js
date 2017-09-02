@@ -14,10 +14,7 @@ module.exports = [
 
 //1
     
-`<span id='but you will have to'>
-
-...ach beidh ort é a</span><span id='prove it'> croṫhú
-</span>
+`Fáilte
 
 
 `,
@@ -321,15 +318,20 @@ deirGeaga1.innerHTML= placeName;
 
 },{}],3:[function(require,module,exports){
 //jshint esversion:6
-
 let geagaTexts = require("./geaga-teacs"); //can't use capital letters with browswerify 
-
+var deirGeaga2 = document.querySelector("#deirGeaga2");
 let story = 1;
-
+var leaveOptions = document.getElementById('leaveOptions');
+var leavePanel = document.getElementById('leavePanel');
 var btnTalk = document.getElementById('btnTalk');
+var btnLeave = document.getElementById('leave');
+var btnNoLeave = document.getElementById('noLeave');
 var allChat = document.getElementById('allChat');
 var súile = document.getElementById('súile');
 var talkingToGeaga = false;
+var chatPanel = document.getElementById('chatPanel');
+btnNoLeave.addEventListener("click",noLeaveHandler,false);
+btnLeave.addEventListener("click",leaveHandler,false);
 
 //sprite Object
 
@@ -491,13 +493,20 @@ function update()
 {
 
     requestAnimationFrame(update,canvas);
-
+//check if player is within talking range of Geaga
 if(player.x>=653 && player.y>=388){
             playerNearGeaga();
         }
     else{
         notNearGeaga();
     }
+
+//check if player leaves Geaga's location
+    if(player.x <=0|| player.x>=970 ){
+        
+  showLeaveMenu(); 
+    }
+
     //up
     if(moveUp && !moveDown)
     {
@@ -576,8 +585,29 @@ if(player.x>=653 && player.y>=388){
     }
     render();
 }
+
+function showLeaveMenu(){
+    leaveOptions.style.display="inline";
+    leavePanel.style.display= "inline";
+}
+
+function noLeaveHandler(){
+    leaveOptions.style.display="none";
+   leavePanel.style.display = "none";     
+if (player.x <10){
+    player.x = 10;
+    }else{
+    player.x=960;
+    }
+
+}
+
+function leaveHandler(){
+    console.log("koo");
+   window.location.replace("../naContae/contaePages/naContae10.html"); 
+}
+
 function playerNearGeaga(){
-    console.log("achtung player 1!");
      btnTalk.style.display="inline"; 
     
 
@@ -611,12 +641,16 @@ function talkToGeaga(){
 }
 
 function endTalkToGeaga(){
+    súile.style.animation="look-up 1s forwards";
+setTimeout(function(){
    talkingToGeaga=false;
    canMove=true;
    player.x=650;
    player.y=450;
    allChat.style.display="none";
+    deirGeaga2.innerHTML="";
     btnTalk.innerHTML='<i class= "fa fa-commenting-o">';
+},1200);
 }
 
 function render(event)
@@ -656,8 +690,10 @@ function render(event)
 
 
 },{"./geaga-teacs":1}],4:[function(require,module,exports){
+
  //jshint esversion:6 
 $(document).ready(function(){
+    
     $('#deirGeaga1').hover(function(){
     $('#bearla').text('The Other Land');
     $(this).css('color','#e35ee5');
@@ -667,18 +703,15 @@ $(document).ready(function(){
         $('#bearla').text('');
         $(this).css('color','#730a0a');
     });
-    document.querySelector('#bckBtn').onmouseenter = (event) => {
-        document.querySelector('#bearla').innerHTML = 'back';
-    };
-//    $('#button').hover(function(){
-//                   $('#bearla').text('push');
-//    });
  
      
-    $('#btnTalk').click(function(){
 
-        $('#deirGeaga2 span').hover(function(){
-             $('#bearla').text($(this).attr('id'));
+       /*
+        *TODO - why doesn't the following behave as it does in jqueries.js?
+        * $('#deirGeaga2 span').hover(function(){
+            console.log("hovvrin!");
+            
+            $('#bearla').text($(this).attr('id'));
              $(this).css('color','#e35ee5');
     });
 
@@ -686,25 +719,26 @@ $(document).ready(function(){
             $('#bearla').text('');
             $(this).css('color','#fff');
 
-    });
-});
-    $('#bckBtn').click(function(){
 
-        $('#deirGeaga2 span').hover(function(){
-             $('#bearla').text($(this).attr('id'));
-             $(this).css('color','#e35ee5');
     });
 
-        $('#deirGeaga2 span').mouseout(function(){
+    */
+
+
+       
+       $('#deirGeaga2').hover(function(){
+     $('#bearla').text('Welcome');
+        
+           $(this).css('color','#e35ee5');
+    });
+
+        $('#deirGeaga2').mouseout(function(){
             $('#bearla').text('');
             $(this).css('color','#fff');
 
+
     });
 });
-
-
-
-   });
 
 
 },{}]},{},[1,2,3,4]);
