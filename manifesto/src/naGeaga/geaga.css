@@ -121,7 +121,7 @@ opacity:1;
 }
 #deirGeaga1{
  top:20px;
- left:-40px;
+ left:20px;
  height:0px;
  line-height:0px;
  position:relative;
@@ -189,7 +189,16 @@ button:hover{
     top:307px;
 
 }
-
+#leavePanel{
+ display:none;
+    position:absolute;
+height:251px;
+width:557px;
+left:473px;
+top:140px;
+z-index:300;
+background-image:url('../../images/geagaFrame.png');
+}
 #leaveOptions{
     position:absolute;
     display:none;
@@ -200,8 +209,21 @@ z-index:500;
     top:0px;
 }
 #leave{
+    position:relative;
+    top:131px;
+    left:206px;
+}
+
+#leaveTxt{
+    position:relative;
+    font-size:39px;
+    top:60px;
+    left:160px;
 }
 #noLeave{
+    position:relative;
+    top:131px;
+    left:240px;
 }
 
 
@@ -295,6 +317,7 @@ z-index:2;
     opacity:1;
     width:80px;
     height:80px
+
 
 }
 

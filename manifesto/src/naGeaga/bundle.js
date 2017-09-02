@@ -321,7 +321,6 @@ deirGeaga1.innerHTML= placeName;
 let geagaTexts = require("./geaga-teacs"); //can't use capital letters with browswerify 
 var deirGeaga2 = document.querySelector("#deirGeaga2");
 let story = 1;
-var leaveOptions = document.getElementById('leaveOptions');
 var leavePanel = document.getElementById('leavePanel');
 var btnTalk = document.getElementById('btnTalk');
 var btnLeave = document.getElementById('leave');
@@ -334,18 +333,33 @@ btnNoLeave.addEventListener("click",noLeaveHandler,false);
 btnLeave.addEventListener("click",leaveHandler,false);
 
 //sprite Object
+var tree=
+    {
+         sourceX: 100,
+        sourceY: 0,
+        sourceWidth: 244,
+        sourceHeight: 358,
+
+        x:814,
+        y:487,
+        width:122,
+        height:182,
+        vx:0,
+        vy:0
+        
+    };
 
 var spriteObject =
     {
         sourceX: 0,
         sourceY: 0,
-        sourceWidth: 64,
-        sourceHeight: 64,
+        sourceWidth: 30,
+        sourceHeight: 45,
 
         x:0,
         y:0,
-        width:64,
-        height:64,
+        width:30,
+        height:45,
         vx:0,
         vy:0
     };
@@ -363,7 +377,7 @@ var sprites = [];
 
 //bg sprite
 var background = Object.create(spriteObject);
-background.sourceY = 64;
+background.sourceY =358;
 background.sourceWidth = 2068;
 background.sourceHeight =1404;
 background.width = 1034;
@@ -406,7 +420,6 @@ var camera =
 
     };
 
-
 //player sprite created and centered
 
 var canMove=true;
@@ -415,6 +428,8 @@ player.x = 243;
 player.y = 368;
 sprites.push(player);
 
+var geagaSprite = Object.create(tree);
+sprites.push(geagaSprite);
 //load the image
 
 var image = new Image();
@@ -510,20 +525,20 @@ if(player.x>=653 && player.y>=388){
     //up
     if(moveUp && !moveDown)
     {
-        player.vy = -5;
+        player.vy = -3;
         console.log("up");
     }
     //down
     if(moveDown && !moveUp){
-        player.vy = 5;
+        player.vy = 3;
     }
     //left
     if(moveLeft && !moveRight){
-        player.vx = -5;
+        player.vx = -3;
     }
     //right
     if (moveRight && !moveLeft){
-        player.vx = 5;
+        player.vx = 3;
     }
 
     //no moves
@@ -587,12 +602,10 @@ if(player.x>=653 && player.y>=388){
 }
 
 function showLeaveMenu(){
-    leaveOptions.style.display="inline";
     leavePanel.style.display= "inline";
 }
 
 function noLeaveHandler(){
-    leaveOptions.style.display="none";
    leavePanel.style.display = "none";     
 if (player.x <10){
     player.x = 10;
