@@ -4,7 +4,6 @@ module.exports = [
 
 //0
 `
-<span id='You are'>Is tú</span><span id='what you say you are'> a deir tú</span>:
 `,
 
 
@@ -13,7 +12,7 @@ module.exports = [
 
 //1
     
-`<span id='welcomee'>Fáiilte</span>
+`<span id='welcome'>Fáilte</span>  
 
 
 `,

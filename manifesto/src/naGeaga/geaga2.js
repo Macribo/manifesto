@@ -31,7 +31,6 @@ var tree=
         vy:0
         
     };
-
 var spriteObject =
     {
         sourceX: 0,
@@ -305,12 +304,12 @@ function leaveHandler(){
 
 function playerNearGeaga(){
      btnTalk.style.display="inline"; 
-    
+    tree.sourceX=425;        
 
 }
 function notNearGeaga(){
      btnTalk.style.display="none"; 
-
+    tree.sourceX=100;
 }
 
 function talkHandler(){
@@ -329,8 +328,8 @@ function talkToGeaga(){
     setTimeout(function(){
         súile.style.animation="look-down 1s forwards";
     },1200);
-        deirGeaga2.innerHTML = geagaTexts[story];
     
+        deirGeaga2.innerHTML = geagaTexts[story];
 
 
 }

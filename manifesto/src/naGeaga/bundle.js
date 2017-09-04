@@ -5,7 +5,6 @@ module.exports = [
 
 //0
 `
-<span id='You are'>Is tú</span><span id='what you say you are'> a deir tú</span>:
 `,
 
 
@@ -14,7 +13,7 @@ module.exports = [
 
 //1
     
-`<span id='welcomee'>Fáiilte</span>
+`<span id='welcome'>Fáilte</span>  
 
 
 `,
@@ -347,7 +346,6 @@ var tree=
         vy:0
         
     };
-
 var spriteObject =
     {
         sourceX: 0,
@@ -621,12 +619,12 @@ function leaveHandler(){
 
 function playerNearGeaga(){
      btnTalk.style.display="inline"; 
-    
+    tree.sourceX=425;        
 
 }
 function notNearGeaga(){
      btnTalk.style.display="none"; 
-
+    tree.sourceX=100;
 }
 
 function talkHandler(){
@@ -645,8 +643,8 @@ function talkToGeaga(){
     setTimeout(function(){
         súile.style.animation="look-down 1s forwards";
     },1200);
-        deirGeaga2.innerHTML = geagaTexts[story];
     
+        deirGeaga2.innerHTML = geagaTexts[story];
 
 
 }
