@@ -13,6 +13,8 @@ var chatPanel = document.getElementById('chatPanel');
 btnNoLeave.addEventListener("click",noLeaveHandler,false);
 btnLeave.addEventListener("click",leaveHandler,false);
 
+var deirGeaga1 = document.querySelector("#deirGeaga1");
+
 //sprite Object
 var tree=
     {
@@ -327,9 +329,8 @@ function talkToGeaga(){
     setTimeout(function(){
         súile.style.animation="look-down 1s forwards";
     },1200);
-    setTimeout(function(){
         deirGeaga2.innerHTML = geagaTexts[story];
-    },2500);
+    
 
 
 }

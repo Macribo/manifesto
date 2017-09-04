@@ -1,22 +1,24 @@
 
  //jshint esversion:6 
 $(document).ready(function(){
-    
-    $('#deirGeaga1').hover(function(){
+   $('#deirGeaga1').hover(function(){
     $('#bearla').text('The Other Land');
     $(this).css('color','#e35ee5');
     }
 );
+
+
     $('#deirGeaga1').mouseout(function(){
         $('#bearla').text('');
         $(this).css('color','#730a0a');
     });
- 
-     
 
-       /*
-        *TODO - why doesn't the following behave as it does in jqueries.js?
-        * $('#deirGeaga2 span').hover(function(){
+
+ 
+     $('#btnTalk').click(function(){ 
+   console.log("btnTalk clicked"); 
+
+         $('#deirGeaga2 span').hover(function(){
             console.log("hovvrin!");
             
             $('#bearla').text($(this).attr('id'));
@@ -29,11 +31,11 @@ $(document).ready(function(){
 
 
     });
+     });
+    
 
-    */
 
-
-       
+   /*    
        $('#deirGeaga2').hover(function(){
      $('#bearla').text('Welcome');
         
@@ -45,6 +47,6 @@ $(document).ready(function(){
             $(this).css('color','#fff');
 
 
-    });
+    });*/
 });
 

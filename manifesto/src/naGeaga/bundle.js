@@ -14,7 +14,7 @@ module.exports = [
 
 //1
     
-`Fáilte
+`<span id='welcomee'>Fáiilte</span>
 
 
 `,
@@ -154,9 +154,6 @@ var image = document.querySelector("img");
 var seanDown = document.querySelector('#seanDown');
 let rightPanel = document.querySelector("#right-panel");
 let contae = document.querySelector("#contae");
-
-var deirGeaga1 = document.querySelector("#deirGeaga1");
-var deirGeaga2 = document.querySelector("#deirGeaga2");
 var inputLabel = document.querySelector("#inputLabel");
 
 var btnTalk = document.querySelector("#btnTalk");
@@ -228,8 +225,8 @@ setTimeout(
       }
 
     function narrate(story){
-        deirGeaga2.innerHTML = storyTexts[story];
-        deirGeaga2.className=''; 
+    //    deirGeaga2.innerHTML = geagaTexts[story];
+      //  deirGeaga2.className=''; 
         console.log("test! "+story);
     }
     //test
@@ -305,7 +302,7 @@ if(story===1){
 function render()
 {
     //Render the location
-    deirGeaga1.innerHTML = map[mapLocation];
+  //deirGeaga1.innerHTML = map[mapLocation];
    // image.src = "../images/" + images[mapLocation];
 
 
@@ -314,7 +311,7 @@ function render()
 
 }
 
-deirGeaga1.innerHTML= placeName;
+//deirGeaga1.innerHTML= placeName;
 
 },{}],3:[function(require,module,exports){
 //jshint esversion:6
@@ -331,6 +328,8 @@ var talkingToGeaga = false;
 var chatPanel = document.getElementById('chatPanel');
 btnNoLeave.addEventListener("click",noLeaveHandler,false);
 btnLeave.addEventListener("click",leaveHandler,false);
+
+var deirGeaga1 = document.querySelector("#deirGeaga1");
 
 //sprite Object
 var tree=
@@ -646,9 +645,8 @@ function talkToGeaga(){
     setTimeout(function(){
         súile.style.animation="look-down 1s forwards";
     },1200);
-    setTimeout(function(){
         deirGeaga2.innerHTML = geagaTexts[story];
-    },2500);
+    
 
 
 }
@@ -706,22 +704,24 @@ function render(event)
 
  //jshint esversion:6 
 $(document).ready(function(){
-    
-    $('#deirGeaga1').hover(function(){
+   $('#deirGeaga1').hover(function(){
     $('#bearla').text('The Other Land');
     $(this).css('color','#e35ee5');
     }
 );
+
+
     $('#deirGeaga1').mouseout(function(){
         $('#bearla').text('');
         $(this).css('color','#730a0a');
     });
- 
-     
 
-       /*
-        *TODO - why doesn't the following behave as it does in jqueries.js?
-        * $('#deirGeaga2 span').hover(function(){
+
+ 
+     $('#btnTalk').click(function(){ 
+   console.log("btnTalk clicked"); 
+
+         $('#deirGeaga2 span').hover(function(){
             console.log("hovvrin!");
             
             $('#bearla').text($(this).attr('id'));
@@ -734,11 +734,11 @@ $(document).ready(function(){
 
 
     });
+     });
+    
 
-    */
 
-
-       
+   /*    
        $('#deirGeaga2').hover(function(){
      $('#bearla').text('Welcome');
         
@@ -750,7 +750,7 @@ $(document).ready(function(){
             $(this).css('color','#fff');
 
 
-    });
+    });*/
 });
 
 

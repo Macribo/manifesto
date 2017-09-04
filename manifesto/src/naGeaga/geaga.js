@@ -47,9 +47,6 @@ var image = document.querySelector("img");
 var seanDown = document.querySelector('#seanDown');
 let rightPanel = document.querySelector("#right-panel");
 let contae = document.querySelector("#contae");
-
-var deirGeaga1 = document.querySelector("#deirGeaga1");
-var deirGeaga2 = document.querySelector("#deirGeaga2");
 var inputLabel = document.querySelector("#inputLabel");
 
 var btnTalk = document.querySelector("#btnTalk");
@@ -121,8 +118,8 @@ setTimeout(
       }
 
     function narrate(story){
-        deirGeaga2.innerHTML = storyTexts[story];
-        deirGeaga2.className=''; 
+    //    deirGeaga2.innerHTML = geagaTexts[story];
+      //  deirGeaga2.className=''; 
         console.log("test! "+story);
     }
     //test
@@ -198,7 +195,7 @@ if(story===1){
 function render()
 {
     //Render the location
-    deirGeaga1.innerHTML = map[mapLocation];
+  //deirGeaga1.innerHTML = map[mapLocation];
    // image.src = "../images/" + images[mapLocation];
 
 
@@ -207,4 +204,4 @@ function render()
 
 }
 
-deirGeaga1.innerHTML= placeName;
+//deirGeaga1.innerHTML= placeName;
