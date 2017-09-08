@@ -1,4 +1,112 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+//jshint esversion:6
+module.exports = function badgeSelectorL(duration) {
+    const countyBtnLeft =document.querySelector("#countyBtnLeft");
+    const badge = document.querySelector("#badge");
+    
+    let countyId = 0;
+    let badgeWidth = -80; 
+    console.log('>>>>>>>', badgeWidth);
+//    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
+   countyBtnLeft.addEventListener("click",changeCounty);
+    let oldX;
+    let changeCountyTime;
+
+    function changeCounty(){
+        changeCountyTime = Date.now();
+        oldX =parseInt(badge.style.backgroundPositionX ||"0px");
+        console.log("county changed at:",changeCountyTime, "  oldX: ", oldX);
+    }
+
+
+    setInterval( function() {
+        if(oldX !== undefined) {
+            let t = Date.now() - changeCountyTime;
+            let m = badgeWidth/duration;
+            let b = oldX;
+            if (t > duration){
+                oldX = undefined;
+                t = duration;               
+            }
+            badge.style.backgroundPositionX = (-m*t+b)+"px";
+        }
+    }, 1000/60);
+};
+
+},{}],2:[function(require,module,exports){
+//jshint esversion:6
+module.exports = function badgeSelectorR(duration) {
+    const countyBtnRight =document.querySelector("#countyBtnRight");
+    const badge = document.querySelector("#badge");
+    
+    let badgeWidth = 80; 
+//    badge.addEventListener("click", changeCounty); //notice no brackets on updateCounty
+   countyBtnRight.addEventListener("click",changeCounty);
+    let oldX;
+    let changeCountyTime;
+
+    function changeCounty(){
+        changeCountyTime = Date.now();
+        oldX =parseInt(badge.style.backgroundPositionX ||"0px");
+    }
+
+
+    setInterval( function() {
+        if(oldX !== undefined) {
+            let t = Date.now() - changeCountyTime;
+            let m = badgeWidth/duration;
+            let b = oldX;
+            if (t > duration){
+                oldX = undefined;
+                t = duration;               
+            }
+            badge.style.backgroundPositionX = (-m*t+b)+"px";
+        }
+    }, 1000/60);
+};
+
+},{}],3:[function(require,module,exports){
+//jshint esversion:6
+
+module.exports = [
+    '',
+    '<span id="Co. Offaly">Co. Uíbh Fhailí</span>',
+    '<span id="Co. Louth">Co. Lú</span>',
+    '<span id="Co. Wexford">Co. Loch Garman</span>',
+    '<span id="Co. Limerick">Co. Luimnigh</span>',
+    '<span id="Co. Dublin">Co. Átha Chliath</span>',
+    '<span id="Co. Leitrim">Co. Liatroma</span>',
+    '<span id="Co. Antrim">Co. Aontroma</span>',
+    '<span id="Co. Donegal">Co. Dhún na nGall</span>',
+    '<span id="Co. Fermanagh">Co. Fhear Manach</span>',
+    '<span id="Co. Cork">Co. Chorcaí</span>',
+    '<span id="Co. Wicklow">Co. Chill Mhantáin</span>',
+    '<span id="Co. Roscommon">Co. Ros Comáin</span>',
+    '<span id="Co. Derry">Co. Dhoire</span>',
+    '<span id="Co. Sligo">Co. Shligigh</span>',
+    '<span id="Co. Tipperary">Co. Thiobraid Árann</span>',
+    '<span id="Co. Laois">Co. Laoise</span>',
+    '<span id="Co. Waterford">Co. Phort Láirge</span>',
+    '<span id="Co. Kilkenny">Co. Chill Chainnigh</span>',
+    '<span id="Co. Meath">Co. Na Mí</span>',
+    '<span id="Co. Kerry">Co. Chiarraí</span>',
+    '<span id="Co. Longford">Co. An Longfoirt</span>',
+    '<span id="Co. Mayo">Co. Mhaigh Eo</span>',
+    '<span id="Co. Westmeath">Co. Na hIarmhí</span>',
+    '<span id="Co. Down">Co. An Dúin</span>',
+    '<span id="Co. Armagh">Co. Ard Mhacha</span>',
+    '<span id="Co. Carlow">Co. Cheatharlach</span>',
+    '<span id="Co. Monaghan">Co. Mhuineacháin</span>',
+    '<span id="Co. Galway">Co. na Gaillimhe</span>',
+    '<span id="Co. Kildare">Co. Chill Dara</span>',
+    '<span id="Co. Clare">Co. An Chláir</span>',
+    '<span id="Co. Cavan">Co. An Cabháin</span>',
+    '<span id="Co. Tyrone">Co. Thír Eoghain</span>',
+    '<span id="A land beyond the sea">Tír Thar Muir</span>',
+    '<span id="For the language">Ar shon an Teanga</span>'
+];
+
+},{}],4:[function(require,module,exports){
 
 //jshint esversion:6
 module.exports = [
@@ -13,8 +121,10 @@ module.exports = [
 
 //1
     
-`<span id='welcome'>Fáilte</span>  
-
+`
+<div style="animation:delay-fade-in 1s;">
+<span id='Who is that'>Cé sin</span><span id="that I have"> agam</span><span id="there?"> ann?</span>  
+</div>
 
 `,
   
@@ -22,89 +132,32 @@ module.exports = [
     
 //2
 
-`<span id=''></span>
-`,
-
-//3<span id=''></span> <span id=''></span> <span id=''></span>, <span id=''></span>.
-
-////9 <div style="animation:delay-fade-in 2s;">
-    /*
- `<span id='Secondly'> Sa dara h-áit</span>, 
-<span id='There is'>tá</span> <span id='a bit of Irish'>Gaeilge éigin</span> <span id='posessed by'>ag</span> <span id='every'>gach</span> <span id='English-speaker'>Bearl-cainteoir</span> <span id='in the country'>sa tír</span>.
-<span id='A factor'>Gníomhadóir</span><span id='unknown'> anaithnid</span><span id='this is'> é seo</span>,<span id='which puts'> a cuireann</span><span id='off accuracy'> dó rath</span><span id='calcu- lations'> áireamhíocht</span><span id='based on Irish Speakers'> bunaithe ar 'Irish Speakers'</span>
-<span id='It is not'> Ní</span> <span id='a subject'>ábhar </span><span id='of mockery'>fachnaoid</span> <span id='those'>iad</span> <span id='the'>na</span><span id='so-called few words'> cúpla focal</span>. <span id='They are seeds'>Síolta íad</span>.
-
-`,
-*/
-//10
 `
-<span id='Asserts'>Dearbhín</span> <span id='this manifesto'>an forógra seo</span>: <ul>
-
-<div style="animation:delay-fade-in 1s;">
-<li>
-<span id='One cannot'>Ní feidir</span><span id='give an objective account'> tuairisc oibiachtúil a thabhairt</span><span id='on the intimacy between'> ar an caidreamh idir</span><span id='language'> teanga</span><span id='and mind'> agus meabhair</span>
-</li>
-</div>
-<br>
-
-<div style="animation:delay-fade-in 3s;">
-<li>
-
-<span id='A lack of space'>Easpa spás,</span> <span id='rather than'> seachas </span><span id='a lack'>easpa</span> <span id='of interest'> spéis</span> <span id='or ability'>ná cumas</span>, 
-<span id='is'>is</span> <span id='the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>
-</li>
-
-</div>
-<br>
-
-<div style="animation:delay-fade-in 5s;">
-<li>
-    
-
-<span id='A virtual community can'>Is feidir le spás fiorúl coiteannta</span><span id='suddenly improve'> feabhas tobann a deanamh ar</span><span id='mental fluency'> líofacht intinneach </span><span id='Gaelic'>Gaelach </span><span id='through play and competing together'>tríd spraoí agus iommíocht le cheile</span>
-</li>
-
-</div>
-
-
-
-</ul>
-
 `,
 //11
 `
-<span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='a test'> tríal</span><span id='to play'> a imirt</span>?
+<span id='What kind of'>Cén saighs </span><span id='Irish'> Gaeilge</span><span id='do you have'> a bhfuil agat?</span> 
 `,
-
+  `
+  `, 
+ 
 //12
 `
-<span id='what'>Cad</span><span id='is your name'> is ainm dhuit?</span>
-`, 
+Go brea. Cad é do rogha foireann?
   
-//13
   `
-<span id='Play'>Imir </span><span id='for'>ar shon</span> :
-  `, 
     
 //18
-  `
-  `, 
-    
+   
 //19
-`
-`
-
-
-
-/*
-  * <span id='It is not'>Ní </span><span id='an absence'>easpa</span> <span id='of interest'> spéis</span>, <span id='nor ability'>ná cumas</span>, <span id='nor will'>ná thoill</span>
-<span id='which'>is</span> <span id='is the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>
-<*/
 
 ];
 
-},{}],2:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 //jshint esversion:6
+var coPos = 1; //county Position
+var imPos=1; //imreoirPosition
+
 
 var map = [];
 
@@ -127,22 +180,12 @@ var mapLocation = 4;
 //Set the images
 var images = [];
 
-images[0] = "anBhograch.png";
-images[1] = "BallyLickey.png";
-images[2] = "BealNaBláth.png";
-images[3] = "Blarney.png";
-images[4] = "CillNaMallach.png";
 images[5] = "geaga.png";
-images[6] = "TighNuaAnDháPhota.png";
-images[7] = "MainistirNaCorann.png";
-images[8] = "Skibbereen.png";
 
 
 
         var shorttrans = false;
 
-//Initialize the gameMessage
-var gameMessage = ``;
 
 //Query Selectors:
 var imreoir = document.querySelector('#imreoir');
@@ -154,10 +197,8 @@ var seanDown = document.querySelector('#seanDown');
 let rightPanel = document.querySelector("#right-panel");
 let contae = document.querySelector("#contae");
 var inputLabel = document.querySelector("#inputLabel");
-
-var btnTalk = document.querySelector("#btnTalk");
 var bckBtn = document.querySelector('#bckBtn'); 
-
+var fwdBtn = document.querySelector('#fwdBtn');
 var playBtn = document.querySelector('#play');
 var countyBtnRight = document.querySelector('#countyBtnRight');
 var countyBtnLeft = document.querySelector('#countyBtnLeft');
@@ -168,11 +209,54 @@ let ainmBtn = document.querySelector('#ainmBtn'); //player name
 var gameMap = document.querySelector('#tileworld');
 var mapdata = document.querySelector('#mapdata');
 var curSiosArCo = document.querySelector('#curSiosArCo');
-//Event Listeners:
-btnTalk.addEventListener("click", btnTalkHandler, false);
-btnTalk.addEventListener("mousedown",btnTalkHandler, false);
+
+
+var btnLvL = document.querySelector('#btnLvL');
+var btnLvR = document.querySelector('#btnLvR');
+var emblem = document.querySelector('#emblem');
+var selectLevel = document.querySelector('#selectLevel');
+var imreoirWLv= document.querySelector('#imreoirWLv');//player With Graphic showing his/her lv
+var pAinm=document.querySelector('#pAinm');
+
+//Query Selectors:
+var joinTeam = document.querySelector("#joinTeam");
+var image = document.querySelector("img");
+var portrait = document.querySelector("#portrait");
+var story = 0;
+var output = document.querySelector("#output");
+var output2 = document.querySelector("#output2");
+var inputLabel = document.querySelector("#inputLabel");
+var tidyBox1 = document.querySelector("#tidyBox1");
+var levelSelect = document.querySelector('#levelSelect');
+var playBtn = document.querySelector('#play');
+var countyBtnRight = document.querySelector('#countyBtnRight');
+var countyBtnLeft = document.querySelector('#countyBtnLeft');
+var htmla=document.querySelector('html');
+var seanDown = document.querySelector('#seanDown');
+let inputElements = document.querySelector('#inputElements');
+let countyColours = document.querySelector('#countyColours');
+
+let blurbId = 0;
+let badgeSelectorL =require("./badge-selector-l");
+let badgeSelectorR = require("./badge-selector-r");
+let storyTexts = require("./story-texts"); //can't use capital letters with browswerify 
+let titleTexts = require("./title-texts");
+let countyNames = require("./county-names");
+///Event Listeners:
+//btnTalk.addEventListener("click", btnTalkHandler, false);
+//btnTalk.addEventListener("mousedown",btnTalkHandler, false);
 bckBtn.addEventListener("click", bckBtnHandler, false);
 playBtn.addEventListener("click", playHandler, false);
+
+joinTeam.addEventListener("click",joinTeamHandler);
+ainmBtn.addEventListener("click", ainmHandler);
+levelSelect.addEventListener("click", levelSelectHandler);
+btnLvL.addEventListener("click", btnLvLHandler);
+btnLvR.addEventListener("click", btnLvRHandler);
+
+countyBtnLeft.addEventListener("click",bckBadgeHandler, false);
+countyBtnRight.addEventListener("click",fwdBadgeHandler, false);
+
 
 
 
@@ -182,6 +266,16 @@ render();
 seanDown.play();
 
 
+    tidyBox1.style.backgroundColor="black";
+setTimeout(function(){
+tidyBox1.style.backgroundImage="url('../../images/bgAnim2.gif')";
+},1000);
+setTimeout(function(){
+    tidyBox1.style.backgroundImage="url('../../images/bgDark.png')";
+    // tidyBox1.style.backgroundColor="rgba(255,255,255,0.02)";
+},3000);
+
+
 //Event Handlers
     function playHandler(){
     window.location.replace("http://ribodev.com/wp-content/uploads/2017/manifestoWeb/src/naContae/naContae.html");
@@ -189,15 +283,15 @@ seanDown.play();
    
 
     function mousedownHandler(){
-        btnTalk.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
-        btnTalk.style.background = "-moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
-        btnTalk.style.background = "linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        //btnTalk.style.background = "-webkit-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        //btnTalk.style.background = "-moz-linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
+        //btnTalk.style.background = "linear-gradient(top, rgba(0,0,0,0.2), rgba(255,255,255,0.3))";
     }
 
     function mouseoutHandler(){
-        btnTalk.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        btnTalk.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
-        btnTalk.style.background = "#505050";
+        //btnTalk.style.background = "-webkit-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        //btnTalk.style.background = "-moz-linear-gradient(top, rgba(255,255,255,0.6), rgba(0,0,0,0.2))";
+        //btnTalk.style.background = "#505050";
     }
 
     function bckBtnHandler(){
@@ -210,18 +304,18 @@ seanDown.play();
     }
 
 
-    function btnTalkHandler(){
+ //   function btnTalkHandler(){
 
  
-    console.log("saying hi.");
+//    console.log("saying hi.");
 
-        btnTalk.style.backgroundImage = 'url("../../images/btnBg2.png")';
-setTimeout(
-    function(){
+ //       btnTalk.style.backgroundImage = 'url("../../images/btnBg2.png")';
+//setTimeout(
+ //   function(){
         
-        btnTalk.style.backgroundImage = "url('../../images/btnBg1.png')";},1000); 
+  //      btnTalk.style.backgroundImage = "url('../../images/btnBg1.png')";},1000); 
 
-      }
+   //   }
 
     function narrate(story){
     //    deirGeaga2.innerHTML = geagaTexts[story];
@@ -254,7 +348,7 @@ function playGame()
         if(story>1){
             bckBtn.style.display='inline';
             bckBtn.style.animation='delay-fade-in 1s';
-        btnTalk.style.animation='slide-button-right 1s forwards';
+        //btnTalk.style.animation='slide-button-right 1s forwards';
         console.log("hello bckBtn?");
         }
     else
@@ -263,7 +357,7 @@ function playGame()
         //bckBtn.style.animation='fade-out 0.25s forwards';
         //instead, I'm just setting display to 'none'
         bckBtn.style.display='none';
-        btnTalk.style.animation='slide-button-left 1s forwards';
+        //btnTalk.style.animation='slide-button-left 1s forwards';
 
     }
         if (story>2){
@@ -274,7 +368,7 @@ function playGame()
 if (story===5){
         playBtn.style.display='inline';
         // btnTalk.style.animation='fade-out 0.25s forwards';
-        btnTalk.style.visibility='hidden';
+        //btnTalk.style.visibility='hidden';
         playBtn.style.animation='fade-in 1s';
         console.log("story === 5");   
 }
@@ -289,34 +383,295 @@ if(story===1){
 } 
     if(story===4){
         //update button styles if player is coming back from events on story 5 
-        btnTalk.style.left='-42px';
-        btnTalk.style.display='inline';
-        btnTalk.style.visibility='visible';
+        //btnTalk.style.left='-42px';
+        //btnTalk.style.display='inline';
+        //btnTalk.style.visibility='visible';
         playBtn.style.display='none';
     }
 
 }
 
 
-function render()
-{
-    //Render the location
-  //deirGeaga1.innerHTML = map[mapLocation];
-   // image.src = "../images/" + images[mapLocation];
 
 
 
-    //Display the game message
+
+//Event Handlers
+function fwdBadgeHandler(){
+   
+    countyBtnRight.style.backgroundImage='url("../../images/btnBg2.png")';
+    setTimeout(function(){
+       countyBtnRight.style.backgroundImage='url("../../images/btnBg1.png")';
+    },1000);
+    updateCountyMain(-1);
+    updateCoNameR();
+    console.log("countyId ", countyId);
+    console.log("countyMain.style.backgroundPositionX ", countyMain.style.backgroundPositionX);
+    if(countyId!==0){
+
+        joinTeam.style.display='inline';
+        emblem.style.opacity="0";
+    }
+    else{
+        console.log("iii");
+        joinTeam.style.display="none";
+        emblem.style.opacity="0.6";
+    }
+} 
+//setTimeout(console.log("wait..."),1500); 
+
+function bckBadgeHandler(){
+    countyBtnLeft.style.backgroundImage='url("../../images/btnBg2.png")';
+    setTimeout(function(){
+       countyBtnLeft.style.backgroundImage='url("../../images/btnBg1.png")';
+    },1000);
+updateCountyMain(1);
+    updateCoNameL();
+    console.log("countyId ", countyId);
+    console.log("countyMain.style.backgroundPositionX ", countyMain.style.backgroundPositionX);
+    if(countyId!==0){
+        joinTeam.style.display='inline';
+        console.log("be like water");
+        emblem.style.opacity="0";
+    }
+    else{
+        console.log("iii");
+        joinTeam.style.display="none";
+        emblem.style.opacity="0.6";
+    }
+}
+
+
+function btnLvLHandler(){
+    
+    btnLvL.style.backgroundImage='url("../../images/btnBg2.png")';
+    setTimeout(function(){
+        btnLvL.style.backgroundImage='url("../../images/btnBg1.png")';
+    },1000);
+    updateImreoirLv(1);
+    blurbId--;
+    if(blurbId<0 ){
+        blurbId = 4;}
+    output2.innerHTML=storyTexts[blurbId];
+
+    if(blurbId===0)
+
+    {
+        levelSelect.style.display='none';
+    }else{
+        levelSelect.style.display='inline';
+        levelSelect.style.visibility='visible';
+    }
+}
+function btnLvRHandler(){
+     btnLvR.style.backgroundImage='url("../../images/btnBg2.png")';
+    setTimeout(function(){
+        btnLvR.style.backgroundImage='url("../../images/btnBg1.png")';
+    },1000);updateImreoirLv(-1);
+    blurbId++;
+    if (blurbId>4){blurbId= 0;}
+    console.log("blurrrb"+blurbId);
+    output2.innerHTML=storyTexts[blurbId];
+    if(blurbId===0)
+    {
+        levelSelect.style.display='none';
+    }else{
+        levelSelect.style.display='inline';
+        levelSelect.style.visibility='visible';
+    }
+}
+
+
+function updateImreoirLv(lv){
+
+    lv += lv*175; // {width:175} 
+    imPos += lv;
+
+    imreoirWLv.style.backgroundPositionX = imPos+"px";
+}
+
+function updateCountyMain(dist){
+
+    if (coPos===0){
+        output2.style.visibility='visible'; 
+    }else{
+        output2.style.visibility='hidden';}
+    dist = dist*432; //#countyMain {width:400} 
+    coPos += dist;
+    console.log("coMain bgposX = ", coPos);
+    countyColours.style.backgroundPositionX = coPos +"px";
+    countyMain.style.backgroundPositionX = coPos+"px";
+}
+function joinTeamHandler(){
+    countyMain.style.animation='fade-out 1s forwards';
+    console.log("team joined",contae[countyId]);
+    countyBtnRight.style.display='none';
+    countyBtnLeft.style.display='none';
+    joinTeam.style.display='none';
+    setTimeout(function(){
+    window.location.replace("../naGeaga/geaga.html");
+
+ 
+    
+    },3000);
+   
+    contae.style.display='none';
+    inputName.style.display='none';
+
+}
+function levelSelectHandler(){
+    setTimeout(function(){tidyBox1.style.backgroundImage="";},1000);
+    mapLocation = 4;
+    story=4;
+    //hide level-select buttons
+    btnLvR.style.display='none';
+    btnLvL.style.display='none';
+    levelSelect.style.display='none';
+    //reveal hidden inputElements
+    inputElements.style.visibility='visible'; 
+    inputElements.style.opacity='1';
+    inputElements.style.left='561px';
+    inputElements.style.bottom='260px';
+    //inputLabel.style.display='block';
+    //inputLabel.innerHTML='Roghnaigh Foireann:';
+    imreoirWLv.style.top='57px';
+    imreoirWLv.style.left='530px';
+
+    badgeSelectorL(100); //player selects team
+    narrate(3);
+    badgeSelectorR(100);
+    countyBtnRight.style.animation='fade-in 1s forwards';
+    countyBtnRight.style.animation='fade-in 1s forwards';
+    countyBtnRight.style.display='inline';
+    countyBtnLeft.style.animation='fade-in 1s forwards';
+    countyBtnLeft.style.display='inline';
+    joinTeam.style.visibility='visible';
+    joinTeam.style.animation='delay-fade-in 1s';
+    tidyBox1.style.backgroundColor="rgba(255,255,255,0.02)";
+    emblem.style.opacity="0.6"; 
+    story++;
+    playGame();
 
 }
 
-//deirGeaga1.innerHTML= placeName;
 
-},{}],3:[function(require,module,exports){
+
+function ainmHandler(){
+    ainmBtn.style.backgroundImage='url("../../images/btnBg2.png")';
+    mapLocation=3;
+    story++; 
+    playGame();//activates the forest of Lycria &narrate() 
+    if (story===1){ //Tús means Start. We start here.
+
+        portrait.style.display='none';
+        //Hide irrelevent buttons
+        //inputElements.style.visibility='hidden'; 
+        inputElements.style.opacity='1';
+        htmla.style.backgroundImage ="url('../../images/bgDark.png')"; 
+        inputName.style.display='none';
+        inputLabel.style.display='none';
+        ainmBtn.style.display='none';
+        //show imreoir language level-icon 
+        imreoirWLv.style.opacity='1';
+        imreoirWLv.style.visibility='visible';
+
+        //show languagelevel right left buttons
+        btnLvR.style.display='inline';
+        btnLvR.style.visibility='visible';
+
+        btnLvL.style.visibility='visible';
+        btnLvL.style.display='inline';
+
+
+        output2.innerHTML=storyTexts[blurbId];
+
+        story++;
+    }
+
+    if(story===2){ //select language level
+        btnLvR.style.display='inline';
+        btnLvR.style.animation='fade-in 1s forwards';
+
+        btnLvL.style.display='inline';
+        btnLvL.style.animation='fade-in 1s forwards';
+        console.log("should have set level select display");
+    }
+
+
+
+
+}
+
+
+
+
+
+function narrate(story){
+    output2.innerHTML = storyTexts[story];
+    output2.className=''; 
+    console.log("test! "+story);
+}
+//test
+
+function stepBack(){
+    story--;
+    playGame();
+}
+function stepFwd(){
+    story++;
+    playGame();
+}
+
+
+
+
+function playGame()
+{
+
+    narrate(story); 
+    console.log("hello narrate!");
+    render();
+    console.log("playGame called and says says story is "+story);
+}
+
+function render()
+{
+    output.innerHTML=titleTexts[mapLocation];
+}
+
+let countyId = 0;
+//show county name
+function updateCoNameR(){
+    countyId = (countyId + 1) ;
+
+    if(countyId===35 ){
+        countyId = 0;}
+
+    contae.innerHTML = countyNames[countyId];
+
+    console.log("current Co id:", countyId, countyNames[countyId] );
+}
+function updateCoNameL(){
+    countyId = (countyId - 1);
+    if(countyId === -1){
+
+        countyId = 34;}
+    contae.innerHTML = countyNames[countyId];
+
+    console.log("current Co id:", countyId );
+
+
+
+}
+
+
+
+
+},{"./badge-selector-l":1,"./badge-selector-r":2,"./county-names":3,"./story-texts":9,"./title-texts":10}],6:[function(require,module,exports){
 //jshint esversion:6
 let geagaTexts = require("./geaga-teacs"); //can't use capital letters with browswerify 
 var deirGeaga2 = document.querySelector("#deirGeaga2");
-let story = 1;
+let geagaSceal = 1;
 var leavePanel = document.getElementById('leavePanel');
 var btnTalk = document.getElementById('btnTalk');
 var btnLeave = document.getElementById('leave');
@@ -325,11 +680,48 @@ var allChat = document.getElementById('allChat');
 var súile = document.getElementById('súile');
 var talkingToGeaga = false;
 var chatPanel = document.getElementById('chatPanel');
+var fwdBtn= document.querySelector('#fwdBtn');
+var ctrlsFrame= document.querySelector("#ctrlsFrame");
+var deirGeaga1 = document.querySelector("#deirGeaga1");
+var naContaeResources=document.querySelector('#naContaeResources');
+//handlers
+
 btnNoLeave.addEventListener("click",noLeaveHandler,false);
 btnLeave.addEventListener("click",leaveHandler,false);
+fwdBtn.addEventListener("click",fwdBtnHandler,false);
+ainmBtn.addEventListener("click",ainmBtnHandler,false);
+function fwdBtnHandler(){
+    geagaSceal++;
+console.log("GS "+geagaSceal);
 
-var deirGeaga1 = document.querySelector("#deirGeaga1");
-
+    deirGeaga2.innerHTML = geagaTexts[geagaSceal];
+    if (geagaSceal === 2){
+        btnTalk.style.display="none";
+        fwdBtn.style.display="none";
+        naContaeResources.style.display="inline";
+        ainmBtn.style.display="inline";
+    }
+    if(geagaSceal === 3){}
+    if(geagaSceal === 4){
+        naContaeResources.style.display="inline";
+        fwdBtn.style.display="none";
+        btnTalk.style.display="none";
+    }
+    if(geagaSceal === 5){}
+    if(geagaSceal === 6){}
+    if(geagaSceal === 3){}
+}
+function ainmBtnHandler(){
+    geagaSceal++;
+    deirGeaga2.innerHTML = geagaTexts[geagaSceal];
+    if(geagaSceal === 3){
+    
+    naContaeResources.style.display="none";
+    ainmBtn.style.display="none";
+    fwdBtn.style.display="inline";
+        
+    }
+}
 //sprite Object
 var tree=
     {
@@ -346,6 +738,9 @@ var tree=
         vy:0
         
     };
+
+
+//tree.addEventListener("click", talkHandler,false);
 var spriteObject =
     {
         sourceX: 0,
@@ -476,6 +871,7 @@ window.addEventListener("keydown",function(event){
 
         event.preventDefault();
 },false);
+
 window.addEventListener("keyup", function(event){
     if(canMove)switch(event.keyCode){
         case UP:
@@ -506,7 +902,7 @@ function update()
 
     requestAnimationFrame(update,canvas);
 //check if player is within talking range of Geaga
-if(player.x>=653 && player.y>=388){
+if(player.x>=653 && player.y>=512){
             playerNearGeaga();
         }
     else{
@@ -618,9 +1014,11 @@ function leaveHandler(){
 }
 
 function playerNearGeaga(){
-     btnTalk.style.display="inline"; 
+     ctrlsFrame.style.display="inline";
     tree.sourceX=425;        
-
+if(geagaSceal <=2){
+    btnTalk.style.display="inline"; 
+}
 }
 function notNearGeaga(){
      btnTalk.style.display="none"; 
@@ -628,38 +1026,35 @@ function notNearGeaga(){
 }
 
 function talkHandler(){
+    if(playerNearGeaga){
     if(talkingToGeaga){
         endTalkToGeaga();
     }else{
     talkToGeaga();}
 }
+}
 function talkToGeaga(){
     allChat.style.display="inline";
     talkingToGeaga=true;
     canMove=false;
-    player.x=863;
-    player.y=398;
-    btnTalk.innerHTML='<i class= "fa fa-window-close-o">';
-    setTimeout(function(){
-        súile.style.animation="look-down 1s forwards";
-    },1200);
-    
-        deirGeaga2.innerHTML = geagaTexts[story];
-
+    player.x=870;
+    player.y=524;
+    btnTalk.innerHTML='<i class= "fa fa-times" aria-hidden="true"></i>';
+    deirGeaga2.innerHTML = geagaTexts[geagaSceal];
+    fwdBtn.style.display="inline";
 
 }
 
 function endTalkToGeaga(){
-    súile.style.animation="look-up 1s forwards";
-setTimeout(function(){
    talkingToGeaga=false;
    canMove=true;
-   player.x=650;
-   player.y=450;
+   player.x=647;
+   player.y=546;
    allChat.style.display="none";
     deirGeaga2.innerHTML="";
+    fwdBtn.style.display="none";
     btnTalk.innerHTML='<i class= "fa fa-commenting-o">';
-},1200);
+    geagaSceal=1;
 }
 
 function render(event)
@@ -698,7 +1093,184 @@ function render(event)
 }
 
 
-},{"./geaga-teacs":1}],4:[function(require,module,exports){
+},{"./geaga-teacs":4}],7:[function(require,module,exports){
+ //jshint esversion:6 
+$(document).ready(function(){
+
+var countyCounter=0;    
+var clickCounter=0;
+var levelCounter=0;  //TODO replace these counters with $('output2 span') as in manifesto/jqueries.js
+var countyEng=['x','y','z'];
+ 
+/*
+     
+$('#countyMain').mouseover(function(){
+  $(this).css('opacity','0');
+console.log("right track?");
+    }
+
+);
+ 
+$('#countyMain').mouseout(function(){
+  $(this).css('opacity','1');
+console.log("right track?");
+    }
+
+);
+*/
+
+//var btnLvR= document.querySelector('#btnLvR');
+
+//var btnLvL= document.querySelector('#btnLvL');
+
+    
+$('#countyBtnLeft').click(function(){
+$('#contae span').hover(function(){
+  $(this).css('color','#e35ee5');
+  $('#bearla').text($(this).attr('id'));
+console.log("right track?");
+    }
+
+);
+ 
+$('#contae span').mouseout(function(){
+  $(this).css('color','white');
+  $('#bearla').text('');
+    }
+
+);
+});
+
+    
+$('#countyBtnRight').click(function(){
+$('#contae span').hover(function(){
+  $(this).css('color','#e35ee5');
+  $('#bearla').text($(this).attr('id'));
+console.log("right track?");
+    }
+
+);
+ 
+$('#contae span').mouseout(function(){
+  $(this).css('color','white');
+  $('#bearla').text('');
+    }
+
+);
+});
+
+$('#btnLvR').click(function(){
+    levelCounter++;
+    if(levelCounter>4){
+    levelCounter=0;
+    }
+});
+
+$('#btnLvL').click(function(){
+    levelCounter--;
+    if(levelCounter<0){
+    levelCounter=4;
+    }
+});
+$('#output').hover(function(){
+            if(clickCounter===0){ $('#bearla').text('What is the name of you?');
+             $(this).css('color','#e35ee5');
+            }
+if(clickCounter===1){ $('#bearla').text('What kind of Irish have you?');
+             $(this).css('color','#e35ee5');
+            }
+
+if(clickCounter===2){ $('#bearla').text('Who do you play for?');
+             $(this).css('color','#e35ee5');
+            }
+
+
+    });
+
+        $('#output').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#730a0a');
+
+    });
+document.querySelector('#inputName').onmouseenter=(event)=>{
+    document.querySelector('#bearla').innerHTML='Player One';
+}; document.querySelector('#ainmBtn').onmouseenter=(event)=>{
+    document.querySelector('#bearla').innerHTML='Océ!';
+}; 
+document.querySelector('#ainmBtn');   
+document.querySelector('#levelSelect');
+$('#inputLabel span').hover(function(){
+             $('#bearla').text($(this).attr('id'));
+             $(this).css('color','#e35ee5');
+    });
+
+        $('#inputLabel span').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+    });
+
+$('#ainmBtn').click(function(){
+    console.log("hello from jqueries");
+    clickCounter++;
+    
+    $('#output2').hover(function(){
+             if(levelCounter===0){ $('#bearla').text('');
+             $(this).css('color','#e35ee5');
+            }
+if(levelCounter===1){ $('#bearla').text('I have no Irish');
+             $(this).css('color','#e35ee5');
+            }
+
+if(levelCounter===2){ $('#bearla').text('I have a little Irish');
+             $(this).css('color','#e35ee5');
+            }
+
+if(levelCounter===3){ $('#bearla').text('I have Irish');
+             $(this).css('color','#e35ee5');
+            }
+
+
+if(levelCounter===4){ $('#bearla').text('I have fluent Irish');
+             $(this).css('color','#e35ee5');
+            }
+
+
+        $('#output2').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+    });
+
+
+
+       });
+     
+});
+
+$('#levelSelect').click(function(){
+    
+    console.log("hello from jqueries");
+    clickCounter++;
+    });
+
+  $('#contae span').hover(function(){
+             $('#bearla').text($(this).attr('id'));
+             $(this).css('color','#e35ee5');
+    });
+
+        $('#contae').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+    });
+    
+    
+
+});
+
+
+},{}],8:[function(require,module,exports){
 
  //jshint esversion:6 
 $(document).ready(function(){
@@ -752,4 +1324,93 @@ $(document).ready(function(){
 });
 
 
-},{}]},{},[1,2,3,4]);
+},{}],9:[function(require,module,exports){
+//jshint esversion:6
+module.exports = [
+
+//0
+
+
+
+
+    
+`
+I won't try.
+
+`,
+  
+//1
+    
+
+
+    
+  `<span id='I don\'t have any Irish'>Níl Gaeilge agam</span>
+  `, 
+    
+//2
+  `<span id='I have a little Irish'>Tá beagán Gaeilge agam</span>
+  `,
+//3
+
+   `<span id='I have Irish'>Tá Gaeilge agam</span>
+  `,
+
+ //4   
+   `<span id='I have fluent Irish'>Tá Gaeilge líofa agam</span>
+  `,
+
+
+   `
+  `, 
+   `Roghnaigh foireann6:
+  `, 
+ `
+`
+
+
+
+/*
+  * <span id='It is not'>Ní </span><span id='an absence'>easpa</span> <span id='of interest'> spéis</span>, <span id='nor ability'>ná cumas</span>, <span id='nor will'>ná thoill</span>
+<span id='which'>is</span> <span id='is the cause'>cúis</span><span id='of our'> len ár</span> <span id='language question'>dúcheist teanga</span>
+<*/
+
+];
+
+},{}],10:[function(require,module,exports){
+
+//jshint esversion:6
+module.exports = [
+
+//0
+
+
+
+
+    
+`<span id='Manifesto'>Forógra</span>
+`,
+  
+//1
+    
+
+
+`
+ `, 
+    
+//2
+  ` <span id='What'>Cad</span><span id='is the name of you'> is ainm dhuit</span>? 
+ `, 
+    
+//19
+  `Cén Gaeilge atá agat?`, 
+   `Roghnaigh Ainm
+  `, 
+   `Roghnaigh foireann4:
+  `, 
+   `Roghnaigh foireann5:
+  `, 
+   `Roghnaigh foireann6:
+  `]; 
+ 
+
+},{}]},{},[1,2,3,6,5,8,7,9,10]);

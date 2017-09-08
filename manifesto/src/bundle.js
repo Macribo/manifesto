@@ -78,7 +78,80 @@ $(document).ready(function(){
             $(this).css('color','#fff');
 
     });
-   });
+ 
+
+
+
+
+
+   $('#deirGeaga1').hover(function(){
+    $('#bearla').text('The Other Land');
+    $(this).css('color','#e35ee5');
+    }
+);
+
+
+    $('#deirGeaga1').mouseout(function(){
+        $('#bearla').text('');
+        $(this).css('color','#730a0a');
+    });
+
+
+ 
+     $('#btnTalk').click(function(){ 
+    
+
+         $('#deirGeaga2 span').hover(function(){
+            console.log("hovvrin!");
+            
+            $('#bearla').text($(this).attr('id'));
+             $(this).css('color','#e35ee5');
+    });
+
+        $('#deirGeaga2 span').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+
+    });
+     });
+    
+
+
+   /*    
+       $('#deirGeaga2').hover(function(){
+     $('#bearla').text('Welcome');
+        
+           $(this).css('color','#e35ee5');
+    });
+
+        $('#deirGeaga2').mouseout(function(){
+            $('#bearla').text('');
+            $(this).css('color','#fff');
+
+
+    });*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
 
 
 },{}],2:[function(require,module,exports){
@@ -173,7 +246,7 @@ render();
 //Event Handlers
     function playHandler(){
         playBtn.style.backgroundImage='url("../images/btnBg3.png")';
-    window.location.replace("http://ribodev.com/wp-content/uploads/2017/manifestoWeb/src/naContae/naContae.html");
+    window.location.replace("http://ribodev.com/wp-content/uploads/2017/manifestoWeb/src/naGeaga/geaga.html");
     }
  // function mouseoverHandler(){
    // fwdBtn.style.backgroundImage='("../images/btnBg3.png")';

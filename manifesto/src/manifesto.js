@@ -89,7 +89,7 @@ render();
 //Event Handlers
     function playHandler(){
         playBtn.style.backgroundImage='url("../images/btnBg3.png")';
-    window.location.replace("http://ribodev.com/wp-content/uploads/2017/manifestoWeb/src/naContae/naContae.html");
+    window.location.replace("http://ribodev.com/wp-content/uploads/2017/manifestoWeb/src/naGeaga/geaga.html");
     }
  // function mouseoverHandler(){
    // fwdBtn.style.backgroundImage='("../images/btnBg3.png")';

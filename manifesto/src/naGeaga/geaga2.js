@@ -1,7 +1,7 @@
 //jshint esversion:6
 let geagaTexts = require("./geaga-teacs"); //can't use capital letters with browswerify 
 var deirGeaga2 = document.querySelector("#deirGeaga2");
-let story = 1;
+let geagaSceal = 1;
 var leavePanel = document.getElementById('leavePanel');
 var btnTalk = document.getElementById('btnTalk');
 var btnLeave = document.getElementById('leave');
@@ -10,11 +10,48 @@ var allChat = document.getElementById('allChat');
 var súile = document.getElementById('súile');
 var talkingToGeaga = false;
 var chatPanel = document.getElementById('chatPanel');
+var fwdBtn= document.querySelector('#fwdBtn');
+var ctrlsFrame= document.querySelector("#ctrlsFrame");
+var deirGeaga1 = document.querySelector("#deirGeaga1");
+var naContaeResources=document.querySelector('#naContaeResources');
+//handlers
+
 btnNoLeave.addEventListener("click",noLeaveHandler,false);
 btnLeave.addEventListener("click",leaveHandler,false);
+fwdBtn.addEventListener("click",fwdBtnHandler,false);
+ainmBtn.addEventListener("click",ainmBtnHandler,false);
+function fwdBtnHandler(){
+    geagaSceal++;
+console.log("GS "+geagaSceal);
 
-var deirGeaga1 = document.querySelector("#deirGeaga1");
-
+    deirGeaga2.innerHTML = geagaTexts[geagaSceal];
+    if (geagaSceal === 2){
+        btnTalk.style.display="none";
+        fwdBtn.style.display="none";
+        naContaeResources.style.display="inline";
+        ainmBtn.style.display="inline";
+    }
+    if(geagaSceal === 3){}
+    if(geagaSceal === 4){
+        naContaeResources.style.display="inline";
+        fwdBtn.style.display="none";
+        btnTalk.style.display="none";
+    }
+    if(geagaSceal === 5){}
+    if(geagaSceal === 6){}
+    if(geagaSceal === 3){}
+}
+function ainmBtnHandler(){
+    geagaSceal++;
+    deirGeaga2.innerHTML = geagaTexts[geagaSceal];
+    if(geagaSceal === 3){
+    
+    naContaeResources.style.display="none";
+    ainmBtn.style.display="none";
+    fwdBtn.style.display="inline";
+        
+    }
+}
 //sprite Object
 var tree=
     {
@@ -31,6 +68,9 @@ var tree=
         vy:0
         
     };
+
+
+//tree.addEventListener("click", talkHandler,false);
 var spriteObject =
     {
         sourceX: 0,
@@ -161,6 +201,7 @@ window.addEventListener("keydown",function(event){
 
         event.preventDefault();
 },false);
+
 window.addEventListener("keyup", function(event){
     if(canMove)switch(event.keyCode){
         case UP:
@@ -191,7 +232,7 @@ function update()
 
     requestAnimationFrame(update,canvas);
 //check if player is within talking range of Geaga
-if(player.x>=653 && player.y>=388){
+if(player.x>=653 && player.y>=512){
             playerNearGeaga();
         }
     else{
@@ -303,9 +344,11 @@ function leaveHandler(){
 }
 
 function playerNearGeaga(){
-     btnTalk.style.display="inline"; 
+     ctrlsFrame.style.display="inline";
     tree.sourceX=425;        
-
+if(geagaSceal <=2){
+    btnTalk.style.display="inline"; 
+}
 }
 function notNearGeaga(){
      btnTalk.style.display="none"; 
@@ -313,38 +356,35 @@ function notNearGeaga(){
 }
 
 function talkHandler(){
+    if(playerNearGeaga){
     if(talkingToGeaga){
         endTalkToGeaga();
     }else{
     talkToGeaga();}
 }
+}
 function talkToGeaga(){
     allChat.style.display="inline";
     talkingToGeaga=true;
     canMove=false;
-    player.x=863;
-    player.y=398;
-    btnTalk.innerHTML='<i class= "fa fa-window-close-o">';
-    setTimeout(function(){
-        súile.style.animation="look-down 1s forwards";
-    },1200);
-    
-        deirGeaga2.innerHTML = geagaTexts[story];
-
+    player.x=870;
+    player.y=524;
+    btnTalk.innerHTML='<i class= "fa fa-times" aria-hidden="true"></i>';
+    deirGeaga2.innerHTML = geagaTexts[geagaSceal];
+    fwdBtn.style.display="inline";
 
 }
 
 function endTalkToGeaga(){
-    súile.style.animation="look-up 1s forwards";
-setTimeout(function(){
    talkingToGeaga=false;
    canMove=true;
-   player.x=650;
-   player.y=450;
+   player.x=647;
+   player.y=546;
    allChat.style.display="none";
     deirGeaga2.innerHTML="";
+    fwdBtn.style.display="none";
     btnTalk.innerHTML='<i class= "fa fa-commenting-o">';
-},1200);
+    geagaSceal=1;
 }
 
 function render(event)
