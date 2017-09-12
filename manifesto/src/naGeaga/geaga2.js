@@ -1,4 +1,23 @@
 //jshint esversion:6
+//
+//
+
+var imreoirWLv = document.querySelector('#imreoirWLv');
+var btnLvL = document.querySelector('#btnLvL');
+var btnLvR = document.querySelector('#btnLvR');
+var emblem = document.querySelector('#emblem');
+var selectLevel = document.querySelector('#selectLevel');
+
+
+
+//
+//
+//
+//
+//
+
+
+let inputElements = document.getElementById('#inputElements');
 let geagaTexts = require("./geaga-teacs"); //can't use capital letters with browswerify 
 var deirGeaga2 = document.querySelector("#deirGeaga2");
 let geagaSceal = 1;
@@ -14,12 +33,14 @@ var fwdBtn= document.querySelector('#fwdBtn');
 var ctrlsFrame= document.querySelector("#ctrlsFrame");
 var deirGeaga1 = document.querySelector("#deirGeaga1");
 var naContaeResources=document.querySelector('#naContaeResources');
+var middlePanel = document.querySelector('#middle-panel');
 //handlers
-
 btnNoLeave.addEventListener("click",noLeaveHandler,false);
 btnLeave.addEventListener("click",leaveHandler,false);
 fwdBtn.addEventListener("click",fwdBtnHandler,false);
 ainmBtn.addEventListener("click",ainmBtnHandler,false);
+levelSelect.addEventListener("click",levelSelectHandler,false);
+
 function fwdBtnHandler(){
     geagaSceal++;
 console.log("GS "+geagaSceal);
@@ -30,12 +51,21 @@ console.log("GS "+geagaSceal);
         fwdBtn.style.display="none";
         naContaeResources.style.display="inline";
         ainmBtn.style.display="inline";
+        portrait.style.opacity="1";
     }
-    if(geagaSceal === 3){}
-    if(geagaSceal === 4){
+    if (geagaSceal === 3){
+        portrait.style.opacity="0";
+    }
+    if(geagaSceal === 4){//lv select
         naContaeResources.style.display="inline";
+        btnLvR.style.display='inline';
+        btnLvR.style.animation='fade-in 1s forwards';
+        console.log("taispán leibheal");
+        btnLvL.style.display='inline';
+        btnLvL.style.animation='fade-in 1s forwards';
         fwdBtn.style.display="none";
         btnTalk.style.display="none";
+        imreoirWLv.style.display="inline";
     }
     if(geagaSceal === 5){}
     if(geagaSceal === 6){}
@@ -49,8 +79,20 @@ function ainmBtnHandler(){
     naContaeResources.style.display="none";
     ainmBtn.style.display="none";
     fwdBtn.style.display="inline";
-        
+    fwdBtn.style.left="102px";
+    
     }
+
+}
+function levelSelectHandler(){
+  geagaSceal++;
+    deirGeaga2.innerHTML= geagaTexts[geagaSceal];
+    naContaeResources.style.display="none";
+    fwdBtn.style.display="inline";
+    fwdBtn.style.left="102px";
+    btnLvL= document.querySelector('#btnLvL');
+    btnLvR= document.querySelector('#btnLvR');
+
 }
 //sprite Object
 var tree=
@@ -195,11 +237,11 @@ window.addEventListener("keydown",function(event){
                 break;
         }
         console.log("px: "+player.x+"  py: "+player.y);
-        
+         event.preventDefault();
+       
     }
     
 
-        event.preventDefault();
 },false);
 
 window.addEventListener("keyup", function(event){
@@ -346,7 +388,7 @@ function leaveHandler(){
 function playerNearGeaga(){
      ctrlsFrame.style.display="inline";
     tree.sourceX=425;        
-if(geagaSceal <=2){
+if(geagaSceal ===1){
     btnTalk.style.display="inline"; 
 }
 }
@@ -370,6 +412,7 @@ function talkToGeaga(){
     player.x=870;
     player.y=524;
     btnTalk.innerHTML='<i class= "fa fa-times" aria-hidden="true"></i>';
+    btnTalk.style.display="none";
     deirGeaga2.innerHTML = geagaTexts[geagaSceal];
     fwdBtn.style.display="inline";
 
@@ -385,6 +428,7 @@ function endTalkToGeaga(){
     fwdBtn.style.display="none";
     btnTalk.innerHTML='<i class= "fa fa-commenting-o">';
     geagaSceal=1;
+    
 }
 
 function render(event)

@@ -94,7 +94,7 @@ playBtn.addEventListener("click", playHandler, false);
 
 joinTeam.addEventListener("click",joinTeamHandler);
 ainmBtn.addEventListener("click", ainmHandler);
-levelSelect.addEventListener("click", levelSelectHandler);
+//levelSelect.addEventListener("click", levelSelectHandler);
 btnLvL.addEventListener("click", btnLvLHandler);
 btnLvR.addEventListener("click", btnLvRHandler);
 
@@ -363,6 +363,7 @@ function joinTeamHandler(){
     inputName.style.display='none';
 
 }
+/*
 function levelSelectHandler(){
     setTimeout(function(){tidyBox1.style.backgroundImage="";},1000);
     mapLocation = 4;
@@ -371,15 +372,7 @@ function levelSelectHandler(){
     btnLvR.style.display='none';
     btnLvL.style.display='none';
     levelSelect.style.display='none';
-    //reveal hidden inputElements
     inputElements.style.visibility='visible'; 
-    inputElements.style.opacity='1';
-    inputElements.style.left='561px';
-    inputElements.style.bottom='260px';
-    //inputLabel.style.display='block';
-    //inputLabel.innerHTML='Roghnaigh Foireann:';
-    imreoirWLv.style.top='57px';
-    imreoirWLv.style.left='530px';
 
     badgeSelectorL(100); //player selects team
     narrate(3);
@@ -398,7 +391,7 @@ function levelSelectHandler(){
 
 }
 
-
+*/
 
 function ainmHandler(){
     ainmBtn.style.backgroundImage='url("../../images/btnBg2.png")';
@@ -420,11 +413,7 @@ function ainmHandler(){
         imreoirWLv.style.visibility='visible';
 
         //show languagelevel right left buttons
-        btnLvR.style.display='inline';
-        btnLvR.style.visibility='visible';
 
-        btnLvL.style.visibility='visible';
-        btnLvL.style.display='inline';
 
 
         output2.innerHTML=storyTexts[blurbId];
@@ -432,20 +421,10 @@ function ainmHandler(){
         story++;
     }
 
-    if(story===2){ //select language level
-        btnLvR.style.display='inline';
-        btnLvR.style.animation='fade-in 1s forwards';
-
-        btnLvL.style.display='inline';
-        btnLvL.style.animation='fade-in 1s forwards';
-        console.log("should have set level select display");
-    }
-
-
+    
 
 
 }
-
 
 
 

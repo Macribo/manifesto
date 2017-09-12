@@ -77,14 +77,14 @@ $('#btnLvL').click(function(){
     }
 });
 $('#output').hover(function(){
-            if(clickCounter===0){ $('#bearla').text('What is the name of you?');
+            if(clickCounter===0){ $('#bearla').text('Choose name');
              $(this).css('color','#e35ee5');
             }
-if(clickCounter===1){ $('#bearla').text('What kind of Irish have you?');
+if(clickCounter===1){ $('#bearla').text('Choose Irish Level');
              $(this).css('color','#e35ee5');
             }
 
-if(clickCounter===2){ $('#bearla').text('Who do you play for?');
+if(clickCounter===2){ $('#bearla').text('Choose Team');
              $(this).css('color','#e35ee5');
             }
 
