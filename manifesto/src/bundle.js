@@ -2,7 +2,7 @@
  //jshint esversion:6 
 $(document).ready(function(){
     $('#output').hover(function(){
-    $('#bearla').text('Manifesto');
+    $('#bearla').text('Null ist gleich 0.');
     $(this).css('color','#e35ee5');
     }
 );
