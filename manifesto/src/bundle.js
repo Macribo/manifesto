@@ -22,12 +22,12 @@ $(document).ready(function(){
  
      
 
-    $('#fwdBtn').click(function(){
+    $('#fwdBtn').on('click touch',function(){
 
         $('#output2 span').hover(function(){
              $('#bearla').text($(this).attr('id'));
              $(this).css('color','#e35ee5');
-             $('div').slidedown(); 
+            //  $('div').slidedown(); 
     });
 
         $('#output2 span').mouseout(function(){
@@ -37,7 +37,7 @@ $(document).ready(function(){
     });
 });
 
-    $('#bckBtn').click(function(){
+    $('#bckBtn').on('click touch',function(){
 
         $('#output2 span').hover(function(){
              $('#bearla').text($(this).attr('id'));
@@ -231,11 +231,11 @@ var gameMap = document.querySelector('#tileworld');
 var mapdata = document.querySelector('#mapdata');
 var curSiosArCo = document.querySelector('#curSiosArCo');
 //Event Listeners:
-fwdBtn.addEventListener("click", fwdBtnHandler, false);
-fwdBtn.addEventListener("mousedown", mousedownHandler, false);
-fwdBtn.addEventListener("mouseout", mouseoutHandler, false);
-bckBtn.addEventListener("click", bckBtnHandler, false);
-playBtn.addEventListener("click", playHandler, false);
+fwdBtn.addEventListener("click touch", fwdBtnHandler, false);
+fwdBtn.addEventListener("mousedown touchstart", mousedownHandler, false);
+fwdBtn.addEventListener("mouseout touchend", mouseoutHandler, false);
+bckBtn.addEventListener("click touch", bckBtnHandler, false);
+playBtn.addEventListener("click touch", playHandler, false);
 
 
 
