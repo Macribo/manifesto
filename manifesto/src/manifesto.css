@@ -1,6 +1,6 @@
 
 html {
-  font-family: computer_pixel-7;
+  font-family:Arial, Helvetica, sans-serif;
   color: #fff;
   font-size: 16px;
   padding: 0px;
@@ -35,7 +35,8 @@ height:435px;
 width:756px;
 top:85px;
 left:340px;
-transition:fade-out 1s;}
+/* transition:fade-out 1s; */
+transform: rotate(90deg);}
 #mapFrame {
 
     position:absolute;
@@ -77,7 +78,7 @@ span.withTitle {
 h1
 {
   text-align: center;
-  font-family: computer_pixel-7;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 80px;
   padding-bottom: 0px;
   padding-top: 20px;
@@ -94,13 +95,9 @@ h1
   opacity:0;
     
 }
-#title:hover{
-}
 
 
-{
-  font-size: 14px;
-}
+
 
 
 #output{
@@ -119,7 +116,7 @@ h1
 {
     position:relative;
     top:-68px;
-font-family: INFO56_0;
+font-family: Arial, Helvetica, sans-serif;
 font-size:39px;
 left:0px;
 width:640px;
@@ -248,6 +245,123 @@ background-image:url('../images/btnBg2.png');
 
 
 
+@media screen and (orientation:landscape) {
+}
+@media screen and (orientation:portrait) {
+  #output2
+  {
+      position:relative;
+      top:17% !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:5em;
+    color:gainsboro;
+  left:0%;
+  width:640px;
+  z-index: 600;
+}
+  img
+  {
+    margin: 0px auto;
+    display: block;
+    margin-bottom: 20px;
+  }
+  #output {
+    top: 9%;
+    height: 0px;
+    line-height: 0px;
+    position: relative;
+    text-align: center;
+    left: 0%;
+    color: #f5f5f5;
+    margin-left: 0px auto;
+    font-size: 85px;
+    z-index: 300;}
+
+  #left-panel{
+    margin:34px;
+    width:242px;
+    height: 467px;
+    position: fixed;
+    background-image: url("../images/bg2.png");
+    background-repeat: no-repeat;
+    top:26%;
+    left:13%;
+    zoom:2.3;
+}
+  #mapFrame {
+
+    position:fixed;
+    /* display: inline; */
+    background-image:url('../images/mapFrame-portrait.png');
+    top:0%;
+    left:0%;
+    z-index:0;
+    padding-top:0px;
+    padding-left:0px;
+    margin-right:0px;
+height:100%;
+width:100%;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+  #bearla{
+    position:absolute;
+    color:black;
+    font-size: 1em;
+    text-align:center;
+    top: 170px;
+    left:-41px;
+    width: 115px;
+    z-index:32;
+    line-height: 27px;
+    word-spacing:-1px;
+}
+
+#middle-panel{
+  position:fixed;
+  top:0%;
+  left:0%;
+  margin-left:0%;
+  height:100%;
+ z-index:500;
+  width:100%;
+  border:3px solid orange;
+  padding-right:0%;
+  padding-left:0%;
+  }
+
+  #fwdBtn{
+    position:fixed;
+       
+   outline:none;
+      left:0%;
+      top:65%;
+      animation: delay-fade-in 1s;
+     }
+  
+  
+  #bckBtn{
+    position:fixed;
+      display:none;
+      left:80%;
+      top:65%;
+  }
+
+  #cubes{
+    display:none;
+    position:fixed;
+    background-image:url('../images/bgAnim6.gif');
+    /* height:100%; */
+    /* width:756px; */
+    top:0%;
+    left:-50%;
+    zoom:3;
+    z-index:-1;
+    /* height:415px; */
+    transition:fade-out 1s;
+    /* transform: rotate(90deg);} */
+}
+
  .fadeText{
 animation: fade-in 2s;
  } 
@@ -288,3 +402,4 @@ animation: fade-in 2s;
 @keyframes dim {
 0%{opacity: 1;}
 130%{opacity:0.25;}
+}

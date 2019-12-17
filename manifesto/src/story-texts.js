@@ -8,7 +8,7 @@ module.exports = [
 
 //1
     
-`<span id='Welcome'>Fáilte.</span>
+`<span id='herzlich willkommen'>Fáilte.<br/></span><span id="Náid ist gleich 0.">Tá náid cothrom le 0.</span>
 
 
 `,
@@ -17,7 +17,7 @@ module.exports = [
     
 //2
 
-`<span id='A Question...'>Ceist...</span>
+`<span id='beginne mit null.'>Tósnímís le náid.</span>
 `,
 
 //3<span id='One cannot'>Ní feidir</span> <span id='think'>smaoineamh</span> <span id='in Irish'>i nGaeilge</span>, <span id='in English'>i mBearla</span>.
@@ -25,9 +25,7 @@ module.exports = [
 
 
 
-`<span id='This language'>Tá an teanga seo</span><span id='is involved with'> bainteach le</span>
-<span id='writing and speaking'> scriobh agus caint,</span><span id='but'> ach </span>
-<span id='is it used'>an usaidtear</span><span id='in the mind'> san aigne í </span><span id='also?'>freisin?</span>
+`<span id='schreibe Null'>scríobh náid.</span>
 `,
 
 ////9 <div style="animation:delay-fade-in 2s;">
@@ -41,7 +39,7 @@ module.exports = [
 */
 //10
 `
-<span id='Asserts'>Dearbhín</span> <span id='this manifesto:'>an forógra seo</span>: <ul>
+<span id='schreibe eins'>scríobh an tuimhear a haon</span> <span id='this manifesto:'>an forógra seo</span>: <ul>
 
 <div style="animation:delay-fade-in 1s;">
 <li>
@@ -54,9 +52,8 @@ module.exports = [
 <li>
 
 
-<span id='A shared virtual space could'>D'feidach spás fiorúl coiteannta</span><span id='support'> tacú </span> <span id='the develop- ment of'>le forbairt </span><span id='these connec- tions'>na caidreamh sin</span>
+<span id='Eine null eins zwei zu drei mal vier.'>A náid a haon a dó a trí a ceathar a cúaig a sé.</span><span id='sieben acht neun zehn elf zwölf dreizehn vierzehn'> seacht, a hocht, a naoi, a deich, a haon déag, a dó dhéag, a trí déag, a ceithre déag... déagceaṫair-deag... </span>
 </li>
-
 
 </li>
 
@@ -69,7 +66,9 @@ module.exports = [
 `,
 //11
 `
-<span id='Would'>Ar</span> <span id='you like to'>mhaith leat</span> <span id='give it a try?'> tríal a bhainnt as</span>?
+<span id='Go maith.'>Ar mhíann leat tuilleadh cleachta le sin?
+arís | ar aghaidh
+</span>
 `,
 
 //12

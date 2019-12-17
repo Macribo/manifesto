@@ -3,12 +3,13 @@
     <meta charset="utf-8">
 
     <head>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <title>Manifesto </title>
         <link rel="stylesheet" href="manifesto.css">
-        <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css"> -->
         <script src="jquery-1.4.js"></script>
         <!--For Firefox  -->
-        <link rel="stylesheet" href="http://www.upsingh.in/css/font-awesome.min.css">
+        <!-- <link rel="stylesheet" href="http://www.upsingh.in/css/font-awesome.min.css"> -->
 
 
     </head>
@@ -18,19 +19,23 @@
         <audio id='hum1' loop>
             <source src="../audio/hum1.mp3">
         </audio>
-                <div id="left-panel">
+
+        <div class="container-fluid">
+                <!-- Content here -->
+              
+        <div id="left-panel">
                     <div id="deetsFrame"></div>
                     <div id="shield-holder">
                         <div class="item" id="dealbh"></div>
                             <div class="item" id="badge"</div>
-                            <p id="bearla">Hover on Irish text for English</p>
+                            <p id="bearla">Tippe auf irischen Text für die Übersetzung</p>
 
                             <button id="fwdBtn"><i class= "fa fa-arrow-right" aria-hidden="true"></i></button>
             <button id="bckBtn"><i class= "fa fa-arrow-left" aria-hidden="true"></i></button>
 
                         <button id="play"><i class= "fa fa-check" aria-hidden="true"></i></button>
 
-
+                    </div>
 
         </div>
 
@@ -44,14 +49,17 @@
                 <div id="inputElements">
                 </div>
 
-
-
-
-
-
         <div id="mapFrame"></div>
+
         <div id = "cubes"></cubes>
-    </body>
-    <script src="jqueries.js"></script>    
-    <script src="bundle.js"></script>
-</html>
+        </div>
+        </div>
+
+            <script src="jqueries.js"></script>    
+            <script src="bundle.js"></script>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        </body>
+            </html>
+            
