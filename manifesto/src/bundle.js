@@ -11,7 +11,7 @@ $(document).ready(function(){
         $(this).css('color','#730a0a');
     });
     document.querySelector('#bckBtn').onmouseenter = (event) => {
-        document.querySelector('#bearla').innerHTML = 'back';
+        document.querySelector('#bearla').innerHTML = 'zurück | síar';
     };
     document.querySelector('#fwdBtn').onmouseenter = (event) => {
         document.querySelector('#bearla').innerHTML = 'Tippe auf irischen Text für die Übersetzung';
@@ -22,7 +22,7 @@ $(document).ready(function(){
  
      
 
-    $('#fwdBtn').on('click touch',function(){
+    $('#fwdBtn').on('touch',function(){
 
         $('#output2 span').hover(function(){
              $('#bearla').text($(this).attr('id'));
@@ -37,7 +37,7 @@ $(document).ready(function(){
     });
 });
 
-    $('#bckBtn').on('click touch',function(){
+    $('#bckBtn').on('touch',function(){
 
         $('#output2 span').hover(function(){
              $('#bearla').text($(this).attr('id'));
@@ -219,7 +219,7 @@ var inputLabel = document.querySelector("#inputLabel");
 var fwdBtn = document.querySelector("#fwdBtn");
 var bckBtn = document.querySelector('#bckBtn'); 
 
-var playBtn = document.querySelector('#play');
+// var playBtn = document.querySelector('#play');
 var countyBtnRight = document.querySelector('#countyBtnRight');
 var countyBtnLeft = document.querySelector('#countyBtnLeft');
 var htmla=document.querySelector('html');
@@ -231,11 +231,11 @@ var gameMap = document.querySelector('#tileworld');
 var mapdata = document.querySelector('#mapdata');
 var curSiosArCo = document.querySelector('#curSiosArCo');
 //Event Listeners:
-fwdBtn.addEventListener("click touch", fwdBtnHandler, false);
-fwdBtn.addEventListener("mousedown touchstart", mousedownHandler, false);
-fwdBtn.addEventListener("mouseout touchend", mouseoutHandler, false);
-bckBtn.addEventListener("click touch", bckBtnHandler, false);
-playBtn.addEventListener("click touch", playHandler, false);
+fwdBtn.addEventListener("touchstart", fwdBtnHandler, false);
+fwdBtn.addEventListener("touchstart", mousedownHandler, false);
+fwdBtn.addEventListener("touchend", mouseoutHandler, false);
+bckBtn.addEventListener("touchstart", bckBtnHandler, false);
+// playBtn.addEventListener("click touch", playHandler, false);
 
 
 
@@ -247,7 +247,7 @@ render();
 
 //Event Handlers
     function playHandler(){
-        playBtn.style.backgroundImage='url("../images/btnBg3.png")';
+        // playBtn.style.backgroundImage='url("../images/btnBg3.png")';
     window.location.replace("http://ribodev.com/wp-content/uploads/2017/manifestoWeb/src/naGeaga/geaga.html");
     }
  // function mouseoverHandler(){
@@ -315,7 +315,7 @@ function playGame()
         if(story>1){
             bckBtn.style.display='inline';
             bckBtn.style.animation='delay-fade-in 1s';
-        fwdBtn.style.animation='slide-button-right 1s forwards';
+        
         console.log("hello bckBtn?");
         }
     else
@@ -329,14 +329,14 @@ function playGame()
     }
         if (story>2){
             
-       hum1.play();
+    //    hum1.play();
         }
     //end of manifesto - begin game y/n?
 if (story===5){
-        playBtn.style.display='inline';
+        // playBtn.style.display='inline';
         // fwdBtn.style.animation='fade-out 0.25s forwards';
         fwdBtn.style.visibility='hidden';
-        playBtn.style.animation='fade-in 1s';
+        // playBtn.style.animation='fade-in 1s';
         console.log("story === 5");   
 }
 if(story===1){
@@ -362,7 +362,7 @@ if(story===4){
         fwdBtn.style.left='-42px';
         fwdBtn.style.display='inline';
         fwdBtn.style.visibility='visible';
-        playBtn.style.display='none';
+        // playBtn.style.display='none';
     }
 
 }
@@ -370,6 +370,13 @@ if(story===4){
 
 function render()
 {
+    if(window.innerWidth > window.innerHeight){
+        fwdBtn.style.animation='slide-button-right-landscape 1s forwards';
+        
+    }else{
+        fwdBtn.style.animation='slide-button-right 1s forwards';
+
+        }
     //Render the location
     output.innerHTML = map[mapLocation];
    // image.src = "../images/" + images[mapLocation];
@@ -431,20 +438,12 @@ module.exports = [
     */
     //10
     `
-    <span id='schreibe eins'>scríobh an tuimhear a haon</span> <span id='this manifesto:'>an forógra seo</span>: <ul>
-    
+    <span id='schreibe eins'>scríobh an tuimhear a haon</span>
     <div style="animation:delay-fade-in 1s;">
-    <li>
-    <span id='One cannot'>Nach feidir</span><span id='give a neutral account'> tuairisc neodrach a thabhairt</span><span id='of the connec- tions'> ar na caidreamh </span><span id='between'>idir</span><span id='language'> teanga</span><span id='and mind'> agus meabhair</span>
-    </li>
-    </div>
-    <br>
+/*TODO component: easca keyboard */
+</div> `,`  
     
-    <div style="animation:delay-fade-in 3s;">
-    <li>
-    
-    
-    <span id='Eine null eins zwei zu drei mal vier.'>A náid a haon a dó a trí a ceathar a cúaig a sé.</span><span id='sieben acht neun zehn elf zwölf dreizehn vierzehn'> seacht, a hocht, a naoi, a deich, a haon déag, a dó dhéag, a trí déag, a ceithre déag... déagceaṫair-deag... </span>
+    <span id='Eine null eins zwei zu drei mal vier.'>A náid a haon a dó a trí a ceathar </span> `,`<span id='funf sechs.'>a cúaig a sé.</span>`,`<span id='sieben acht neun ...'> 789.... </span>
     </li>
     
     </li>
