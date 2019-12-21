@@ -66,20 +66,6 @@ $(document).ready(function(){
 });
 
 
-$('.dm-says').click(function(){
-
-    $('#output2 span').hover(function(){
-         $('#bearla').text($(this).attr('id'));
-         $(this).css('color','#e35ee5');
-         $('div').slidedown(); 
-});
-
-    $('#output2 span').mouseout(function(){
-        $('#bearla').text('');
-        $(this).css('color','#fff');
-
-});
-});
 
 
         $('#output2 span').hover(function(){

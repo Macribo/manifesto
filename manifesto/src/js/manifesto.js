@@ -96,12 +96,12 @@ render();
 //  } 
 
     function mousedownHandler(){
-        fwdBtn.style.backgroundImage ='url("../images/btnBg2.png")';
+        // fwdBtn.style.backgroundImage ='url("../images/btnBg2.png")';
     }
 
     function mouseoutHandler(){
     }
-
+// alert();
     function bckBtnHandler(){
         bckBtn.style.backgroundImage = 'url("../images/btnBg2.png")';
 
@@ -152,7 +152,7 @@ function playGame()
 
     function progressStory(){
 
-
+alert();
         if(story>1){
             bckBtn.style.display='inline';
             bckBtn.style.animation='delay-fade-in 1s';

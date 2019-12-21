@@ -2,7 +2,6 @@ $(document).ready(function () {
 	new ClipboardJS('#copy');
 
 	let keyPressed;
-
 	let keysToShow = [];
 	showWhatKeys=(keyPressed)=>{
 		switch(keyPressed){
@@ -166,6 +165,8 @@ function holdKeyDown() {
 )
 }
 	$('.btn').on('touchstart', function(){
+		$('#output').fadeIn();
+// alert();
 		$('#j-line').empty();
 		keyPressed = (this.innerHTML);
 		keysToShow=[];
@@ -180,7 +181,7 @@ function holdKeyDown() {
 				var id = this.id
 				if (keyPressed=== "Ᵹ"){
 					fadaMode();
-					// alert('alt')
+					alert('alt')
 				}
 				else if(
 					
@@ -194,9 +195,9 @@ function holdKeyDown() {
 				if (id ==='undo'){
 					var temp = $('#output').text();
 					temp.toString();
-					// alert(temp)
+					alert(temp)
 				str=	temp.substring(0, temp.length - 1);
-				// alert(str)
+				alert(str)
 				$('#output').text(str) ;
 				}
 				else if( $('#j-line').is(':hidden')){
@@ -209,6 +210,10 @@ function holdKeyDown() {
 			// 	let temp = document.getElementById('#output');
 			// 	alert(temp)
 			// }
+
+			// alert();
+
+			
 		});
 
 

@@ -54,31 +54,33 @@ let keyPressedInDMmode;
     
 }
 
-
+let ceistVis =false;
+toggleCeistVis = ()=>{
+    if(ceistVis){ceistVis = false;
+    render()
+}
+    else{ceistVis = true;
+        render();
+    }}
 $('#fwdBtn').on('touchend', function(){
         // say++;
 // alert()
-$('.dm-says').fadeOut();
-$('#keyboard-container').fadeIn();
-dmAgCainnt = false;
-justListen = false;
-render();
+toggleCeistVis();
 }
 );
 
     $('btn').on('touchstart', function(){
 		keyPressedInDMmode = (this.innerHTML);
         if(keyPressedInDMmode === '<i class="fa fa-long-arrow-right"></i>'){
-            say++;
-render();     
-setTimeout(function () {
-    $('#saighead-deas').removeClass();
-    $('#saighead-deas').addClass('btn');
-    $('#saighead-deas').addClass('special-btns-during-dm-mode');
-    $('#saighead-deas').css('color','rgb(73, 206, 33)');
-    // $('#saighead-deas').addClass('btn-outline-dark');
+        render();     
+        setTimeout(function () {
+            $('#saighead-deas').removeClass();
+            $('#saighead-deas').addClass('btn');
+            // $('#saighead-deas').addClass('special-btns-during-dm-mode');
+            $('#saighead-deas').css('color','rgb(73, 206, 33)');
+            // $('#saighead-deas').addClass('btn-outline-dark');
 
-},1000);
+        },1000);
 
 // alert(keyPressedInDMmode);
 // alert(keyPressedInDMmode);
@@ -111,6 +113,21 @@ start bringing in tall order resources
 
 
 //
+
+if(ceistVis){
+    $('.dm-output').fadeOut();
+    // alert(ceistVis)
+    $('#keyboard-container').fadeIn();
+
+}
+else{
+    $('.dm-output').fadeIn();
+    $('#keyboard-container').fadeOut();
+
+
+}
+
+
 }
    };
 
