@@ -174,10 +174,17 @@ function holdKeyDown() {
 // alert(keyPressed);
 
 resolve = () =>{
-	// alert();
-	say++;
-	toggleCeistVis();
-	toggleOutputVis();  
+	let answer = `náid`;
+	if(answer === $('#output').text()){
+		alert("ok");
+
+		say++;
+		toggleCeistVis();
+		toggleOutputVis();  
+	}
+	else{
+		alert('falsch!')
+	}
 	// render();
  
 }
@@ -219,6 +226,7 @@ if( keyPressed ===`<i class="fa fa-long-arrow-right"></i>`){
 				}
 				else if( $('#j-line').is(':hidden')){
 					// alert("hidden")
+					// git commit -m "block arrow key from being added to output"
 					if(keyPressed != `<i class="fa fa-long-arrow-right"></i>`)
 				$('#output').append(keyPressed);
 		keysToShow= [];}
@@ -246,71 +254,81 @@ if( keyPressed ===`<i class="fa fa-long-arrow-right"></i>`){
 			let dmAgCainnt = true;
 			let justListen = true;
 		 let deirDM = [
-			 `"<div class='dm-output'>
+			 `<div class='dm-output'>
 			 0
 			<br/>
 			<br/>
 			<br/>
-			 náid
+			náid
 			 </div>`,
 			 
-			 `<div class='dm-output'>1
+			 `<div class='dm-output'>
+			 1
 			 <br/>
 			 <br/>
 			 <br/>
 			 a haon</div>`,
 			 
-			 `<div class='dm-output'>2
+			 `<div class='dm-output'>
+			 2
 			 <br/>
 			 <br/>
 			 <br/>
 			 a dó</div>`,
-			 `<div class='dm-output'>3
+			 `<div class='dm-output'>
+			 3
 			 <br/>
 			 <br/>
 			 <br/>
 			 a trí</div>`,
 			 
-			 `<div class='dm-output'>4
+			 `<div class='dm-output'>
+			 4
 			 <br/>
 			 <br/>
 			 <br/>
 			 a ceathair</div>`,
 			 
-			 `<div class='dm-output'>5
+			 `<div class='dm-output'>
+			 5
 			 <br/>
 			 <br/>
 			 <br/>
 			 a cúig</div>`,
 			 
-			 `<div class='dm-output'>6
+			 `<div class='dm-output'>
+			 6
 			 <br/>
 			 <br/>
 			 <br/>
 			 a sé</div>`,
 			 
-			 `<div class='dm-output'>7
+			 `<div class='dm-output'>
+			 7
 			 <br/>
 			 <br/>
 			 <br/>
 			 a seacht</div>`
 			 ,
 			 
-			 `<div class='dm-output'>8
+			 `<div class='dm-output'>
+			 8
 			 <br/>
 			 <br/>
 			 <br/>
 			 a hocht</div>`
 			 ,
 			 
-			 `<div class='dm-output'>9
+			 `<div class='dm-output'>
+			 9
 			 <br/>
 			 <br/>
 			 <br/>
 			 a naoi</div>`
 			 ,
 			 
-			 `<div class='dm-output'>10
+			 `<div class='dm-output'>
+			 10
 			 <br/>
 			 <br/>
 			 <br/>

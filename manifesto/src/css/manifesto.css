@@ -368,12 +368,12 @@ background-image:url('../../images/btnBg2.png');
   
   .dm-output
   {
-      /* position:relative; */
-      top:17% !important;
+      position:fixed;
+      top:6% !important;
   /* font-family: Arial, Helvetica, sans-serif; */
   font-size:2em;
     color:gainsboro;  
-  left:18% !important;
+  left:38% !important;
   /* width:640px; */
   /* z-index: 600; */
 }
