@@ -153,16 +153,16 @@ function holdKeyDown() {
 		$('#j-line').append(newButton)	
 	}
 
-	$('#j-line').fadeIn();
-	let newLeft = $('#'+keyPressed).offset().left;
-	let newTop = $('#'+keyPressed).offset().top -50;
-	$('#j-line').css({"left": newLeft});
-	$('#j-line').css({"top": newTop});
-	setTimeout(function(){
-		$('#j-line').fadeOut();
+	// $('#j-line').fadeIn();
+	// let newLeft = $('#'+keyPressed).offset().left;
+	// let newTop = $('#'+keyPressed).offset().top -50;
+	// $('#j-line').css({"left": newLeft});
+	// $('#j-line').css({"top": newTop});
+	// setTimeout(function(){
+		// $('#j-line').fadeOut();
 		// alert("removed");
-},2000
-)
+// },2000
+// )
 }
 	$('.btn').on('touchstart', function(){
 		$('#output').fadeIn();
@@ -170,19 +170,30 @@ function holdKeyDown() {
 		$('#j-line').empty();
 		keyPressed = (this.innerHTML);
 		keysToShow=[];
+// alert(keyPressed);
 
+resolve = () =>{
+	// alert();
+ 
+}
+if( keyPressed ===`<i class="fa fa-long-arrow-right"></i>`){
+	resolve();
+}
 		showWhatKeys(keyPressed);
 
 		myVar = setTimeout(holdKeyDown, 600);
 	
 	})
 		$('.btn').on( 'touchend' , function(e) {
+		
+	
 			clearTimeout(myVar)
 				var id = this.id
 				if (keyPressed=== "Ᵹ"){
 					fadaMode();
-					alert('alt')
+					// alert('alt')
 				}
+
 				else if(
 					
 					(this.id === "copy")
@@ -191,19 +202,21 @@ function holdKeyDown() {
 
 					
 				}
+
 				else
 				if (id ==='undo'){
 					var temp = $('#output').text();
 					temp.toString();
-					alert(temp)
+					// alert(temp)
 				str=	temp.substring(0, temp.length - 1);
-				alert(str)
+				// alert(str)
 				$('#output').text(str) ;
 				}
 				else if( $('#j-line').is(':hidden')){
 					// alert("hidden")
 				$('#output').append(keyPressed);
 		keysToShow= [];}
+	
 	
 			});
 			// if (id === 'undo'){
@@ -213,7 +226,210 @@ function holdKeyDown() {
 
 			// alert();
 
+
 			
+
+
+
+
+
+
+
+
+
+			let dmAgCainnt = true;
+			let justListen = true;
+		 let deirDM = [
+			 `"<div class='dm-output'>
+			 0
+			<br/>
+			<br/>
+			<br/>
+			 náid
+			 </div>`,
+			 
+			 `1
+			 <br/>
+			 <br/>
+			 <br/>
+			 a haon`,
+			 
+			 `2
+			 <br/>
+			 <br/>
+			 <br/>
+			 a dó`,
+			 `3
+			 <br/>
+			 <br/>
+			 <br/>
+			 a trí`,
+			 
+			 `4
+			 <br/>
+			 <br/>
+			 <br/>
+			 a ceathair`,
+			 
+			 `5
+			 <br/>
+			 <br/>
+			 <br/>
+			 a cúig`,
+			 
+			 `6
+			 <br/>
+			 <br/>
+			 <br/>
+			 a sé`,
+			 
+			 `7
+			 <br/>
+			 <br/>
+			 <br/>
+			 a seacht`
+			 ,
+			 
+			 `8
+			 <br/>
+			 <br/>
+			 <br/>
+			 a hocht`
+			 ,
+			 
+			 `9
+			 <br/>
+			 <br/>
+			 <br/>
+			 a naoi`
+			 ,
+			 
+			 `10
+			 <br/>
+			 <br/>
+			 <br/>
+			 a deich`
+		 ]
+		 let say = 0;
+		 let saidEnough = 9;
+		 let keyPressedInDMmode;
+		 
+			if(dmAgCainnt){
+		 
+			 $('#output').fadeOut();
+			 if(justListen){
+			 $('.btn').addClass('most-btns-during-dm-mode');
+			 $('#saighead-deas').addClass('special-btns-during-dm-mode');
+			 
+		 }
+		 
+		 let ceistVis =false;
+		 let outputVis =false;
+		 toggleCeistVis = ()=>{
+			 if(ceistVis){ceistVis = false;
+			 render()
+		 }
+			 else{ceistVis = true;
+				 render();
+			 }}
+
+			 toggleOutputVis = ()=>{
+				if(outputVis){outputVis = false;
+				render()
+			}
+				else{outputVis = true;
+					render();
+				}}
+		 $('#fwdBtn').on('touchend', function(){
+				 // say++;
+		 // alert()
+		 toggleOutputVis();
+		 toggleCeistVis();
+		 }
+		 );
+		 
+			 $('btn').on('touchstart', function(){
+				 keyPressedInDMmode = (this.innerHTML);
+				 if(keyPressedInDMmode === '<i class="fa fa-long-arrow-right"></i>'){
+				 render();     
+				 setTimeout(function () {
+					 $('#saighead-deas').removeClass();
+					 $('#saighead-deas').addClass('btn');
+					 // $('#saighead-deas').addClass('special-btns-during-dm-mode');
+					 $('#saighead-deas').css('color','rgb(73, 206, 33)');
+					 // $('#saighead-deas').addClass('btn-outline-dark');
+		 
+				 },1000);
+		 
+		 // alert(keyPressedInDMmode);
+		 // alert(keyPressedInDMmode);
+				 }
+		 })
+		 
+		 render = () => {
+		 
+		 
+			 $('.dm-says').html(deirDM[say]);
+		 
+			 if (say === saidEnough){
+				 setTimeout(function(){
+					 $('.dm-says').fadeOut();
+				 },4000);
+				 $('.btn').removeClass('most-btns-during-dm-mode')
+				 setTimeout(function(){
+					 $('#keyboard-container').fadeOut()
+				 },2000);
+		 
+		 
+			 }
+		 /*Start game mode
+		 
+		 
+					 $('.btn').removeClass('most-btns-during-dm-mode')
+		 start bringing in tall order resources 
+		 
+		 */
+		 
+		 
+		 //
+		 
+		 if(ceistVis){
+			 $('.dm-output').fadeOut();
+			 // alert(ceistVis)
+			 $('#keyboard-container').fadeIn();
+		 
+		 }
+		 else{
+			 $('.dm-output').fadeIn();
+			 $('#keyboard-container').fadeOut();
+		 
+		 
+		 }
+		 if(outputVis){
+			$('#output').fadeIn();
+			// alert(ceistVis)
+		
+		}
+		else{
+			$('#output').fadeOut();
+		
+		
+		}
+		 
+		 }
+			};
+		 
+		 
+			render();            // alert(keyPressedInDMmode);
+		 
+
+
+
+
+
+
+
+
 		});
 
 

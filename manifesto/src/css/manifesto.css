@@ -353,6 +353,10 @@ background-image:url('../../images/btnBg2.png');
 
 }
 @media screen and (orientation:portrait) {
+  #mapFrame{
+    position:fixed;
+    z-index:0 !important;
+  }
   .dm-says{
     position:fixed;
     align-content: center;

@@ -152,7 +152,6 @@ function playGame()
 
     function progressStory(){
 
-alert();
         if(story>1){
             bckBtn.style.display='inline';
             bckBtn.style.animation='delay-fade-in 1s';
