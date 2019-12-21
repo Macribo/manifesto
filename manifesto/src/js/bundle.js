@@ -411,7 +411,7 @@ module.exports = [
     
     //1
         
-    `<span id='herzlich willkommen'>Fáilte.<br/></span><span id="Náid ist gleich 0.">Tá náid cothrom le 0.</span>
+    `<span  id='herzlich willkommen'>Fáilte.<br/></span><span class="output-text" id="Náid ist gleich 0.">Tá náid cothrom le 0.</span>
     
     
     `,

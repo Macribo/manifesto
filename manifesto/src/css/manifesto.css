@@ -7,20 +7,20 @@ html {
   font-size: 16px;
   padding: 0px;
   margin: 0px;
-  background-image:url('../images/bg.png');
+  background-image:url('../../images/bg.png');
   transition: 0.05s background-image ease-in;
 }
-@font-face
+/* @font-face
 {
     font-family: INFO56_0;
-    src: url("../fonts/INFO56_0.ttf");
+    src: url("../../fonts/INFO56_0.ttf");
 }  
   
 @font-face
 {
     font-family: computer_pixel-7;
     src: url("../fonts/computer_pixel-7.ttf");
-}
+} */
 
 
 /*flex-boxes*/
@@ -44,7 +44,7 @@ transform: rotate(90deg);} */
 
     position:absolute;
     display: inline;
-    background-image:url('../images/mapFrame.png');
+    background-image:url('../../images/mapFrame.png');
     top:62px;
     left:319px;
     height: 544px;
@@ -62,7 +62,7 @@ transform: rotate(90deg);} */
     width:242px;
     height: 467px;
     position: relative;
-    background-image: url("../images/bg2.png");
+    background-image: url("../../images/bg2.png");
     background-repeat: no-repeat;
     top:43px;
     left:0px;
@@ -110,7 +110,7 @@ h1
  position:relative;
  text-align:center;
  left: -200px;
- color:#730a0a;
+ color:#f5e1e1;
  margin-left: 0px auto;
  font-size: 85px;
  z-index:300;
@@ -145,11 +145,11 @@ button
   user-select: none;
   background-color:transparent;
 
- background-image:url('../images/btnBg1.png');
+ background-image:url('../../images/btnBg1.png');
 	
 }
 button:hover{
-    background-image:url('../images/btnBg3.png');
+    background-image:url('../../images/btnBg3.png');
 }
 #fwdBtn{
   position:relative;
@@ -175,7 +175,7 @@ button:hover{
   top:234px;
   left:38px;
 z-index:20;
-background-image:url('../images/btnBg2.png');
+background-image:url('../../images/btnBg2.png');
 }
 
 
@@ -187,7 +187,7 @@ background-image:url('../images/btnBg2.png');
     position:absolute;
     width:257px;
     height:420px;
-    background-image:url("../images/dealbh.png");
+    background-image:url("../../images/dealbh.png");
     bottom:27px;
     left:-52px;
     z-index:10;
@@ -210,7 +210,7 @@ background-image:url('../images/btnBg2.png');
     position:absolute;
     top:90px;
     left:158px;
-    background-image:url("../images/badges.png");
+    background-image:url("../../images/badges.png");
     z-index:20;
     opacity:1;
     width:80px;
@@ -238,6 +238,8 @@ background-image:url('../images/btnBg2.png');
 	box-shadow: 3px 3px 5px rgba(0,0,0,0.4);
   z-index: 100;
 
+
+
 }
 
 
@@ -255,7 +257,7 @@ background-image:url('../images/btnBg2.png');
       top:17% !important;
   font-family: Arial, Helvetica, sans-serif;
   font-size:3em;
-    color:gainsboro;
+    color:gainsboro;  
   left:18% !important;
   width:640px;
   z-index: 600;
@@ -284,7 +286,7 @@ background-image:url('../images/btnBg2.png');
     width:242px;
     height: 467px;
     position: fixed;
-    background-image: url("../images/bg2.png");
+    background-image: url("../../images/bg2.png");
     background-repeat: no-repeat;
     top:-22%;
     left:-7%;
@@ -293,7 +295,7 @@ background-image:url('../images/btnBg2.png');
   #mapFrame {
     position:fixed;
     /* display: inline; */
-    background-image:url('../images/mapFrame-portrait.png');
+    background-image:url('../../images/mapFrame-portrait.png');
     top:0%;
     left:0%;
     z-index:0;
@@ -350,6 +352,28 @@ background-image:url('../images/btnBg2.png');
 
 }
 @media screen and (orientation:portrait) {
+  .dm-says{
+    position:fixed;
+    align-content: center;
+    text-align: center;
+    top:0% !important;
+    left:38% !important;
+    z-index:5000;
+  }
+  
+  .dm-output
+  {
+      /* position:relative; */
+      top:17% !important;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-size:2em;
+    color:gainsboro;  
+  left:18% !important;
+  /* width:640px; */
+  /* z-index: 600; */
+}
+
+  
   #output2
   {
       position:relative;
@@ -383,22 +407,23 @@ background-image:url('../images/btnBg2.png');
   #left-panel, #fwdBtn, #bckBtn{
 
     background-repeat: no-repeat;
-    top:26%;
-    left:13%;
-    zoom:2.3;
+    top:14%;
+    left:9%;
+    zoom:1;
   }
   #left-panel{
+   opacity:0.3;
     margin:34px;
     width:242px;
     height: 467px;
     position: fixed;
-    background-image: url("../images/bg2.png");
+    background-image: url("../../images/bg2.png");
 
   }
   #mapFrame {
     position:fixed;
     /* display: inline; */
-    background-image:url('../images/mapFrame-portrait.png');
+    background-image:url('../../images/mapFrame-portrait.png');
     top:0%;
     left:0%;
     z-index:0;
@@ -441,8 +466,8 @@ background-image:url('../images/btnBg2.png');
     position:fixed;
        
    outline:none;
-      left:0%;
-      top:65%;
+      left:44%;
+      top:90%;
       animation: delay-fade-in 1s;
         /* border:3px solid green; */
       z-index:5000 !important; 

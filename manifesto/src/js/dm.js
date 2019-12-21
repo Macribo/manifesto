@@ -16,8 +16,13 @@ $(document).ready(function () {
    let dmAgCainnt = true;
    let justListen = true;
 let deirDM = [
-    `"Do what is beyond your strength even should you fail sometimes."
-    <br>Charles Stewart Parnell`,
+    `"<div class='dm-output'>
+    0
+   <br/>
+   <br/>
+   <br/>
+    náid
+    </div>`,
     
     `According to <a href="https://storyarchaeology.com/">this</a> the Irish are Brits.
     And the Brits are Celts.`,
@@ -48,7 +53,20 @@ let keyPressedInDMmode;
     $('#saighead-deas').addClass('special-btns-during-dm-mode');
     
 }
-    $('.btn').on('touchstart', function(){
+
+
+$('#fwdBtn').on('touchend', function(){
+        // say++;
+// alert()
+$('.dm-says').fadeOut();
+$('#keyboard-container').fadeIn();
+dmAgCainnt = false;
+justListen = false;
+render();
+}
+);
+
+    $('btn').on('touchstart', function(){
 		keyPressedInDMmode = (this.innerHTML);
         if(keyPressedInDMmode === '<i class="fa fa-long-arrow-right"></i>'){
             say++;
@@ -95,6 +113,8 @@ start bringing in tall order resources
 //
 }
    };
+
+
    render();            // alert(keyPressedInDMmode);
 
 });

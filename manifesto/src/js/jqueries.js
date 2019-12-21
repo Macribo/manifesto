@@ -13,7 +13,7 @@ $(document).ready(function(){
         document.querySelector('#bearla').innerHTML = 'back';
     };
     document.querySelector('#fwdBtn').onmouseenter = (event) => {
-        document.querySelector('#bearla').innerHTML = 'Mouseover Irish text to translate';
+        document.querySelector('#bearla').innerHTML = '';
     };
 //    $('#button').hover(function(){
 //                   $('#bearla').text('push');
@@ -21,8 +21,7 @@ $(document).ready(function(){
  
      
 
-    $('#fwdBtn').click(function(){
-
+    $('#fwdBtn').on('touchend',function(){
         $('#output2 span').hover(function(){
              $('#bearla').text($(this).attr('id'));
              $(this).css('color','#e35ee5');
@@ -64,6 +63,22 @@ $(document).ready(function(){
             $(this).css('color','#fff');
 
     });
+});
+
+
+$('.dm-says').click(function(){
+
+    $('#output2 span').hover(function(){
+         $('#bearla').text($(this).attr('id'));
+         $(this).css('color','#e35ee5');
+         $('div').slidedown(); 
+});
+
+    $('#output2 span').mouseout(function(){
+        $('#bearla').text('');
+        $(this).css('color','#fff');
+
+});
 });
 
 
