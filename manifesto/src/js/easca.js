@@ -147,6 +147,7 @@ function holdKeyDown() {
 	
 	// alert(keysToShow)
 	for (let i = 0; i<keysToShow.length; i++){
+
 		let newButton = `<button id=`+keysToShow[i]+` onclick = "				$('#output').append(this.id);
 		" type="button" class="btn btn-right-logo btn-outline-dark">`+keysToShow[i]+`</button>`
 		
@@ -174,6 +175,10 @@ function holdKeyDown() {
 
 resolve = () =>{
 	// alert();
+	say++;
+	toggleCeistVis();
+	toggleOutputVis();  
+	// render();
  
 }
 if( keyPressed ===`<i class="fa fa-long-arrow-right"></i>`){
@@ -214,6 +219,7 @@ if( keyPressed ===`<i class="fa fa-long-arrow-right"></i>`){
 				}
 				else if( $('#j-line').is(':hidden')){
 					// alert("hidden")
+					if(keyPressed != `<i class="fa fa-long-arrow-right"></i>`)
 				$('#output').append(keyPressed);
 		keysToShow= [];}
 	
@@ -248,67 +254,67 @@ if( keyPressed ===`<i class="fa fa-long-arrow-right"></i>`){
 			 náid
 			 </div>`,
 			 
-			 `1
+			 `<div class='dm-output'>1
 			 <br/>
 			 <br/>
 			 <br/>
-			 a haon`,
+			 a haon</div>`,
 			 
-			 `2
+			 `<div class='dm-output'>2
 			 <br/>
 			 <br/>
 			 <br/>
-			 a dó`,
-			 `3
+			 a dó</div>`,
+			 `<div class='dm-output'>3
 			 <br/>
 			 <br/>
 			 <br/>
-			 a trí`,
+			 a trí</div>`,
 			 
-			 `4
+			 `<div class='dm-output'>4
 			 <br/>
 			 <br/>
 			 <br/>
-			 a ceathair`,
+			 a ceathair</div>`,
 			 
-			 `5
+			 `<div class='dm-output'>5
 			 <br/>
 			 <br/>
 			 <br/>
-			 a cúig`,
+			 a cúig</div>`,
 			 
-			 `6
+			 `<div class='dm-output'>6
 			 <br/>
 			 <br/>
 			 <br/>
-			 a sé`,
+			 a sé</div>`,
 			 
-			 `7
+			 `<div class='dm-output'>7
 			 <br/>
 			 <br/>
 			 <br/>
-			 a seacht`
+			 a seacht</div>`
 			 ,
 			 
-			 `8
+			 `<div class='dm-output'>8
 			 <br/>
 			 <br/>
 			 <br/>
-			 a hocht`
+			 a hocht</div>`
 			 ,
 			 
-			 `9
+			 `<div class='dm-output'>9
 			 <br/>
 			 <br/>
 			 <br/>
-			 a naoi`
+			 a naoi</div>`
 			 ,
 			 
-			 `10
+			 `<div class='dm-output'>10
 			 <br/>
 			 <br/>
 			 <br/>
-			 a deich`
+			 a deich</div>`
 		 ]
 		 let say = 0;
 		 let saidEnough = 9;
@@ -338,6 +344,8 @@ if( keyPressed ===`<i class="fa fa-long-arrow-right"></i>`){
 				render()
 			}
 				else{outputVis = true;
+					$("#output").empty();
+
 					render();
 				}}
 		 $('#fwdBtn').on('touchend', function(){
