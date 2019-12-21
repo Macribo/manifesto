@@ -145,11 +145,11 @@ button
   user-select: none;
   background-color:transparent;
 
- background-image:url('../../images/btnBg1.png');
+ /* background-image:url('../../images/btnBg1.png'); */
 	
 }
 button:hover{
-    background-image:url('../../images/btnBg3.png');
+    /* background-image:url('../../images/btnBg3.png'); */
 }
 #fwdBtn{
   position:relative;

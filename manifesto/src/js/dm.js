@@ -24,22 +24,67 @@ let deirDM = [
     náid
     </div>`,
     
-    `According to <a href="https://storyarchaeology.com/">this</a> the Irish are Brits.
-    And the Brits are Celts.`,
+    `1
+    <br/>
+    <br/>
+    <br/>
+    a haon`,
     
-    `<h3>The Island of Ireland comes from 150 vertical kilometers of Lorentia afloat on the asthenosphere;</h3>`,
-    `
-    which crossed the world to collide with a seperation of the Avalonian landmass,
-    450 million years ago.</h3>`,
+    `2
+    <br/>
+    <br/>
+    <br/>
+    a dó`,
+    `3
+    <br/>
+    <br/>
+    <br/>
+    a trí`,
     
-    `<h3>Ages flew through we know not what until our oldest tales of Banba.</h3>`,`Whomever they were;
-    Beaker people, Milesians...`,
+    `4
+    <br/>
+    <br/>
+    <br/>
+    a ceathair`,
     
-    `'They who were' have gifted us a language on the wind;`,
+    `5
+    <br/>
+    <br/>
+    <br/>
+    a cúig`,
     
-    `in which`,
+    `6
+    <br/>
+    <br/>
+    <br/>
+    a sé`,
     
-    `The difference between an enegmatic arrowhead, and 'saiġead', is kinetic war broght to the eye of a king...`
+    `7
+    <br/>
+    <br/>
+    <br/>
+    a seacht`
+    ,
+    
+    `8
+    <br/>
+    <br/>
+    <br/>
+    a hocht`
+    ,
+    
+    `9
+    <br/>
+    <br/>
+    <br/>
+    a naoi`
+    ,
+    
+    `10
+    <br/>
+    <br/>
+    <br/>
+    a deich`
 ]
 let say = 0;
 let saidEnough = 9;
@@ -72,7 +117,7 @@ toggleCeistVis();
     $('btn').on('touchstart', function(){
 		keyPressedInDMmode = (this.innerHTML);
         if(keyPressedInDMmode === '<i class="fa fa-long-arrow-right"></i>'){
-        render();     
+        alert();render();     
         setTimeout(function () {
             $('#saighead-deas').removeClass();
             $('#saighead-deas').addClass('btn');

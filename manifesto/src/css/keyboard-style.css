@@ -5,7 +5,7 @@
         align-content: center;
     }
     
-    @font-face { font-family: 'Urchlo Romhanach'; src: url('../fonts/Urchlo\ Romhanach.ttf'); } 
+    @font-face { font-family: 'Urchlo Romhanach'; src: url('../../fonts/Urchlo\ Romhanach.ttf'); } 
     #output{
         position: fixed;
         width:90%;
@@ -72,6 +72,7 @@
         bottom:5%;
         padding-left:60px !important;
         padding-right:60px !important;
+
     }
     #backspace{
         
@@ -387,7 +388,7 @@
         display:none;
         position:fixed;
         bottom:10%;
-        background-color:rgba(144, 144, 144, 0.52);
+        background-color:rgba(144, 144, 144, 1);
         padding-top:3px;
         padding-bottom:3px;
         /* display:inline-block; */
