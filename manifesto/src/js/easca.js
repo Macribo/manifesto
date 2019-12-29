@@ -3,6 +3,7 @@ $(document).ready(function () {
 
 	let keyPressed;
 	let keysToShow = [];
+	let rightAnswers = ['náid','a haon','a dó','a trí','a ceathair','a cúig','a sé','a seacht','a hocht','a naoi','a deich']
 	showWhatKeys=(keyPressed)=>{
 		switch(keyPressed){
 			case 'a': keysToShow.push('a');
@@ -174,7 +175,7 @@ function holdKeyDown() {
 // alert(keyPressed);
 
 resolve = () =>{
-	let answer = `náid`;
+	let answer = rightAnswers[say];
 	if(answer === $('#output').text()){
 		alert("ok");
 
@@ -263,7 +264,7 @@ if( keyPressed ===`<i class="fa fa-long-arrow-right"></i>`){
 			 </div>`,
 			 
 			 `<div class='dm-output'>
-			 1
+			1
 			 <br/>
 			 <br/>
 			 <br/>
