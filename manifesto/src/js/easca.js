@@ -177,7 +177,7 @@ function holdKeyDown() {
 resolve = () =>{
 	let answer = rightAnswers[say];
 	if(answer === $('#output').text()){
-		alert("ok");
+		// alert("ok");
 
 		say++;
 		toggleCeistVis();
