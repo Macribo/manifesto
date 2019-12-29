@@ -154,16 +154,16 @@ function holdKeyDown() {
 		$('#j-line').append(newButton)	
 	}
 
-	// $('#j-line').fadeIn();
-	// let newLeft = $('#'+keyPressed).offset().left;
-	// let newTop = $('#'+keyPressed).offset().top -50;
-	// $('#j-line').css({"left": newLeft});
-	// $('#j-line').css({"top": newTop});
-	// setTimeout(function(){
-		// $('#j-line').fadeOut();
+	$('#j-line').fadeIn();
+	let newLeft = $('#'+keyPressed).offset().left;
+	let newTop = $('#'+keyPressed).offset().top -50;
+	$('#j-line').css({"left": newLeft});
+	$('#j-line').css({"top": newTop});
+	setTimeout(function(){
+		$('#j-line').fadeOut();
 		// alert("removed");
-// },2000
-// )
+},2000
+)
 }
 	$('.btn').on('touchstart', function(){
 		$('#output').fadeIn();
