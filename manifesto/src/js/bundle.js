@@ -296,11 +296,11 @@ render();
     //test
 
     function stepBack(){
-        story--;
+        // story--;
         playGame();
     }
     function stepFwd(){
-        story++;
+        // story++;
         playGame();
     }
 function playGame()
